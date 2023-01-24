@@ -143,7 +143,7 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Satsuma Kawachi Fuso Yamashiro Ise Hyuga Nagato Mutsu Tosa Musashi Shinano Togo Enomoto Saigo Ijuin Kaga Kiri Owari Sagami Noto Yamato 
+		Satsuma Kawachi Fuso Yamashiro Ise Hyuga Nagato Mutsu Tosa Musashi Shinano Togo Enomoto Saigo Ijuin Kaga Kiri Owari Sagami Noto Yamato
 	}
 	battleship = {
 		Fuji Yashima Shikishima Hatsuse Asaki Mikasa Iki Tango Sagami Suwo Hizen Iwami Mishima Okinoshima Katori Kashima Satsuma Aki Kawachi Settsu
@@ -152,7 +152,7 @@ unit_names = {
 		Kotetsu Chiyodagata "Ryujo Maru" Fuso Shinsoku Teibo Hozu Azuma Kabayama Choyo Kosei Koshin Chin'en Anegawa Tshushima Fuji Heien Mikasa Oki
 	}
 	manowar = {
-		"Shohei Maru" "Kaiyo Maru" Un'yo "Hoo Maru" "Asahi Maru" Banryu Fujisan Yari Ibaraki Mie Ehime Wakayama Gifu Awa Tamba 
+		"Shohei Maru" "Kaiyo Maru" Un'yo "Hoo Maru" "Asahi Maru" Banryu Fujisan Yari Ibaraki Mie Ehime Wakayama Gifu Awa Tamba
 	}
 	cruiser = {
 		Naniwa Takachiho Matsushima Itsukushima Hashidate Chiyoda Yaeyama Yoshino Hiei Haruna Kirishima Chitose Kasagi Niitaka Yura Kinu Yoshino
@@ -163,12 +163,12 @@ unit_names = {
 	monitor = {
 		"Kanko Maru" Kaiten Kasuga Hiryu Katada Sumida Tsukushi Moshun "Izu Oshima" Okinotorishima Wakkanai Biwa Hamana
 	}
-	clipper_transport = { 
-		 
+	clipper_transport = {
+
 
 	}
-	steam_transport = { 
-		
+	steam_transport = {
+
 
 	}
 	commerce_raider = {

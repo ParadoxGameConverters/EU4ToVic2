@@ -101,37 +101,37 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent" 
-		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur		
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"
+		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 	ironclad = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent" 
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"
 		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 	manowar = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew  "St. Laurent" 
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew  "St. Laurent"
 		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 	cruiser = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent" 
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"
 		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 	frigate = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent" 
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"
 		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 	monitor = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent" 
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"
 		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"  
+		Saskatchewan Winnipeg Dauphine Regina Alberta Manitoba Edmonton Macleod Pitikwahanapiwiyin Kamiokisihkwew "St. Laurent"
 		"Fish Creek" "Duck Lake" "Cut Knife" "Coureur des bois" Voyageur
 	}
 }

@@ -57,7 +57,7 @@
 	}
 }
 #uncolonized in 1836
-#Bata (132000/33000 POPS) 
+#Bata (132000/33000 POPS)
 1973 = {
 	aristocrats = {
 		culture = fang

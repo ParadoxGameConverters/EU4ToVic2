@@ -101,13 +101,13 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Kilkis Aspis "Vasilefs Konstantinos" Salamis Athina Constantinopolis Sparta Leonidas "Mégas Aléxandros" Pericles Olympias 
+		Kilkis Aspis "Vasilefs Konstantinos" Salamis Athina Constantinopolis Sparta Leonidas "Mégas Aléxandros" Pericles Olympias
 	}
 	ironclad = {
-		Karteria Panopi Pliksavra Afroessa Sfendoni Hydra Spetsai Psara Limnos "Vasilissa Olga" 
+		Karteria Panopi Pliksavra Afroessa Sfendoni Hydra Spetsai Psara Limnos "Vasilissa Olga"
 	}
 	manowar = {
-		"Nikolis Apostolis" Tombazis Poros "Andreas Vokos" "Laskarina Bouboulina" "Constantine Kanaris" Plixavra Averof 
+		"Nikolis Apostolis" Tombazis Poros "Andreas Vokos" "Laskarina Bouboulina" "Constantine Kanaris" Plixavra Averof
 	}
 	cruiser = {
 		"Navarhos Miaoulis" "Georgios Averof" Elli "Antinaurkos Condoriotis" "Lambros Katsonis" Árgos Agamemnon Gyáros Tilemachos Delfoí
@@ -118,12 +118,12 @@ unit_names = {
 	monitor = {
 		Sfendoni Thessalía Apeiros Attikí Pelopónnisos Circe Eurýkleia Aiolia Kriti Ródos
 	}
-	clipper_transport = { 
-		 
+	clipper_transport = {
+
 
 	}
-	steam_transport = { 
-		
+	steam_transport = {
+
 
 	}
 	commerce_raider = {

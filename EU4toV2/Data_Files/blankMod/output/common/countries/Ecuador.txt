@@ -158,13 +158,13 @@ unit_names = {
 		Constitución Cuenca Cuero Esmeraldas Espejo Guayaquil Montufar Quito República Zamora
 	}
 	monitor = {
-		Coca Cotopaxi Huancavilca Illiniza Manteño Napo Pastaza Putumayo Shyri Tunguraha 
+		Coca Cotopaxi Huancavilca Illiniza Manteño Napo Pastaza Putumayo Shyri Tunguraha
 	}
 	clipper_transport = {
 		Audaz Cuencana Darwin Indestructible Ingapirca Intrépido "Lago Agrio" Marina Orellana Portoviejo
 		Puyeña Quiteña "San Gregorio" "San José" "San Miguel" "Santa María" Santiago "Santo Domingo" Tena Veloz
 	}
-	steam_transport = { 
+	steam_transport = {
 		Audaz Cuencana Darwin Indestructible Ingapirca Intrépido "Lago Agrio" Marina Orellana Portoviejo
 		Puyeña Quiteña "San Gregorio" "San José" "San Miguel" "Santa María" Santiago "Santo Domingo" Tena Veloz
 	}

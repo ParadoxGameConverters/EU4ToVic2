@@ -676,7 +676,7 @@
 }
 #Luristan-Ardelan Region (476000)
 #under the rule of Persia in 1836
-#Kermanshah (236000/59000 POPS) #Lur POPs included in Persian 
+#Kermanshah (236000/59000 POPS) #Lur POPs included in Persian
 1117 = {
 	aristocrats = {
 		culture = persian

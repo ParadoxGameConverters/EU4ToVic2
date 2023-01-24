@@ -41,7 +41,7 @@ france =
 	# slave = COR	# Corsica
 	# slave = SAV	# Savoy
 	# slave = SPI   # Sardinia-Piedmont
-}	
+}
 
 ireland =
 {

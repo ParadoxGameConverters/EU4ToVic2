@@ -438,7 +438,7 @@ political_decisions = {
 				tag = ENS
 			}
 		}
-		
+
 		allow = {
 			prestige = 45
 			nationalism_n_imperialism = 1
@@ -470,7 +470,7 @@ political_decisions = {
 				limit = {
 					NOT = { is_greater_power = yes }
 					NOT = { has_country_flag = post_colonial_country }
-					is_culture_group = THIS					
+					is_culture_group = THIS
 					OR = {
 						in_sphere = THIS
 						vassal_of = THIS

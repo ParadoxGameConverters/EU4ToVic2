@@ -871,9 +871,9 @@
 		size = 8000
 	}
 }
-#Borgu Region (56000) #see Benin.txt for balance of region  
+#Borgu Region (56000) #see Benin.txt for balance of region
 #ruled by Sokoto in 1836
-#Bussa (56000/14000 POPS) #now part of Nigeria  
+#Bussa (56000/14000 POPS) #now part of Nigeria
 1938 = {
 	aristocrats = {
 		culture = african_minor
@@ -1993,7 +1993,7 @@
 		size = 23350
 	}
 }
-#Adamawa Region (140000) #see Cameroun.txt for balance of region   
+#Adamawa Region (140000) #see Cameroun.txt for balance of region
 #under rule of Sokoto in 1836
 #Yola (140000/35000 POPS)
 1950 = {

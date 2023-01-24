@@ -89,7 +89,7 @@ link = { tag = SRB culture = sorbian }
 link = { tag = POM culture = old_pommeranian } #Slavic Pomerania
 
 #Czechoslovakian => Czechoslovakia
-link = { tag = CZE culture = czech } 
+link = { tag = CZE culture = czech }
 link = { tag = SLV culture = slovak }
 
 #East Slavic

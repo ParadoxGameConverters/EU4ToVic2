@@ -5,7 +5,7 @@ country_event = { #Esperanto event
 	picture = "jews"
 	major = yes
 	fire_only_once = yes
-	
+
 	trigger = {
 		owns = 706 # Warsaw
 		year = 1887
@@ -13,7 +13,7 @@ country_event = { #Esperanto event
 		invention = expressionist_literature
 		literacy = 0.3 #Let's hope they know how to write before books
 	}
-	
+
 	mean_time_to_happen = {
 		months = 7 #26.7.1887, publication of the Unua Libro
 		modifier = {
@@ -21,7 +21,7 @@ country_event = { #Esperanto event
 			month = 7
 		}
 	}
-	
+
 	option = {
 		name = EVTOPTA450007 #Adopt
 		any_pop = {
@@ -29,7 +29,7 @@ country_event = { #Esperanto event
 		}
 		prestige = 5
 	}
-	
+
 	option = {
 		name = EVTOPTB450007 #Discard
 		any_pop = {
@@ -43,7 +43,7 @@ country_event = { #Esperanto event
 		}
 		prestige = 5
 	}
-	
+
 }
 country_event = {
 	id = 251000
@@ -1353,9 +1353,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CAN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CAN
-  NOT = { exists = CAN } 
+  NOT = { exists = CAN }
  }
     mean_time_to_happen = {
   months = 120
@@ -1554,9 +1554,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = LSK_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = LSK
-  NOT = { exists = LSK } 
+  NOT = { exists = LSK }
  }
     mean_time_to_happen = {
   months = 120
@@ -1755,9 +1755,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = USA_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = USA
-  NOT = { exists = USA } 
+  NOT = { exists = USA }
  }
     mean_time_to_happen = {
   months = 120
@@ -1956,9 +1956,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = UCA_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = UCA
-  NOT = { exists = UCA } 
+  NOT = { exists = UCA }
  }
     mean_time_to_happen = {
   months = 120
@@ -2157,9 +2157,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = MEX_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = MEX
-  NOT = { exists = MEX } 
+  NOT = { exists = MEX }
  }
     mean_time_to_happen = {
   months = 120
@@ -2358,9 +2358,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = BRZ_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = BRZ
-  NOT = { exists = BRZ } 
+  NOT = { exists = BRZ }
  }
     mean_time_to_happen = {
   months = 120
@@ -2559,9 +2559,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = PEU_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = PEU
-  NOT = { exists = PEU } 
+  NOT = { exists = PEU }
  }
     mean_time_to_happen = {
   months = 120
@@ -2760,9 +2760,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = ARG_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = ARG
-  NOT = { exists = ARG } 
+  NOT = { exists = ARG }
  }
     mean_time_to_happen = {
   months = 120
@@ -2961,9 +2961,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = PRG_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = PRG
-  NOT = { exists = PRG } 
+  NOT = { exists = PRG }
  }
     mean_time_to_happen = {
   months = 120
@@ -3162,9 +3162,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = URU_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = URU
-  NOT = { exists = URU } 
+  NOT = { exists = URU }
  }
     mean_time_to_happen = {
   months = 120
@@ -3363,9 +3363,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = BOL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = BOL
-  NOT = { exists = BOL } 
+  NOT = { exists = BOL }
  }
     mean_time_to_happen = {
   months = 120
@@ -3564,9 +3564,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CLM_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CLM
-  NOT = { exists = CLM } 
+  NOT = { exists = CLM }
  }
     mean_time_to_happen = {
   months = 120
@@ -3765,9 +3765,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = VNZ_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = VNZ
-  NOT = { exists = VNZ } 
+  NOT = { exists = VNZ }
  }
     mean_time_to_happen = {
   months = 120
@@ -3966,9 +3966,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = MLY_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = MLY
-  NOT = { exists = MLY } 
+  NOT = { exists = MLY }
  }
     mean_time_to_happen = {
   months = 120
@@ -4166,9 +4166,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = LOU_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = LOU
-  NOT = { exists = LOU } 
+  NOT = { exists = LOU }
  }
     mean_time_to_happen = {
   months = 120
@@ -4367,9 +4367,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = HND_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = HND
-  NOT = { exists = HND } 
+  NOT = { exists = HND }
  }
     mean_time_to_happen = {
   months = 120
@@ -4567,9 +4567,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = AST_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = AST
-  NOT = { exists = AST } 
+  NOT = { exists = AST }
  }
     mean_time_to_happen = {
   months = 120
@@ -4768,9 +4768,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = PHI_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = PHL
-  NOT = { exists = PHL } 
+  NOT = { exists = PHL }
  }
     mean_time_to_happen = {
   months = 120
@@ -4968,9 +4968,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = NZL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = NZL
-  NOT = { exists = NZL } 
+  NOT = { exists = NZL }
  }
     mean_time_to_happen = {
   months = 120
@@ -5169,9 +5169,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = MAD_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = MAD
-  NOT = { exists = MAD } 
+  NOT = { exists = MAD }
  }
     mean_time_to_happen = {
   months = 120
@@ -5370,9 +5370,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = SAF_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = SAF
-  NOT = { exists = SAF } 
+  NOT = { exists = SAF }
  }
     mean_time_to_happen = {
   months = 120
@@ -5571,9 +5571,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = RHO_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = RHO
-  NOT = { exists = RHO } 
+  NOT = { exists = RHO }
  }
     mean_time_to_happen = {
   months = 120
@@ -5772,9 +5772,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = LIB_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = LIB
-  NOT = { exists = LIB } 
+  NOT = { exists = LIB }
  }
     mean_time_to_happen = {
   months = 120
@@ -5973,9 +5973,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CNG_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CNG
-  NOT = { exists = CNG } 
+  NOT = { exists = CNG }
  }
     mean_time_to_happen = {
   months = 120
@@ -6174,9 +6174,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CHL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CHL
-  NOT = { exists = CHL } 
+  NOT = { exists = CHL }
  }
     mean_time_to_happen = {
   months = 120
@@ -6375,9 +6375,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = QUE_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = QUE
-  NOT = { exists = QUE } 
+  NOT = { exists = QUE }
  }
     mean_time_to_happen = {
   months = 120
@@ -6576,9 +6576,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = COL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = COL
-  NOT = { exists = COL } 
+  NOT = { exists = COL }
  }
     mean_time_to_happen = {
   months = 120
@@ -6777,9 +6777,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = NEW_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = NEW
-  NOT = { exists = NEW } 
+  NOT = { exists = NEW }
  }
     mean_time_to_happen = {
   months = 120
@@ -6978,9 +6978,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = NEN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = NEN
-  NOT = { exists = NEN } 
+  NOT = { exists = NEN }
  }
     mean_time_to_happen = {
   months = 120
@@ -7179,9 +7179,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = MAN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = MAN
-  NOT = { exists = MAN } 
+  NOT = { exists = MAN }
  }
     mean_time_to_happen = {
   months = 120
@@ -7380,9 +7380,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = TEX_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = TEX
-  NOT = { exists = TEX } 
+  NOT = { exists = TEX }
  }
     mean_time_to_happen = {
   months = 120
@@ -7581,9 +7581,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CSA_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CSA
-  NOT = { exists = CSA } 
+  NOT = { exists = CSA }
  }
     mean_time_to_happen = {
   months = 120
@@ -7782,9 +7782,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = DES_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = DES
-  NOT = { exists = DES } 
+  NOT = { exists = DES }
  }
     mean_time_to_happen = {
   months = 120
@@ -7983,9 +7983,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CAL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CAL
-  NOT = { exists = CAL } 
+  NOT = { exists = CAL }
  }
     mean_time_to_happen = {
   months = 120
@@ -8184,9 +8184,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CUB_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CUB
-  NOT = { exists = CUB } 
+  NOT = { exists = CUB }
  }
     mean_time_to_happen = {
   months = 120
@@ -8385,9 +8385,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = HAI_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = HAI
-  NOT = { exists = HAI } 
+  NOT = { exists = HAI }
  }
     mean_time_to_happen = {
   months = 120
@@ -8586,9 +8586,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = DOM_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = DOM
-  NOT = { exists = DOM } 
+  NOT = { exists = DOM }
  }
     mean_time_to_happen = {
   months = 120
@@ -8787,9 +8787,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = COS_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = COS
-  NOT = { exists = COS } 
+  NOT = { exists = COS }
  }
     mean_time_to_happen = {
   months = 120
@@ -8988,9 +8988,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = HON_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = HON
-  NOT = { exists = HON } 
+  NOT = { exists = HON }
  }
     mean_time_to_happen = {
   months = 120
@@ -9189,9 +9189,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = ELS_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = ELS
-  NOT = { exists = ELS } 
+  NOT = { exists = ELS }
  }
     mean_time_to_happen = {
   months = 120
@@ -9390,9 +9390,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = PNM_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = PNM
-  NOT = { exists = PNM } 
+  NOT = { exists = PNM }
  }
     mean_time_to_happen = {
   months = 120
@@ -9591,9 +9591,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = ECU_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = ECU
-  NOT = { exists = ECU } 
+  NOT = { exists = ECU }
  }
     mean_time_to_happen = {
   months = 120
@@ -9792,9 +9792,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = GUA_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = GUA
-  NOT = { exists = GUA } 
+  NOT = { exists = GUA }
  }
     mean_time_to_happen = {
   months = 120
@@ -9993,9 +9993,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = NIC_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = NIC
-  NOT = { exists = NIC } 
+  NOT = { exists = NIC }
  }
     mean_time_to_happen = {
   months = 120
@@ -10194,9 +10194,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = GUY_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = GUY
-  NOT = { exists = GUY } 
+  NOT = { exists = GUY }
  }
     mean_time_to_happen = {
   months = 120
@@ -10395,9 +10395,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CHP_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CHP
-  NOT = { exists = CHP } 
+  NOT = { exists = CHP }
  }
     mean_time_to_happen = {
   months = 120
@@ -10596,9 +10596,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CEQ_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CEQ
-  NOT = { exists = CEQ } 
+  NOT = { exists = CEQ }
  }
     mean_time_to_happen = {
   months = 120
@@ -10797,9 +10797,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = ENT_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = ENT
-  NOT = { exists = ENT } 
+  NOT = { exists = ENT }
  }
     mean_time_to_happen = {
   months = 120
@@ -10998,9 +10998,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = LOS_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = LOS
-  NOT = { exists = LOS } 
+  NOT = { exists = LOS }
  }
     mean_time_to_happen = {
   months = 120
@@ -11199,9 +11199,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = OAX_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = OAX
-  NOT = { exists = OAX } 
+  NOT = { exists = OAX }
  }
     mean_time_to_happen = {
   months = 120
@@ -11400,9 +11400,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = RGR_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = RGR
-  NOT = { exists = RGR } 
+  NOT = { exists = RGR }
  }
     mean_time_to_happen = {
   months = 120
@@ -11601,9 +11601,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = RGS_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = RGS
-  NOT = { exists = RGS } 
+  NOT = { exists = RGS }
  }
     mean_time_to_happen = {
   months = 120
@@ -11802,9 +11802,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = SON_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = SON
-  NOT = { exists = SON } 
+  NOT = { exists = SON }
  }
     mean_time_to_happen = {
   months = 120
@@ -12003,9 +12003,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = TRS_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = TRS
-  NOT = { exists = TRS } 
+  NOT = { exists = TRS }
  }
     mean_time_to_happen = {
   months = 120
@@ -12203,9 +12203,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = YUC_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = YUC
-  NOT = { exists = YUC } 
+  NOT = { exists = YUC }
  }
     mean_time_to_happen = {
   months = 120
@@ -12404,9 +12404,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = BLZ_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = BLZ
-  NOT = { exists = BLZ } 
+  NOT = { exists = BLZ }
  }
     mean_time_to_happen = {
   months = 120
@@ -12605,9 +12605,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = DAK_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = DAK
-  NOT = { exists = DAK } 
+  NOT = { exists = DAK }
  }
     mean_time_to_happen = {
   months = 120
@@ -12806,9 +12806,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = GRN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = GRN
-  NOT = { exists = GRN } 
+  NOT = { exists = GRN }
  }
     mean_time_to_happen = {
   months = 120
@@ -13006,9 +13006,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = JAM_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = JAM
-  NOT = { exists = JAM } 
+  NOT = { exists = JAM }
  }
     mean_time_to_happen = {
   months = 120
@@ -13207,9 +13207,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = PRI_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = PRI
-  NOT = { exists = PRI } 
+  NOT = { exists = PRI }
  }
     mean_time_to_happen = {
   months = 120
@@ -13408,9 +13408,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = TTB_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = TTB
-  NOT = { exists = TTB } 
+  NOT = { exists = TTB }
  }
     mean_time_to_happen = {
   months = 120
@@ -13609,9 +13609,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = UIL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = UIL
-  NOT = { exists = UIL } 
+  NOT = { exists = UIL }
  }
     mean_time_to_happen = {
   months = 120
@@ -13810,9 +13810,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = UNB_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = UNB
-  NOT = { exists = UNB } 
+  NOT = { exists = UNB }
  }
     mean_time_to_happen = {
   months = 120
@@ -14011,9 +14011,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = UNM_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = UNM
-  NOT = { exists = UNM } 
+  NOT = { exists = UNM }
  }
     mean_time_to_happen = {
   months = 120
@@ -14212,9 +14212,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = UOR_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = UOR
-  NOT = { exists = UOR } 
+  NOT = { exists = UOR }
  }
     mean_time_to_happen = {
   months = 120
@@ -14414,9 +14414,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = ORA_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   owns = 2103
-  NOT = { exists = ORA } 
+  NOT = { exists = ORA }
  }
     mean_time_to_happen = {
   months = 120
@@ -14617,9 +14617,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = TRN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   owns = 2108
-  NOT = { exists = TRN } 
+  NOT = { exists = TRN }
  }
     mean_time_to_happen = {
   months = 120
@@ -14820,9 +14820,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = NAL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   owns = 2113
-  NOT = { exists = NAL } 
+  NOT = { exists = NAL }
  }
     mean_time_to_happen = {
   months = 120
@@ -15022,9 +15022,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = SUR_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = SUR
-  NOT = { exists = SUR } 
+  NOT = { exists = SUR }
  }
     mean_time_to_happen = {
   months = 120
@@ -15223,9 +15223,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CAY_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CAY
-  NOT = { exists = CAY } 
+  NOT = { exists = CAY }
  }
     mean_time_to_happen = {
   months = 120
@@ -15424,9 +15424,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = HAW_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = HAW
-  NOT = { exists = HAW } 
+  NOT = { exists = HAW }
  }
     mean_time_to_happen = {
   months = 120
@@ -15625,9 +15625,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = BHM_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = BHM
-  NOT = { exists = BHM } 
+  NOT = { exists = BHM }
  }
     mean_time_to_happen = {
   months = 120
@@ -15826,9 +15826,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = AGU_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = AGU
-  NOT = { exists = AGU } 
+  NOT = { exists = AGU }
  }
     mean_time_to_happen = {
   months = 120
@@ -16027,9 +16027,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = ATB_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = ANT
-  NOT = { exists = ANT } 
+  NOT = { exists = ANT }
  }
     mean_time_to_happen = {
   months = 120
@@ -16228,9 +16228,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = SKN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = SKN
-  NOT = { exists = SKN } 
+  NOT = { exists = SKN }
  }
     mean_time_to_happen = {
   months = 120
@@ -16429,9 +16429,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = MNR_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = MNR
-  NOT = { exists = MNR } 
+  NOT = { exists = MNR }
  }
     mean_time_to_happen = {
   months = 120
@@ -16630,9 +16630,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = GDL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = GDL
-  NOT = { exists = GDL } 
+  NOT = { exists = GDL }
  }
     mean_time_to_happen = {
   months = 120
@@ -16831,9 +16831,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = DMN_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = DMN
-  NOT = { exists = DMN } 
+  NOT = { exists = DMN }
  }
     mean_time_to_happen = {
   months = 120
@@ -17032,9 +17032,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = MTQ_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = MTQ
-  NOT = { exists = MTQ } 
+  NOT = { exists = MTQ }
  }
     mean_time_to_happen = {
   months = 120
@@ -17233,9 +17233,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = STL_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = STL
-  NOT = { exists = STL } 
+  NOT = { exists = STL }
  }
     mean_time_to_happen = {
   months = 120
@@ -17434,9 +17434,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = BBD_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = BAR
-  NOT = { exists = BAR } 
+  NOT = { exists = BAR }
  }
     mean_time_to_happen = {
   months = 120
@@ -17635,9 +17635,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = GRD_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = GRD
-  NOT = { exists = GRD } 
+  NOT = { exists = GRD }
  }
     mean_time_to_happen = {
   months = 120
@@ -17836,9 +17836,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = CUR_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = CUR
-  NOT = { exists = CUR } 
+  NOT = { exists = CUR }
  }
     mean_time_to_happen = {
   months = 120
@@ -18037,9 +18037,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = STV_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = STV
-  NOT = { exists = STV } 
+  NOT = { exists = STV }
  }
     mean_time_to_happen = {
   months = 120
@@ -18238,9 +18238,9 @@ country_event = {
    }
   }
   NOT = { has_country_flag = SBA_independence }
-  has_global_flag = der_postcolonialism 
+  has_global_flag = der_postcolonialism
   is_possible_vassal = SBA
-  NOT = { exists = SBA } 
+  NOT = { exists = SBA }
  }
     mean_time_to_happen = {
   months = 120
@@ -18441,7 +18441,7 @@ country_event = {
   NOT = { has_country_flag = ALD_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = ALD
-  NOT = { exists = ALD } 
+  NOT = { exists = ALD }
  }
     mean_time_to_happen = {
   months = 120
@@ -18642,7 +18642,7 @@ country_event = {
   NOT = { has_country_flag = MOR_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = MOR
-  NOT = { exists = MOR } 
+  NOT = { exists = MOR }
  }
     mean_time_to_happen = {
   months = 120
@@ -18843,7 +18843,7 @@ country_event = {
   NOT = { has_country_flag = WSH_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = WSH
-  NOT = { exists = WSH } 
+  NOT = { exists = WSH }
  }
     mean_time_to_happen = {
   months = 120
@@ -19044,7 +19044,7 @@ country_event = {
   NOT = { has_country_flag = TUN_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = TUN
-  NOT = { exists = TUN } 
+  NOT = { exists = TUN }
  }
     mean_time_to_happen = {
   months = 120
@@ -19245,7 +19245,7 @@ country_event = {
   NOT = { has_country_flag = LBY_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = LBY
-  NOT = { exists = LBY } 
+  NOT = { exists = LBY }
  }
     mean_time_to_happen = {
   months = 120
@@ -19446,7 +19446,7 @@ country_event = {
   NOT = { has_country_flag = EGY_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = EGY
-  NOT = { exists = EGY } 
+  NOT = { exists = EGY }
  }
     mean_time_to_happen = {
   months = 120
@@ -19647,7 +19647,7 @@ country_event = {
   NOT = { has_country_flag = ETH_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = ETH
-  NOT = { exists = ETH } 
+  NOT = { exists = ETH }
  }
     mean_time_to_happen = {
   months = 120
@@ -19848,7 +19848,7 @@ country_event = {
   NOT = { has_country_flag = ERI_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = ERI
-  NOT = { exists = ERI } 
+  NOT = { exists = ERI }
  }
     mean_time_to_happen = {
   months = 120
@@ -20049,7 +20049,7 @@ country_event = {
   NOT = { has_country_flag = TRZ_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = TRZ
-  NOT = { exists = TRZ } 
+  NOT = { exists = TRZ }
  }
     mean_time_to_happen = {
   months = 120
@@ -20250,7 +20250,7 @@ country_event = {
   NOT = { has_country_flag = MLI_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = MLI
-  NOT = { exists = MLI } 
+  NOT = { exists = MLI }
  }
     mean_time_to_happen = {
   months = 120
@@ -20451,7 +20451,7 @@ country_event = {
   NOT = { has_country_flag = SNG_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SNG
-  NOT = { exists = SNG } 
+  NOT = { exists = SNG }
  }
     mean_time_to_happen = {
   months = 120
@@ -20652,7 +20652,7 @@ country_event = {
   NOT = { has_country_flag = NIG_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = NIG
-  NOT = { exists = NIG } 
+  NOT = { exists = NIG }
  }
     mean_time_to_happen = {
   months = 120
@@ -20853,7 +20853,7 @@ country_event = {
   NOT = { has_country_flag = BKF_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = BKF
-  NOT = { exists = BKF } 
+  NOT = { exists = BKF }
  }
     mean_time_to_happen = {
   months = 120
@@ -21054,7 +21054,7 @@ country_event = {
   NOT = { has_country_flag = TOG_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = TOG
-  NOT = { exists = TOG } 
+  NOT = { exists = TOG }
  }
     mean_time_to_happen = {
   months = 120
@@ -21255,7 +21255,7 @@ country_event = {
   NOT = { has_country_flag = DAH_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = DAH
-  NOT = { exists = DAH } 
+  NOT = { exists = DAH }
  }
     mean_time_to_happen = {
   months = 120
@@ -21456,7 +21456,7 @@ country_event = {
   NOT = { has_country_flag = NGR_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = NGR
-  NOT = { exists = NGR } 
+  NOT = { exists = NGR }
  }
     mean_time_to_happen = {
   months = 120
@@ -21657,7 +21657,7 @@ country_event = {
   NOT = { has_country_flag = BUG_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = BUG
-  NOT = { exists = BUG } 
+  NOT = { exists = BUG }
  }
     mean_time_to_happen = {
   months = 120
@@ -21858,7 +21858,7 @@ country_event = {
   NOT = { has_country_flag = KNY_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = KNY
-  NOT = { exists = KNY } 
+  NOT = { exists = KNY }
  }
     mean_time_to_happen = {
   months = 120
@@ -22059,7 +22059,7 @@ country_event = {
   NOT = { has_country_flag = ZBW_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = ZBW
-  NOT = { exists = ZBW } 
+  NOT = { exists = ZBW }
  }
     mean_time_to_happen = {
   months = 120
@@ -22260,7 +22260,7 @@ country_event = {
   NOT = { has_country_flag = ZAM_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = ZAM
-  NOT = { exists = ZAM } 
+  NOT = { exists = ZAM }
  }
     mean_time_to_happen = {
   months = 120
@@ -22461,7 +22461,7 @@ country_event = {
   NOT = { has_country_flag = GNE_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = GNE
-  NOT = { exists = GNE } 
+  NOT = { exists = GNE }
  }
     mean_time_to_happen = {
   months = 120
@@ -22662,7 +22662,7 @@ country_event = {
   NOT = { has_country_flag = SLE_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SLE
-  NOT = { exists = SLE } 
+  NOT = { exists = SLE }
  }
     mean_time_to_happen = {
   months = 120
@@ -22863,7 +22863,7 @@ country_event = {
   NOT = { has_country_flag = IVC_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = IVC
-  NOT = { exists = IVC } 
+  NOT = { exists = IVC }
  }
     mean_time_to_happen = {
   months = 120
@@ -23064,7 +23064,7 @@ country_event = {
   NOT = { has_country_flag = GHN_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = GHN
-  NOT = { exists = GHN } 
+  NOT = { exists = GHN }
  }
     mean_time_to_happen = {
   months = 120
@@ -23265,7 +23265,7 @@ country_event = {
   NOT = { has_country_flag = SUD_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SUD
-  NOT = { exists = SUD } 
+  NOT = { exists = SUD }
  }
     mean_time_to_happen = {
   months = 120
@@ -23466,7 +23466,7 @@ country_event = {
   NOT = { has_country_flag = SSU_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SSU
-  NOT = { exists = SSU } 
+  NOT = { exists = SSU }
  }
     mean_time_to_happen = {
   months = 120
@@ -23667,7 +23667,7 @@ country_event = {
   NOT = { has_country_flag = SOM_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SOM
-  NOT = { exists = SOM } 
+  NOT = { exists = SOM }
  }
     mean_time_to_happen = {
   months = 120
@@ -23868,7 +23868,7 @@ country_event = {
   NOT = { has_country_flag = CAR_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = CAR
-  NOT = { exists = CAR } 
+  NOT = { exists = CAR }
  }
     mean_time_to_happen = {
   months = 120
@@ -24069,7 +24069,7 @@ country_event = {
   NOT = { has_country_flag = CHD_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = CHD
-  NOT = { exists = CHD } 
+  NOT = { exists = CHD }
  }
     mean_time_to_happen = {
   months = 120
@@ -24270,7 +24270,7 @@ country_event = {
   NOT = { has_country_flag = CMR_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = CMR
-  NOT = { exists = CMR } 
+  NOT = { exists = CMR }
  }
     mean_time_to_happen = {
   months = 120
@@ -24471,7 +24471,7 @@ country_event = {
   NOT = { has_country_flag = CGO_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = CGO
-  NOT = { exists = CGO } 
+  NOT = { exists = CGO }
  }
     mean_time_to_happen = {
   months = 120
@@ -24672,7 +24672,7 @@ country_event = {
   NOT = { has_country_flag = GAB_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = GAB
-  NOT = { exists = GAB } 
+  NOT = { exists = GAB }
  }
     mean_time_to_happen = {
   months = 120
@@ -24873,7 +24873,7 @@ country_event = {
   NOT = { has_country_flag = TNZ_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = TNZ
-  NOT = { exists = TNZ } 
+  NOT = { exists = TNZ }
  }
     mean_time_to_happen = {
   months = 120
@@ -25074,7 +25074,7 @@ country_event = {
   NOT = { has_country_flag = ANG_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = ANG
-  NOT = { exists = ANG } 
+  NOT = { exists = ANG }
  }
     mean_time_to_happen = {
   months = 120
@@ -25275,7 +25275,7 @@ country_event = {
   NOT = { has_country_flag = NMB_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = NMB
-  NOT = { exists = NMB } 
+  NOT = { exists = NMB }
  }
     mean_time_to_happen = {
   months = 120
@@ -25476,7 +25476,7 @@ country_event = {
   NOT = { has_country_flag = TSW_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = TSW
-  NOT = { exists = TSW } 
+  NOT = { exists = TSW }
  }
     mean_time_to_happen = {
   months = 120
@@ -25677,7 +25677,7 @@ country_event = {
   NOT = { has_country_flag = MOZ_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = MOZ
-  NOT = { exists = MOZ } 
+  NOT = { exists = MOZ }
  }
     mean_time_to_happen = {
   months = 120
@@ -25878,7 +25878,7 @@ country_event = {
   NOT = { has_country_flag = GBI_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = GBI
-  NOT = { exists = GBI } 
+  NOT = { exists = GBI }
  }
     mean_time_to_happen = {
   months = 120
@@ -26079,7 +26079,7 @@ country_event = {
   NOT = { has_country_flag = GMB_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = GMB
-  NOT = { exists = GMB } 
+  NOT = { exists = GMB }
  }
     mean_time_to_happen = {
   months = 120
@@ -26280,7 +26280,7 @@ country_event = {
   NOT = { has_country_flag = RWA_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = RWA
-  NOT = { exists = RWA } 
+  NOT = { exists = RWA }
  }
     mean_time_to_happen = {
   months = 120
@@ -26481,7 +26481,7 @@ country_event = {
   NOT = { has_country_flag = BRD_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = BRD
-  NOT = { exists = BRD } 
+  NOT = { exists = BRD }
  }
     mean_time_to_happen = {
   months = 120
@@ -26682,7 +26682,7 @@ country_event = {
   NOT = { has_country_flag = SUA_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SUA
-  NOT = { exists = SUA } 
+  NOT = { exists = SUA }
  }
     mean_time_to_happen = {
   months = 120
@@ -26883,7 +26883,7 @@ country_event = {
   NOT = { has_country_flag = BSH_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = BSH
-  NOT = { exists = BSH } 
+  NOT = { exists = BSH }
  }
     mean_time_to_happen = {
   months = 120
@@ -27084,7 +27084,7 @@ country_event = {
   NOT = { has_country_flag = CPV_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = CPV
-  NOT = { exists = CPV } 
+  NOT = { exists = CPV }
  }
     mean_time_to_happen = {
   months = 120
@@ -27285,7 +27285,7 @@ country_event = {
   NOT = { has_country_flag = EQG_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = EQG
-  NOT = { exists = EQG } 
+  NOT = { exists = EQG }
  }
     mean_time_to_happen = {
   months = 120
@@ -27486,7 +27486,7 @@ country_event = {
   NOT = { has_country_flag = SAO_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SAO
-  NOT = { exists = SAO } 
+  NOT = { exists = SAO }
  }
     mean_time_to_happen = {
   months = 120
@@ -27687,7 +27687,7 @@ country_event = {
   NOT = { has_country_flag = DJI_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = DJI
-  NOT = { exists = DJI } 
+  NOT = { exists = DJI }
  }
     mean_time_to_happen = {
   months = 120
@@ -27888,7 +27888,7 @@ country_event = {
   NOT = { has_country_flag = CMS_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = CMS
-  NOT = { exists = CMS } 
+  NOT = { exists = CMS }
  }
     mean_time_to_happen = {
   months = 120
@@ -28089,7 +28089,7 @@ country_event = {
   NOT = { has_country_flag = MAU_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = MAU
-  NOT = { exists = MAU } 
+  NOT = { exists = MAU }
  }
     mean_time_to_happen = {
   months = 120
@@ -28290,7 +28290,7 @@ country_event = {
   NOT = { has_country_flag = SEY_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = SEY
-  NOT = { exists = SEY } 
+  NOT = { exists = SEY }
  }
     mean_time_to_happen = {
   months = 120
@@ -28491,7 +28491,7 @@ country_event = {
   NOT = { has_country_flag = MLW_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
   is_possible_vassal = MLW
-  NOT = { exists = MLW } 
+  NOT = { exists = MLW }
  }
     mean_time_to_happen = {
   months = 120

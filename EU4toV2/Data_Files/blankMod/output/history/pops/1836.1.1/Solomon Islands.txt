@@ -1,6 +1,6 @@
-#Central Melanesia (54000) 
+#Central Melanesia (54000)
 #uncolonized in 1836
-#Solomon Islands (48000/12000 POPS) 
+#Solomon Islands (48000/12000 POPS)
 2534 = {
 	aristocrats = {
 		culture = melanesian
@@ -32,7 +32,7 @@
 		size = 10925
 	}
 }
-#Santa Cruz Islands (6000/1500 POPS) 
+#Santa Cruz Islands (6000/1500 POPS)
 2536 = {
 	aristocrats = {
 		culture = melanesian

@@ -3,12 +3,12 @@ political_decisions = {
 	cavours_diplomacy = {
 		potential = {
 			OR = {
-				AND = { 
+				AND = {
 					tag = ITA
 					NOT = { exists = SAR }
 					NOT = { exists = SVY }
 				}
-				AND = { 
+				AND = {
 					tag = SAR
 					NOT = { exists = ITA }
 					NOT = { exists = SVY }
@@ -39,7 +39,7 @@ political_decisions = {
 			owns = 727
 			owns = 728
 		}
-		
+
 		effect = {
 			prestige = 20
 			badboy = -10
@@ -77,7 +77,7 @@ political_decisions = {
 			set_country_flag = cavour_has_done_his
 		}
 	}
-	
+
 	award_order_of_st_francis = {
 		potential = {
 			OR = {
@@ -92,18 +92,18 @@ political_decisions = {
 				has_country_flag = order_awarded
 			}
 		}
-		
+
 		allow = {
 			prestige = 25
 		}
-		
+
 		effect = {
 			years_of_research = 0.02
 			prestige = 2
 			set_country_flag = order_awarded
 		}
 	}
-	
+
 	statuto_albertino = {
 		potential = {
 			OR = { tag = SAR AND = { tag = SVY NOT = { exists = SAR } } }
@@ -112,11 +112,11 @@ political_decisions = {
 				has_country_flag = get_your_statuto_albertino_here
 			}
 		}
-		
+
 		allow = {
 			average_militancy = 3
 		}
-		
+
 		effect = {
 			any_pop = {
 				militancy = -2
@@ -140,11 +140,11 @@ political_decisions = {
 				has_country_flag = vittoriano_built
 			}
 		}
-		
+
 		allow = {
 			realism = 1
 		}
-		
+
 		effect = {
 			prestige = 5
 			any_pop = {
@@ -181,7 +181,7 @@ political_decisions = {
 			set_country_flag = edgardo_mortara
 		}
 	}
-	
+
 	the_first_vatican_council = {
 		potential = {
 			OR = {
@@ -193,11 +193,11 @@ political_decisions = {
 				has_country_flag = first_vatican_council_held
 			}
 		}
-		
+
 		allow = {
 			empiricism = 1
 		}
-		
+
 		effect = {
 			prestige = 10
 			badboy = 1
@@ -213,7 +213,7 @@ political_decisions = {
 			set_country_flag = first_vatican_council_held
 		}
 	}
-	
+
 	law_of_guarantees = {
 		potential = {
 			OR = {
@@ -224,18 +224,18 @@ political_decisions = {
 				capital = 749
 			}
 		}
-		
+
 		allow = {
 			owns = 749
 		}
-		
+
 		effect = {
 			capital = 749
 			prestige = 5
 			badboy = -2
 		}
 	}
-		
+
 	italia_irredenta = {
 		potential = {
 			OR = {
@@ -246,14 +246,14 @@ political_decisions = {
 				has_country_flag = italia_ulterior
 			}
 		}
-		
+
 		allow = {
 			OR = {
 				invention = national_fraternity
 				is_greater_power = yes
 			}
 		}
-		
+
 		effect = {
 			set_country_flag = italia_ulterior
 			729 = {

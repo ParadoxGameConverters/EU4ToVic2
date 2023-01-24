@@ -924,9 +924,9 @@
 		size = 23325
 	}
 }
-#Smolensk Region (392000) #see Russia.txt for balance of region 
+#Smolensk Region (392000) #see Russia.txt for balance of region
 #under the rule of Russia in 1836
-#Orsha (392000/98000 POPS) #now part of Belarus 
+#Orsha (392000/98000 POPS) #now part of Belarus
 944 = {
 	aristocrats = {
 		culture = russian

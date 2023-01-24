@@ -1,4 +1,4 @@
-#Smolensk Region (2032000) #see Belarus.txt for balance of region 
+#Smolensk Region (2032000) #see Belarus.txt for balance of region
 #under the rule of Russia in 1836
 #Smolensk (336000/84000 POPS)
 943 = {
@@ -236,7 +236,7 @@
 		size = 990
 	}
 }
-#Kursk Region (3716000) #see Ukraine.txt for balance of region 
+#Kursk Region (3716000) #see Ukraine.txt for balance of region
 #under the rule of Russia in 1836
 #Kursk (772000/193000 POPS)
 977 = {
@@ -630,7 +630,7 @@
 		size = 7325
 	}
 }
-#Chirskaya (92000/23000 POPS)  #mongol = kalmyk  
+#Chirskaya (92000/23000 POPS)  #mongol = kalmyk
 1046 = {
 	aristocrats = {
 		culture = ukrainian
@@ -5866,7 +5866,7 @@
 		religion = animist
 		size = 700
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = orthodox
@@ -5916,7 +5916,7 @@
 		religion = animist
 		size = 100
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = orthodox
@@ -8099,7 +8099,7 @@
 		religion = animist
 		size = 75
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = orthodox
@@ -8272,14 +8272,14 @@
 }
 #Irkutsk Region (292000)
 #under the rule of Russia in 1836
-#Irkutsk (289000/72250 POPS) #Mongol = Buryat  
+#Irkutsk (289000/72250 POPS) #Mongol = Buryat
 1075 = {
 	aristocrats = {
 		culture = yakut
 		religion = animist
 		size = 675
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = orthodox
@@ -8450,7 +8450,7 @@
 }
 #Chita Region (472000)
 #under the rule of Russia in 1836
-#Chita (216000/54000 POPS) #Mongol = Buryat  
+#Chita (216000/54000 POPS) #Mongol = Buryat
 1078 = {
 	aristocrats = {
 		culture = russian
@@ -8524,7 +8524,7 @@
 		size = 15475
 	}
 }
-#Nerchinsk (160000/40000 POPS) #Mongol = Buryat   
+#Nerchinsk (160000/40000 POPS) #Mongol = Buryat
 1079 = {
 	aristocrats = {
 		culture = russian
@@ -8927,7 +8927,7 @@
 		size = 1925
 	}
 }
-#Utchan (18000 POPS) 
+#Utchan (18000 POPS)
 1084 = {
 	aristocrats = {
 		culture = manchu
@@ -9057,7 +9057,7 @@
 		size = 1925
 	}
 }
-#Saghalian Oula (62000 POPS)    
+#Saghalian Oula (62000 POPS)
 2617 = {
 	aristocrats = {
 		culture = manchu

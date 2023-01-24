@@ -101,30 +101,30 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Hammer Sickle Socialism Spartacus Communism 
+		Hammer Sickle Socialism Spartacus Communism
 	}
 	ironclad = {
-		Worker Proletariat Peasant Soldier Rebel 
+		Worker Proletariat Peasant Soldier Rebel
 	}
 	manowar = {
-		"Revolutionary Wave" Vanguard Union International Labour 
+		"Revolutionary Wave" Vanguard Union International Labour
 	}
 	cruiser = {
-		"Red Flag" "Red Star" "Red Wedge" "Red Fist" "Red Rose"   
+		"Red Flag" "Red Star" "Red Wedge" "Red Fist" "Red Rose"
 	}
 	frigate = {
-		Rosa Karl Friedrich Eduard "Claude Henri" 
+		Rosa Karl Friedrich Eduard "Claude Henri"
 	}
 	monitor = {
-		Europe Asia America Africa Australia  
+		Europe Asia America Africa Australia
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Justice Equality  Solidarity Brotherhood Unity 
+		Justice Equality  Solidarity Brotherhood Unity
 	}
 }

@@ -203,10 +203,10 @@ unit_names = {
 
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 

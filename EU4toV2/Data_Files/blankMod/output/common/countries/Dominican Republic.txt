@@ -216,11 +216,11 @@ unit_names = {
 		Azua Beller "El Memiso" "El Número" "La Estrelleta" "Las Carreras" "Puerto Tortuguero" "Sabana Larga" Santiago Santomé
 	}
 	clipper_transport = {
-		Bajabonico Boa Carey Carpintero Cocodrilo Cotorra "Culebra Verde" Enriquillo Flamenco Gaviota 
+		Bajabonico Boa Carey Carpintero Cocodrilo Cotorra "Culebra Verde" Enriquillo Flamenco Gaviota
 		Higuamo Limóm Ozama Romana "San Juan" Soco "Yaque del Norte" "Yaque del Sur" Yuma Yuna
 	}
 	steam_transport = {
-		Bajabonico Boa Carey Carpintero Cocodrilo Cotorra "Culebra Verde" Enriquillo Flamenco Gaviota 
+		Bajabonico Boa Carey Carpintero Cocodrilo Cotorra "Culebra Verde" Enriquillo Flamenco Gaviota
 		Higuamo Limóm Ozama Romana "San Juan" Soco "Yaque del Norte" "Yaque del Sur" Yuma Yuna
 	}
 	commerce_raider = {

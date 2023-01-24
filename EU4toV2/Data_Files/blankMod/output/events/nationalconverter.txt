@@ -105,7 +105,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -134,11 +134,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = FLA
@@ -151,7 +151,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601002
@@ -159,7 +159,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -188,11 +188,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = WLL
@@ -205,7 +205,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601003
@@ -213,7 +213,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -241,11 +241,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SWI
@@ -258,7 +258,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601004
@@ -266,7 +266,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -294,11 +294,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SWE
@@ -311,7 +311,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601005
@@ -319,7 +319,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -347,11 +347,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = DEN
@@ -364,7 +364,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601006
@@ -372,7 +372,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -400,11 +400,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = NOR
@@ -417,7 +417,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601007
@@ -425,7 +425,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -453,11 +453,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = ICL
@@ -470,7 +470,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601008
@@ -478,7 +478,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -506,11 +506,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = FIN
@@ -523,7 +523,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601009
@@ -531,7 +531,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -559,11 +559,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SMI
@@ -576,7 +576,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601010
@@ -584,7 +584,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -612,11 +612,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = IRE
@@ -629,7 +629,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601011
@@ -637,7 +637,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -665,11 +665,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SCO
@@ -682,7 +682,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601012
@@ -690,7 +690,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -718,11 +718,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = ENL
@@ -735,7 +735,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601013
@@ -743,7 +743,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -771,11 +771,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = WHA
@@ -788,7 +788,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601014
@@ -796,7 +796,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -824,11 +824,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = XLI
@@ -841,7 +841,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601015
@@ -849,7 +849,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -877,11 +877,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = WEN
@@ -894,7 +894,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601016
@@ -902,11 +902,11 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	option = {
 		name = STRING_OK
 	}
-	
+
 	immediate = {
 		change_tag = CAT
 		prestige = 5
@@ -918,14 +918,14 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
 		war = no
 		number_of_states = 2
 		has_recently_lost_war = no
-		nationalism_n_imperialism = 1	
+		nationalism_n_imperialism = 1
 		primary_culture = catalan
 		NOT = { exists = SPA } #Cultural union
 		NOT = { exists = CAT } #Cultural country
@@ -946,11 +946,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 }
 country_event = {
 	id = 601017
@@ -958,7 +958,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -986,11 +986,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = GLC
@@ -1003,7 +1003,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601018
@@ -1011,7 +1011,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1042,11 +1042,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = CST
@@ -1059,7 +1059,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601019
@@ -1067,7 +1067,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1096,11 +1096,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = POR
@@ -1113,7 +1113,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601020
@@ -1121,7 +1121,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1148,11 +1148,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = FRA
@@ -1165,7 +1165,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601021
@@ -1173,7 +1173,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1201,11 +1201,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = BRT
@@ -1218,7 +1218,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601022
@@ -1226,7 +1226,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1254,11 +1254,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = CRO
@@ -1271,7 +1271,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601023
@@ -1279,7 +1279,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1309,11 +1309,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SER
@@ -1326,7 +1326,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601024
@@ -1334,7 +1334,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1362,11 +1362,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = MCD
@@ -1379,7 +1379,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601025
@@ -1387,7 +1387,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1414,11 +1414,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = BUL
@@ -1431,7 +1431,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601026
@@ -1439,7 +1439,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1466,11 +1466,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = ALB
@@ -1483,7 +1483,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601027
@@ -1491,7 +1491,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1519,11 +1519,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SLO
@@ -1536,7 +1536,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601028
@@ -1544,7 +1544,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1572,11 +1572,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = BOS
@@ -1589,7 +1589,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601029
@@ -1597,7 +1597,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1625,11 +1625,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = HUN
@@ -1642,7 +1642,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601030
@@ -1650,7 +1650,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1679,11 +1679,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = POL
@@ -1696,7 +1696,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601031
@@ -1704,7 +1704,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1733,11 +1733,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = LIT
@@ -1750,7 +1750,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601032
@@ -1758,7 +1758,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1788,11 +1788,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = CZH
@@ -1805,7 +1805,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601033
@@ -1813,7 +1813,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1843,11 +1843,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SLV
@@ -1860,7 +1860,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601034
@@ -1868,7 +1868,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1897,11 +1897,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = RUS
@@ -1914,7 +1914,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601035
@@ -1922,7 +1922,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -1951,11 +1951,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = BYE
@@ -1968,7 +1968,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601036
@@ -1976,7 +1976,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2005,11 +2005,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = UKR
@@ -2022,7 +2022,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601037
@@ -2030,7 +2030,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2059,11 +2059,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = UGR
@@ -2076,7 +2076,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601038
@@ -2084,7 +2084,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2112,11 +2112,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = LAT
@@ -2129,7 +2129,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601039
@@ -2137,7 +2137,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2165,11 +2165,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = EST
@@ -2182,7 +2182,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601040
@@ -2190,7 +2190,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2218,11 +2218,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = GRE
@@ -2235,7 +2235,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601041
@@ -2243,7 +2243,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2270,11 +2270,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = ALN
@@ -2287,7 +2287,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601042
@@ -2295,7 +2295,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2322,11 +2322,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = ASY
@@ -2339,7 +2339,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601043
@@ -2347,7 +2347,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		always = no #Need to avoid Rûm and Tatars to become Turkey
 		civilized = yes
@@ -2375,11 +2375,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = TUR
@@ -2392,7 +2392,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601044
@@ -2400,7 +2400,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2427,11 +2427,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = AZB
@@ -2444,7 +2444,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601045
@@ -2452,7 +2452,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2479,11 +2479,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = DKU
@@ -2496,7 +2496,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601046
@@ -2504,7 +2504,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2532,11 +2532,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = ADU
@@ -2549,7 +2549,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601047
@@ -2557,7 +2557,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2584,11 +2584,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = PER
@@ -2601,7 +2601,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601048
@@ -2609,7 +2609,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2636,11 +2636,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = KAZ
@@ -2653,7 +2653,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601049
@@ -2661,7 +2661,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2688,11 +2688,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = TIB
@@ -2705,7 +2705,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 #country_event = { #It f--ks up formatting and I don't know why
 #	id = 601050
@@ -2713,13 +2713,13 @@ country_event = {
 #	desc = EVTDESC601xxx
 #	major = yes
 #	allow_multiple_instances = no
-#	
+#
 #	mean_time_to_happen = {
 #		months = 1
 #	}
-#	
+#
 #	option = { name = STRING_OK }
-#	
+#
 #	immediate = {
 #		change_tag = PHI
 #		prestige = 5
@@ -2731,7 +2731,7 @@ country_event = {
 #			inherit = FROM
 #		}
 #	}
-#	
+#
 #	trigger = {
 #		civilized = yes
 #		is_independant = yes
@@ -2752,7 +2752,7 @@ country_event = {
 #			}
 #		}
 #	}
-#	
+#
 #}
 
 country_event = {
@@ -2761,7 +2761,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2788,11 +2788,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = SIA
@@ -2805,7 +2805,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601052
@@ -2813,7 +2813,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	option = { name = STRING_OK }
 	immediate = {
 		change_tag = KCH
@@ -2826,7 +2826,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2854,11 +2854,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 }
 country_event = {
 	id = 601053
@@ -2866,7 +2866,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2894,11 +2894,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 		change_tag = KAR
@@ -2911,7 +2911,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
-	
+
 }
 country_event = { #Dummy - no effect
 	id = 601054
@@ -2919,11 +2919,11 @@ country_event = { #Dummy - no effect
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = STRING_OK
 	}
@@ -2932,7 +2932,7 @@ country_event = { #Dummy - no effect
 		#inherit = REB
 		prestige = -5
 	}
-	
+
 	trigger = {
 		always = no
 		primary_culture = noculture
@@ -2946,7 +2946,7 @@ country_event = { #Dummy - no effect
 			} }
 		}
 	}
-	
+
 }
 country_event = {
 	id = 601060
@@ -2954,7 +2954,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -2984,11 +2984,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = DNL
@@ -3001,7 +3001,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601161
@@ -3009,7 +3009,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3036,11 +3036,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = SAB
@@ -3053,7 +3053,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601262
@@ -3061,7 +3061,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3088,11 +3088,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = LGU
@@ -3105,7 +3105,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601363
@@ -3113,7 +3113,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3141,11 +3141,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = VNT
@@ -3158,7 +3158,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601464
@@ -3166,7 +3166,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3195,11 +3195,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = SKL
@@ -3212,7 +3212,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601565
@@ -3220,7 +3220,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3247,11 +3247,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = LEP
@@ -3264,7 +3264,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601666
@@ -3272,7 +3272,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3302,11 +3302,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = MRL
@@ -3319,7 +3319,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601767
@@ -3327,7 +3327,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3354,11 +3354,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = PHO
@@ -3371,7 +3371,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601868
@@ -3379,7 +3379,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3411,11 +3411,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = PRT
@@ -3428,7 +3428,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 601969
@@ -3436,7 +3436,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3463,11 +3463,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = PCH
@@ -3480,7 +3480,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 602070
@@ -3488,7 +3488,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3515,11 +3515,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = SMT
@@ -3532,7 +3532,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 602171
@@ -3540,7 +3540,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3567,11 +3567,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = TOC
@@ -3584,7 +3584,7 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }
 country_event = {
 	id = 602172
@@ -3592,7 +3592,7 @@ country_event = {
 	desc = EVTDESC601xxx
 	major = yes
 	allow_multiple_instances = no
- 
+
 	trigger = {
 		civilized = yes
 		is_independant = yes
@@ -3623,11 +3623,11 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen = {
 		months = 1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		change_tag = SRB
@@ -3640,5 +3640,5 @@ country_event = {
 			inherit = FROM
 		}
 	}
- 
+
 }

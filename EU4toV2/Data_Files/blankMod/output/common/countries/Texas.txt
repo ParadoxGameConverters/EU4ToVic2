@@ -115,43 +115,43 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
-		
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
+
 	}
 	ironclad = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
-		
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
+
 	}
 	manowar = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
-		
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
+
 	}
 	cruiser = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
-		
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
+
 	}
 	frigate = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
 	}
 	monitor = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
-		
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin 
-		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose" 
-		
+		Texas "The Alamo" "San Jacinto" "Sam Houston" "James Bowie" "William Travis" "Davy Crockett" "Mirabeau Lamar" Austin
+		Goliad Galveston "Anson Jones" Cherokee Ranger "San Antonio" "Yellow Rose"
+
 	}
 }

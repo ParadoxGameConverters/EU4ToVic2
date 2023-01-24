@@ -132,11 +132,11 @@ unit_names = {
 	monitor = {
 		Constitución "Gran Chaco" Inca Libertador Mercurio Saturno Tihauano Urano Vulcano Yungas
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		"Águila Roja" Ana Aymara Beatriz Carmen "Cóndor Negro" María Marta Raquel Salomé
 		"San Antonio" "San Judas" "San Pablo" Sirena Tahuamanu Tetis Tritón Vencedora Victoria Voladora
 	}
-	steam_transport = { 
+	steam_transport = {
 		"Águila Roja" Ana Aymara Beatriz Carmen "Cóndor Negro" María Marta Raquel Salomé
 		"San Antonio" "San Judas" "San Pablo" Sirena Tahuamanu Tetis Tritón Vencedora Victoria Voladora
 	}

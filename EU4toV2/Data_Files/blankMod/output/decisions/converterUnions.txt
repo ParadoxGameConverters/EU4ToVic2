@@ -13,11 +13,11 @@ political_decisions = {
 				government = democracy
 				government = theocracy
 			}
-		}	
+		}
 		allow = {
 			always = yes
 		}
-		
+
 		effect = {
 			government = presidential_dictatorship
 			election = yes
@@ -125,7 +125,7 @@ political_decisions = {
 				limit = {
 					owned_by = THIS
 				}
-				remove_core = THIS 
+				remove_core = THIS
 				add_core = MGL
 			}
 			change_tag = MGL
@@ -145,7 +145,7 @@ political_decisions = {
 			}
 		}
 		allow = {
-			ai = yes		
+			ai = yes
 		}
 
 		effect = {
@@ -602,7 +602,7 @@ political_decisions = {
 			803 = { add_core = KOS }
 			610 = { add_core = FSM } #Micronesia
 			2518 = { add_core = FSM } #--Palau
-			2519 = { add_core = FSM } 
+			2519 = { add_core = FSM }
 			2522 = { add_core = FSM } #--Marshall Islands
 			2517 = { add_core = GUM } #Guam
 			2521 = { add_core = GUM } #--North Mariana
@@ -650,10 +650,10 @@ political_decisions = {
 		ai_will_do = {
 			factor = 1
 		}
-			
+
 	}
 
-	
+
 	reform_into_china = {
 		picture = clear_out_the_manchu_elite
 		news = yes
@@ -674,7 +674,7 @@ political_decisions = {
 			NOT = {
 				exists = CHI
 			}
-		}	
+		}
 		allow = {
 			war = no
 			CHI = {
@@ -688,7 +688,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -713,7 +713,7 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = CHI
-			}			
+			}
 			change_tag = CHI
 		}
 		ai_will_do = {
@@ -729,7 +729,7 @@ political_decisions = {
 				tag = FRA
 				tag = SPQ
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -744,7 +744,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -763,8 +763,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = NET
-			}			
-			
+			}
+
 			change_tag = NET
 		}
 		ai_will_do = {
@@ -793,7 +793,7 @@ political_decisions = {
 					FLA = { exists = no }
 				}
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -808,7 +808,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -827,8 +827,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = BEL
-			}			
-			
+			}
+
 			change_tag = BEL
 		}
 		ai_will_do = {
@@ -849,7 +849,7 @@ political_decisions = {
 				tag = CAT
 				tag = SPQ
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -876,7 +876,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -898,8 +898,8 @@ political_decisions = {
 			any_owned = {
 				add_core = SPA
 				remove_core = SPC #Carlist Spain
-			}			
-			
+			}
+
 			change_tag = SPA
 		}
 		ai_will_do = {
@@ -917,7 +917,7 @@ political_decisions = {
 				tag = CRI
 				tag = SPQ
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -932,7 +932,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -948,8 +948,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = UKR
-			}			
-			
+			}
+
 			change_tag = UKR
 		}
 		ai_will_do = {
@@ -965,7 +965,7 @@ political_decisions = {
 				tag = USA
 			}
 			primary_culture = filipino
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -994,7 +994,7 @@ political_decisions = {
 					}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1010,8 +1010,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = PHI
-			}			
-			
+			}
+
 			change_tag = PHI
 		}
 		ai_will_do = {
@@ -1026,7 +1026,7 @@ political_decisions = {
 				exists = MLY
 			}
 		}
-		
+
 		allow = {
 			war = no
 			prestige = 5
@@ -1042,7 +1042,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1056,8 +1056,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = MLY
-			}			
-			
+			}
+
 			change_tag = MLY
 		}
 		ai_will_do = {
@@ -1077,7 +1077,7 @@ political_decisions = {
 				tag = TEX
 				tag = CAL
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1092,7 +1092,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1110,8 +1110,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = USA
-			}			
-			
+			}
+
 			change_tag = USA
 		}
 		ai_will_do = {
@@ -1129,7 +1129,7 @@ political_decisions = {
 			NOT = {
 				exists = SAF
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1174,13 +1174,13 @@ political_decisions = {
 					}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
 				add_core = SAF
-			}			
-			
+			}
+
 			change_tag = SAF
 		}
 		ai_will_do = {
@@ -1194,7 +1194,7 @@ political_decisions = {
 			NOT = {
 				exists = MAD
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1209,7 +1209,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1224,8 +1224,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = MAD
-			}			
-			
+			}
+
 			change_tag = MAD
 		}
 		ai_will_do = {
@@ -1320,18 +1320,18 @@ political_decisions = {
 				accepted_culture = zzz_religion_ibadi
 				accepted_culture = zzz_religion_kharijite
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
 				add_core = HYD
-			}			
-			
+			}
+
 			change_tag = HYD
 		}
 		ai_will_do = {
@@ -1348,19 +1348,19 @@ political_decisions = {
 			}
 			NOT = { tag = YUG }
 			NOT = { exists = SLO }
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
 			primary_culture = slovene
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
 				add_core = SLO
-			}			
-			
+			}
+
 			change_tag = SLO
 		}
 		ai_will_do = {
@@ -1373,19 +1373,19 @@ political_decisions = {
 			has_country_flag = vic2_country_LTN
 			NOT = { exists = BYZ }
 			NOT = { exists = SPQ }
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
 			is_greater_power = yes
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
 				add_core = SPQ
-			}			
-			
+			}
+
 			change_tag = SPQ
 		}
 		ai_will_do = {
@@ -1443,7 +1443,7 @@ political_decisions = {
 			NOT = { exists = JAP }
 			NOT = { has_global_flag = united_japan }
 			primary_culture = japanese
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1464,7 +1464,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1480,7 +1480,7 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = JAP
-			}			
+			}
 			set_global_flag = united_japan
 			change_tag = JAP
 		}
@@ -1494,19 +1494,19 @@ political_decisions = {
 			has_country_flag = vic2_country_ZOM
 			NOT = { exists = UND }
 			NOT = { has_global_flag = oh_fuck }
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
 				add_core = UND
 				remove_core = ZOM
 				assimilate = yes
-			}			
+			}
 			set_global_flag = oh_fuck
 			change_tag = UND
 		}
@@ -1525,7 +1525,7 @@ political_decisions = {
 				tag = ENL
 				tag = SCO
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1552,7 +1552,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1568,8 +1568,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = IRE
-			}			
-			
+			}
+
 			change_tag = IRE
 		}
 		ai_will_do = {
@@ -1588,7 +1588,7 @@ political_decisions = {
 				tag = ITA
 				tag = MCD
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1614,7 +1614,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1630,8 +1630,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = GRE
-			}			
-			
+			}
+
 			change_tag = GRE
 		}
 		ai_will_do = {
@@ -1658,7 +1658,7 @@ political_decisions = {
 				tag = CHI
 				tag = YUA
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1680,7 +1680,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1701,8 +1701,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = TKS
-			}			
-			
+			}
+
 			change_tag = TKS
 			add_accepted_culture = turkmen
 			add_accepted_culture = uzbek
@@ -1722,7 +1722,7 @@ political_decisions = {
 				exists = OCC
 				tag = FRA
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1752,7 +1752,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1769,8 +1769,8 @@ political_decisions = {
 			any_owned = {
 				add_core = OCC
 				remove_core = FRA
-			}			
-			
+			}
+
 			change_tag = OCC
 		}
 		ai_will_do = {
@@ -1788,7 +1788,7 @@ political_decisions = {
 				tag = SPA
 				tag = SPC
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1803,7 +1803,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1823,8 +1823,8 @@ political_decisions = {
 				remove_core = POR
 				remove_core = GLC
 				remove_core = SPC
-			}			
-			
+			}
+
 			change_tag = SUE
 		}
 		ai_will_do = {
@@ -1841,7 +1841,7 @@ political_decisions = {
 				tag = SPA
 				tag = SPC
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1856,7 +1856,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1875,8 +1875,8 @@ political_decisions = {
 				remove_core = SPA
 				remove_core = POR
 				remove_core = SPC
-			}			
-			
+			}
+
 			change_tag = VGO
 		}
 		ai_will_do = {
@@ -1892,7 +1892,7 @@ political_decisions = {
 				tag = RUS
 				tag = SLA
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -1907,7 +1907,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1925,8 +1925,8 @@ political_decisions = {
 				add_core = SIB
 				remove_core = RUS
 				remove_core = SLA
-			}			
-			
+			}
+
 			change_tag = SIB
 		}
 		ai_will_do = {
@@ -1950,7 +1950,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -1966,8 +1966,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = IDO
-			}			
-			
+			}
+
 			change_tag = IDO
 			add_accepted_culture = thai
 			add_accepted_culture = vietnamese
@@ -1991,7 +1991,7 @@ political_decisions = {
 				tag = ENG
 				tag = ENL
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -2006,7 +2006,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			civilized = no
 			prestige = 10
@@ -2025,8 +2025,8 @@ political_decisions = {
 				add_core = AES
 				remove_core = ENG
 				remove_core = ENL
-			}			
-			
+			}
+
 			change_tag = AES
 		}
 		ai_will_do = {
@@ -2041,7 +2041,7 @@ political_decisions = {
 				exists = FRK
 				tag = FRA
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -2056,7 +2056,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2073,8 +2073,8 @@ political_decisions = {
 			any_owned = {
 				add_core = FRK
 				remove_core = FRA
-			}			
-			
+			}
+
 			change_tag = FRK
 		}
 		ai_will_do = {
@@ -2089,7 +2089,7 @@ political_decisions = {
 				exists = ENR
 			}
 		}
-		
+
 		allow = {
 			war = no
 			prestige = 5
@@ -2104,7 +2104,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2118,8 +2118,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = ENR
-			}			
-			
+			}
+
 			change_tag = ENR
 		}
 		ai_will_do = {
@@ -2134,7 +2134,7 @@ political_decisions = {
 				exists = FRR
 			}
 		}
-		
+
 		allow = {
 			war = no
 			prestige = 5
@@ -2149,7 +2149,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2163,8 +2163,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = FRR
-			}			
-			
+			}
+
 			change_tag = FRR
 		}
 		ai_will_do = {
@@ -2179,7 +2179,7 @@ political_decisions = {
 				exists = AUR
 			}
 		}
-		
+
 		allow = {
 			war = no
 			prestige = 5
@@ -2194,7 +2194,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2208,8 +2208,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = AUR
-			}			
-			
+			}
+
 			change_tag = AUR
 		}
 		ai_will_do = {
@@ -2254,7 +2254,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -2263,7 +2263,7 @@ political_decisions = {
 			}
 			change_tag = BSQ
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
@@ -2273,24 +2273,24 @@ political_decisions = {
 		potential = {
 			is_greater_power = no
 			primary_culture = nepali
-			OR = { 
+			OR = {
 				capital = 1326
 				capital = 1327
 			}
 			NOT = { exists = NEP }
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 1
 			1326 = { owned_by = THIS }
 			1327 = { owned_by = THIS }
 		}
-		
+
 		effect = {
 			prestige = 2
 			any_owned = {
 				add_core = NEP
-			}		
+			}
 			change_tag = NEP
 		}
 		ai_will_do = {
@@ -2313,7 +2313,7 @@ political_decisions = {
 				tag = TIM
 				tag = ISL
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -2328,7 +2328,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			change_tag = PER
@@ -2367,7 +2367,7 @@ political_decisions = {
 				tag = SYR
 				tag = ISL
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -2382,7 +2382,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2397,8 +2397,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = SRN
-			}			
-			
+			}
+
 			change_tag = SRN
 		}
 		ai_will_do = {
@@ -2507,7 +2507,7 @@ political_decisions = {
 					}
 				}
 			}
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -2520,7 +2520,7 @@ political_decisions = {
 				all_core = { owned_by = THIS }
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			AUS_726 = { add_core = LVN }
@@ -2576,7 +2576,7 @@ political_decisions = {
 					any_core = { owned_by = THIS }
 				}
 			}
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -2589,7 +2589,7 @@ political_decisions = {
 				all_core = { owned_by = THIS }
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			AUS_726 = { add_core = LVN secede_province = LVN }
@@ -2626,11 +2626,11 @@ political_decisions = {
 				accepted_culture = zzz_religion_ibadi
 				accepted_culture = zzz_religion_kharijite
 			}
-		}	
+		}
 		allow = {
 			war = no
 		}
-		
+
 		effect = {
 			all_core = { remove_core = EGY add_core = CEG }
 			change_tag = CEG
@@ -2654,11 +2654,11 @@ political_decisions = {
 				accepted_culture = zzz_religion_ibadi
 				accepted_culture = zzz_religion_kharijite
 			}
-		}	
+		}
 		allow = {
 			war = no
 		}
-		
+
 		effect = {
 			all_core = { remove_core = CEG add_core = EGY }
 			change_tag = EGY
@@ -2681,7 +2681,7 @@ political_decisions = {
 			}
 			NOT = { tag = SPQ }
 		}
-		
+
 		allow = {
 			prestige = 45
 			nationalism_n_imperialism = 1
@@ -2716,7 +2716,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 20
 			all_core = { remove_core = THIS }
@@ -2792,7 +2792,7 @@ political_decisions = {
 			}
 			NOT = { exists = SPQ }
 		}
-		
+
 		allow = {
 			prestige = 45
 			is_greater_power = yes
@@ -2839,7 +2839,7 @@ political_decisions = {
 			900 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
 			897 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
 		}
-		
+
 		effect = {
 			prestige = 50
 			all_core = { remove_core = THIS add_core = SPQ }
@@ -2864,7 +2864,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	form_yemen = {
 	picture = form_arabia
 		potential = {
@@ -2878,13 +2878,13 @@ political_decisions = {
 				tag = ARA
 				tag = ISL
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 3
 			YEM_1173 = { owned_by = THIS }
 		}
-		
+
 		effect = {
 			prestige = 5
 			any_owned = { add_core = YEM }
@@ -2895,7 +2895,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	form_burma = {
 	picture = peking_convention
 		potential = {
@@ -2909,7 +2909,7 @@ political_decisions = {
 				exists = BUR
 				tag = SHA
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -2923,7 +2923,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			change_tag = BUR
@@ -2957,7 +2957,7 @@ political_decisions = {
 				tag = BUR
 				exists = SHA
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -2971,7 +2971,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2986,8 +2986,8 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = SHA
-			}			
-			
+			}
+
 			change_tag = SHA
 		}
 		ai_will_do = {
@@ -3004,7 +3004,7 @@ political_decisions = {
 			}
 			NOT = { exists = LBY }
 			civilized = yes
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -3014,32 +3014,32 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
 				add_core = LBY
-			}			
-			
+			}
+
 			change_tag = LBY
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	form_kenya = {
 	picture = end_the_merina_monarchy
 		potential = {
 			NOT = { exists = KNY }
 			civilized = yes
 			tag = SWA
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
 		}
-		
+
 		effect = {
 			prestige = 10
 			all_core = {
@@ -3062,11 +3062,11 @@ political_decisions = {
 				NOT = { exists = MOL }
 			}
 			NOT = { has_global_flag = moldova }
-		}	
+		}
 		allow = {
 			exists = ROM
 		}
-		
+
 		effect = {
 			all_core = {
 				limit = {
@@ -3095,7 +3095,7 @@ political_decisions = {
 			NOT = {
 				exists = WSF
 			}
-		}	
+		}
 		allow = {
 			war = no
 			nationalism_n_imperialism = 1
@@ -3136,7 +3136,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			clr_country_flag = crown_from_the_gutter
 			prestige = 25
@@ -3194,12 +3194,12 @@ political_decisions = {
 			NOT = { primary_culture = hulwud }
 			NOT = { primary_culture = camite }
 			NOT = { has_global_flag = oy_vey }
-		}	
+		}
 		allow = {
 			war = no
 			nationalism_n_imperialism = 1
 		}
-		
+
 		effect = {
 			prestige = 25
 			add_accepted_culture = union
@@ -3227,7 +3227,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	form_celtic = {
 	picture = form_kellys_irish_brigade
 		potential = {
@@ -3243,7 +3243,7 @@ political_decisions = {
 				tag = GBR
 				tag = SPQ
 			}
-		}	
+		}
 		allow = {
 			war = no
 			prestige = 5
@@ -3251,7 +3251,7 @@ political_decisions = {
 			WHA = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
 			BRT = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -3278,14 +3278,14 @@ political_decisions = {
 			add_accepted_culture = pictish
 			add_accepted_culture = welsh
 			add_accepted_culture = breton
-			
+
 			change_tag = CEL
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	form_tatar = {
 	picture = enact_muhammad_alis_reforms
 		potential = {
@@ -3297,7 +3297,7 @@ political_decisions = {
 				is_secondary_power = yes
 			}
 			number_of_states = 5
-		}	
+		}
 		allow = {
 			war = no
 			OR = {
@@ -3306,7 +3306,7 @@ political_decisions = {
 			}
 			has_unclaimed_cores = no
 		}
-		
+
 		effect = {
 			prestige = 10
 			all_core = {
@@ -3318,7 +3318,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	the_concession_to_the_travelers = {
 		picture = fugitive_slave_act
 		potential = {
@@ -3330,12 +3330,12 @@ political_decisions = {
 				is_core = GYP
 			}
 			NOT = { has_global_flag = gypsy_exists }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
 		}
-		
+
 		effect = {
 			badboy = -1
 			capital_scope = { secede_province = GYP }

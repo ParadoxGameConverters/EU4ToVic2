@@ -238,11 +238,11 @@ unit_names = {
 		"Gascoigne" "Languedoc" "Normandie" "Guyenne" "Champagne" "Auvergne" "Lille" "Lyon"
 		"Orleans" "La Rochelle" "Bourdeaux"
 	}
-	
+
 	battleship = {
 		"Brennus" "Charles Martel" "Carnot" "Jauréguiberry" "Masséna" Bouvet Charlemagne "St Louis" Gaulois Iéna Suffren République Patrie Liberté Justice Vérité Démocratie Danton Voltaire Diderot Condorcet Mirebeau Vergniaud "Henri IV"
 	}
-	
+
 	ironclad = {
 		"Congreve" "Foudroyante" "Lave" "Tonnante" "Gloire" "Invincible" "Normandie" "Couronne"
 		"Magenta" "Solferino" "Flandre" "Gauloise" "Magnanime" "Provence" "Revanche" "Savoie"

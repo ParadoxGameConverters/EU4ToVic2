@@ -143,36 +143,36 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
-		
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
+
 	}
 	ironclad = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
-		
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
+
 	}
 	manowar = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
-		
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
+
 	}
 	cruiser = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 	
-		
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
+
 	}
 	frigate = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
-		
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
+
 	}
 	monitor = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
-		
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma 
+		California "John Frémont" "The Bear and Star" "William Ide" "San Francisco" "Los Angeles" Monterey Olompali Sacramento Sonoma
 	}
 }

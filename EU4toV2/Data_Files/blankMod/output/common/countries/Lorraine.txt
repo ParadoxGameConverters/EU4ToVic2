@@ -203,10 +203,10 @@ unit_names = {
 		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg
 	}
 	clipper_transport = {
-		Adler Albatross Amazone Bremse Brummer Donau Drache Feldberg Frauenlob Greif Karlsruhe Natter Neckar Salamander Seeadler Rhein 
+		Adler Albatross Amazone Bremse Brummer Donau Drache Feldberg Frauenlob Greif Karlsruhe Natter Neckar Salamander Seeadler Rhein
 	}
 	steam_transport = {
-		Adler Albatross Amazone Bremse Brummer Donau Drache Feldberg Frauenlob Greif Karlsruhe Natter Neckar Salamander Seeadler Rhein 
+		Adler Albatross Amazone Bremse Brummer Donau Drache Feldberg Frauenlob Greif Karlsruhe Natter Neckar Salamander Seeadler Rhein
 	}
 	commerce_raider = {
 		Baden Zähringen Markgraf "Großherzog Leopold" "Großherzog Karl Friedrich" Türkenlouis Reichsgraf Durlach Sausenberg Hachberg

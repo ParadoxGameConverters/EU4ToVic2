@@ -4,9 +4,9 @@ private_banks = {
 	year = 1815
 	cost = 3600
 
-	activate_building = cement_factory 
+	activate_building = cement_factory
 	tax_eff = 3
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -23,7 +23,7 @@ private_banks = {
 		}
 		modifier = {
 			factor = 1.1
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.1
@@ -37,7 +37,7 @@ stock_exchange = {
 	cost = 7200
 
 	tax_eff = 5
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -54,7 +54,7 @@ stock_exchange = {
 		}
 		modifier = {
 			factor = 1.15
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.15
@@ -68,7 +68,7 @@ business_banks = {
 	cost = 10800
 
 	tax_eff = 5
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -85,7 +85,7 @@ business_banks = {
 		}
 		modifier = {
 			factor = 1.15
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.15
@@ -115,12 +115,12 @@ investment_banks = {
 		}
 		modifier = {
 			factor = 1.15
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.15
 			literacy = 0.6
-		}		
+		}
 	}
 }
 bank_inspection_board = {
@@ -145,12 +145,12 @@ bank_inspection_board = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 	}
 }
 mutual_funds = {
@@ -200,7 +200,7 @@ ad_hoc_money_bill_printing = {
 	area = monetary_system
 	year = 1825
 	cost = 7200
-	
+
 	administrative_efficiency = 0.05
 	ai_chance = {
 		factor = 1.1
@@ -214,7 +214,7 @@ ad_hoc_money_bill_printing = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
@@ -225,7 +225,7 @@ ad_hoc_money_bill_printing = {
 			tech_school = commerce_tech_school
 		}
 	}
-}  
+}
 private_bank_money_bill_printing = {
 	area = monetary_system
 	year = 1836
@@ -288,7 +288,7 @@ modern_central_bank_system = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
@@ -330,7 +330,7 @@ early_classical_theory_and_critique = {
 	area = economic_thought_and_critique
 	year = 1815
 	cost = 3600
-	
+
 	activate_building = lumber_mill
 	factory_input = -0.01
 	ai_chance = {
@@ -341,7 +341,7 @@ early_classical_theory_and_critique = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
@@ -367,7 +367,7 @@ late_classical_theory = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
@@ -401,12 +401,12 @@ collectivist_theory = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 	}
 }
 the_historical_theory = {
@@ -431,12 +431,12 @@ the_historical_theory = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 	}
 }
 neoclassical_theory = {
@@ -461,12 +461,12 @@ neoclassical_theory = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 	}
 }
 keynesian_economics = {
@@ -491,12 +491,12 @@ keynesian_economics = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 	}
 }
 
@@ -508,12 +508,12 @@ freedom_of_trade = {
 	cost = 3600
 
 
-	activate_building = luxury_clothes_factory  
+	activate_building = luxury_clothes_factory
 
 	influence = 0.1
 	farm_rgo_eff = 0.1
 	mine_rgo_eff = 0.1
-	
+
 	ai_chance = {
 		factor = 11
 		modifier = {
@@ -522,12 +522,12 @@ freedom_of_trade = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.1 
+			literacy = 0.1
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.2
-		}		
+		}
 		modifier = {
 			factor = 1.02
 			tech_school = commerce_tech_school
@@ -542,7 +542,7 @@ market_structure = {
 	influence = 0.1
 	farm_rgo_eff = 0.1
 	mine_rgo_eff = 0.1
-	
+
 	ai_chance = {
 		factor = 3.5
 		modifier = {
@@ -565,7 +565,7 @@ market_structure = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 
 }
 business_regulations = {
@@ -594,8 +594,8 @@ business_regulations = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
-	
+	}
+
 }
 market_regulations = {
 	area = market_functionality
@@ -621,8 +621,8 @@ market_regulations = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
-	
+	}
+
 }
 economic_responsibility = {
 	area = market_functionality
@@ -648,8 +648,8 @@ economic_responsibility = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
-	
+	}
+
 }
 government_interventionism = {
 	area = market_functionality
@@ -675,8 +675,8 @@ government_interventionism = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
-	
+	}
+
 }
 
 
@@ -685,7 +685,7 @@ guild_based_production = {
 	area = tech_organization
 	year = 1815
 	cost = 3600
-	activate_building = canned_food_factory 
+	activate_building = canned_food_factory
 	factory_output = 0.01
 	ai_chance = {
 		factor = 1.05
@@ -703,17 +703,17 @@ guild_based_production = {
 		}
 		modifier = {
 			factor = 1.25
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.5
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 }
 organized_factories = {
 	area = tech_organization
@@ -733,12 +733,12 @@ organized_factories = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.25
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 1.2
 			industrial_score = 100
@@ -751,7 +751,7 @@ organized_factories = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 }
 scientific_management = {
 	area = tech_organization
@@ -771,12 +771,12 @@ scientific_management = {
 		}
 		modifier = {
 			factor = 1.05
-			literacy = 0.3 
+			literacy = 0.3
 		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 1.2
 			industrial_score = 200
@@ -789,7 +789,7 @@ scientific_management = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 }
 time_saving_measures = {
 	area = tech_organization
@@ -815,7 +815,7 @@ time_saving_measures = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 }
 management_strategy = {
 	area = tech_organization
@@ -841,7 +841,7 @@ management_strategy = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 }
 organizational_development = {
 	area = tech_organization
@@ -867,7 +867,7 @@ organizational_development = {
 			factor = 1.02
 			tech_school = commerce_tech_school
 		}
-	}	
+	}
 }
 
 

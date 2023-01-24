@@ -446,7 +446,7 @@
 		religion = totemism
 		size = 37
 	}
-	
+
 
 	artisans = {
 		culture = penutian

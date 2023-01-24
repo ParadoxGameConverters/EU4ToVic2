@@ -1,6 +1,6 @@
-#Macedonia Region (564000) #see Macedonia.txt and Bulgaria.txt for balance of region 
+#Macedonia Region (564000) #see Macedonia.txt and Bulgaria.txt for balance of region
 #under the rule of Ottoman Empire in 1836
-#Salonika (304000/76000 POPS) #now part of Greece 
+#Salonika (304000/76000 POPS) #now part of Greece
 805 = {
 	aristocrats = {
 		culture = turkish
@@ -348,7 +348,7 @@
 		size = 500
 	}
 }
-#Monastir Region (384000) #see Greece.txt for balance of region 
+#Monastir Region (384000) #see Greece.txt for balance of region
 #under the rule of Ottoman Empire in 1836
 #Florina (116000/29000 POPS) #now part of Greece
 819 = {
@@ -650,7 +650,7 @@
 		size = 3975
 	}
 }
-#Epirus Region (724000) #see Albania.txt for balance of region 
+#Epirus Region (724000) #see Albania.txt for balance of region
 #under the rule of Ottoman Empire in 1836
 #Janina (504000/126000 POPS)
 824 = {
@@ -993,7 +993,7 @@
 		size = 1425
 	}
 }
-#Thrace Region (144000) #see Turkey.txt for balance of region 
+#Thrace Region (144000) #see Turkey.txt for balance of region
 #under the rule of Ottoman Empire in 1836
 #Xanthi (72000/18000 POPS)
 829 = {
@@ -1149,7 +1149,7 @@
 		size = 900
 	}
 }
-#Thessaly Region (408000)  
+#Thessaly Region (408000)
 #under the rule of Ottoman Empire in 1836
 #Larisa (140000/35000 POPS)
 831 = {
@@ -1355,7 +1355,7 @@
 		size = 1050
 	}
 }
-#Hellas Region (510000)  
+#Hellas Region (510000)
 #under the rule of Greece in 1836
 #Athens (308000/77000 POPS)
 834 = {
@@ -1613,7 +1613,7 @@
 		size = 4500
 	}
 }
-#Peloponnese Region (220000)  
+#Peloponnese Region (220000)
 #under the rule of Greece in 1836
 #Nafplion (72000/18000 POPS)
 839 = {
@@ -1839,7 +1839,7 @@
 		size = 1500
 	}
 }
-#Aegean Islands Region (184000)  
+#Aegean Islands Region (184000)
 #under the rule of Greece in 1836
 #Cyclades (40000/10000 POPS)
 845 = {
@@ -2078,7 +2078,7 @@
 		size = 495
 	}
 }
-#Crete Region (140000)  
+#Crete Region (140000)
 #under the rule of Egypt in 1836
 #Chania (72000/18000 POPS)
 847 = {

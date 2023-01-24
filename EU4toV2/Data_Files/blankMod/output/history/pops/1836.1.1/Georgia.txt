@@ -1,5 +1,5 @@
-#Gruzhia Region (644000)    
-#under the rule of Russia in 1836  
+#Gruzhia Region (644000)
+#under the rule of Russia in 1836
 #Tblisi (232000/58000 POPS) #circassian-orthodox = Ossetian
 1090 = {
 	bureaucrats = {
@@ -522,8 +522,8 @@
 		size = 4550
 	}
 }
-#Kars Region (76000) #see Turkey.txt for balance of region  
-#under the rule of Ottoman Empire in 1836  
+#Kars Region (76000) #see Turkey.txt for balance of region
+#under the rule of Ottoman Empire in 1836
 #Batum (76000/19000 POPS) #now part of Georgia
 1096 = {
 	aristocrats = {

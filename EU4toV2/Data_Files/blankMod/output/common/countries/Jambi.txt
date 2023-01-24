@@ -102,7 +102,7 @@ party = {
 unit_names = {
 	dreadnought = {
 		Jambi Padang Sumatra Inderagiri Pasir Sultan Sintang Samarinda Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Malacca
-		
+
 	}
 	ironclad = {
 		Jambi Padang Sumatra Inderagiri Pasir Sultan Sintang Samarinda Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Malacca
@@ -120,10 +120,10 @@ unit_names = {
 		Jambi Padang Sumatra Inderagiri Pasir Sultan Sintang Samarinda Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Malacca
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Jambi Padang Sumatra Inderagiri Pasir Sultan Sintang Samarinda Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Malacca

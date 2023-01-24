@@ -7,7 +7,7 @@ party = {
 	end_date = 2000.1.1
 
 	ideology = reactionary
-	
+
 	economic_policy = state_capitalism
 	trade_policy = protectionism
 	religious_policy = moralism
@@ -101,50 +101,50 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
 	}
 	ironclad = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
-		
+
 	}
 	manowar = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
-		
+
 	}
 	cruiser = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
-		
+
 	}
 	frigate = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
-		
+
 	}
 	monitor = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
-		
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh 	
+		Azerbaijan "Nader Shah" "Hasan Zardabi" "Fatali Akhundov" Mammadguluzadeh "Mirza Alakbar Sabir"  Narimanov Baku Shirvan Karabakh
 
 		Ganja Quba Shaki Talysh Erivan Nakchivan
-		
+
 	}
 }

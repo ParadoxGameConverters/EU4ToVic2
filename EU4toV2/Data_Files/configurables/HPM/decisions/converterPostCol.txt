@@ -369,12 +369,12 @@ political_decisions = {
 			any_country = { limit = { tag = STV	 NOT = { exists = STV } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = SBA	 NOT = { exists = SBA } } set_country_flag = buro_independence }
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	## Post-colonial country changes
 	postcol_LSK = {
 		potential = {
@@ -388,7 +388,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -402,7 +402,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -432,7 +432,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -449,7 +449,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -480,7 +480,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -497,7 +497,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -528,7 +528,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -545,7 +545,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -565,7 +565,7 @@ political_decisions = {
 			capital_scope = { is_core = CAN }
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -581,7 +581,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -614,7 +614,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -632,7 +632,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -661,7 +661,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -680,7 +680,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -706,7 +706,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -724,7 +724,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -751,7 +751,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -767,7 +767,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -790,7 +790,7 @@ political_decisions = {
 			NOT = { tag = CSA }
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -806,7 +806,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -833,7 +833,7 @@ political_decisions = {
 			}
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -849,7 +849,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -870,7 +870,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -886,7 +886,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -913,7 +913,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -929,7 +929,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			2213 = { remove_core = DOM } # To avoid Haiti disappearing
@@ -958,7 +958,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -974,7 +974,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			2214 = { remove_core = HAI } #Same as for Haiti
@@ -1008,7 +1008,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1026,7 +1026,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1058,7 +1058,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1076,7 +1076,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1109,7 +1109,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1127,7 +1127,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1160,7 +1160,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1179,7 +1179,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1202,7 +1202,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1221,7 +1221,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1253,7 +1253,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1271,7 +1271,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1294,7 +1294,7 @@ political_decisions = {
 			capital_scope = { is_core = UCA }
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1311,7 +1311,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1343,7 +1343,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1362,7 +1362,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1385,7 +1385,7 @@ political_decisions = {
 			capital_scope = { is_core = MEX }
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1404,7 +1404,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1425,7 +1425,7 @@ political_decisions = {
 			capital_scope = { is_core = BRZ }
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1441,7 +1441,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1472,7 +1472,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1490,7 +1490,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1513,7 +1513,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1532,7 +1532,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1557,7 +1557,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1576,7 +1576,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1601,7 +1601,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1620,7 +1620,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1644,7 +1644,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1685,7 +1685,7 @@ political_decisions = {
 					}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1717,7 +1717,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1734,7 +1734,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1765,7 +1765,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1783,7 +1783,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1815,7 +1815,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1833,7 +1833,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1854,7 +1854,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_2 }
 			NOT = { tag = FIJ }
-		}	
+		}
 		allow = {
 			war = no
 			AST = {
@@ -1866,7 +1866,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1887,7 +1887,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			NZL = {
@@ -1897,7 +1897,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -1930,7 +1930,7 @@ political_decisions = {
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -1944,7 +1944,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_owned = {
@@ -2101,7 +2101,7 @@ political_decisions = {
 				capital = 2226
 			}
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -2126,7 +2126,7 @@ political_decisions = {
 			2238 = { owned_by = THIS }
 			2226 = { owned_by = THIS }
 		}
-		
+
 		effect = {
 			prestige = 10
 			2236 = { add_core = CRB }
@@ -2216,7 +2216,7 @@ political_decisions = {
 				2237 = { owned_by = THIS }
 				2238 = { owned_by = THIS }
 			}
-		}	
+		}
 		allow = {
 			war = no
 			is_independant = yes
@@ -2241,7 +2241,7 @@ political_decisions = {
 			2237 = { owned_by = THIS }
 			2238 = { owned_by = THIS }
 		}
-		
+
 		effect = {
 			prestige = 10
 			2236 = { add_core = CRB secede_province = CRB }
@@ -2294,7 +2294,7 @@ political_decisions = {
 				exists = PBC
 			}
 			NOT = { has_country_flag = postcol_2 }
-		}	
+		}
 		allow = {
 			war = no
 			is_greater_power = yes
@@ -2321,7 +2321,7 @@ political_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			prestige = 10
 			any_country = {
@@ -2330,14 +2330,14 @@ political_decisions = {
 				}
 				annex_to = THIS
 			}
-			
+
 			PEU = { all_core = { add_core = PBC } }
 			BOL = { all_core = { add_core = PBC } }
 			any_country = {
 				limit = {
 					in_sphere = THIS
 				}
-				
+
 				any_owned = {
 					limit = {
 						is_core = PBC
@@ -2350,9 +2350,9 @@ political_decisions = {
 			change_tag = PBC
 			set_country_flag = postcol_2
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
-	}	
+	}
 }

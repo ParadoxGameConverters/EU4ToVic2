@@ -1,4 +1,4 @@
-#Mali Region (648000)  
+#Mali Region (648000)
 #uncolonized in 1836/ruled by Kingdom of Segu
 #Bamako (148000/37000 POPS)
 1794 = {
@@ -405,7 +405,7 @@
 		size = 6000
 	}
 }
-#Bambuk Region (256000)  
+#Bambuk Region (256000)
 #uncolonized in 1836/ruled by Kingdom of Segu
 #Kayes (100000/25000 POPS)
 1795 = {
@@ -611,7 +611,7 @@
 		size = 6000
 	}
 }
-#Bure Region (136000) #see Guinea.txt and Ivory Coast.txt for balance of region 
+#Bure Region (136000) #see Guinea.txt and Ivory Coast.txt for balance of region
 #uncolonized in 1836/under loose rule of Segu
 #Bourgouni (136000/34000 POPS)
 1798 = {
@@ -711,7 +711,7 @@
 		size = 3000
 	}
 }
-#Worodugu Region (172000)  #see Burkina.txt and Ivory Coast.txt for balance of region 
+#Worodugu Region (172000)  #see Burkina.txt and Ivory Coast.txt for balance of region
 #uncolonized in 1836/under loose rule of Segu
 #Sikasso (172000/43000 POPS)
 1799 = {
@@ -811,7 +811,7 @@
 		size = 14000
 	}
 }
-#Macina Region (536000)  
+#Macina Region (536000)
 #uncolonized in 1836/ruled by Sultan of Macina
 #Timbuktu (184000/46000 POPS)
 1803 = {
@@ -1051,7 +1051,7 @@
 		size = 7300
 	}
 }
-#Gao (116000/29000 POPS) #under Tuareg control 1836 
+#Gao (116000/29000 POPS) #under Tuareg control 1836
 1805 = {
 	aristocrats = {
 		culture = tuareg
@@ -1119,7 +1119,7 @@
 		size = 6000
 	}
 }
-#Azawad Region (36000)  
+#Azawad Region (36000)
 #uncolonized in 1836/dominated by Tuareg
 #Taoudenni (8000/2000 POPS)
 1806 = {

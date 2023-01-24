@@ -42,7 +42,7 @@ water_wheel_power = {
 			factor = 1.02
 			tech_school = industrial_tech_school
 		}
-	}	
+	}
 }
 practical_steam_engine = {
 	area = tech_power
@@ -269,7 +269,7 @@ publishing_industry = {
 	year = 1815
 	cost = 3600
 
-	activate_building = regular_clothes_factory 
+	activate_building = regular_clothes_factory
 	ai_chance = {
 		factor = 1.5
 		modifier = {
@@ -296,7 +296,7 @@ publishing_industry = {
 			factor = 1.2
 			industrial_score = 10
 		}
-	}	
+	}
 
 }
 mechanical_production = {
@@ -304,8 +304,8 @@ mechanical_production = {
 	year = 1825
 	cost = 7200
 
-	factory_throughput = 0.05 
-	
+	factory_throughput = 0.05
+
 	ai_chance = {
 		factor = 1.05
 		modifier = {
@@ -347,7 +347,7 @@ mechanical_production = {
 			factor = 1.02
 			tech_school = industrial_tech_school
 		}
-	}	
+	}
 }
 interchangeable_parts = {
 	area = mechanization
@@ -355,7 +355,7 @@ interchangeable_parts = {
 	cost = 10800
 
 	factory_throughput = 0.05
-	
+
 	ai_chance = {
 		factor = 1.05
 		modifier = {
@@ -382,14 +382,14 @@ interchangeable_parts = {
 			factor = 1.02
 			tech_school = industrial_tech_school
 		}
-	}	
+	}
 }
 semi_automatization = {
 	area = mechanization
 	year = 1850
 	cost = 14400
 	factory_throughput = 0.1
-	factory_cost = -0.1 
+	factory_cost = -0.1
 	ai_chance = {
 		factor = 1.05
 		modifier = {
@@ -416,14 +416,14 @@ semi_automatization = {
 			factor = 1.02
 			tech_school = industrial_tech_school
 		}
-	}	
+	}
 }
 assembly_line = {
 	area = mechanization
 	year = 1870
 	cost = 18000
 	factory_throughput = 0.1
-	factory_cost = -0.1 
+	factory_cost = -0.1
 	ai_chance = {
 		factor = 1.05
 		modifier = {
@@ -442,16 +442,16 @@ assembly_line = {
 			factor = 1.02
 			tech_school = industrial_tech_school
 		}
-	}	
+	}
 }
 shift_work = {
 	area = mechanization
 	year = 1900
 	cost = 21600
 
-	
+
 	rgo_output = 0.05
-	factory_throughput = 0.1 
+	factory_throughput = 0.1
 	ai_chance = {
 		factor = 1.05
 		modifier = {
@@ -470,7 +470,7 @@ shift_work = {
 			factor = 1.02
 			tech_school = industrial_tech_school
 		}
-	}	
+	}
 }
 
 
@@ -479,7 +479,7 @@ mechanized_mining = {
 	area = metallurgy
 	year = 1815
 	cost = 3600
-	activate_building = steel_factory 
+	activate_building = steel_factory
 
 	rgo_goods_output = {
 		iron = 0.25
@@ -538,7 +538,7 @@ clean_coal = {
 	area = metallurgy
 	year = 1825
 	cost = 7200
-	
+
 	rgo_goods_output = {
 		coal = 0.2
 	}
@@ -557,7 +557,7 @@ clean_coal = {
 	rgo_size = {
 		iron = 0.2
 	}
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -621,7 +621,7 @@ cheap_iron = {
 	rgo_size = {
 		iron = 0.2
 	}
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -682,7 +682,7 @@ cheap_steel = {
 	rgo_size = {
 		precious_metal = 0.2
 	}
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -744,7 +744,7 @@ advanced_metallurgy = {
 	rgo_size = {
 		sulphur = 0.2
 	}
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -795,7 +795,7 @@ electric_furnace = {
 	cost = 21600
 
 	factory_goods_output = {
-		steel = 0.05 
+		steel = 0.05
 	}
 	rgo_goods_output = {
 		coal = 1
@@ -803,7 +803,7 @@ electric_furnace = {
 	rgo_goods_output = {
 		iron = 1
 	}
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -857,7 +857,7 @@ experimental_railroad = {
 	cost = 3600
 
 	activate_building = railroad
-	
+
 	ai_chance = {
 		factor = 1.5 #1.1
 		modifier = {
@@ -881,7 +881,7 @@ early_railroad = {
 	cost = 7200
 
 	max_railroad = 1
-	
+
 	ai_chance = {
 		factor = 2
 		modifier = {
@@ -904,7 +904,7 @@ iron_railroad = {
 	year = 1850
 	cost = 10800
 
-	max_railroad = 1 
+	max_railroad = 1
 	ai_chance = {
 		factor = 2
 		modifier = {
@@ -927,7 +927,7 @@ steel_railroad = {
 	year = 1870
 	cost = 14400
 
-	max_railroad = 1 
+	max_railroad = 1
 	ai_chance = {
 		factor = 2
 		modifier = {
@@ -998,7 +998,7 @@ basic_chemistry = {
 	year = 1815
 	cost = 3600
 
-	activate_building = fertilizer_factory 
+	activate_building = fertilizer_factory
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -1017,7 +1017,7 @@ medicine = {
 	cost = 7200
 
 	supply_limit = 0.25
-	
+
 	ai_chance = {
 		factor = 1.5
 		modifier = {
@@ -1040,7 +1040,7 @@ inorganic_chemistry = {
 	cost = 10800
 
 	supply_limit = 0.25
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -1075,7 +1075,7 @@ organic_chemistry = {
 	cost = 14400
 
 	supply_limit = 0.25
-	
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -1108,7 +1108,7 @@ electricity = {
 	area = chemistry_and_electricity
 	year = 1880
 	cost = 18000
-	
+
 	supply_limit = 0.50
 	ai_chance = {
 		factor = 2
@@ -1164,7 +1164,7 @@ synthetic_polymers = {
 			industrial_score = 1500
 		}
 	}
-	
+
 }
 
 

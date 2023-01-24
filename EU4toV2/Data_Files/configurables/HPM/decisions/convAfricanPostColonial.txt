@@ -8,7 +8,7 @@ political_decisions = {
 			has_global_flag = der_postcolonialism
 		}
 		allow = {
-			ai = no		
+			ai = no
 		}
 
 		effect = {

@@ -459,7 +459,7 @@ clipper_design = {
 	year = 1815
 	cost = 3600
 	unciv_military = yes
-	activate_building = clipper_shipyard 
+	activate_building = clipper_shipyard
 	ai_chance = {
 		factor = 1
 		# Land-locked countries don't research this
@@ -540,7 +540,7 @@ steamers = {
 	year = 1836
 	cost = 7200
 	unciv_military = yes
-	activate_building = steamer_shipyard 
+	activate_building = steamer_shipyard
 	ai_chance = {
 		factor = 1
 		# Land-locked countries don't research this
@@ -697,7 +697,7 @@ steel_steamers = {
 	year = 1880
 	cost = 14400
 	unciv_military = yes
-	navy_base = { maximum_speed = 2 } 
+	navy_base = { maximum_speed = 2 }
 	ai_chance = {
 		factor = 1
 		# Land-locked countries don't research this
@@ -773,7 +773,7 @@ steam_turbine_ships = {
 	year = 1900
 	cost = 18000
 	unciv_military = yes
-	navy_base = { maximum_speed = 2 } 
+	navy_base = { maximum_speed = 2 }
 	ai_chance = {
 		factor = 1
 		# Land-locked countries don't research this
@@ -849,7 +849,7 @@ oil_driven_ships = {
 	year = 1919
 	cost = 21600
 	unciv_military = yes
-	navy_base = { maximum_speed = 2 } 
+	navy_base = { maximum_speed = 2 }
 	ai_chance = {
 		factor = 1
 		# Land-locked countries don't research this
@@ -1447,7 +1447,7 @@ alphabetic_flag_signaling = {
 	cost = 3600
 	unciv_military = yes
 	supply_range = 0.10
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -1490,7 +1490,7 @@ naval_plans = {
 	cost = 7200
 	unciv_military = yes
 	supply_range = 0.10
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -1700,7 +1700,7 @@ naval_integration = {
 		modifier = {
 			factor = 1.02
 			total_amount_of_ships = 50
-		}	
+		}
 	}
 }
 

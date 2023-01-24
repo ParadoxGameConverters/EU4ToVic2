@@ -1,6 +1,6 @@
-#Macedonia Region (424000) #see Greece.txt and Bulgaria.txt for balance of region 
-#under the rule of Ottoman Empire in 1836  
-#Skopje (424000/106000 POPS) 
+#Macedonia Region (424000) #see Greece.txt and Bulgaria.txt for balance of region
+#under the rule of Ottoman Empire in 1836
+#Skopje (424000/106000 POPS)
 806 = {
 	aristocrats = {
 		culture = turkish
@@ -98,9 +98,9 @@
 		size = 1475
 	}
 }
-#Monastir Region (268000) #see Greece.txt for balance of region 
-#under the rule of Ottoman Empire in 1836  
-#Bitola (268000/67000 POPS) 
+#Monastir Region (268000) #see Greece.txt for balance of region
+#under the rule of Ottoman Empire in 1836
+#Bitola (268000/67000 POPS)
 807 = {
 	clergymen = {
 		culture = macedonian

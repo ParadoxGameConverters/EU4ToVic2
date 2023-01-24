@@ -233,22 +233,22 @@ unit_names = {
 		Göteborg Malmö Uppsala Västerås Örebro Linköping Helsingborg Nynäshamn Karlshamn Halmstad Blenda Astrid Stockholm
 	}
 	manowar = {
-		"Carl XIII" "Karl XIV Johan" "Prins Oscar" "Gustav den Store" Stockholm Försiktigheten Tapperheten "Kung Adolph Fredric" Henrik Tomas 
+		"Carl XIII" "Karl XIV Johan" "Prins Oscar" "Gustav den Store" Stockholm Försiktigheten Tapperheten "Kung Adolph Fredric" Henrik Tomas
 	}
 	cruiser = {
 		"Claes Uggla" Psilander "Claes Horn" "Jacob Bakke" Ornen Fylgia "Tre Kronor" "Göta Lejon" Östersund Borgholm
 	}
 	frigate = {
-		Packa "Svarta Örn" Jarramas Vainqueur Delphin Illerim "Lilla Phoenix" Växjö Gävle "Baron Gustaf Bonde" 
+		Packa "Svarta Örn" Jarramas Vainqueur Delphin Illerim "Lilla Phoenix" Växjö Gävle "Baron Gustaf Bonde"
 	}
 	monitor = {
 		"John Ericsson" Loke Sköld Tirfing Tordön Berserk Björn Folke Sölve Ulf Fenris Garmer Gerda Hildur
 	}
 	clipper_transport = {
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
-		"Björn Järnsida" "Erik Segersäll" "Gardarr Svavarsson" Birka Asgård Kraken Bäckahäst Storsjön Vänern Vättern     
+		"Björn Järnsida" "Erik Segersäll" "Gardarr Svavarsson" Birka Asgård Kraken Bäckahäst Storsjön Vänern Vättern
 	}
 }

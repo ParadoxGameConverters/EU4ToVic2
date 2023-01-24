@@ -48,7 +48,7 @@ link = { name = "French Canada" key = 415 provinces = { 77 } }
 # French Africa to Paris
 link = { name = "French Africa" key = 425 provinces = { 1783 1784 1894 2126 } }
 
-# French India to Paris 
+# French India to Paris
 link = { name = "French India" key = 425 provinces = { 1312 } }
 
 ###### Netherlands ######
@@ -86,7 +86,7 @@ link = { name = "Spanish Indonesia" key = 487 provinces = { 1455 1456 1457 1458 
 # Russian Alaska to St. Petersburg
 link = { name = "Alaska" key = 994 provinces = { 1 2 3 4 5 2631 } }
 
-# Russian Scandinavia to Petrozavodsk 
+# Russian Scandinavia to Petrozavodsk
 link = { name = "Russian Scandinavia" key = 995 provinces = { 983 984 988 2588 982 2587 } }
 
 # Russian North to Kotlas - decolonize unless RUS
@@ -116,7 +116,7 @@ link = { name = "Norway" key = 309 provinces = { 305 306 307 308 } }
 
 # Finland to Turku
 link = { name = "Finland" key = 345 provinces = { 336 337 338 342 346 } }
- 
+
 ###### Egypt ######
 
 # Egypt to Qina

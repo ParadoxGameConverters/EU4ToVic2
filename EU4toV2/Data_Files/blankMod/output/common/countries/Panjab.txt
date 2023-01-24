@@ -103,7 +103,7 @@ unit_names = {
 	dreadnought = {
 		Beas Chenab Devi Gayatri Guru Indus Jalsena Jhelum Lakshmi Nausena "Nav ka Yudh" Parvati Radha Ratri
 		Ravi Sagar Sutlej Sarasvati Sita
-		
+
 	}
 	ironclad = {
 		Beas Chenab Devi Gayatri Guru Indus Jalsena Jhelum Lakshmi Nausena "Nav ka Yudh" Parvati Radha Ratri
@@ -126,10 +126,10 @@ unit_names = {
 		Ravi Sagar Sutlej Sarasvati Sita
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Beas Chenab Devi Gayatri Guru Indus Jalsena Jhelum Lakshmi Nausena "Nav ka Yudh" Parvati Radha Ratri

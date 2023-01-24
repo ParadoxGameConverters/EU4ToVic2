@@ -3,7 +3,7 @@ province_event = {
 	title = we_are_the_undeads_title
 	desc = we_are_the_undeads_desc
 	picture = "Demonstration"
-	
+
 	trigger = {
 		owner = {
 			OR = {
@@ -13,11 +13,11 @@ province_event = {
 		}
 		minorities = yes
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	option = {
 		name = EVTOPTA666000
 		any_pop = {
@@ -35,7 +35,7 @@ province_event = {
 	title = go_away_undeads_title
 	desc = go_away_undeads_desc
 	picture = "Demonstration"
-	
+
 	trigger = {
 		always = no
 		NOT = {
@@ -53,15 +53,15 @@ province_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 	}
-	
+
 	option = {
 		name = EVTOPTA666001
 		any_pop = {
-			limit = { 
+			limit = {
 				OR = {
 					is_culture_group = non_human
 					is_culture_group = anti_human
@@ -77,7 +77,7 @@ country_event = {
 	title = "The Area 51"
 	desc = "Since the 20th of September $YEAR$, the Aliens have finally won the siege of the 'Face-book' horde who tried to drive them out of New Mexico. Hence, we rebaptized this place with its true alien name, Area 51"
 	picture = "Demonstration"
-	
+
 	trigger = {
 		tag = ALI
 		owns = 103 #New Mexico
@@ -85,11 +85,11 @@ country_event = {
 		owns = 105
 		NOT = { has_global_flag = area_51 }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 0.01
 	}
-	
+
 	option = {
 		name = "For Xenu!"
 		103 = {

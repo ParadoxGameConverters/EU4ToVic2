@@ -115,13 +115,13 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"Ulrik Christian Gyldenløve" København Århus Ålborg Odense Fredriksberg Esbjerg "Nørrejyske Ø" Fyn Jótlandshaf 
+		"Ulrik Christian Gyldenløve" København Århus Ålborg Odense Fredriksberg Esbjerg "Nørrejyske Ø" Fyn Jótlandshaf
 	}
 	ironclad = {
-		Helgoland Danmark Gorm Lindormen Odin "Rolf Krake" Tordenskjold "Peder Skram" Dannebrog Gorm "Olfert Fischer" Absalon 
+		Helgoland Danmark Gorm Lindormen Odin "Rolf Krake" Tordenskjold "Peder Skram" Dannebrog Gorm "Olfert Fischer" Absalon
 	}
 	manowar = {
-		"Prins Christian Frederik" Skjold Absalon Ingolf Dannebrog Dagmar Gesjer "Dronning Marie" Waldemar Fredrik 
+		"Prins Christian Frederik" Skjold Absalon Ingolf Dannebrog Dagmar Gesjer "Dronning Marie" Waldemar Fredrik
 	}
 	cruiser = {
 		Fyen Geiser Heimdal Hekla "St. Thomas" Valkyrien "Herluf Trolle" Søeormen Susåen Gudenåen
@@ -132,12 +132,12 @@ unit_names = {
 	monitor = {
 		Freia Diana Lindormen Støren Stubberkøbing Gejser Kiel Falster Narhvalen Tumleren
 	}
-	clipper_transport = { 
-		 
+	clipper_transport = {
+
 
 	}
-	steam_transport = { 
-		
+	steam_transport = {
+
 
 	}
 	commerce_raider = {

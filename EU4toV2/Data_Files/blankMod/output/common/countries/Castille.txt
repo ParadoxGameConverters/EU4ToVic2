@@ -241,7 +241,7 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"Alfonso XIII" "Álvaro de Bazán" "Brigadier Topete" Castañeta "Ciudad de Cartagena" "Ciudad de Sevilla" "Ciudad de Valencia" "Duque de Alba" "Duque de Medina-Sidonia" "Duque de Parma" 
+		"Alfonso XIII" "Álvaro de Bazán" "Brigadier Topete" Castañeta "Ciudad de Cartagena" "Ciudad de Sevilla" "Ciudad de Valencia" "Duque de Alba" "Duque de Medina-Sidonia" "Duque de Parma"
 		"El Gran Capitán" España "Estrella de los Mares" "Fadrique Álvarez de Toledo" "Fernando de Magallanes" "Infante de España" "Jaime I" Lángara "Luis de Córdova" "María de Molina"
 		"Marqués de la Victoria" Pelayo "Príncipe de Asturias" Requesens "Reyes Católicos" "Rodrigo Díaz de Vivar" "Sánchez de Tovar" "Sancho III" "Villa de Barcelona" "Villa de Madrid"
 	}
@@ -250,7 +250,7 @@ unit_names = {
 		"Mar Caribe" Mistral "Navas de Tolosa" Numancia Resolución Sagunto "San Quintín" "Santa María" Segura Sella
 		Siroco Tajo Tambre Tetuán Tramontana Turia Vencedora Viriato Vitoria Zaragoza
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		Águila "Águila de Nantes" "Águila Volante" Astrolabio Aurora Concepción Cornelia Cortes Diana Esmeralda
 		Esperanza Fama Fénix Fidela Flecha Flora Gloria Gusana Hermione Iberia
 		Ifigenia Iris Juno Ligera Mahonesa "María Isabel" Medea Mercurio Minerva Ninfa
@@ -258,7 +258,7 @@ unit_names = {
 		Providencia Prueba "San Jorge" "San José" "San Juan" "San Miguel" "Santa Ana" "Santa Bárbara" "Santa Catalina" "Santa Leocadia"
 		Sirena Soledad Sorpresa Tetis Tigre Triunfo Unicornio Venganza Victoria Viva
 	}
-	steam_transport = { 
+	steam_transport = {
 		Águila "Águila de Nantes" "Águila Volante" Astrolabio Aurora Concepción Cornelia Cortes Diana Esmeralda
 		Esperanza Fama Fénix Fidela Flecha Flora Gloria Gusana Hermione Iberia
 		Ifigenia Iris Juno Ligera Mahonesa "María Isabel" Medea Mercurio Minerva Ninfa
@@ -272,18 +272,18 @@ unit_names = {
 		Osado Plutón Proserpina "Sánchez Barcáiztegui" Terror Teruel Triunfante Ulloa Velasco Villamil
 	}
 	cruiser = {
-		"Alfonso XII" "Almirante Oquendo" Aragón "Cardenal Cisneros" Castilla "Ciudad de Oviedo" Cataluña "Conde de Venadito" "Cristóbal Colón" "Don Antonio de Ulloa" 
-		"Don Juan de Austria" "Emperador Carlos V" Extremadura Gravina "Infanta Isabel" "Isla de Cuba" "Isla de Luzón" "Juan Sebastián Elcano" 
+		"Alfonso XII" "Almirante Oquendo" Aragón "Cardenal Cisneros" Castilla "Ciudad de Oviedo" Cataluña "Conde de Venadito" "Cristóbal Colón" "Don Antonio de Ulloa"
+		"Don Juan de Austria" "Emperador Carlos V" Extremadura Gravina "Infanta Isabel" "Isla de Cuba" "Isla de Luzón" "Juan Sebastián Elcano"
 		"Lepanto" "Marqués de la Ensenada" Navarra "Princesa de Asturias" "Reina Cristina" "Reina Mercedes" "Reina Regente" "Río de la Plata" "Velasco" "Vizcaya"
 	}
-	
+
 	frigate = {
 		"Almirante Cervera" Andalucía Asturias Atrevida Baleares "Blas de Lezo" Canarias Diana Eolo Galicia
 		"Hernán Cortés" "Juan de la Cosa" Júpiter Legazpi Marte "Martín Alonso Pinzón" "Méndez Núñez" "Miguel de Cervantes" Neptuno
 		Pizarro Princesa "Príncipe Alfonso" "Reina Victoia Eugenia" "Sarmiento de Gamboa" "Tritón" "Vasco Núñez de Balboa" "Vicente Yáñez Pinzón" "Villa de Bilbao" Vulcano
 	}
 	monitor = {
-		"Ambrosio Spinola" "Bernardo Gálvez" "Cantabria" "Ciudad de Cádiz" "Ciudad de Las Palmas" "Ciudad de Mahón" "Ciudad de Palma" "Ciudad de Santa Cruz" "Ciudad de Vigo" "Duque de Tetuán" 
+		"Ambrosio Spinola" "Bernardo Gálvez" "Cantabria" "Ciudad de Cádiz" "Ciudad de Las Palmas" "Ciudad de Mahón" "Ciudad de Palma" "Ciudad de Santa Cruz" "Ciudad de Vigo" "Duque de Tetuán"
 		"García Álvarez de Toledo" Hespérides Hevia "Hidalgo de Cisneros" "Ignacio María de Álava" "La Mancha" León "Marqués del Socorro" "Menéndez de Avilés"
 		"Meteoro" "Pedro Navarro" Porter Puigcerdá Rayo Relámpago Somiedo Tornado Valdés "Vicealmirante Pareja" "Villa de Gijón"
 	}

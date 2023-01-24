@@ -1,12 +1,12 @@
 # Do not change tags in here without changing every other reference to them.
-# If adding new forms of governemnts, make sure they are uniquely named.
+# If adding new forms of governments, make sure they are uniquely named.
 
 
 
 proletarian_dictatorship = {
 	#which ideology of parties.
 	communist = yes
-	
+
 	election = no
 	appoint_ruling_party = yes
 	flagType = communist
@@ -17,16 +17,16 @@ presidential_dictatorship = {
 	reactionary = yes
 	fascist = yes
 	conservative = yes
-	
+
 	election = no
 	appoint_ruling_party = yes
 	flagType = republic
 }
- 
+
 bourgeois_dictatorship = {
 	#which ideology of parties.
 	anarcho_liberal = yes
-	
+
 	election = no
 	appoint_ruling_party = yes
 	flagType = republic
@@ -35,30 +35,30 @@ bourgeois_dictatorship = {
 fascist_dictatorship = {
 	#which ideology of parties.
 	fascist = yes
-	
+
 	election = no
 	appoint_ruling_party = yes
 	flagType = fascist
 }
- 
+
 absolute_monarchy = {
 	liberal = yes
 	conservative = yes
 	reactionary = yes
-	
-	
+
+
 	election = no
 	appoint_ruling_party = yes
 	flagType = monarchy
 }
- 
+
 prussian_constitutionalism = {
 	liberal = yes
 	socialist = yes
 	conservative = yes
 	reactionary = yes
-	
-	
+
+
 	election = yes
 	duration = 48
 	appoint_ruling_party = yes
@@ -73,8 +73,8 @@ hms_government = {
 	communist = yes
 	anarcho_liberal = yes
 	fascist = yes
-	
-	
+
+
 	election = yes
 	duration = 48
 	appoint_ruling_party = yes
@@ -89,8 +89,8 @@ democracy = {
 	communist = yes
 	anarcho_liberal = yes
 	fascist = yes
-	
-	
+
+
 	election = yes
 	duration = 48
 	appoint_ruling_party = no
@@ -101,10 +101,10 @@ theocracy = {
 	#which ideology of parties.
 	reactionary = yes
 	conservative = yes
-	
+
 	election = no
 	appoint_ruling_party = yes
 	flagType = monarchy
 }
- 
+
 

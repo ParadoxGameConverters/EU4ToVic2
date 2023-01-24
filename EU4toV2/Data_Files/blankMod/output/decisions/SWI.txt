@@ -35,14 +35,14 @@ political_decisions = {
 				has_global_flag = geneva_convention_held
 			}
 		}
-		
+
 		allow = {
 			any_greater_power = {
 				war_exhaustion = 5
 			}
 			empiricism = 1
 		}
-		
+
 		effect = {
 			add_country_modifier = {
 				name = signed_the_geneva_convention
@@ -52,7 +52,7 @@ political_decisions = {
 			prestige = 10
 		}
 	}
-	
+
 	sign_the_geneva_convention = {
 		potential = {
 			civilized = yes
@@ -61,13 +61,13 @@ political_decisions = {
 				has_country_modifier = signed_the_geneva_convention
 			}
 		}
-		
+
 		allow = {
 			NOT = {
 				badboy = 1
 			}
 		}
-		
+
 		effect = {
 			add_country_modifier = {
 				name = signed_the_geneva_convention
@@ -76,7 +76,7 @@ political_decisions = {
 			badboy = -1
 		}
 	}
-	
+
 	build_gotthard_tunnel = {
 		potential = {
 			tag = SWI
@@ -85,11 +85,11 @@ political_decisions = {
 				has_country_flag = gotthard_tunnel_built
 			}
 		}
-		
+
 		allow = {
 			invention = machine_tools
 		}
-		
+
 		effect = {
 			606 = {
 				infrastructure = 4

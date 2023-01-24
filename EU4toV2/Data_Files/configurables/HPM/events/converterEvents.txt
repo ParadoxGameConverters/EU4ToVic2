@@ -1,22 +1,22 @@
-country_event = { 
-	id = 250001 
+country_event = {
+	id = 250001
 	title = EVTNAME250001
 	desc = EVTDESC250001
-	is_triggered_only = yes 
+	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = EVTOPTA250001
 		FROM = { inherit = THIS }
     }
 }
 
-country_event = { 
-	id = 250004 
+country_event = {
+	id = 250004
 	title = EVTNAME250004
 	desc = EVTDESC250004
 	is_triggered_only = yes
-	
-	option = { 
+
+	option = {
 		name = EVTOPTA250004
 		release_vassal = XIN
 		release_vassal = XBI
@@ -46,7 +46,7 @@ country_event = {
 		any_owned = {
 			add_core = FROM
 			}
-   
+
         ai_chance = {
             factor = 50
             modifier = {
@@ -101,37 +101,37 @@ country_event = {
 		any_owned = {
 				add_core = FROM
 				}
-           
+
         ai_chance = {
             factor = 50
         }
     }
 }
 
-country_event = { 
+country_event = {
 	id = 350002
 	title = EVTNAME350002
 	desc = EVTDESC350002
 
-	trigger = { 
+	trigger = {
 		has_country_flag = emperor_heaven
 		NOT = { is_year = 1880 }
 	}
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA250002
 		clr_country_flag = emperor_heaven
 	}
 }
 
-country_event = { 
-	id = 350003 
+country_event = {
+	id = 350003
 	title = EVTNAME350003
 	desc = EVTDESC350003
 
-	trigger = { 
+	trigger = {
 		tag = AOT
 		is_year = 1900
 		any_core = { empty = yes }
@@ -139,7 +139,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA350003
 		any_core = {
 			limit = { empty = yes }
@@ -149,12 +149,12 @@ country_event = {
     }
 }
 
-country_event = { 
+country_event = {
 	id = 350004
 	title = EVTNAME350004
 	desc = EVTDESC350003
 
-	trigger = { 
+	trigger = {
 		tag = ABO
 		is_year = 1900
 		any_core = { empty = yes }
@@ -162,7 +162,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA350003
 		any_core = {
 			limit = { empty = yes }
@@ -176,161 +176,161 @@ country_event = {
 	title = EVTNAME350005
 	desc = EVTDESC350005
 	picture = "Riot"
-	
+
 	trigger = {
 		tag = TUR
 		EGY = { exists = no }
 	}
-	
+
 	fire_only_once = yes
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
 
 	option = {
 		name = EVTOPTA350005
-		847 = { 
+		847 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-848 = { 
+848 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-894 = { 
+894 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-896 = { 
+896 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-898 = { 
+898 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_897 = { 
+EGY_897 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_903 = { 
+EGY_903 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_910 = { 
+EGY_910 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_915 = { 
+EGY_915 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_921 = { 
+EGY_921 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-NEJ_1156 = { 
+NEJ_1156 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1755 = { 
+EGY_1755 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1745 = { 
+EGY_1745 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1771 = { 
+EGY_1771 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1758 = { 
+EGY_1758 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1762 = { 
+EGY_1762 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1771 = { 
+EGY_1771 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1827 = { 
+EGY_1827 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1834 = { 
+EGY_1834 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-EGY_1838 = { 
+EGY_1838 = {
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
-ENG_1848 = { 
+ENG_1848 = {
 			limit = {
 				owned_by = TUR
 			}
@@ -347,7 +347,7 @@ country_event = {
 	desc = "EVTDESC451001"
 	major = yes
 	picture = "Riot"
-	
+
 	trigger = {
 		NOT = { civilization_progress = 0.5 }
 		civilized = no
@@ -387,7 +387,7 @@ country_event = {
 			stronger_army_than = FROM
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 48
 		modifier = {
@@ -407,7 +407,7 @@ country_event = {
 			year = 1914
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451001"
 		sphere_owner = { inherit = FROM }
@@ -420,7 +420,7 @@ country_event = {
 	desc = "EVTDESC451002"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = HES
 		HEK = { exists = no }
@@ -428,7 +428,7 @@ country_event = {
 		owns = 568
 		has_global_flag = der_postcolonialism
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -440,7 +440,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451002"
 		566 = { add_core = HEK }
@@ -455,7 +455,7 @@ country_event = {
 	desc = "EVTDESC451003"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		NOT = { tag = GER }
 		NOT = { tag = NGF }
@@ -466,7 +466,7 @@ country_event = {
 		owns = 585
 		has_global_flag = der_postcolonialism
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -478,7 +478,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451003"
 		585 = { add_core = LIP }
@@ -492,7 +492,7 @@ country_event = {
 	desc = "EVTDESC451004"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		OR = {
 			tag = SAX
@@ -506,7 +506,7 @@ country_event = {
 		owns = 561
 		has_global_flag = der_postcolonialism
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -518,7 +518,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451004"
 		562 = { add_core = COB }
@@ -539,7 +539,7 @@ country_event = {
 	desc = "EVTDESC451006"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		BHO = { exists = no }
 		IND = { exists = no }
@@ -548,7 +548,7 @@ country_event = {
 		has_global_flag = der_postcolonialism
 		NOT = { has_global_flag = india_angered }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -560,7 +560,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451006"
 		1272 = { add_core = BHO }
@@ -580,7 +580,7 @@ country_event = {
 	desc = "EVTDESC451005"
 	major = yes
 	picture = "Riot"
-	
+
 	trigger = {
 		ZUL = { exists = no }
 		owns = 2111
@@ -589,9 +589,9 @@ country_event = {
 		has_global_flag = der_postcolonialism
 		NOT = { has_global_flag = zulu_angered }
 	}
-	
+
 	immediate = { set_global_flag = zulu_angered }
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -603,7 +603,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451005"
 		2111 = { add_core = ZUL }
@@ -623,7 +623,7 @@ country_event = {
 	title = EVTNAME450008
 	desc = EVTDESC450008
 	picture = "Orthodox"
-	
+
 	trigger = {
 		NOT = { has_country_flag = formed_in_transcaucasia }
 		NOT = { tag = RUS }
@@ -648,11 +648,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	immediate = {
 		set_country_flag = formed_in_transcaucasia
 		prestige = 5
@@ -662,14 +662,14 @@ country_event = {
 		change_tag = GEO
 		capital = 1090 #Tbilisi
 	}
-	
+
 }
 country_event = {
 	id = 450009
 	title = EVTNAME450009
 	desc = EVTDESC450009
 	picture = "darwin"
-	
+
 	trigger = {
 		NOT = { has_country_flag = atheocracy }
 		NOT = { tag = PAP }
@@ -686,11 +686,11 @@ country_event = {
 			NOT = { government = theocracy }
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	immediate = {
 		set_country_flag = atheocracy
 		government = absolute_monarchy
@@ -780,15 +780,15 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
-	}	
-	
+	}
+
 }
 country_event = {
 	id = 450010
 	title = EVTNAME450008
 	desc = EVTDESC450008
 	picture = "Orthodox"
-	
+
 	trigger = {
 		NOT = { has_country_flag = formed_in_transcaucasia }
 		NOT = {
@@ -813,11 +813,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	immediate = {
 		set_country_flag = formed_in_transcaucasia
 		prestige = 5
@@ -827,14 +827,14 @@ country_event = {
 		change_tag = ARM
 		capital = 1098 #Erivan
 	}
-	
+
 }
 country_event = {
 	id = 450011
 	title = EVTNAME450008
 	desc = EVTDESC450008
 	picture = "Orthodox"
-	
+
 	trigger = {
 		NOT = { has_country_flag = formed_in_transcaucasia }
 		NOT = {
@@ -859,11 +859,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	immediate = {
 		set_country_flag = formed_in_transcaucasia
 		prestige = 5
@@ -873,7 +873,7 @@ country_event = {
 		change_tag = AZB
 		capital = 1102 #Baku
 	}
-	
+
 }
 country_event = {
 	id = 451001
@@ -881,7 +881,7 @@ country_event = {
 	desc = "EVTDESC451001"
 	major = yes
 	picture = "Riot"
-	
+
 	trigger = {
 		NOT = { civilization_progress = 0.5 }
 		civilized = no
@@ -921,7 +921,7 @@ country_event = {
 			stronger_army_than = FROM
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 48
 		modifier = {
@@ -941,7 +941,7 @@ country_event = {
 			year = 1914
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451001"
 		sphere_owner = { inherit = FROM }
@@ -954,7 +954,7 @@ country_event = {
 	desc = "EVTDESC451002"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = HES
 		HEK = { exists = no }
@@ -962,7 +962,7 @@ country_event = {
 		owns = 568
 		has_global_flag = der_postcolonialism
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -974,7 +974,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451002"
 		566 = { add_core = HEK }
@@ -989,7 +989,7 @@ country_event = {
 	desc = "EVTDESC451003"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		NOT = { tag = GER }
 		NOT = { tag = NGF }
@@ -1001,7 +1001,7 @@ country_event = {
 		owns = 585
 		has_global_flag = der_postcolonialism
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -1013,7 +1013,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451003"
 		585 = { add_core = LIP }
@@ -1027,7 +1027,7 @@ country_event = {
 	desc = "EVTDESC451004"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		OR = {
 			tag = SAX
@@ -1041,7 +1041,7 @@ country_event = {
 		owns = 561
 		has_global_flag = der_postcolonialism
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -1053,7 +1053,7 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA451004"
 		562 = { add_core = COB }
@@ -1073,7 +1073,7 @@ country_event = {
 	desc = "EVTDESC451006"
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		BHO = { exists = no }
 		IND = { exists = no }
@@ -1082,7 +1082,7 @@ country_event = {
 		has_global_flag = der_postcolonialism
 		NOT = { has_global_flag = bharat_city }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -1094,9 +1094,9 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	immediate = { set_global_flag = bharat_city }
-	
+
 	option = {
 		name = "EVTOPTA451006"
 		1272 = { add_core = BHO }
@@ -1116,7 +1116,7 @@ country_event = {
 	major = yes
 	picture = "Riot"
 	fire_only_once = yes
-	
+
 	trigger = {
 		ZUL = { exists = no }
 		owns = 2111
@@ -1125,7 +1125,7 @@ country_event = {
 		has_global_flag = der_postcolonialism
 		NOT = { has_global_flag = zulu_angered }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -1137,9 +1137,9 @@ country_event = {
 			year = 1850
 		}
 	}
-	
+
 	immediate = { set_global_flag = zulu_angered }
-	
+
 	option = {
 		name = "EVTOPTA451005"
 		2111 = { add_core = ZUL }
@@ -1153,12 +1153,12 @@ country_event = {
 	}
 }
 
-country_event = { 
+country_event = {
 	id = 550000
 	title = EVTNAMEBYZ
 	desc = EVTDESCBYZ
 
-	trigger = { 
+	trigger = {
 		tag = BYZ
 		number_of_states = 3
 		NOT = { has_global_flag = greek_BYZ }
@@ -1166,7 +1166,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTABYZ
 		set_global_flag = greek_BYZ
 		GRE = {
@@ -1187,12 +1187,12 @@ country_event = {
 		}
 	}
 }
-country_event = { 
+country_event = {
 	id = 550001
 	title = EVTNAMEGRE
 	desc = EVTDESCGRE
 
-	trigger = { 
+	trigger = {
 		NOT = { exists = BYZ }
 		ai = no #So the player will cry at 1453
 		has_global_flag = greek_BYZ
@@ -1200,7 +1200,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTAGRE
 		clr_global_flag = greek_BYZ
 		BYZ = {
@@ -1214,12 +1214,12 @@ country_event = {
 		}
 	}
 }
-country_event = { 
+country_event = {
 	id = 550002
 	title = EVTNAMEITP
 	desc = EVTDESCITP
 
-	trigger = { 
+	trigger = {
 		tag = ITA
 		government = theocracy
 		NOT = { has_country_flag = ITA_to_ITP }
@@ -1227,7 +1227,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTAITP
 		set_country_flag = ITA_to_ITP
 		clr_country_flag = ITP_to_ITA
@@ -1239,12 +1239,12 @@ country_event = {
 	}
 }
 
-country_event = { 
+country_event = {
 	id = 550003
 	title = EVTNAMEITA
 	desc = EVTDESCITA
 
-	trigger = { 
+	trigger = {
 		tag = ITP
 		NOT = { government = theocracy }
 		NOT = { has_country_flag = ITP_to_ITA }
@@ -1252,7 +1252,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTAITP
 		set_country_flag = ITP_to_ITA
 		clr_country_flag = ITA_to_ITP
@@ -1263,12 +1263,12 @@ country_event = {
 		change_tag = ITA
 	}
 }
-country_event = { 
+country_event = {
 	id = 550004
 	title = EVTNAME550004
 	desc = EVTDESC550xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1299,7 +1299,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TNT }
@@ -1307,12 +1307,12 @@ country_event = {
 		set_global_flag = tannu_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550005
 	title = EVTNAME550005
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1341,7 +1341,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TAM }
@@ -1349,12 +1349,12 @@ country_event = {
 		set_global_flag = transamur_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550006
 	title = EVTNAME550006
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1382,7 +1382,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = MCK }
@@ -1390,12 +1390,12 @@ country_event = {
 		set_global_flag = manchukuo_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550007
 	title = EVTNAME550007
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1423,7 +1423,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = MGL }
@@ -1432,12 +1432,12 @@ country_event = {
 		add_accepted_culture = mongol
 	}
 }
-country_event = { 
+country_event = {
 	id = 550008
 	title = EVTNAME550008
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1462,7 +1462,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = IMG }
@@ -1470,12 +1470,12 @@ country_event = {
 		set_global_flag = innmongolia_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550009
 	title = EVTNAME550009
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1503,7 +1503,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = PYO }
@@ -1512,12 +1512,12 @@ country_event = {
 		add_accepted_culture = korean
 	}
 }
-country_event = { 
+country_event = {
 	id = 550010
 	title = EVTNAME550010
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1546,7 +1546,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = GMJ }
@@ -1554,12 +1554,12 @@ country_event = {
 		set_global_flag = mengjiang_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550011
 	title = EVTNAME550011
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1584,7 +1584,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = SHD }
@@ -1592,12 +1592,12 @@ country_event = {
 		set_global_flag = shandong_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550012
 	title = EVTNAME550012
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1622,7 +1622,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TPG }
@@ -1630,12 +1630,12 @@ country_event = {
 		set_global_flag = taiping_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550013
 	title = EVTNAME550013
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1664,7 +1664,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = SHG }
@@ -1672,12 +1672,12 @@ country_event = {
 		set_global_flag = shanghai_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550014
 	title = EVTNAME550014
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1705,7 +1705,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = HUI }
@@ -1713,12 +1713,12 @@ country_event = {
 		set_global_flag = anhui_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550015
 	title = EVTNAME550015
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1743,7 +1743,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = SXI }
@@ -1751,12 +1751,12 @@ country_event = {
 		set_global_flag = shanxi_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550016
 	title = EVTNAME550016
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1785,7 +1785,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = HNN }
@@ -1793,12 +1793,12 @@ country_event = {
 		set_global_flag = hunan_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550017
 	title = EVTNAME550017
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1823,7 +1823,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = FJN }
@@ -1831,12 +1831,12 @@ country_event = {
 		set_global_flag = fujian_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550018
 	title = EVTNAME550018
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1861,7 +1861,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TAI }
@@ -1869,12 +1869,12 @@ country_event = {
 		set_global_flag = taiwan_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550019
 	title = EVTNAME550019
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1904,7 +1904,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = GXI }
@@ -1912,12 +1912,12 @@ country_event = {
 		set_global_flag = guangxi_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550020
 	title = EVTNAME550020
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1942,7 +1942,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = GNG }
@@ -1950,12 +1950,12 @@ country_event = {
 		set_global_flag = guangdong_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550021
 	title = EVTNAME550021
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -1981,7 +1981,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = YNN }
@@ -1989,12 +1989,12 @@ country_event = {
 		set_global_flag = yunnan_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550022
 	title = EVTNAME550022
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2022,7 +2022,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = SZC }
@@ -2030,12 +2030,12 @@ country_event = {
 		set_global_flag = sichuan_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550023
 	title = EVTNAME550023
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2064,7 +2064,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = XSM }
@@ -2072,12 +2072,12 @@ country_event = {
 		set_global_flag = xibei_clique
 	}
 }
-country_event = { 
+country_event = {
 	id = 550024
 	title = EVTNAME550024
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2105,7 +2105,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = XIN }
@@ -2114,12 +2114,12 @@ country_event = {
 		add_accepted_culture = uighur
 	}
 }
-country_event = { 
+country_event = {
 	id = 550025
 	title = EVTNAME550025
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2144,7 +2144,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TIB }
@@ -2153,12 +2153,12 @@ country_event = {
 		add_accepted_culture = tibetan
 	}
 }
-country_event = { 
+country_event = {
 	id = 550026
 	title = EVTNAME550026
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2186,7 +2186,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = KYR }
@@ -2195,12 +2195,12 @@ country_event = {
 		add_accepted_culture = kirgiz
 	}
 }
-country_event = { 
+country_event = {
 	id = 550027
 	title = EVTNAME550027
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2225,7 +2225,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = BHU }
@@ -2234,12 +2234,12 @@ country_event = {
 		add_accepted_culture = tibetan
 	}
 }
-province_event = { 
+province_event = {
 	id = 550028
 	title = EVTNAME550028
 	desc = EVTDESC550028
 
-	trigger = { 
+	trigger = {
 		exists = ISL
 		controlled_by = ISL
 		any_pop = {
@@ -2261,17 +2261,17 @@ province_event = {
 
 	mean_time_to_happen = { months = 0.0001 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550028
 		add_core = ISL
 	}
 }
-country_event = { 
+country_event = {
 	id = 550029
 	title = EVTNAME550029
 	desc = EVTDESC550029
 
-	trigger = { 
+	trigger = {
 		tag = SSU
 		SUD = { exists = no }
 		1827 = { owned_by = SSU } #Khartoum
@@ -2279,19 +2279,19 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550029
 		change_tag = SUD
 		prestige = 10
 		capital = 1827
 	}
 }
-country_event = { 
+country_event = {
 	id = 550030
 	title = EVTNAME550030
 	desc = EVTDESC5500030
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = GUY }
 		SUR = { exists = no }
 		OR = {
@@ -2305,7 +2305,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550030
 		change_tag = SUR
 		prestige = 1
@@ -2313,12 +2313,12 @@ country_event = {
 		set_country_flag = buro_independence
 	}
 }
-country_event = { 
+country_event = {
 	id = 550031
 	title = EVTNAME550031
 	desc = EVTDESC550031
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = GUY }
 		CAY = { exists = no }
 		OR = {
@@ -2332,7 +2332,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550031
 		change_tag = CAY
 		prestige = 1
@@ -2340,12 +2340,12 @@ country_event = {
 		set_country_flag = buro_independence
 	}
 }
-country_event = { 
+country_event = {
 	id = 550032
 	title = EVTNAME550032
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2373,7 +2373,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TAJ }
@@ -2382,12 +2382,12 @@ country_event = {
 		add_accepted_culture = tajik
 	}
 }
-country_event = { 
+country_event = {
 	id = 550033
 	title = EVTNAME550033
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2415,7 +2415,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = PNJ }
@@ -2424,12 +2424,12 @@ country_event = {
 		add_accepted_culture = punjabi
 	}
 }
-country_event = { 
+country_event = {
 	id = 550034
 	title = EVTNAME550034
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2457,7 +2457,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = ASM }
@@ -2466,12 +2466,12 @@ country_event = {
 		add_accepted_culture = assamese
 	}
 }
-country_event = { 
+country_event = {
 	id = 550035
 	title = EVTNAME550035
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2499,7 +2499,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = SHA }
@@ -2508,12 +2508,12 @@ country_event = {
 		add_accepted_culture = shan
 	}
 }
-country_event = { 
+country_event = {
 	id = 550036
 	title = EVTNAME550036
 	desc = EVTDESC5500xxx
 
-	trigger = { 
+	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
@@ -2541,7 +2541,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA550xxx
 		prestige = 10
 		any_owned = { add_core = TOK }

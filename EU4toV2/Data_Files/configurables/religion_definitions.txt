@@ -57,7 +57,7 @@ christian = {
 		icon = 3
 		color = { 0.7 0.5 0 }
 	}
-	
+
 	pre_schism = {
 		icon = 55
 		color = { 0.7 0.5 0 }
@@ -83,7 +83,7 @@ christian = {
 		icon = 35
 		color = {0.9 0.1 0.1}
 	}
-	
+
 	coptic = {
 		icon = 4
 		color = { 0 0.5 0.7 }

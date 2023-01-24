@@ -7,7 +7,7 @@ party = {
 	end_date = 2000.1.1
 
 	ideology = reactionary
-	
+
 	economic_policy = state_capitalism
 	trade_policy = protectionism
 	religious_policy = moralism
@@ -101,44 +101,44 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" "Ibrahim Hananu" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" "Ibrahim Hananu" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 	ironclad = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 	manowar = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 	cruiser = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 	frigate = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 	monitor = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra 
-		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"	
-		
+		Syriana "Salah Al-Din" "Sultan Pasha al-Atrash" "al-Hattin" "al-Hirasa" "Tawfiq Bay" Sham Halab Lattakia Homs Hama Palmyra
+		"Mu'aviyye" Tartus "Faisal I" "Sayf al-Sultan" Zainab "Minat al-Baida" Baniyas Kadisia "al-Assad" Karrusa "al-Abyad" "Al-Hakim Bi-Amrih"
+
 	}
 }

@@ -41,7 +41,7 @@ political_decisions = {
 					is_secondary_power = yes
 				}
 				is_greater_power = yes
-			}			
+			}
 			war = no
 			prestige = 85
 			has_country_flag = emperor_hre
@@ -69,7 +69,7 @@ political_decisions = {
 				}
 			}
 		}
-			
+
 		effect = {
 			change_tag = HLR
 			clr_country_flag = emperor_hre

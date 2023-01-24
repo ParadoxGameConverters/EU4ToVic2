@@ -5,19 +5,19 @@ country_event = {
 	desc = EVTHELLODESC
 	picture = observer
 	major = yes
-	
+
 	trigger = {
 		ai = no
 		NOT = { has_global_flag = hello_player }
 	}
-	
+
 	mean_time_to_happen = { months = 0.0001 }
-	
+
 	option = {
 		name = EVTHELLOPLAY
 		set_global_flag = hello_player
 	}
-	
+
 	option = {
 		name = EVTHELLOOBS
 		set_global_flag = hello_player
@@ -52,12 +52,12 @@ country_event = {
 	}
 }
 # At war with a landless country
-country_event = { 
+country_event = {
 	id = 2500020
 	title = NOWARTITLE
 	desc = NOWARDESC
 
-	trigger = { 
+	trigger = {
 		OR = {
 			exists = no
 			tag = REB #God knows why
@@ -67,7 +67,7 @@ country_event = {
 
 	mean_time_to_happen = { months = 0.00001 } #F--king immediately
 
-	option = { 
+	option = {
 		name = NOWAROPTA
 		neutrality = yes
 		any_country = {
@@ -91,7 +91,7 @@ province_event = {
 	title = EVTNAME000000
 	desc = EVTDESC000000
 	picture = "Demonstration"
-	
+
 	trigger = {
 		any_pop = {
 			OR = {
@@ -100,11 +100,11 @@ province_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 0.001
 	}
-	
+
 	option = {
 		name = EVTOPTA000000
 		any_pop = {
@@ -118,18 +118,18 @@ country_event = {
 	title = EVTNAME000001
 	desc = EVTDESC000001
 	picture = "Demonstration"
-	
+
 	trigger = {
 		OR = {
 			accepted_culture = noculture
 			accepted_culture = dummy
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 0.001
 	}
-	
+
 	option = {
 		name = EVTOPTA000001
 		remove_accepted_culture = noculture
@@ -14453,11 +14453,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_catholic }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = STRING_OK
 		add_accepted_culture = zzz_religion_catholic
@@ -14478,11 +14478,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_cathar }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_cathar
@@ -14503,11 +14503,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_fraticelli }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_fraticelli
@@ -14528,11 +14528,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_waldensian }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_waldensian
@@ -14553,11 +14553,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_lollard }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_lollard
@@ -14578,11 +14578,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_catholic_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_catholic_heresy
@@ -14603,11 +14603,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_arian }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_arian
@@ -14628,11 +14628,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_protestant }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_protestant
@@ -14653,11 +14653,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_protestant_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_protestant_heresy
@@ -14678,11 +14678,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_mormon }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_mormon
@@ -14703,11 +14703,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_orthodox }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_orthodox
@@ -14728,11 +14728,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_pre_schism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_pre_schism
@@ -14753,11 +14753,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_bogomilist }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_bogomilist
@@ -14778,11 +14778,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_monothelite }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_monothelite
@@ -14803,11 +14803,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_iconoclast }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_iconoclast
@@ -14828,11 +14828,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_paulician }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_paulician
@@ -14853,11 +14853,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_orthodox_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_orthodox_heresy
@@ -14878,11 +14878,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_coptic }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_coptic
@@ -14903,11 +14903,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_monophysite }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_monophysite
@@ -14928,11 +14928,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_nestorian }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_nestorian
@@ -14953,11 +14953,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_messalian }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_messalian
@@ -14978,11 +14978,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_hussite }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_hussite
@@ -15003,11 +15003,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_sunni }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_sunni
@@ -15028,11 +15028,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_zikri }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_zikri
@@ -15053,11 +15053,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_yazidi }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_yazidi
@@ -15078,11 +15078,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_sunni_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_sunni_heresy
@@ -15103,11 +15103,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_shiite }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_shiite
@@ -15128,11 +15128,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_hurufi }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_hurufi
@@ -15153,11 +15153,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_druze }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_druze
@@ -15178,11 +15178,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_shiite_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_shiite_heresy
@@ -15203,11 +15203,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_ibadi }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_ibadi
@@ -15228,11 +15228,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_kharijite }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_kharijite
@@ -15253,11 +15253,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_jewish }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_jewish
@@ -15278,11 +15278,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_samaritan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_samaritan
@@ -15303,11 +15303,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_karaite }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_karaite
@@ -15328,11 +15328,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_jewish_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_jewish_heresy
@@ -15353,11 +15353,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_mahayana }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_mahayana
@@ -15378,11 +15378,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_gelugpa }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_gelugpa
@@ -15403,11 +15403,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_theravada }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_theravada
@@ -15428,11 +15428,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_hindu }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_hindu
@@ -15453,11 +15453,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_shinto }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_shinto
@@ -15478,11 +15478,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_sikh }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_sikh
@@ -15503,11 +15503,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_jain }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_jain
@@ -15528,11 +15528,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_animist }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_animist
@@ -15553,11 +15553,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_norse_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_norse_pagan_reformed
@@ -15578,11 +15578,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_tengri_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_tengri_pagan_reformed
@@ -15603,11 +15603,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_baltic_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_baltic_pagan_reformed
@@ -15628,11 +15628,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_finnish_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_finnish_pagan_reformed
@@ -15653,11 +15653,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_aztec_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_aztec_reformed
@@ -15678,11 +15678,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_slavic_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_slavic_pagan_reformed
@@ -15703,11 +15703,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_west_african_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_west_african_pagan_reformed
@@ -15728,11 +15728,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_zun_pagan_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_zun_pagan_reformed
@@ -15753,11 +15753,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_hellenic_pagan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_hellenic_pagan
@@ -15778,11 +15778,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_inca_reformed }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_inca_reformed
@@ -15803,11 +15803,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_shamanism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_shamanism
@@ -15828,11 +15828,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_totemism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_totemism
@@ -15853,11 +15853,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_mayan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_mayan
@@ -15878,11 +15878,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_nahuatl }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_nahuatl
@@ -15903,11 +15903,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_inti }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_inti
@@ -15928,11 +15928,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_kemetic }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_kemetic
@@ -15953,11 +15953,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_arab_pagan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_arab_pagan
@@ -15978,11 +15978,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_druidist }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_druidist
@@ -16003,11 +16003,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_tibet_bon }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_tibet_bon
@@ -16028,11 +16028,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_muism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_muism
@@ -16053,11 +16053,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_zoroastrian }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_zoroastrian
@@ -16078,11 +16078,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_manichean }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_manichean
@@ -16103,11 +16103,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_mazdaki }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_mazdaki
@@ -16128,11 +16128,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_zoroastrian_heresy }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_zoroastrian_heresy
@@ -16153,11 +16153,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_gnostic }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_gnostic
@@ -16178,11 +16178,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_adamites }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_adamites
@@ -16203,11 +16203,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_german_pagan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_german_pagan
@@ -16228,11 +16228,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_cybelene }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_cybelene
@@ -16253,11 +16253,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_zamolxism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_zamolxism
@@ -16278,11 +16278,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_mithraism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_mithraism
@@ -16303,11 +16303,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_hetanism }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_hetanism
@@ -16328,11 +16328,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_iberian_pagan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_iberian_pagan
@@ -16353,11 +16353,11 @@ country_event = {
 		NOT = { accepted_culture = zzz_religion_scythian_pagan }
 		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELIGI
 		add_accepted_culture = zzz_religion_scythian_pagan
@@ -16380,11 +16380,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16406,11 +16406,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16432,11 +16432,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16458,11 +16458,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16484,11 +16484,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16510,11 +16510,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16536,11 +16536,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16562,11 +16562,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16588,11 +16588,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16614,11 +16614,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16640,11 +16640,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16666,11 +16666,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16692,11 +16692,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16718,11 +16718,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16744,11 +16744,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16770,11 +16770,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16796,11 +16796,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16822,11 +16822,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16848,11 +16848,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16874,11 +16874,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16900,11 +16900,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16926,11 +16926,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16952,11 +16952,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -16978,11 +16978,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17004,11 +17004,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17030,11 +17030,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17056,11 +17056,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17082,11 +17082,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17108,11 +17108,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17134,11 +17134,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17160,11 +17160,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17186,11 +17186,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17212,11 +17212,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17238,11 +17238,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17264,11 +17264,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17290,11 +17290,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17316,11 +17316,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17342,11 +17342,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17368,11 +17368,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17394,11 +17394,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17420,11 +17420,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17446,11 +17446,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17472,11 +17472,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17498,11 +17498,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17524,11 +17524,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17550,11 +17550,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17576,11 +17576,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17602,11 +17602,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17628,11 +17628,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17654,11 +17654,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17680,11 +17680,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17706,11 +17706,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17732,11 +17732,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17758,11 +17758,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17784,11 +17784,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17810,11 +17810,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17836,11 +17836,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17862,11 +17862,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17888,11 +17888,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17914,11 +17914,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17940,11 +17940,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17966,11 +17966,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -17992,11 +17992,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18018,11 +18018,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18044,11 +18044,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18070,11 +18070,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18096,11 +18096,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18122,11 +18122,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18148,11 +18148,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18174,11 +18174,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18200,11 +18200,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18226,11 +18226,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18252,11 +18252,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18278,11 +18278,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18304,11 +18304,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18330,11 +18330,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18356,11 +18356,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18382,11 +18382,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18408,11 +18408,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18434,11 +18434,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion
@@ -18460,11 +18460,11 @@ country_event = {
 		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
 		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
 	}
- 
+
 	mean_time_to_happen = {
 		months = 0.1
 	}
- 
+
 	option = {
 		name = EVTOPTARELNEW
 		remove_accepted_culture = zzz_religion_noreligion

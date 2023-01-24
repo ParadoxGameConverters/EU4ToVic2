@@ -1,6 +1,6 @@
-#Taiwan Region (2980000) 
-#under the rule of China in 1836  
-#Taipei (1452000/363000 POPS) #now part of Taiwan   
+#Taiwan Region (2980000)
+#under the rule of China in 1836
+#Taipei (1452000/363000 POPS) #now part of Taiwan
 1485 = {
 	aristocrats = {
 		culture = nanfaren
@@ -98,7 +98,7 @@
 		size = 50
 	}
 }
-#Tainan (1528000/382000 POPS) #now part of Taiwan  
+#Tainan (1528000/382000 POPS) #now part of Taiwan
 2562 = {
 	aristocrats = {
 		culture = nanfaren

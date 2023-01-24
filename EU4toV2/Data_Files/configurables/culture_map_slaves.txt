@@ -2,10 +2,10 @@
 # It asks every culture, "If a pop of this culture and this religion, possibly in these locations, owned a slave, what would be that slave's culture?"
 # Answer is - it depends. Europeans would probably have african pops speaking their language, for example afro_slovak.
 # Other cultures would likely enslave their own people so amazonian would own other amazonians - thus no change in slave culture.
-# 
-# If a culture is not listed here, then slaves owned by that culture will be african_minor, UNLESS the province where this happens is in 
+#
+# If a culture is not listed here, then slaves owned by that culture will be african_minor, UNLESS the province where this happens is in
 # africa, oceania or asia, where slaves will be of the same culture as they are.
-# 
+#
 # Usage:
 # link = { vic2 = v2culture eu4 = eu4culture region = eu4region provinceid = eu4provinceID owner = eu4tag }
 # multiples of all except vic2 are allowed.

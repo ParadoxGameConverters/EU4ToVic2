@@ -118,11 +118,11 @@ unit_names = {
 	monitor = {
 		Atahualpa "Diego de Almagro" "Francisco Pizarro" "Hernando de Soto" Huáscar "Huayna Cápac" "Manco Cápac" Pachacuti "Túpac Amaru" "Túpac Inca"
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		Caupolican Chalaco Chimbote Colón Constitución "Contraalmirante Haza" "General Lerzundi" "Guardian Ríos" Independencia Iquitos
 		Limeña Oroya Perú Pucallpa "San Martín" "Santa Fe" "Santa Rosa" Tacna Talismán Vilcanota
 	}
-	steam_transport = { 
+	steam_transport = {
 		Caupolican Chalaco Chimbote Colón Constitución "Contraalmirante Haza" "General Lerzundi" "Guardian Ríos" Independencia Iquitos
 		Limeña Oroya Perú Pucallpa "San Martín" "Santa Fe" "Santa Rosa" Tacna Talismán Vilcanota
 	}

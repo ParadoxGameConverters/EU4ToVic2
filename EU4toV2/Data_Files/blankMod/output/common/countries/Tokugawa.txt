@@ -105,7 +105,7 @@ unit_names = {
 		}
 	ironclad = {
 	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"
-		
+
 	}
 	manowar = {
 	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"
@@ -115,18 +115,18 @@ unit_names = {
 	}
 	frigate = {
 	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"
-		
+
 	}
 	monitor = {
-	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"		
+	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"		
+	Tokugawa "Enomoto Takeaki" Osaka Ryo Hakodate Goryokaku "Otori Keisuke" "Matsudaira Taro" "Arai Ikunosuke" "Hijikata Toshizo" "Takenaka Shigekata" "Tokugawa Kamenosuke" "Kamenosuke" Shinsegumi "Yoshinobu"
 	}
 }

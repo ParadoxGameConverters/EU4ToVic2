@@ -1,11 +1,11 @@
-#Banat-Bacska Region (760000) #See Romania.txt and Croatia.txt for balance of region 
-#under the rule of Austria in 1836  
+#Banat-Bacska Region (760000) #See Romania.txt and Croatia.txt for balance of region
+#under the rule of Austria in 1836
 #Mitrovica (108000/27000 POPS) #part of Serbia today
 791 = {
 	clergymen = {
 		culture = serb
 		religion = orthodox
-		size = 150 
+		size = 150
 	}
 
 	artisans = {
@@ -17,7 +17,7 @@
 	soldiers = {
 		culture = serb
 		religion = orthodox
-		size = 250 
+		size = 250
 	}
 
 	farmers = {
@@ -29,7 +29,7 @@
 	clergymen = {
 		culture = croat
 		religion = catholic
-		size = 75  
+		size = 75
 	}
 
 	artisans = {
@@ -41,25 +41,25 @@
 	soldiers = {
 		culture = croat
 		religion = catholic
-		size = 50 
+		size = 50
 	}
 
 	farmers = {
 		culture = croat
 		religion = catholic
-		size = 3675  
+		size = 3675
 	}
 
 	aristocrats = {
 		culture = south_german
 		religion = catholic
-		size = 300  
+		size = 300
 	}
 
 	clergymen = {
 		culture = south_german
 		religion = catholic
-		size = 50   
+		size = 50
 	}
 
 	artisans = {
@@ -71,13 +71,13 @@
 	soldiers = {
 		culture = south_german
 		religion = catholic
-		size = 75     
+		size = 75
 	}
 
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 5225  
+		size = 5225
 	}
 }
 #Pancevo (268000/67000 POPS) #part of Serbia today
@@ -97,7 +97,7 @@
 	soldiers = {
 		culture = serb
 		religion = orthodox
-		size = 300 
+		size = 300
 	}
 
 	farmers = {
@@ -109,13 +109,13 @@
 	aristocrats = {
 		culture = hungarian
 		religion = catholic
-		size = 600  
+		size = 600
 	}
 
 	clergymen = {
 		culture = hungarian
 		religion = catholic
-		size = 100  
+		size = 100
 	}
 
 	artisans = {
@@ -127,25 +127,25 @@
 	soldiers = {
 		culture = hungarian
 		religion = catholic
-		size = 100  
+		size = 100
 	}
 
 	farmers = {
 		culture = hungarian
 		religion = catholic
-		size = 8700 
+		size = 8700
 	}
 
 	aristocrats = {
 		culture = south_german
 		religion = catholic
-		size = 1100  
+		size = 1100
 	}
 
 	clergymen = {
 		culture = south_german
 		religion = catholic
-		size = 200   
+		size = 200
 	}
 
 	artisans = {
@@ -157,19 +157,19 @@
 	soldiers = {
 		culture = south_german
 		religion = catholic
-		size = 200     
+		size = 200
 	}
 
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 17600  
+		size = 17600
 	}
 
 	clergymen = {
 		culture = romanian
 		religion = orthodox
-		size = 100 
+		size = 100
 	}
 
 	artisans = {
@@ -181,13 +181,13 @@
 	soldiers = {
 		culture = romanian
 		religion = orthodox
-		size = 100 
+		size = 100
 	}
 
 	farmers = {
 		culture = romanian
 		religion = orthodox
-		size = 10300 
+		size = 10300
 	}
 }
 #Novi Sad (384000/96000 POPS) #part of Serbia today
@@ -195,7 +195,7 @@
 	officers = {
 		culture = serb
 		religion = orthodox
-		size = 75 
+		size = 75
 	}
 
 	clergymen = {
@@ -213,25 +213,25 @@
 	soldiers = {
 		culture = serb
 		religion = orthodox
-		size = 300 
+		size = 300
 	}
 
 	farmers = {
 		culture = serb
 		religion = orthodox
-		size = 26175 
+		size = 26175
 	}
 
 	aristocrats = {
 		culture = hungarian
 		religion = catholic
-		size = 1400  
+		size = 1400
 	}
 
 	clergymen = {
 		culture = hungarian
 		religion = catholic
-		size = 300  
+		size = 300
 	}
 
 	artisans = {
@@ -243,25 +243,25 @@
 	soldiers = {
 		culture = hungarian
 		religion = catholic
-		size = 300  
+		size = 300
 	}
 
 	farmers = {
 		culture = hungarian
 		religion = catholic
-		size = 26500 
+		size = 26500
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = catholic
-		size = 1500 
+		size = 1500
 	}
 
 	clergymen = {
 		culture = croat
 		religion = catholic
-		size = 75  
+		size = 75
 	}
 
 	artisans = {
@@ -273,19 +273,19 @@
 	soldiers = {
 		culture = croat
 		religion = catholic
-		size = 50 
+		size = 50
 	}
 
 	farmers = {
 		culture = croat
 		religion = catholic
-		size = 4625  
+		size = 4625
 	}
 
 	clergymen = {
 		culture = slovak
 		religion = catholic
-		size = 75 
+		size = 75
 	}
 
 	artisans = {
@@ -297,19 +297,19 @@
 	soldiers = {
 		culture = slovak
 		religion = catholic
-		size = 100 
+		size = 100
 	}
 
 	farmers = {
 		culture = slovak
 		religion = catholic
-		size = 9375 
+		size = 9375
 	}
 
 	aristocrats = {
 		culture = south_german
 		religion = catholic
-		size = 1100  
+		size = 1100
 	}
 
 	clergymen = {
@@ -327,13 +327,13 @@
 	soldiers = {
 		culture = south_german
 		religion = catholic
-		size = 250     
+		size = 250
 	}
 
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 20375 
+		size = 20375
 	}
 }
 #Serbia Region (1288000)
@@ -375,7 +375,7 @@
 		religion = orthodox
 		size = 75625
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = orthodox
@@ -630,7 +630,7 @@
 		religion = orthodox
 		size = 22900
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = sunni
@@ -794,7 +794,7 @@
 		religion = orthodox
 		size = 1825
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = sunni

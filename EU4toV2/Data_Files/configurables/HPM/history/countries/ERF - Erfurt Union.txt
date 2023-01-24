@@ -31,7 +31,7 @@ trade_unions=all_trade_unions
 political_parties=gerrymandering
 
 ruling_party = NGF_conservative
-upper_house = 
+upper_house =
 {
 	fascist = 0
 	liberal = 25

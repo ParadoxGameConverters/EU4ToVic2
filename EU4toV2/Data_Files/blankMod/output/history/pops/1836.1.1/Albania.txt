@@ -230,9 +230,9 @@
 		size = 3125
 	}
 }
-#Epirus Region (168000) #see Greece.txt for balance of region 
+#Epirus Region (168000) #see Greece.txt for balance of region
 #under the rule of Ottoman Empire in 1836
-#Gjirokaster (168000/42000 POPS) #now part of Albania   
+#Gjirokaster (168000/42000 POPS) #now part of Albania
 853 = {
 	aristocrats = {
 		culture = albanian

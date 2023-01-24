@@ -188,23 +188,23 @@ unit_names = {
 	}
 	cruiser = {
 			Zaragoza Altamira "San Fernando" "Río Bravo" "Los Ramones" "Loma Alta"
-			"El Lobo" Candela Villadama "Santo Domingo" Tuxpan 
+			"El Lobo" Candela Villadama "Santo Domingo" Tuxpan
 	}
 	frigate = {
 			California Chihuahua Durango Aldabaran Veracrúz Tlaxcala Jalisco Camotlán
-			"El Tordo" Repulsión Valor Iguala Anáhuac 
+			"El Tordo" Repulsión Valor Iguala Anáhuac
 	}
 	monitor = {
 			Navojoa "La Paz" Colima Madera Coatzacoalcos Chetumal Campeche "Salina Cruz"
 			Navolato "Santa Rosalia" Constitución Mexicali Democráta "Nicolás Bravo"
 	}
-	clipper_transport = { 
-			
+	clipper_transport = {
+
 	}
-	steam_transport = { 
+	steam_transport = {
 			}
 	commerce_raider = {
 			Olmec Teotihaucan Nahua Azcapotzalco Usumacinta Corralero "Rio Grande"
-			Tiltepec Pastoria Ayutla Tehuantepec 
+			Tiltepec Pastoria Ayutla Tehuantepec
 	}
 }

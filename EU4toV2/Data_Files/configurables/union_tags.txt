@@ -1,6 +1,6 @@
 # These are VIC2 union tags that automatically accept all cultures that regard the tag as "union tag", defined in unions.txt or elsewhere.
 
-union_tags = { 
+union_tags = {
 	GER # Germany
 	HLR # The Holy Roman Empire
 	SCA # Scandinavia
@@ -9,7 +9,7 @@ union_tags = {
 	YUG # Yugoslavia
 	ROM # Romania
 	PLC # Polish-Lithuanian Commonwealth
-	CZH # Czechoslovakia 
+	CZH # Czechoslovakia
 	UBD # United Baltic Nationa
 	ARA # Arabia
 	HND # India

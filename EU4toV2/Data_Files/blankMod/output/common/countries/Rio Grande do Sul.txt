@@ -127,11 +127,11 @@ unit_names = {
 	monitor = {
 		"Colonia del Sacramento" "Fray Bentos" Marín Melo Mercedes Minas "Paso del Palmar" "Rincón del Bonete" "Río de la Plata" Trinidad
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		"Barón de Rio Branco" Beatriz Canelones "Cerro Largo" Durazno Flores Florida Inmaculada Lavallejo Maldonado
 		María Rápido Rocha Salto "San José" Soriano Tacarembó "Treinta y Tres" Vanguardia Vigoroso
 	}
-	steam_transport = { 
+	steam_transport = {
 		"Barón de Rio Branco" Beatriz Canelones "Cerro Largo" Durazno Flores Florida Inmaculada Lavallejo Maldonado
 		María Rápido Rocha Salto "San José" Soriano Tacarembó "Treinta y Tres" Vanguardia Vigoroso
 	}

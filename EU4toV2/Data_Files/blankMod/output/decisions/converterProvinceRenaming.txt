@@ -13,7 +13,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -38,7 +38,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -66,7 +66,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -95,7 +95,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -120,7 +120,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -148,7 +148,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -173,7 +173,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -202,7 +202,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -234,7 +234,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -259,7 +259,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -288,7 +288,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -313,7 +313,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 70_changed }	
+			NOT = { has_global_flag = 70_changed }
 		}
 		allow = {
 			70 = {
@@ -347,7 +347,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -375,7 +375,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -406,7 +406,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -438,7 +438,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -466,7 +466,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -497,7 +497,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -525,7 +525,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -557,7 +557,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -592,7 +592,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -620,7 +620,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -652,7 +652,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -680,7 +680,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 139_changed }	
+			NOT = { has_global_flag = 139_changed }
 		}
 		allow = {
 			139 = {
@@ -716,7 +716,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -744,7 +744,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -775,7 +775,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -807,7 +807,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -835,7 +835,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -866,7 +866,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -894,7 +894,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -926,7 +926,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -961,7 +961,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -989,7 +989,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -1021,7 +1021,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -1049,7 +1049,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 232_changed }	
+			NOT = { has_global_flag = 232_changed }
 		}
 		allow = {
 			232 = {
@@ -1085,7 +1085,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1110,7 +1110,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1138,7 +1138,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1167,7 +1167,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1192,7 +1192,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1220,7 +1220,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1245,7 +1245,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1274,7 +1274,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1306,7 +1306,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1331,7 +1331,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1360,7 +1360,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1385,7 +1385,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 244_changed }	
+			NOT = { has_global_flag = 244_changed }
 		}
 		allow = {
 			244 = {
@@ -1418,7 +1418,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1443,7 +1443,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1471,7 +1471,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1500,7 +1500,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1525,7 +1525,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1553,7 +1553,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1578,7 +1578,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1607,7 +1607,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1639,7 +1639,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1664,7 +1664,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1693,7 +1693,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1718,7 +1718,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2510_changed }	
+			NOT = { has_global_flag = 2510_changed }
 		}
 		allow = {
 			2510 = {
@@ -1751,7 +1751,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1776,7 +1776,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1804,7 +1804,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1833,7 +1833,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1858,7 +1858,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1886,7 +1886,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1911,7 +1911,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1940,7 +1940,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1972,7 +1972,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -1997,7 +1997,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -2026,7 +2026,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -2051,7 +2051,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 220_changed }	
+			NOT = { has_global_flag = 220_changed }
 		}
 		allow = {
 			220 = {
@@ -2084,7 +2084,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2109,7 +2109,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2137,7 +2137,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2166,7 +2166,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2191,7 +2191,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2219,7 +2219,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2244,7 +2244,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2273,7 +2273,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2305,7 +2305,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2330,7 +2330,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2359,7 +2359,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2384,7 +2384,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 89_changed }	
+			NOT = { has_global_flag = 89_changed }
 		}
 		allow = {
 			89 = {
@@ -2417,7 +2417,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2442,7 +2442,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2470,7 +2470,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2499,7 +2499,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2524,7 +2524,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2552,7 +2552,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2577,7 +2577,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2606,7 +2606,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2638,7 +2638,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2663,7 +2663,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2692,7 +2692,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2717,7 +2717,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 84_changed }	
+			NOT = { has_global_flag = 84_changed }
 		}
 		allow = {
 			84 = {
@@ -2749,7 +2749,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2131_changed }	
+			NOT = { has_global_flag = 2131_changed }
 		}
 		allow = {
 			2131 = {
@@ -2777,7 +2777,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2131_changed }	
+			NOT = { has_global_flag = 2131_changed }
 		}
 		allow = {
 			2131 = {
@@ -2802,7 +2802,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2131_changed }	
+			NOT = { has_global_flag = 2131_changed }
 		}
 		allow = {
 			2131 = {
@@ -2835,7 +2835,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -2863,7 +2863,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -2894,7 +2894,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -2926,7 +2926,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -2954,7 +2954,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -2985,7 +2985,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3013,7 +3013,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3045,7 +3045,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3080,7 +3080,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3108,7 +3108,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3140,7 +3140,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3168,7 +3168,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2447_changed }	
+			NOT = { has_global_flag = 2447_changed }
 		}
 		allow = {
 			2447 = {
@@ -3204,7 +3204,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3232,7 +3232,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3263,7 +3263,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3295,7 +3295,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3323,7 +3323,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3354,7 +3354,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3382,7 +3382,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3414,7 +3414,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3449,7 +3449,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3477,7 +3477,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3509,7 +3509,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3537,7 +3537,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2450_changed }	
+			NOT = { has_global_flag = 2450_changed }
 		}
 		allow = {
 			2450 = {
@@ -3573,7 +3573,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3601,7 +3601,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3632,7 +3632,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3664,7 +3664,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3692,7 +3692,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3723,7 +3723,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3751,7 +3751,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3783,7 +3783,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3818,7 +3818,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3846,7 +3846,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3878,7 +3878,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3906,7 +3906,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2348_changed }	
+			NOT = { has_global_flag = 2348_changed }
 		}
 		allow = {
 			2348 = {
@@ -3942,7 +3942,7 @@ political_decisions = {
 			}
 			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -3970,7 +3970,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4001,7 +4001,7 @@ political_decisions = {
 				is_culture_group = baltic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4033,7 +4033,7 @@ political_decisions = {
 				is_culture_group = american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4061,7 +4061,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4092,7 +4092,7 @@ political_decisions = {
 				is_culture_group = latin_american_cultures
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4120,7 +4120,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4152,7 +4152,7 @@ political_decisions = {
 				is_culture_group = iranian_turanian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4187,7 +4187,7 @@ political_decisions = {
 				is_culture_group = east_slavic
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4215,7 +4215,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4247,7 +4247,7 @@ political_decisions = {
 				is_culture_group = east_asian
 			}
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4275,7 +4275,7 @@ political_decisions = {
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 		}
 		allow = {
 			2214 = {
@@ -4303,7 +4303,7 @@ political_decisions = {
 		potential = {
 			tag = HAI
 			NOT = { year = 1837 }
-			NOT = { has_global_flag = 2214_changed }	
+			NOT = { has_global_flag = 2214_changed }
 			has_global_flag = DOM_independence
 		}
 		allow = {
@@ -4327,7 +4327,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 # Korean province renamings
 # Currently for Japan and China
 japanese_names_in_korea = {

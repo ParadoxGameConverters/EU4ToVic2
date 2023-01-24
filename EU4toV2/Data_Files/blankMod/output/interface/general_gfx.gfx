@@ -17,7 +17,7 @@ spriteTypes = {
 		noOfFrames = 20
 		loadType = "INGAME"
 	}
-	
+
 	spriteType = {
 		name = "GFX_checkbox_default"
 		textureFile = "gfx\\interface\\checkbox_default.tga"
@@ -266,7 +266,7 @@ spriteTypes = {
 		name = "GFX_sortbutton_literacy"
 		texturefile = "gfx\\interface\\sortbutton_literacy.dds"
 	}
-	
+
 	spriteType = {
 		name = "GFX_main_close_button"
 		texturefile = "gfx\\interface\\main_close_button.dds"
@@ -300,7 +300,7 @@ spriteTypes = {
 		texturefile = "gfx\\interface\\progress_overlay_16_64.dds"
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_popup_label_bg"
 		texturefile = "gfx\\interface\\popup_label_bg.tga"
@@ -309,19 +309,19 @@ spriteTypes = {
 		name = "GFX_diplo_default_tile_bg"
 		texturefile = "gfx\\interface\\diplo_default_tile_bg.tga"
 	}
-	
+
 	corneredTileSpriteType = {
 		name = "SandboxFloaterBackground"
-		size= {x=190 y=310 }		
+		size= {x=190 y=310 }
 		textureFile ="gfx\\interface\\tiles_dialog_type2.tga"
 		borderSize = { x=94 y=94 }
 	}
-	
+
 	corneredTileSpriteType = {
 		name = "diplo_dialog"
-		size= {x=190 y=310 }		
+		size= {x=190 y=310 }
 		textureFile ="gfx\\interface\\tiles_dialog_diplo.tga"
 		borderSize = { x=94 y=94 }
 	}
-	
+
 }

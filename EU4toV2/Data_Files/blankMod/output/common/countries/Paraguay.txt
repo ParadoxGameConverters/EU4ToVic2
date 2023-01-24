@@ -146,11 +146,11 @@ unit_names = {
 	monitor = {
 		"Carlos Antonio López" Guaraní Jopará Nivaclé Paraná Pilcomayo "Río Paraguay" "Salto de Guairá" "San Francisco Javier" "San Ignacio de Loyola"
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		Angostura "Estrella de los Mares" Gigante Intrépida Júpiter Libre Marte Neptuno Plutón Reducción
 		"San Honorato" "San Lucas" "San Marcos" "San Mateo" "Santa Isabel" "Santa Mónica" Saturno Sirena Tetis Veloz
 	}
-	steam_transport = { 
+	steam_transport = {
 		Angostura "Estrella de los Mares" Gigante Intrépida Júpiter Libre Marte Neptuno Plutón Reducción
 		"San Honorato" "San Lucas" "San Marcos" "San Mateo" "Santa Isabel" "Santa Mónica" Saturno Sirena Tetis Veloz
 	}

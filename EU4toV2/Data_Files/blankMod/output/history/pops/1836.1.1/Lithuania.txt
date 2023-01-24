@@ -1,5 +1,5 @@
-#Lithuania Region (1272000) 
-#under the rule of Russia in 1836  
+#Lithuania Region (1272000)
+#under the rule of Russia in 1836
 #Vilnius (168000/42000 POPS)
 360 = {
 	clergymen = {
@@ -524,19 +524,19 @@
 
 }
 #East Prussia Region (172000) #see Poland.txt and Lithuania.txt for balance of region
-#under the rule of Prussia in 1836  
-#Memel (172000/43000 POPS) #now part of Lithuania 
+#under the rule of Prussia in 1836
+#Memel (172000/43000 POPS) #now part of Lithuania
 698 = {
 	aristocrats = {
 		culture = north_german
 		religion = protestant
-		size = 750 
+		size = 750
 	}
 
 	clergymen = {
 		culture = north_german
 		religion = protestant
-		size = 200   
+		size = 200
 	}
 
 	artisans = {
@@ -548,19 +548,19 @@
 	soldiers = {
 		culture = north_german
 		religion = protestant
-		size = 1100  
+		size = 1100
 	}
 
 	farmers = {
 		culture = north_german
 		religion = protestant
-		size = 19500 
+		size = 19500
 	}
 
 	clergymen = {
 		culture = north_german
 		religion = jewish
-		size = 5  
+		size = 5
 	}
 
 	artisans = {
@@ -572,7 +572,7 @@
 	clergymen = {
 		culture = lithuanian
 		religion = protestant
-		size = 150 
+		size = 150
 	}
 
 	artisans = {
@@ -584,7 +584,7 @@
 	soldiers = {
 		culture = lithuanian
 		religion = protestant
-		size = 1100 
+		size = 1100
 	}
 
 	farmers = {

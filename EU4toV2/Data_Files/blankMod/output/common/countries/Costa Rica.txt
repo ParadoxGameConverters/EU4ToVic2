@@ -121,7 +121,7 @@ unit_names = {
 		Arenal Bebedero Diquís Jiménez Reventazón "San Juan" Sixaola Tárcoles Tempisque Tortuguero
 	}
 	manowar = {
-		Audaz Intrépido Libertad "San Antonio" "San Fernando" "San Juan" "Santa Isabel" "Santa Marta" "Santa Mónica" Vigilante 
+		Audaz Intrépido Libertad "San Antonio" "San Fernando" "San Juan" "Santa Isabel" "Santa Marta" "Santa Mónica" Vigilante
 	}
 	cruiser = {
 		Cacique "Castillo del Oro" Chamán Chorotega Constitución "Cristóbal Colón" Independencia "Puerto Limón" "Quince de Septiembre" "Vasco Núñez de Balboa"

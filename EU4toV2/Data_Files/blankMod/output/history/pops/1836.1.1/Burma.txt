@@ -1199,7 +1199,7 @@
 		size = 18825
 	}
 
-	clergymen = { 
+	clergymen = {
 		culture = asian_minor #Chin
 		religion = animist
 		size = 25

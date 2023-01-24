@@ -271,14 +271,14 @@
 		religion = animist
 		size=200
 	}
-	
+
 	aristocrats=
 	{
 		culture = guajiro
 		religion = animist
 		size=200
 	}
-	
+
 	aristocrats=
 	{
 		culture = chibchan

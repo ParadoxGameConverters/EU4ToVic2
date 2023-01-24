@@ -7,7 +7,7 @@
 		religion = animist
 		size = 20000
 	}
-	
+
 	farmers = {
 		culture = african_minor
 		religion = sunni

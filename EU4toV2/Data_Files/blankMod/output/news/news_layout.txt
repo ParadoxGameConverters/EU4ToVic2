@@ -112,14 +112,14 @@ style =
 	title_image =
 	{
 		case =	{ # Observer
-			trigger = { 
+			trigger = {
 				tag = AAA
 			}
 			picture = "news/observer_news.dds"
 		}
 		#Weird stuff
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					or = {
 						is_culture_group = non_human
@@ -131,7 +131,7 @@ style =
 
 						sphere_owner = {
 							or = {
-								is_culture_group = non_human 
+								is_culture_group = non_human
 								is_culture_group = anti_human
 							}
 						}
@@ -142,21 +142,21 @@ style =
 
 						overlord = {
 							or = {
-								is_culture_group = non_human 
+								is_culture_group = non_human
 								is_culture_group = anti_human
 							}
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/not_human_newspaper.dds"
 		}
 		# FRA ###################
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = french 
+						is_culture_group = french
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -164,7 +164,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = french 
+							is_culture_group = french
 							ruling_party_ideology = communist
 						}
 					}
@@ -173,20 +173,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = french 
+							is_culture_group = french
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/FRA_communist_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = french 
+						is_culture_group = french
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -194,7 +194,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = french 
+							is_culture_group = french
 							ruling_party_ideology = fascist
 						}
 					}
@@ -203,20 +203,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = french 
+							is_culture_group = french
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/FRA_facist_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = french 
+						is_culture_group = french
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -224,7 +224,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = french 
+							is_culture_group = french
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -233,27 +233,27 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = french 
+							is_culture_group = french
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/FRA_reactionary_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = french 
+						is_culture_group = french
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = french 
+							is_culture_group = french
 						}
 					}
 					and = {
@@ -261,9 +261,9 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = french 
+							is_culture_group = french
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/FRA_default_newspaper_title.dds"
@@ -271,10 +271,10 @@ style =
 
 		# ENG ###################
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = british 
+						is_culture_group = british
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -282,7 +282,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = communist
 						}
 					}
@@ -291,20 +291,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GBR_communist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = british 
+						is_culture_group = british
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -312,7 +312,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = fascist
 						}
 					}
@@ -321,20 +321,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GBR_facist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = british 
+						is_culture_group = british
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -342,7 +342,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -351,21 +351,21 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GBR_reactionary_newspaper_title.dds"
 		}
-		
-		
+
+
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = british 
+						is_culture_group = british
 						ruling_party_ideology = anarcho_liberal
 					}
 					and = {
@@ -373,7 +373,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = anarcho_liberal
 						}
 					}
@@ -382,20 +382,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = british 
+							is_culture_group = british
 							ruling_party_ideology = anarcho_liberal
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GBR_anarchoLiberal_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = british 
+						is_culture_group = british
 					}
 					and = {
 						civilized = no
@@ -412,7 +412,7 @@ style =
 						overlord = {
 							is_culture_group = british
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GBR_default_newspaper_title.dds"
@@ -421,7 +421,7 @@ style =
 
 		# Roman Empire ###################
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = { tag = SPQ tag = LTN }
@@ -444,14 +444,14 @@ style =
 							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RME_reactionary_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = { tag = SPQ tag = LTN }
@@ -474,14 +474,14 @@ style =
 							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RME_communist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = { tag = SPQ tag = LTN }
@@ -509,9 +509,9 @@ style =
 			}
 			picture = "news/RME_facist_newspaper_title.dds"
 		}
-		
+
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = { tag = SPQ tag = LTN }
@@ -541,7 +541,7 @@ style =
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = { tag = SPQ tag = LTN }
@@ -561,19 +561,19 @@ style =
 						overlord = {
 							OR = { tag = SPQ tag = LTN }
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RME_default_newspaper_title.dds"
-		}		
-		
-		
+		}
+
+
 		# ITA ###################
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = italian 
+						is_culture_group = italian
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -581,7 +581,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = italian 
+							is_culture_group = italian
 							ruling_party_ideology = communist
 						}
 					}
@@ -590,20 +590,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = italian 
+							is_culture_group = italian
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/ITA_communist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = italian 
+						is_culture_group = italian
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -611,7 +611,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = italian 
+							is_culture_group = italian
 							ruling_party_ideology = fascist
 						}
 					}
@@ -620,20 +620,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = italian 
+							is_culture_group = italian
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/ITA_facist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = italian 
+						is_culture_group = italian
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -641,7 +641,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = italian 
+							is_culture_group = italian
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -650,27 +650,27 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = italian 
+							is_culture_group = italian
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/ITA_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = italian 
+						is_culture_group = italian
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = italian 
+							is_culture_group = italian
 						}
 					}
 					and = {
@@ -678,14 +678,14 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = italian 
+							is_culture_group = italian
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/ITA_default_newspaper_title.dds"
 		}
-		
+
 		# Greeks ###################
 		case =	{
 			trigger = { primary_culture = greek }
@@ -700,10 +700,10 @@ style =
 
 		# RUS ###################
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = east_slavic 
+						is_culture_group = east_slavic
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -711,7 +711,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 							ruling_party_ideology = communist
 						}
 					}
@@ -720,20 +720,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RUS_communist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = east_slavic 
+						is_culture_group = east_slavic
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -741,7 +741,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 							ruling_party_ideology = fascist
 						}
 					}
@@ -750,20 +750,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RUS_fascist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = east_slavic 
+						is_culture_group = east_slavic
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -771,7 +771,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -780,27 +780,27 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RUS_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = east_slavic 
+						is_culture_group = east_slavic
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 						}
 					}
 					and = {
@@ -808,9 +808,9 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = east_slavic 
+							is_culture_group = east_slavic
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/RUS_default_newspaper_title.dds"
@@ -819,68 +819,10 @@ style =
 		# POR ###################
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = POR
-						ruling_party_ideology = communist 
-					}
-					and = {
-						civilized = no
-						part_of_sphere = yes
-
-						sphere_owner = {
-							tag = POR 
-							ruling_party_ideology = communist 
-						}
-					}
-					and = {
-						civilized = no
-						is_vassal = yes
-
-						overlord = {
-							tag = POR 
-							ruling_party_ideology = communist 
-						}
-					}					
-				}
-			}
-			picture = "news/POR_communist_newspaper_title.dds"
-		}
-
-		case =	{
-			trigger = { 
-				or = {
-					and = {
-						tag = POR 
-					}
-					and = {
-						civilized = no
-						part_of_sphere = yes
-
-						sphere_owner = {
-							tag = POR 
-						}
-					}
-					and = {
-						civilized = no
-						is_vassal = yes
-
-						overlord = {
-							tag = POR 
-						}
-					}					
-				}
-			}
-			picture = "news/POR_default_newspaper_title.dds"
-		}
-
-		# SPA ###################
-		case = {
-			trigger = { 
-				or = {
-					and = {
-						is_culture_group = iberian 
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -888,7 +830,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = iberian 
+							tag = POR
 							ruling_party_ideology = communist
 						}
 					}
@@ -897,20 +839,78 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = iberian 
+							tag = POR
 							ruling_party_ideology = communist
 						}
-					}					
+					}
+				}
+			}
+			picture = "news/POR_communist_newspaper_title.dds"
+		}
+
+		case =	{
+			trigger = {
+				or = {
+					and = {
+						tag = POR
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							tag = POR
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							tag = POR
+						}
+					}
+				}
+			}
+			picture = "news/POR_default_newspaper_title.dds"
+		}
+
+		# SPA ###################
+		case = {
+			trigger = {
+				or = {
+					and = {
+						is_culture_group = iberian
+						ruling_party_ideology = communist
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							is_culture_group = iberian
+							ruling_party_ideology = communist
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							is_culture_group = iberian
+							ruling_party_ideology = communist
+						}
+					}
 				}
 			}
 			picture = "news/SPA_communist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = iberian 
+						is_culture_group = iberian
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -918,7 +918,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = iberian 
+							is_culture_group = iberian
 							ruling_party_ideology = fascist
 						}
 					}
@@ -927,20 +927,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = iberian 
+							is_culture_group = iberian
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/SPA_facist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = iberian 
+						is_culture_group = iberian
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -948,7 +948,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = iberian 
+							is_culture_group = iberian
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -957,27 +957,27 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = iberian 
+							is_culture_group = iberian
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/SPA_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = iberian 
+						is_culture_group = iberian
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = iberian 
+							is_culture_group = iberian
 						}
 					}
 					and = {
@@ -985,30 +985,30 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = iberian 
+							is_culture_group = iberian
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/SPA_default_newspaper_title.dds"
 		}
-		
+
 		# POL ###################
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = polish_culture_group
-						ruling_party_ideology = communist 
+						ruling_party_ideology = communist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = polish_culture_group 
-							ruling_party_ideology = communist 
+							is_culture_group = polish_culture_group
+							ruling_party_ideology = communist
 						}
 					}
 					and = {
@@ -1017,28 +1017,28 @@ style =
 
 						overlord = {
 							is_culture_group = polish_culture_group
-							ruling_party_ideology = communist 
+							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/POL_communist_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = polish_culture_group
-						ruling_party_ideology = fascist 
+						ruling_party_ideology = fascist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = polish_culture_group 
-							ruling_party_ideology = fascist 
+							is_culture_group = polish_culture_group
+							ruling_party_ideology = fascist
 						}
 					}
 					and = {
@@ -1049,14 +1049,14 @@ style =
 							is_culture_group = polish_culture_group
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/POL_fascist_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = polish_culture_group
@@ -1067,8 +1067,8 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = polish_culture_group 
-							ruling_party_ideology = reactionary 
+							is_culture_group = polish_culture_group
+							ruling_party_ideology = reactionary
 						}
 					}
 					and = {
@@ -1077,16 +1077,16 @@ style =
 
 						overlord = {
 							is_culture_group = polish_culture_group
-							ruling_party_ideology = reactionary 
+							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/POL_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = polish_culture_group
@@ -1096,7 +1096,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = polish_culture_group 
+							is_culture_group = polish_culture_group
 						}
 					}
 					and = {
@@ -1106,7 +1106,7 @@ style =
 						overlord = {
 							is_culture_group = polish_culture_group
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/POL_default_newspaper_title.dds"
@@ -1114,10 +1114,10 @@ style =
 
 		# USA ###################
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = american_cultures 
+						is_culture_group = american_cultures
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -1125,7 +1125,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = american_cultures 
+							is_culture_group = american_cultures
 							ruling_party_ideology = fascist
 						}
 					}
@@ -1134,20 +1134,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = american_cultures 
+							is_culture_group = american_cultures
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/USA_facist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = american_cultures 
+						is_culture_group = american_cultures
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -1155,7 +1155,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = american_cultures 
+							is_culture_group = american_cultures
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -1164,27 +1164,27 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = american_cultures 
+							is_culture_group = american_cultures
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/USA_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = american_cultures 
+						is_culture_group = american_cultures
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = american_cultures 
+							is_culture_group = american_cultures
 						}
 					}
 					and = {
@@ -1192,7 +1192,7 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = american_cultures 
+							is_culture_group = american_cultures
 						}
 					}
 				}
@@ -1203,19 +1203,19 @@ style =
 		# BRZ ###################
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = BRZ
-						ruling_party_ideology = communist 
+						ruling_party_ideology = communist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = BRZ 
-							ruling_party_ideology = communist 
+							tag = BRZ
+							ruling_party_ideology = communist
 						}
 					}
 					and = {
@@ -1224,28 +1224,28 @@ style =
 
 						overlord = {
 							tag = BRZ
-							ruling_party_ideology = communist 
+							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/BRZ_communist_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = BRZ
-						ruling_party_ideology = fascist 
+						ruling_party_ideology = fascist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = BRZ 
-							ruling_party_ideology = fascist 
+							tag = BRZ
+							ruling_party_ideology = fascist
 						}
 					}
 					and = {
@@ -1256,14 +1256,14 @@ style =
 							tag = BRZ
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/BRZ_fascist_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = BRZ
@@ -1274,8 +1274,8 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = BRZ 
-							ruling_party_ideology = reactionary 
+							tag = BRZ
+							ruling_party_ideology = reactionary
 						}
 					}
 					and = {
@@ -1284,16 +1284,16 @@ style =
 
 						overlord = {
 							tag = BRZ
-							ruling_party_ideology = reactionary 
+							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/BRZ_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = BRZ
@@ -1303,7 +1303,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = BRZ 
+							tag = BRZ
 						}
 					}
 					and = {
@@ -1313,28 +1313,28 @@ style =
 						overlord = {
 							tag = BRZ
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/BRZ_default_newspaper_title.dds"
 		}
-		
+
 		# Spanish Latin America ###################
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = latin_american_cultures
-						ruling_party_ideology = communist 
+						ruling_party_ideology = communist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = latin_american_cultures 
-							ruling_party_ideology = communist 
+							is_culture_group = latin_american_cultures
+							ruling_party_ideology = communist
 						}
 					}
 					and = {
@@ -1343,28 +1343,28 @@ style =
 
 						overlord = {
 							is_culture_group = latin_american_cultures
-							ruling_party_ideology = communist 
+							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/latinamerica_communist_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = latin_american_cultures
-						ruling_party_ideology = fascist 
+						ruling_party_ideology = fascist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = latin_american_cultures 
-							ruling_party_ideology = fascist 
+							is_culture_group = latin_american_cultures
+							ruling_party_ideology = fascist
 						}
 					}
 					and = {
@@ -1375,14 +1375,14 @@ style =
 							is_culture_group = latin_american_cultures
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/latinamerica_fascist_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = latin_american_cultures
@@ -1393,8 +1393,8 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = latin_american_cultures 
-							ruling_party_ideology = reactionary 
+							is_culture_group = latin_american_cultures
+							ruling_party_ideology = reactionary
 						}
 					}
 					and = {
@@ -1403,16 +1403,16 @@ style =
 
 						overlord = {
 							is_culture_group = latin_american_cultures
-							ruling_party_ideology = reactionary 
+							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/latinamerica_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = latin_american_cultures
@@ -1422,7 +1422,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = latin_american_cultures 
+							is_culture_group = latin_american_cultures
 						}
 					}
 					and = {
@@ -1432,21 +1432,21 @@ style =
 						overlord = {
 							is_culture_group = latin_american_cultures
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/latinamerica_default_newspaper_title.dds"
 		}
-		
+
 				# JAP ###################
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = far_east_asian
 						tag = JAP
-						ruling_party_ideology = communist 
+						ruling_party_ideology = communist
 					}
 					and = {
 						civilized = no
@@ -1454,8 +1454,8 @@ style =
 
 						sphere_owner = {
 							is_culture_group = far_east_asian
-							tag = JAP 
-							ruling_party_ideology = communist 
+							tag = JAP
+							ruling_party_ideology = communist
 						}
 					}
 					and = {
@@ -1465,30 +1465,30 @@ style =
 						overlord = {
 							is_culture_group = far_east_asian
 							tag = JAP
-							ruling_party_ideology = communist 
+							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/JAP_communist_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						is_culture_group = far_east_asian
 						tag = JAP
-						ruling_party_ideology = fascist 
+						ruling_party_ideology = fascist
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = far_east_asian 
+							is_culture_group = far_east_asian
 							tag = JAP
-							ruling_party_ideology = fascist 
+							ruling_party_ideology = fascist
 						}
 					}
 					and = {
@@ -1496,21 +1496,21 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = far_east_asian 
+							is_culture_group = far_east_asian
 							tag = JAP
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/JAP_fascist_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = far_east_asian 
+						is_culture_group = far_east_asian
 						tag = JAP
 						ruling_party_ideology = reactionary
 					}
@@ -1519,9 +1519,9 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = far_east_asian 
+							is_culture_group = far_east_asian
 							tag = JAP
-							ruling_party_ideology = reactionary 
+							ruling_party_ideology = reactionary
 						}
 					}
 					and = {
@@ -1529,21 +1529,21 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = far_east_asian 
+							is_culture_group = far_east_asian
 							tag = JAP
-							ruling_party_ideology = reactionary 
+							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/JAP_reactionary_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = far_east_asian 
+						is_culture_group = far_east_asian
 						tag = JAP
 					}
 					and = {
@@ -1551,7 +1551,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = far_east_asian  
+							is_culture_group = far_east_asian
 							tag = JAP
 						}
 					}
@@ -1560,27 +1560,27 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = far_east_asian 
+							is_culture_group = far_east_asian
 							tag = JAP
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/JAP_default_newspaper_title.dds"
 		}
-		
+
 		# Arab ##########################
 		case =	{
-			trigger = { 
+			trigger = {
 				is_culture_group = arab
 			}
 			picture = "news/arabic_newspaper_title.dds"
 		}
 
 		# PRU ###################
-	
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = PRU
@@ -1591,8 +1591,8 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = PRU 
-							ruling_party_ideology = reactionary 
+							tag = PRU
+							ruling_party_ideology = reactionary
 						}
 					}
 					and = {
@@ -1601,16 +1601,16 @@ style =
 
 						overlord = {
 							tag = PRU
-							ruling_party_ideology = reactionary 
+							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/PRU_reactionary_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = PRU
@@ -1621,7 +1621,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = PRU 
+							tag = PRU
 							ruling_party_ideology = liberal
 						}
 					}
@@ -1633,14 +1633,14 @@ style =
 							tag = PRU
 							ruling_party_ideology = liberal
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/PRU_liberal_newspaper_title.dds"
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						tag = PRU
@@ -1650,7 +1650,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = PRU 
+							tag = PRU
 						}
 					}
 					and = {
@@ -1660,15 +1660,15 @@ style =
 						overlord = {
 							tag = PRU
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/PRU_default_newspaper_title.dds"
 		}
-		
+
 		# AUS and KUK ###################
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = {
@@ -1703,14 +1703,14 @@ style =
 							}
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/AUS_communist_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = {
@@ -1745,14 +1745,14 @@ style =
 							}
 							ruling_party_ideology = fascist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/AUS_fascist_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = {
@@ -1787,14 +1787,14 @@ style =
 							}
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/AUS_reactionary_newspaper_title.dds"
 		}
-		
+
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = {
@@ -1826,7 +1826,7 @@ style =
 								tag = DNB
 							}
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/AUS_default_newspaper_title.dds"
@@ -1834,10 +1834,10 @@ style =
 
 		# Germanic ###################
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = germanic 
+						is_culture_group = germanic
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -1845,7 +1845,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = germanic 
+							is_culture_group = germanic
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -1854,20 +1854,20 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = germanic 
+							is_culture_group = germanic
 							ruling_party_ideology = reactionary
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GER_reactionary_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = germanic 
+						is_culture_group = germanic
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -1875,7 +1875,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = germanic 
+							is_culture_group = germanic
 							ruling_party_ideology = communist
 						}
 					}
@@ -1884,17 +1884,17 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = germanic 
+							is_culture_group = germanic
 							ruling_party_ideology = communist
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GER_communist_newspaper_title.dds"
 		}
 
 		case = {
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
 						OR = {
@@ -1933,17 +1933,17 @@ style =
 		}
 
 		case =	{
-			trigger = { 
+			trigger = {
 				or = {
 					and = {
-						is_culture_group = germanic 
+						is_culture_group = germanic
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							is_culture_group = germanic 
+							is_culture_group = germanic
 						}
 					}
 					and = {
@@ -1951,9 +1951,9 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							is_culture_group = germanic 
+							is_culture_group = germanic
 						}
-					}					
+					}
 				}
 			}
 			picture = "news/GER_default_newspaper_title.dds"
@@ -1983,8 +1983,8 @@ style =
 
 
 		# Fallback picture
-		case = { 
-			picture = "news/generic_newspaper_title.dds" 
+		case = {
+			picture = "news/generic_newspaper_title.dds"
 		}
 	}
 }

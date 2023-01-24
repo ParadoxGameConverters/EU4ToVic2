@@ -451,7 +451,7 @@ TNT		= "countries/Tannu Tuva.txt"
 URA 	= "countries/Ural Republic.txt"
 
 #Latin America
- 
+
 CHP     = "countries/Chiapas.txt"
 CEQ     = "countries/Equador Confederation.txt"
 ENT     = "countries/Entre Rios.txt"
@@ -465,7 +465,7 @@ RGS     = "countries/Rio Grande do Sul.txt"
 SON     = "countries/Sonora.txt"
 SPU     = "countries/South Peru.txt"
 YUC     = "countries/Yucatan.txt"
- 
+
 #North America
 BLZ     = "countries/Belize.txt"
 DAK     = "countries/Dakota.txt"

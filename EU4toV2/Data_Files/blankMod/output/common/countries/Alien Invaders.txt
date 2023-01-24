@@ -7,7 +7,7 @@ party = {
 	end_date = 2000.1.1
 
 	ideology = reactionary
-	
+
 	economic_policy = state_capitalism
 	trade_policy = protectionism
 	religious_policy = pluralism
@@ -126,7 +126,7 @@ unit_names = {
 	}
 	clipper_transport = {
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		Xad-Nyak Xederex Zadhadex Xontex Xadamach Xedleetha Xiin Zadakhat Ximang Zaraxes Ziinaxad Xadara Xischmi Zongax Zaraxim Zidix Zadaxon Zixim Ciimixin Ceremax Casarax Codvox Xiad Xomba Cardaxes Cardix Xobbon Zidinix Zarakh Zidrimax Zymtarax Cidjax Ximpa Xarxa Xogor Xanar Zilgar Deltox Zinivar Zendjax Zorixon Derazix Dolzor Dargaxor Darbix Daraxa Diinorzo Debar-Zax Zor-Kalos Zur-Talax Xom-Buruk Xol-Remok Xar-Corox Zel-Dotor Zod-Garax Diigarzak Zebarax Cyntharzo Conobax Carox Dez-Hilam Dax-Endiv Zablinnox Zapozor Zakithor Zadamak Zikrax Zuuldorox Zaximock Zaatrix Xoldagoros Xurinzaga Xorbozhaga Caldorix Cathrox Dexirama Dezuzarix Dirixiz Descorax Difirixamon Canix Zakarax Zithrix Cablarex Xarkaz Xeplaz Xevarex Damonix Decorza Daxarim Zakardim

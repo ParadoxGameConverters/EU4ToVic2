@@ -150,7 +150,7 @@ unit_names = {
 		Aurora Etna Fama Flora Fortuna Galatea "San Antonio" "San Carlo" "San Ferdinando" "San Filippo"
 		"San Gabriele" "San Giovanni" "San Luigi" "San Luigi Gonzaga" "San Pasquale" Sannita "Santa Elisabetta" Spartiviero Stabia Vulcano
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		Aretusa Cerere Corona Leona Minerva Pallade "Santa Lucia" Sibilla Sirena Venere

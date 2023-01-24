@@ -2,10 +2,10 @@
 # 0 - Vehemently oppose or prevents (Over my dead body)
 # 5 - Couldn't care less / does not affect an issue
 # 10 - Strongly boosts / promotes
-# 
+#
 # If an issue is not listed, it counts as being at level 5 (ignored)
-# 
-# Issues recognized: 
+#
+# Issues recognized:
 # Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
 # National values: liberty, equality, order, literacy
 # Technologies: army, commerce, culture, industry, navy
@@ -16,7 +16,7 @@
 #
 # Special:
 # enforce is the government type this reform forces. For conflicting cases
-# e.g. american_republic (democracy) with strengthen_executive_powers_reform 
+# e.g. american_republic (democracy) with strengthen_executive_powers_reform
 # (presidential_dictatorship) the latter will always override the former.
 # Legitimate targets are:
 # proletarian_dictatorship, presidential_dictatorship, bourgeois_dictatorship,
@@ -419,7 +419,7 @@ pursuit_of_knowledge_reform = {}
 
 # Theocracy 6
 clerical_commission_reform = { order = 6 commerce = 4 }
-divine_guidance_reform = { culture = 3 } 
+divine_guidance_reform = { culture = 3 }
 theocratic_democracy_reform = { liberty = 9 political_parties = 9 upper_house_composition = 7 }
 regionally_elected_commanders = { order = 6 }
 monastic_elections_reform = { enforce = democracy order = 6 }
@@ -459,7 +459,7 @@ mamluk_leadership_reform = { army = 6 order = 4 commerce = 4 culture = 4 }
 advising_vizirate_reform = { literacy = 6 culture = 7 equality = 3 }
 strength_of_the_voynuks_reform = { army = 7 reactionary = 6 order = 6 }
 askeri_officials_reform = { army = 4 industry = 6 literacy = 6 }
-authorized_thing_reform = { order = 7 commerce = 6 } 
+authorized_thing_reform = { order = 7 commerce = 6 }
 representative_thing_reform = { liberty = 6 reactionary = 6 }
 consular_constitution_reform = { political_parties = 7 vote_franchise = 7 equality = 7 }
 captain_of_the_people_reform = { political_parties = 3 vote_franchise = 2 order = 7 }

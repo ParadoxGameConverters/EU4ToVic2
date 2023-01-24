@@ -7,13 +7,13 @@
 		religion = mayan
 		size = 350
 	}
-	
+
 	aristocrats = {
 		culture = nahua
 		religion = nahuatl
 		size = 300
 	}
-	
+
 	aristocrats = {
 		culture = chibchan
 		religion = inti
@@ -131,7 +131,7 @@
 		religion = mayan
 		size = 225
 	}
-	
+
 	aristocrats = {
 		culture = chibchan
 		religion = inti
@@ -193,7 +193,7 @@
 		religion = mayan
 		size = 40
 	}
-	
+
 	aristocrats = {
 		culture = chibchan
 		religion = inti

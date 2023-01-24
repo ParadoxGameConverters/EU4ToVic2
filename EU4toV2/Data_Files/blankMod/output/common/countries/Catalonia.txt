@@ -160,11 +160,11 @@ unit_names = {
 	monitor = {
 		"Comtat de Barcelona" "Comtat d'Empuries" "Comtat d'Urgell" "Dues Sicílies" "Hèrcules" "Mallorca" "Nèmesi" "Sardenya" "València" "Vulcano"
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		"Àguila Negra" "Drac Vermell" "Estrella" "Fama" "Fidel" "Fletxa" "Glòria" "Ibera" "Lleó de Montpellier" "Mare de Déu de Montserrat"
 		"Mercuri" "Nimfa" "Sant Antoni" "Santa Anna" "Saturn" "Sirena" "Sorpresa" "Tetis" "Tritó" "Unicorn"
 	}
-	steam_transport = { 
+	steam_transport = {
 		"Àguila Negra" "Drac Vermell" "Estrella" "Fama" "Fidel" "Fletxa" "Glòria" "Ibera" "Lleó de Montpellier" "Mare de Déu de Montserrat"
 		"Mercuri" "Nimfa" "Sant Antoni" "Santa Anna" "Saturn" "Sirena" "Sorpresa" "Tetis" "Tritó" "Unicorn"
 	}

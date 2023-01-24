@@ -102,7 +102,7 @@ party = {
 unit_names = {
 	dreadnought = {
 		Djokjakarta Lebak Pandeglang Serang Tangerang Cilegon Kujang "Selat Sunda" Panaitan Krakatau Sebuku Sabesi Sangiang Tundo Panjang 	Tinjal Deli
-		
+
 	}
 	ironclad = {
 		Djokjakarta Lebak Pandeglang Serang Tangerang Cilegon Kujang "Selat Sunda" Panaitan Krakatau Sebuku Sabesi Sangiang Tundo Panjang 	Tinjal Deli
@@ -120,10 +120,10 @@ unit_names = {
 		Djokjakarta Lebak Pandeglang Serang Tangerang Cilegon Kujang "Selat Sunda" Panaitan Krakatau Sebuku Sabesi Sangiang Tundo Panjang 	Tinjal Deli
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Djokjakarta Lebak Pandeglang Serang Tangerang Cilegon Kujang "Selat Sunda" Panaitan Krakatau Sebuku Sabesi Sangiang Tundo Panjang 	Tinjal Deli

@@ -1,4 +1,4 @@
-#Thrace Region (364000) #see Greece.txt for balance of region 
+#Thrace Region (364000) #see Greece.txt for balance of region
 #under the rule of Ottoman Empire in 1836
 #Edirne (172000/43000 POPS)
 828 = {
@@ -2034,7 +2034,7 @@
 		size = 1875
 	}
 }
-#Kars Region (856000) #see Georgia.txt for balance of region 
+#Kars Region (856000) #see Georgia.txt for balance of region
 #under the rule of Ottoman Empire in 1836
 #Kars (408000/102000 POPS)
 885 = {
@@ -2406,7 +2406,7 @@
 		size = 16450
 	}
 }
-#Malatya (196000/49000 POPS) #mashriqi catholic = Assyrians  
+#Malatya (196000/49000 POPS) #mashriqi catholic = Assyrians
 889 = {
 	aristocrats = {
 		culture = turkish
@@ -3104,7 +3104,7 @@
 		size = 5650
 	}
 }
-#Halab Region (756000) #see Syria.txt for balance of region 
+#Halab Region (756000) #see Syria.txt for balance of region
 #under the rule of Egypt in 1836
 #Antep (248000/62000 POPS)
 898 = {

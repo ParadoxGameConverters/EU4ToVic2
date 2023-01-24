@@ -8,11 +8,11 @@ country_event = {
 		NOT = {
 			year = 1913
 		}
-		
+
 	}
-	
+
 	fire_only_once = yes
- 
+
 	mean_time_to_happen =  {
 		months = 5
 
@@ -33,7 +33,7 @@ country_event = {
 	picture = "theatre"
 
 	option = {
-		name = "EVTOPTA35300" 
+		name = "EVTOPTA35300"
 		prestige = 2
 	}
 }
@@ -48,11 +48,11 @@ country_event = {
 		NOT = {
 			year = 1905
 			}
-		
+
 	}
-	
+
 	fire_only_once = yes
- 
+
 	mean_time_to_happen =  {
 		months = 5
 
@@ -73,7 +73,7 @@ country_event = {
 	picture = "theatre"
 
 	option = {
-		name = "EVTOPTA35301" 
+		name = "EVTOPTA35301"
 		prestige = 3
 	}
 }
@@ -84,7 +84,7 @@ country_event = {
 	title = "EVTNAME35700"
 	desc = "EVTDESC35700"
 	picture = "pope"
-	
+
 	trigger = {
 		tag = ITA
 		year = 1891
@@ -95,9 +95,9 @@ country_event = {
 			has_global_flag = RerumNovarum
 		}
 	}
-	
+
 	fire_only_once = yes
- 
+
 	mean_time_to_happen =  {
 		months = 5
 
@@ -114,7 +114,7 @@ country_event = {
 	}
 
 	option = {
-		name = "EVTOPTA35700" 
+		name = "EVTOPTA35700"
 		prestige = 5
 		labourers = {
 			consciousness = 1
@@ -128,6 +128,6 @@ country_event = {
 		soldiers = {
 			consciousness = 1
 		}
-		set_global_flag = RerumNovarum		
+		set_global_flag = RerumNovarum
 	}
 }

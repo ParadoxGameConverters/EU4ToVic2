@@ -102,7 +102,7 @@ party = {
 unit_names = {
 	dreadnought = {
 		"Shaka Zulu" KwaZulu Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa
-		
+
 	}
 	ironclad = {
 		"Shaka Zulu" KwaZulu Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa
@@ -120,10 +120,10 @@ unit_names = {
 		"Shaka Zulu" KwaZulu Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		"Shaka Zulu" KwaZulu Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa

@@ -1,6 +1,6 @@
-#Basra Region (12000) #see Iraq.txt for balance of region  
-#under the rule of Ottoman Empire in 1836  
-#Kuwait (12000/3000 POPS) #now part of Kuwait 
+#Basra Region (12000) #see Iraq.txt for balance of region
+#under the rule of Ottoman Empire in 1836
+#Kuwait (12000/3000 POPS) #now part of Kuwait
 935 = {
 	aristocrats = {
 		culture = bedouin
@@ -32,9 +32,9 @@
 		size = 2725
 	}
 }
-#Bahrain Region (28000) #see Saudi Arabia.txt for balance of region  
-#under the rule of Trucial States in 1836  
-#Bahrain (20000/5000 POPS) #now part of Bahrein  
+#Bahrain Region (28000) #see Saudi Arabia.txt for balance of region
+#under the rule of Trucial States in 1836
+#Bahrain (20000/5000 POPS) #now part of Bahrein
 1162 = {
 	aristocrats = {
 		culture = bedouin
@@ -96,7 +96,7 @@
 		size = 2800
 	}
 }
-#Doha (8000/2000 POPS) #now part of Qatar 
+#Doha (8000/2000 POPS) #now part of Qatar
 1165 = {
 	aristocrats = {
 		culture = bedouin
@@ -128,9 +128,9 @@
 		size = 1825
 	}
 }
-#Uman Region (36000) #see Oman.txt for balance of region 
-#under the rule of Oman in 1836  
-#Abu Dhabi (20000/5000 POPS) #now part of UAE  
+#Uman Region (36000) #see Oman.txt for balance of region
+#under the rule of Oman in 1836
+#Abu Dhabi (20000/5000 POPS) #now part of UAE
 1167 = {
 	aristocrats = {
 		culture = bedouin
@@ -174,7 +174,7 @@
 		size = 3650
 	}
 }
-#Dubai (16000/4000 POPS)   #now part of UAE 
+#Dubai (16000/4000 POPS)   #now part of UAE
 1168 = {
 	aristocrats = {
 		culture = bedouin

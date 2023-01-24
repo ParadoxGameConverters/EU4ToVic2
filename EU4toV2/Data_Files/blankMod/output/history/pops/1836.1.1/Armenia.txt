@@ -246,7 +246,7 @@
 		size = 2775
 	}
 }
-#Nakhichevan (60000/15000 POPS) #now part of Azerbaijan 
+#Nakhichevan (60000/15000 POPS) #now part of Azerbaijan
 1101 = {
 	aristocrats = {
 		culture = armenian

@@ -647,27 +647,27 @@
 	}
 }
 #Tirol Region (368000) #see Austria.txt for balance of Region
-#under the rule of Austria in 1836  
+#under the rule of Austria in 1836
 #Trent (276000/69000 POPS) #now part of Italy
 734 = {
 	aristocrats = {
 		culture = south_german
 		religion = catholic
-		size = 60 
+		size = 60
 	}
 
 	clergymen = {
 		culture = south_german
 		religion = catholic
-		size = 80 
+		size = 80
 	}
 
 	bureaucrats = {
 		culture = south_german
 		religion = catholic
-		size = 800 
+		size = 800
 	}
-	
+
 	artisans = {
 		culture = south_german
 		religion = catholic
@@ -677,13 +677,13 @@
 	soldiers = {
 		culture = south_german
 		religion = catholic
-		size = 50 
+		size = 50
 	}
 
 	farmers = {
 		culture = south_german
 		religion = catholic
-		size = 4610 
+		size = 4610
 	}
 
 	clergymen = {
@@ -701,7 +701,7 @@
 	soldiers = {
 		culture = north_italian
 		religion = catholic
-		size = 550 
+		size = 550
 	}
 
 	farmers = {
@@ -715,7 +715,7 @@
 	aristocrats = {
 		culture = south_german
 		religion = catholic
-		size = 250 
+		size = 250
 	}
 
 	clergymen = {
@@ -733,7 +733,7 @@
 	soldiers = {
 		culture = south_german
 		religion = catholic
-		size = 150 
+		size = 150
 	}
 
 	farmers = {
@@ -757,7 +757,7 @@
 	soldiers = {
 		culture = north_italian
 		religion = catholic
-		size = 50 
+		size = 50
 	}
 
 	farmers = {
@@ -766,7 +766,7 @@
 		size = 5400
 	}
 }
-#Friuli-Istria Region (292000) #see Croatia.txt for balance of region 
+#Friuli-Istria Region (292000) #see Croatia.txt for balance of region
 #under the rule of Austria in 1836
 #Trieste (112000/28000 POPS)
 736 = {
@@ -787,7 +787,7 @@
 		religion = catholic
 		size = 450
 	}
-	
+
 	officers = {
 		culture = north_italian
 		religion = catholic
@@ -903,7 +903,7 @@
 		religion = catholic
 		size = 30375
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = catholic

@@ -829,7 +829,7 @@
 		religion = nahuatl
 		size=425
 	}
-	
+
 	aristocrats = {
 		culture = tarascan
 		religion = nahuatl

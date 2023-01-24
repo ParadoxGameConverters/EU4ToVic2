@@ -102,41 +102,41 @@ party = {
 unit_names = {
 	dreadnought = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
 	}
 	ironclad = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
-		
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
+
 	}
 	manowar = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
 	}
 	cruiser = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
-		
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
+
 	}
 	frigate = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
-		
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
+
 	}
 	monitor = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
-		
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		"Brigham Young" "Joseph Smith" Deseret Zion "St. John the Baptist" "Saint Peter" "Saint James" "Saint John" Moroni
-		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle" 
-		
+		"New Jerusalem" Nimrod Zedekiah Gideon "The Holy Spirit" "The Apostle"
+
 	}
 }

@@ -1,6 +1,6 @@
 #Bayrut Region (52000)  #see Lebanon.txt for balance of region
 #under the rule of Egypt in 1836
-#Acre (52000/13000 POPS) #now part of Israel-Palestine  mashriqi-animist = druze 
+#Acre (52000/13000 POPS) #now part of Israel-Palestine  mashriqi-animist = druze
 916 = {
 	aristocrats = {
 		culture = mashriqi

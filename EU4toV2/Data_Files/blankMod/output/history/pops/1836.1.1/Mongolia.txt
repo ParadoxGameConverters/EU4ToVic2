@@ -1,6 +1,6 @@
-#Outer Mongolia Region (1292000) 
-#under the rule of China in 1836  
-#Ugra (376000/94000 POPS)   
+#Outer Mongolia Region (1292000)
+#under the rule of China in 1836
+#Ugra (376000/94000 POPS)
 1465 = {
 	aristocrats = {
 		culture = mongol
@@ -74,7 +74,7 @@
 		size = 3300
 	}
 }
-#Dalandzadgad (212000/53000 POPS)   
+#Dalandzadgad (212000/53000 POPS)
 1466 = {
 	aristocrats = {
 		culture = mongol
@@ -106,7 +106,7 @@
 		size = 48200
 	}
 }
-#Bayan Tumen (176000/44000 POPS)   
+#Bayan Tumen (176000/44000 POPS)
 1467 = {
 	aristocrats = {
 		culture = mongol
@@ -168,7 +168,7 @@
 		size = 2750
 	}
 }
-#Uliastay (140000/35000 POPS)   
+#Uliastay (140000/35000 POPS)
 1468 = {
 	aristocrats = {
 		culture = mongol
@@ -201,7 +201,7 @@
 	}
 }
 
-#Sainshand (71100/17775 POPS)   
+#Sainshand (71100/17775 POPS)
 2207 = {
 	aristocrats = {
 		culture = mongol
@@ -234,7 +234,7 @@
 	}
 }
 
-#Khatgal (152000/38000 POPS)   
+#Khatgal (152000/38000 POPS)
 2608 = {
 	aristocrats = {
 		culture = mongol
@@ -266,7 +266,7 @@
 		size = 35000
 	}
 }
-#Bulgan (84000/21000 POPS)   
+#Bulgan (84000/21000 POPS)
 2678 = {
 	aristocrats = {
 		culture = mongol
@@ -298,7 +298,7 @@
 		size = 17125
 	}
 }
-#Khovd (120000/30000 POPS)   
+#Khovd (120000/30000 POPS)
 2679 = {
 	aristocrats = {
 		culture = mongol
@@ -360,7 +360,7 @@
 		size = 10975
 	}
 }
-#Uliatai (32000/8000 POPS) #now Tuva Republic of Russia  Tatar = Tuvan   
+#Uliatai (32000/8000 POPS) #now Tuva Republic of Russia  Tatar = Tuvan
 1469 = {
 	aristocrats = {
 		culture = tatar

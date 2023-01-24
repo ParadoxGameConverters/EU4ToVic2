@@ -107,7 +107,7 @@ unit_names = {
 	ironclad = {
 		Kansas Nebraska Colorado Wichita Meadowlark Topeka Sunflower Cottonwood Lincoln Omaha Columbine
 		"Lewis and Clark" Cornhusker Goldenrod Denver Aurora "Lark Bunting" "Rocky Mountain"
-		
+
 	}
 	manowar = {
 		Kansas Nebraska Colorado Wichita Meadowlark Topeka Sunflower Cottonwood Lincoln Omaha Columbine
@@ -116,27 +116,27 @@ unit_names = {
 	cruiser = {
 		Kansas Nebraska Colorado Wichita Meadowlark Topeka Sunflower Cottonwood Lincoln Omaha Columbine
 		"Lewis and Clark" Cornhusker Goldenrod Denver Aurora "Lark Bunting" "Rocky Mountain"
-		
+
 	}
 	frigate = {
 		Kansas Nebraska Colorado Wichita Meadowlark Topeka Sunflower Cottonwood Lincoln Omaha Columbine
 		"Lewis and Clark" Cornhusker Goldenrod Denver Aurora "Lark Bunting" "Rocky Mountain"
-		
+
 	}
 	monitor = {
 		Kansas Nebraska Colorado Wichita Meadowlark Topeka Sunflower Cottonwood Lincoln Omaha Columbine
 		"Lewis and Clark" Cornhusker Goldenrod Denver Aurora "Lark Bunting" "Rocky Mountain"
-		
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Kansas Nebraska Colorado Wichita Meadowlark Topeka Sunflower Cottonwood Lincoln Omaha Columbine
 		"Lewis and Clark" Cornhusker Goldenrod Denver Aurora "Lark Bunting" "Rocky Mountain"
-		
+
 	}
 }

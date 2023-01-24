@@ -1,5 +1,5 @@
-#Mosul Region (492000) #mashriqi-catholic = assyrian  
-#under the rule of Ottoman Empire in 1836  
+#Mosul Region (492000) #mashriqi-catholic = assyrian
+#under the rule of Ottoman Empire in 1836
 #Mosul (228000/57000 POPS)
 923 = {
 	aristocrats = {
@@ -934,7 +934,7 @@
 		size = 1825
 	}
 }
-#Basra Region (388000) #see Gulf States.txt for balance of region  
+#Basra Region (388000) #see Gulf States.txt for balance of region
 #under the rule of Ottoman Empire in 1836
 #Basra (140000/35000 POPS)
 932 = {

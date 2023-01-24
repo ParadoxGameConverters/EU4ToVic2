@@ -9,14 +9,14 @@ country_event = {
 	news_desc_medium = "EVTDESC160001_NEWS_MEDIUM"
 	news_desc_short = "EVTDESC160001_NEWS_SHORT"
 
-	major = yes	
+	major = yes
 	trigger = {
 		tag = CHI
 		NOT = { has_global_flag = taiping_has_happened }
 		average_consciousness = 3
 		is_possible_vassal = TPG #There are Taiping cores in China
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -34,7 +34,7 @@ country_event = {
 			year = 1860
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA160001"
 		any_owned = {
@@ -70,14 +70,14 @@ country_event = {
 			attacker_goal = {
 				casus_belli = civil_war
 			}
-			
+
 			defender_goal = {
 				casus_belli = civil_war
 			}
 		}
 		set_global_flag = taiping_has_happened
 	}
-	
+
 	option = {
 		name = "EVTOPTB160001"
 		any_owned = {
@@ -107,13 +107,13 @@ country_event = {
 				}
 			}
 			militancy = 5
-		}		
+		}
 		war = {
 			target = TPG
 			attacker_goal = {
 				casus_belli = civil_war
 			}
-			
+
 			defender_goal = {
 				casus_belli = civil_war
 			}
@@ -129,24 +129,24 @@ province_event = {
 	title = "EVTNAME160502"
 	desc = "EVTDESC160502"
 	picture = rebellion
-	
+
 	trigger = {
 		owner = { tag = CHI }
 		not = { average_consciousness = 3 }
 		NOT = { has_global_flag = taiping_has_happened }
 		year = 1840
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
-		
+
 		modifier = {
 			factor = 0.7
 			has_province_modifier = local_opium_habit
 		}
 		modifier = {
 			factor = 0.7
-			has_province_modifier = western_presence		
+			has_province_modifier = western_presence
 		}
 		modifier = {
 			factor = 0.7
@@ -169,7 +169,7 @@ province_event = {
 			has_province_modifier = kettler_denkmal
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTA160502"
 		any_pop = {
@@ -182,7 +182,7 @@ province_event = {
 			factor = 75
 		}
 	}
-	
+
 	option = {
 		name = "EVTOPTB160502"
 		any_pop = {

@@ -1,5 +1,5 @@
 #Suriye Region (36000)  #see Syria.txt & Lebanon.txt for balance of region
-#under the rule of Egypt in 1836  
+#under the rule of Egypt in 1836
 #Amman (20000/5000 POPS) #now part of Jordan
 908 = {
 	aristocrats = {
@@ -125,8 +125,8 @@
 	}
 }
 #Badiyat al-Sham Region (40000)  #see Syria.txt, Iraq.txt & Saudi Arabia.txt for balance of region
-#under the "rule" of Egypt in 1836  
-#Ruwayshid (12000/3000 POPS) #now part of Jordan 
+#under the "rule" of Egypt in 1836
+#Ruwayshid (12000/3000 POPS) #now part of Jordan
 910 = {
 	aristocrats = {
 		culture = bedouin
@@ -221,8 +221,8 @@
 	}
 }
 #Palestine Region (20000)  #see Israel-Palestine.txt for balance of region
-#under the rule of Egypt in 1836  
-#Aqaba (20000/5000 POPS) #now part of Jordan 
+#under the rule of Egypt in 1836
+#Aqaba (20000/5000 POPS) #now part of Jordan
 922 = {
 	clergymen = {
 		culture = mashriqi

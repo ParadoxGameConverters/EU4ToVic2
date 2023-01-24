@@ -8,7 +8,7 @@ party = {
 	end_date = 2000.1.1
 
 	ideology = reactionary
-	
+
 	economic_policy = state_capitalism
 	trade_policy = protectionism
 	religious_policy = moralism
@@ -105,13 +105,13 @@ unit_names = {
 		"Genghis Khan" "Alghu Khan" "Baraq Khan" "Yesünto'a" Qipchaq
 		"Ögedai Khan" Güyük "Möngke Khan" "Qubilai Khan" Duwa "Qazan Khan" "Tughlugh Timur"
 		Irtysh "Amir Husayn" "Timur i Leng"
-		
+
 	}
 	ironclad = {
 		"Genghis Khan" "Alghu Khan" "Baraq Khan" "Yesünto'a" Qipchaq
 		"Ögedai Khan" Güyük "Möngke Khan" "Qubilai Khan" Duwa "Qazan Khan" "Tughlugh Timur"
 		Irtysh "Amir Husayn" "Timur i Leng"
-		
+
 	}
 	manowar = {
 		"Genghis Khan" "Alghu Khan" "Baraq Khan" "Yesünto'a" Qipchaq
@@ -134,10 +134,10 @@ unit_names = {
 		Irtysh "Amir Husayn" "Timur i Leng"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		"Genghis Khan" "Alghu Khan" "Baraq Khan" "Yesünto'a" Qipchaq

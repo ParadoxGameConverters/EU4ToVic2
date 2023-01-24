@@ -1,4 +1,4 @@
-#Damaraland Region (192000)  
+#Damaraland Region (192000)
 #uncolonized in 1836/dominated by the Herero in 1836
 #Windhoek (72000/18000 POPS)
 2078 = {

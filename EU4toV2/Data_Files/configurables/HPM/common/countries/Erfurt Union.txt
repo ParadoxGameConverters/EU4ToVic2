@@ -201,7 +201,7 @@ unit_names = {
 		Derfflinger "Friedrich der Große" Goeben "Großer Kurfürst" Helgoland Hindenburg Kaiser Kaiserin König "König Albert" Kronprinz Lützow Mackensen Markgraf Moltke Nassau Oldenburg Ostfriesland Posen Rheinland Sachsen Seydlitz Thüringen Westfalen
 	}
 	battleship = {
-		
+
 	}
 	ironclad = {
 		Arminius Bremen Carola Charlotte Frankfurt "Friedrich Carl" "Friedrich der Große" "Großer Kurfürst" Hamburg Hansa Kaiser "König Wilhelm" Kronprinz Leipzig Lübeck Marie Medusa Möwe Moltke Nixe Oldenburg Olga Otter Pfeil Preußen "Preußischer Adler" "Prinz Adalbert" Sophie

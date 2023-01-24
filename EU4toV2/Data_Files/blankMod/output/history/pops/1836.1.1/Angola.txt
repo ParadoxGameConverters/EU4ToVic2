@@ -278,9 +278,9 @@
 	}
 
 }
-#Congo Region (116000) #see Congo-Zaire.txt for balance of region 
+#Congo Region (116000) #see Congo-Zaire.txt for balance of region
 #uncolonized in 1836/tradepost for Portugal
-#Cabinda (116000/29000 POPS) 
+#Cabinda (116000/29000 POPS)
 2000 = {
 	aristocrats = {
 		culture = bakongo

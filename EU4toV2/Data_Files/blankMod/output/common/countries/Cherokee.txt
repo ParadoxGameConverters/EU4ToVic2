@@ -118,13 +118,13 @@ unit_names = {
 		"Ani-kutani" "Ah-ni-ga-to-ge-wi" "Ah-ni-gi-lo-hi" "Ah-ni-ka-wi" "Ah-ni-tsi-sk-wa" "Ah-ni-sa-ho-ni" "Ah-ni-wo-di" "Ah-ni-wa-ya" Kana'ti Selu
 		"Tsul Kalu" "Oonawieh Unggi" "Ani Yuntikwalaski" "Asgaya Gigagei" "I'nage-utasvhi" "Anisga'ya Tsunsdi" "Nv-da u-no-le" "Nv-da ko-la"
 		"Nv-da ka-na-wo-ga" "Nv-da gu-ti-ha"
-		
+
 	}
 	ironclad = {
 		"Ani-kutani" "Ah-ni-ga-to-ge-wi" "Ah-ni-gi-lo-hi" "Ah-ni-ka-wi" "Ah-ni-tsi-sk-wa" "Ah-ni-sa-ho-ni" "Ah-ni-wo-di" "Ah-ni-wa-ya" Kana'ti Selu
 		"Tsul Kalu" "Oonawieh Unggi" "Ani Yuntikwalaski" "Asgaya Gigagei" "I'nage-utasvhi" "Anisga'ya Tsunsdi" "Nv-da u-no-le" "Nv-da ko-la"
 		"Nv-da ka-na-wo-ga" "Nv-da gu-ti-ha"
-		
+
 	}
 	manowar = {
 		"Ani-kutani" "Ah-ni-ga-to-ge-wi" "Ah-ni-gi-lo-hi" "Ah-ni-ka-wi" "Ah-ni-tsi-sk-wa" "Ah-ni-sa-ho-ni" "Ah-ni-wo-di" "Ah-ni-wa-ya" Kana'ti Selu
@@ -147,10 +147,10 @@ unit_names = {
 		"Nv-da ka-na-wo-ga" "Nv-da gu-ti-ha"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		"Ani-kutani" "Ah-ni-ga-to-ge-wi" "Ah-ni-gi-lo-hi" "Ah-ni-ka-wi" "Ah-ni-tsi-sk-wa" "Ah-ni-sa-ho-ni" "Ah-ni-wo-di" "Ah-ni-wa-ya" Kana'ti Selu

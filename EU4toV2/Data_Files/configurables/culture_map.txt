@@ -364,7 +364,7 @@ link = { vic2 = bosniak eu4 = bosnian eu4 = bosniak }
 link = { vic2 = croat eu4 = croatian }
 link = { vic2 = serb eu4 = serbian eu4 = montenegrin eu4 = balkan_colonial }
 link = { vic2 = bulgarian eu4 = sclavenian eu4 = bulgarian }
-link = { vic2 = albanian eu4 = albanian eu4 = illyrian eu4 = arbereshe eu4 = arvanite }		
+link = { vic2 = albanian eu4 = albanian eu4 = illyrian eu4 = arbereshe eu4 = arvanite }
 link = { vic2 = slovene eu4 = carantanian eu4 = slovene eu4 = slovenian }
 
 # West Slav - polish, schlesian, czech, slovak

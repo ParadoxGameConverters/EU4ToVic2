@@ -120,7 +120,7 @@ unit_names = {
 	}
 	clipper_transport = {
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		Abathur "Adamn Kasia" "Aesma Daeva" Agas Ahriman Ahura "Ahura Mazda" Ahurani Airyaman "Aka Manah" Aladdin Allatum Amashaspan Ameratat "Amesha Spentas" Anahita "Angra Mainyu" Anjuman "Apam-natat" Apaosa Aredvi Arishtat Armaiti Arsaces "Asha vahista" Asman "Asto Vidatu" "Astvat-Ereta" Atar "Azi Dahaka" Baga Bahram Burijas Bushyasta Buyasta Camros Daena Daevas Ahaka Dahhak Dena Dev Diwe Drug Drvaspa Frashegird Fravashis Gandarewa "Gao-kerena" Gayomard Gayomart "Geus-Tasan" "Geus-Urvan" Haoma Haurvatat Humay Hvar Hvarekhshaeta Indar Indra Izha Jamshid Jeh Karshipta Kavi Khara "Khshathra vairya" Kundrav Mah Mahre Mahrianag Manu Manuchihir Mao  Mashyane Mashye Menog Mithra Nairyosangha Nanghaithya Neriosang Ormazd Peris Peshdadians Rapithwin Rashnu Rustam Saurva Simurgh "Spenta Mainyu" Sraosa Srosh Tawrich Thunaupa Tistrya Tushnamatay Vanant Vata Verethragna "Vohu Manah" Vouruskasha Yam Yasht Yazata Yezidi Yima Zal Zam "Zam-Armatay" Zarathustra Zarich "Zend-Avesta" Zurva

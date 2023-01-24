@@ -130,13 +130,13 @@ unit_names = {
 		Antioquía Caldas Cartagena Espartana "José Mª García y Toledo" "Juan Nepomuceno Eslava" Quitasueño República "Santa Marta" "Valle del Cauca"
 	}
 	monitor = {
-		Amazonas Andes Caribe "Ciénaga Grande" Meta "Nevado del Huila" Orinoquía Pacífico "San Juan" "Sierra Nevada" 
+		Amazonas Andes Caribe "Ciénaga Grande" Meta "Nevado del Huila" Orinoquía Pacífico "San Juan" "Sierra Nevada"
 	}
 	clipper_transport = {
 		Amenazante Arauca Auspicio Barranquilla Caquetá Catatumbo Chocó Estrella Florencia Guainía
 		Huila Indestructible "La Guajira" Leticia Manizales Montería Nariño Natividad Salvador Vaupés
 	}
-	steam_transport = { 
+	steam_transport = {
 		Amenazante Arauca Auspicio Barranquilla Caquetá Catatumbo Chocó Estrella Florencia Guainía
 		Huila Indestructible "La Guajira" Leticia Manizales Montería Nariño Natividad Salvador Vaupés
 	}

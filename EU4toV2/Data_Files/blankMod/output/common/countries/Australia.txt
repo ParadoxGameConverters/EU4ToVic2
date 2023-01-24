@@ -128,31 +128,31 @@ party = {
 }
 
 unit_names = {
-	dreadnought = { "Big Bruce" Tasmania Queensland "New South Wales" Commonwealth             
+	dreadnought = { "Big Bruce" Tasmania Queensland "New South Wales" Commonwealth
 
 	}
-	ironclad = { Victoria Paluma Fantome "Alf Stewart" Perth 
-                        
+	ironclad = { Victoria Paluma Fantome "Alf Stewart" Perth
+
 	}
-	manowar = { Spitfire Adelaide "Gold Coast" Murray Sheila 
-		 
+	manowar = { Spitfire Adelaide "Gold Coast" Murray Sheila
+
 	}
-	cruiser = { Australia Melbourne Sydney Encounter Brisbane Pioneer Protector 
-		 
+	cruiser = { Australia Melbourne Sydney Encounter Brisbane Pioneer Protector
+
 	}
-	frigate = { Darwin Darling Diamantina Dawson Dee 
-		 
+	frigate = { Darwin Darling Diamantina Dawson Dee
+
 	}
 	monitor = { Cerberus Nelson Gayunda "Bass Strait" "Mount Kosciuszko"
-                        
+
 	}
-	clipper_transport = { 
-		 
+	clipper_transport = {
+
 	}
-	steam_transport = { Kanowna 
-		
+	steam_transport = { Kanowna
+
 	}
-	commerce_raider = { Alexander Charlotte "Lady Penrhyn" "Prince of Wales" Scarborough 
-		 
+	commerce_raider = { Alexander Charlotte "Lady Penrhyn" "Prince of Wales" Scarborough
+
 	}
 }

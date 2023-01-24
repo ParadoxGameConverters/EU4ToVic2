@@ -147,7 +147,7 @@ unit_names = {
 		"Rama Varma" "Aditya Varma" "Ravi Varma" "Balarama Varma" "Swathi Thirunal" "Uthram Thirunal" "Visakham Thirunal"
 		}
 	cruiser = {
-		Amar Anil Asim Bhavesh Chandrahas Dhirendra Gopan Jagajit Jishnu Mahabala Pinak Ranjit Satyajit Urjit Varun Vishvajit 
+		Amar Anil Asim Bhavesh Chandrahas Dhirendra Gopan Jagajit Jishnu Mahabala Pinak Ranjit Satyajit Urjit Varun Vishvajit
 	}
 	ironclad = {
 		Akshat Avanindra Dipendra Debashish Durjaya Ilesh Jagannath Meghnad Paramjit Samarjit Sudhir Vijay Vikrant
@@ -163,7 +163,7 @@ unit_names = {
 	}
 	clipper_transport = {
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		Anupam Arihant Bhanu Dhananjay Hemendra Jawahar Kaushal Makarand Manindra Narhari Nidhish Ratnakar Shashwat Srikant

@@ -7,7 +7,7 @@ party = {
 	end_date = 2000.1.1
 
 	ideology = reactionary
-	
+
 	economic_policy = state_capitalism
 	trade_policy = protectionism
 	religious_policy = moralism
@@ -105,11 +105,11 @@ unit_names = {
 	}
 	ironclad = {
 		Aceh Samandara "Malik ul Salih" "Malik Al-Salih" Teunom Peusangen Jamboaye Alas Tripa "Simpang-kiri" "Peg Serbeulangit" "Peg Pusat" 			"Gunung Peuetsagoe""Pulau we" "Pulau Breueh"
-		
+
 	}
 	manowar = {
 		Aceh Samandara "Malik ul Salih" "Malik Al-Salih" Teunom Peusangen Jamboaye Alas Tripa "Simpang-kiri" "Peg Serbeulangit" "Peg Pusat" 			"Gunung Peuetsagoe""Pulau we" "Pulau Breueh"
-		
+
 	}
 	cruiser = {
 		Aceh Samandara "Malik ul Salih" "Malik Al-Salih" Teunom Peusangen Jamboaye Alas Tripa "Simpang-kiri" "Peg Serbeulangit" "Peg Pusat" 			"Gunung Peuetsagoe""Pulau we" "Pulau Breueh"
@@ -121,10 +121,10 @@ unit_names = {
 		Aceh Samandara "Malik ul Salih" "Malik Al-Salih" Teunom Peusangen Jamboaye Alas Tripa "Simpang-kiri" "Peg Serbeulangit" "Peg Pusat" 			"Gunung Peuetsagoe""Pulau we" "Pulau Breueh"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Aceh Samandara "Malik ul Salih" "Malik Al-Salih" Teunom Peusangen Jamboaye Alas Tripa "Simpang-kiri" "Peg Serbeulangit" "Peg Pusat" 			"Gunung Peuetsagoe""Pulau we" "Pulau Breueh"

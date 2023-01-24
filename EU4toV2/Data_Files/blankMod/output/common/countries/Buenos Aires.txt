@@ -198,7 +198,7 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"ARA Alvear" "ARA Argentina" "ARA General Rosas" "ARA Moreno" "ARA Paz" "ARA Presidente Avellaneda" "ARA Río de la Plata" "ARA Rivadavia" "ARA San Martín" "ARA Urquiza" 
+		"ARA Alvear" "ARA Argentina" "ARA General Rosas" "ARA Moreno" "ARA Paz" "ARA Presidente Avellaneda" "ARA Río de la Plata" "ARA Rivadavia" "ARA San Martín" "ARA Urquiza"
 		"ARA Yrigoyen"
 	}
 	ironclad = {
@@ -221,13 +221,13 @@ unit_names = {
 		"ARA El Plata" "ARA Formosa" "ARA Gran Chaco" "ARA La Pampa" "ARA Lago Argentino" "ARA Los Andes" "ARA Mesopotamia" "ARA Posadas" "ARA Rawson" "ARA Resistencia"
 		"ARA San Fernando del Valle" "ARA San Miguel" "ARA San Salvador" "ARA Santa Rosa" "ARA Sirena" "ARA Somuncurá" "ARA Tetis" "ARA Tritón" "ARA Viedma" "ARA Vulcano"
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		"ARA Águila" "ARA Apolo" "ARA Atlántida" "ARA Audaz" "ARA Ceres" "ARA Cóndor" "ARA Cruel" "ARA Delfín" "ARA Eolo" "ARA Esperanza"
 		"ARA Fénix" "ARA Fidela" "ARA Flora" "ARA Hera" "ARA Iris" "ARA Lanza" "ARA Minerva" "ARA Minotauro" "ARA Movimiento" "ARA Odisea"
 		"ARA Platense" "ARA Proserpina" "ARA Providencia" "ARA Prueba" "ARA Puma" "ARA Rayo" "ARA Relámpago" "ARA Salvadora" "ARA San José" "ARA San Juan Bautista"
 		"ARA Santa María" "ARA Servidora" "ARA Temeraria" "ARA Tiburón" "ARA Tranquila" "ARA Triunfo" "ARA Ulíses" "ARA Veloz" "ARA Victoria" "ARA Voladora"
 	}
-	steam_transport = { 
+	steam_transport = {
 		"ARA Águila" "ARA Apolo" "ARA Atlántida" "ARA Audaz" "ARA Ceres" "ARA Cóndor" "ARA Cruel" "ARA Delfín" "ARA Eolo" "ARA Esperanza"
 		"ARA Fénix" "ARA Fidela" "ARA Flora" "ARA Hera" "ARA Iris" "ARA Lanza" "ARA Minerva" "ARA Minotauro" "ARA Movimiento" "ARA Odisea"
 		"ARA Platense" "ARA Proserpina" "ARA Providencia" "ARA Prueba" "ARA Puma" "ARA Rayo" "ARA Relámpago" "ARA Salvadora" "ARA San José" "ARA San Juan Bautista"

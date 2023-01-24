@@ -1520,7 +1520,7 @@
 		size = 1850
 	}
 }
-#Red Sea Region (44000) #see Sudan.txt for balance of the region  
+#Red Sea Region (44000) #see Sudan.txt for balance of the region
 #under the rule of Egypt in 1836
 #Qusayr (12000/3000 POPS)
 1770 = {

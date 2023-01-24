@@ -102,7 +102,7 @@ party = {
 unit_names = {
 	dreadnought = {
 		Soshangane Gaza Nguni Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa
-		
+
 	}
 	ironclad = {
 		Soshangane Gaza Nguni Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa
@@ -120,10 +120,10 @@ unit_names = {
 		Soshangane Gaza Nguni Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Soshangane Gaza Nguni Assegai Dingane Dziva Mwari Dzivaguru Mulungu Mbonga Svikiro Mazendere "Mai Vedu" Musikavanhu Mutorwa

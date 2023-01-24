@@ -119,10 +119,10 @@ unit_names = {
 		Ayutthaya Mengrai "Muang Sua" "Muang Then" Hamsavati "Khun Lo" "Khun Borom" "Khun Sung" Shan "Siang Khwang" "Sipsong Pan Na"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Ayutthaya Mengrai "Muang Sua" "Muang Then" Hamsavati "Khun Lo" "Khun Borom" "Khun Sung" Shan "Siang Khwang" "Sipsong Pan Na"

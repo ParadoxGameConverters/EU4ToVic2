@@ -132,7 +132,7 @@ unit_names = {
 	dreadnought = {
 			"Sao Paulo" "Minas Geraes" "Marshal Floriano" "Marshal Deodoro" "Rio de Janeiro"
 			Riachuelo Constituicao "Santa Caterina" Vargas "Almirante Amazonas"
-			
+
 	}
 	ironclad = {
 			Brasil Tamandare "Mariz e Barros" Colombo Bahia "Rio Grande Do Norte" Alagaos
@@ -154,11 +154,11 @@ unit_names = {
 			Javary Solimoes "Sete de Setembro" Ipiranga Independencia "Mato Grosso" Maranhao
 			"Guana Bara" Ceara Humaita
 	}
-	clipper_transport = { 
-			
+	clipper_transport = {
+
 	}
-	steam_transport = { 
-			
+	steam_transport = {
+
 	}
 	commerce_raider = {
 			Belmonte Jequitinhonha Amazonas Beberibe Iguatemi Mearim Araguari Parnaíba Cabral

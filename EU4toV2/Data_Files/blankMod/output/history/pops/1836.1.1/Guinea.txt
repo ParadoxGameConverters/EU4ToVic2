@@ -40,7 +40,7 @@
 }
 #Jallon Region (540000) #see Sierra Leone.txt for balance of Region
 #uncolonized in 1836/ruled by Emirate of Futa Jallon
-#Timbo (360000/90000 POPS)  
+#Timbo (360000/90000 POPS)
 1880 = {
 	aristocrats = {
 		culture = fulbe
@@ -120,7 +120,7 @@
 		size = 4000
 	}
 }
-#Dinguiraye (180000/45000 POPS)  
+#Dinguiraye (180000/45000 POPS)
 1881 = {
 	aristocrats = {
 		culture = fulbe
@@ -226,7 +226,7 @@
 }
 #Bure Region (340000) #see Mali.txt and Ivory Coast.txt for balance of Region
 #uncolonized in 1836/ruled by Futa Jallon
-#Kankan (156000/39000 POPS)  
+#Kankan (156000/39000 POPS)
 1882 = {
 	aristocrats = {
 		culture = fulbe
@@ -325,7 +325,7 @@
 	}
 }
 #uncolonized in 1836}
-#Beyla (184000/46000 POPS)  
+#Beyla (184000/46000 POPS)
 1883 = {
 	aristocrats = {
 		culture = mande

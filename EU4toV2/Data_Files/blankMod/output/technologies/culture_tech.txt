@@ -26,7 +26,7 @@ romanticism = {
 	area = aesthetics
 	year = 1825
 	cost = 7200
-	
+
 	prestige = 0.05
 
 
@@ -45,11 +45,11 @@ romanticism = {
 			factor = 0.1
 			not = { literacy = 0.5  }
 			is_greater_power = no
-		}			
+		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 2
 			tech_school = culture_tech_school
@@ -73,11 +73,11 @@ realism = {
 			factor = 0.1
 			not = { literacy = 0.3  }
 			is_greater_power = no
-		}			
+		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 2
 			tech_school = culture_tech_school
@@ -100,11 +100,11 @@ impressionism = {
 			factor = 0.1
 			not = { literacy = 0.4  }
 			is_greater_power = no
-		}			
+		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 2
 			tech_school = culture_tech_school
@@ -127,11 +127,11 @@ expressionism = {
 			factor = 0.1
 			not = { literacy = 0.5  }
 			is_greater_power = no
-		}			
+		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 2
 			tech_school = culture_tech_school
@@ -154,11 +154,11 @@ mass_culture_n_the_avant_garde = {
 			factor = 0.1
 			not = { literacy = 0.5  }
 			is_greater_power = no
-		}			
+		}
 		modifier = {
 			factor = 1.05
 			literacy = 0.6
-		}		
+		}
 		modifier = {
 			factor = 2
 			tech_school = culture_tech_school
@@ -175,7 +175,7 @@ late_enlightenment_philosophy = {
 
 
 	increase_research = 0.50
-	
+
 	ai_chance = {
 		factor = 51
 		modifier = {
@@ -243,7 +243,7 @@ empiricism = {
 	area = philosophy
 	year = 1860
 	cost = 10800
-	
+
 	increase_research = 0.50
 	ai_chance = {
 		factor = 51
@@ -341,7 +341,7 @@ malthusian_thought = {
 
 	colonial_migration = 0.05
 	education_efficiency = 0.1
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -441,7 +441,7 @@ social_alienation = {
 	area = social_thought
 	year = 1900
 	cost = 21600
-	
+
 	colonial_migration = 0.05
 	education_efficiency = 0.1
 	ai_chance = {
@@ -470,7 +470,7 @@ enlightenment_thought = {
 	cost = 3600
 
 	max_national_focus = 1
-	
+
 	ai_chance = {
 		factor = 11
 		modifier = {
@@ -489,8 +489,8 @@ ideological_thought = {
 	year = 1825
 	cost = 7200
 
-	max_national_focus = 1 
-		
+	max_national_focus = 1
+
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -514,7 +514,7 @@ ideological_thought = {
 			factor = 1.02
 			tech_school = culture_tech_school
 		}
-		
+
 	}
 }
 state_n_government = {
@@ -522,7 +522,7 @@ state_n_government = {
 	year = 1840
 	cost = 10800
 
-	max_national_focus = 1 
+	max_national_focus = 1
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -546,8 +546,8 @@ state_n_government = {
 			factor = 1.02
 			tech_school = culture_tech_school
 		}
-		
-	}	
+
+	}
 }
 nationalism_n_imperialism = {
 	area = political_thought
@@ -555,9 +555,9 @@ nationalism_n_imperialism = {
 	cost = 14400
 
 	max_national_focus = 1
-	#colonial_life_rating = -10 
+	#colonial_life_rating = -10
 	cb_creation_speed = 0.1
-	
+
 	ai_chance = {
 		factor = 1.15
 		modifier = {
@@ -587,8 +587,8 @@ nationalism_n_imperialism = {
 			factor = 1.02
 			tech_school = culture_tech_school
 		}
-		
-	}	
+
+	}
 }
 revolution_n_counterrevolution = {
 	area = political_thought
@@ -611,15 +611,15 @@ revolution_n_counterrevolution = {
 			factor = 1.02
 			tech_school = culture_tech_school
 		}
-		
-	}	
+
+	}
 }
 mass_politics = {
 	area = political_thought
 	year = 1900
 	cost = 21600
 
-	max_national_focus = 1 
+	max_national_focus = 1
 	ai_chance = {
 		factor = 1.1
 		modifier = {
@@ -634,7 +634,7 @@ mass_politics = {
 			factor = 1.02
 			tech_school = culture_tech_school
 		}
-	}	
+	}
 }
 
 
@@ -647,7 +647,7 @@ introspectionism = {
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -676,7 +676,7 @@ associationism = {
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -704,7 +704,7 @@ phenomenalism = {
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -732,7 +732,7 @@ experimental_psychology = {
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -760,7 +760,7 @@ psychoanalysis = {
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {
@@ -789,7 +789,7 @@ behaviorism = {
 
 	regular_experience_level = 5
 	reinforce_rate = 0.05
-	
+
 	ai_chance = {
 		factor = 1.01
 		modifier = {

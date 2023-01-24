@@ -118,11 +118,11 @@ unit_names = {
 	dreadnought = {
 		 "Dreadnought" "Bellerophon" "Superb" "Temeraire" "St Vincent" "Collingwood" "Vanguard" "Neptune" "Colossus" "Hercules" "Orion" "Monarch" "Conqueror" "Thunderer" "King George V" "Centurion" "Audacious" "Ajax" "Iron Duke" "Marlborough" "Benbow" "Emperor of India" "Agincourt" "Erin" "Canada" "Queen Elizabeth" "Warspite" "Barham" "Valiant" "Malaya" "Royal Oak" "Royal Sovereign" "Revenge" "Resolution" "Ramillies" "Resistance" "Nelson" "Rodney" "Prince of Wales" "Duke of York" "Anson" "Howe" "Lion"
 	}
-	
+
 	battleship = {
 		"Royal Sovereign" "Ramillies" "Royal Oak" "Repulse" "Revenge" "Resolution" "Empress of India" "Majestic" "Caesar" "Hannibal" "Illustrious" "Jupiter" "Magnificent" "Mars" "Prince George" "Victorious" "Canopus" "Albion" "Glory" "Goliath" "Ocean" "Vengeance" "Formidable" "Irresistible" "Implacable" "Bulwark" "London" "Venerable" "Duncan" "Albemarle" "Cornwallis" "Exmouth" "Montagu" "Russell" "Queen" "Prince of Wales" "King Edward VII" "Africa" "Britannia" "Commonwealth" "Dominion" "Hibernia" "Hindustan" "New Zealand" "Swiftsure" "Triumph" "Lord Nelson" "Agamemnon" "Camperdown" "Victoria" "Sans Pareil" "Trafalgar" "Nile"
 	}
-	
+
 	ironclad = {
 		"Warrior" "Black Prince" "Defence" "Resistance" "Hector" "Valiant" "Achilles" "Minotaur" "Agincourt" "Northumberland" "Prince Consort" "Caledonia" "Ocean" "Royal Oak" "Royal Alfred" "Research" "Enterprise" "Favorite" "Zealous" "Repulse" "Lord Clyde" "Lord Warden" "Pallas" "Bellerophon" "Penelope" "Hercules" "Monarch" "Captain" "Audacious" "Invincible" "Iron Duke" "Vanguard" "Swiftsure" "Triumph" "Sultan" "Devastation" "Thunderer" "Alexandra" "Temeraire" "Superb" "Neptune" "Inflexible" "Agamemnon" "Ajax"
 	}
@@ -138,12 +138,12 @@ unit_names = {
 	monitor = {
 		"Royal Sovereign" "Prince Albert" "Scorpion" "Wivern" "Cyclops" "Gorgon" "Hecate" "Hydra" "Cerberus" "Magdala" "Abyssinia" "Glatton" "Hotspur" "Rupert" "Belleisle" "Orion" "Conqueror" "Hero" "Severn" "Humber" "Mersey" "Abercrombie" "Havelock" "Raglan" "Roberts" "Lord Clive" "General Craufurd" "Earl of Peterborough" "Sir Thomas Picton" "Prince Eugene" "Prince Rupert" "Sir John Moore" "General Wolfe" "Marshal Ney" "Marshal Soult" "Gorgon" "Glatton" "Medusa" "Erebus" "Terror" "Robert" "Abercrombie"
 	}
-	clipper_transport = { 
-		
+	clipper_transport = {
+
 
 	}
-	steam_transport = { 
-		
+	steam_transport = {
+
 
 	}
 	commerce_raider = {

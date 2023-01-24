@@ -1,6 +1,6 @@
 #Southern Melanesia (24000) #see Vanuatu.txt for balance of region
 #uncolonized in 1836
-#New Caledonia (24000/6000 POPS) 
+#New Caledonia (24000/6000 POPS)
 1097 = {
 	aristocrats = {
 		culture = melanesian

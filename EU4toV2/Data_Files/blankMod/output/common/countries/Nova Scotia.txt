@@ -164,7 +164,7 @@ unit_names = {
 		"Duke of Rothesay" "Edinburgh" "Glasgow" "Aberdeen" "Dundee" "Inverness" "Perth"
 		"Strathclyde" "Stirling"
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		"Flying Spur" "Cutty Sark" "Falls of Clyde" "Glenlee" "Mull of Kintyre" "Walter Scott"
 		"William Wallace" Parkhead Govan Gorgie Leith "Mount Florida" "James Bruce"
 		"David Douglas" "Alexander Gordon Laing" "Patrick Miller" "William Symington"

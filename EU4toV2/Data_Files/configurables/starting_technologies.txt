@@ -1,4 +1,4 @@
-# As soon as there are at least two civilized countries, they receive normalized 
+# As soon as there are at least two civilized countries, they receive normalized
 # technology group score ranging from -1 to 1. Below are technologies assigned
 # at each technological threshold. Countries that score 1.0 will receive everything
 # on the group's list.

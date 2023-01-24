@@ -189,11 +189,11 @@ unit_names = {
 	dreadnought = {
 		Baden Bayern Derfflinger "Friedrich der Grosse" Goeben "Grosser Kurfürst" Helgoland Hindenburg Kaiser Kaiserin König "König Albert" Kronprinz Lützow Mackensen Markgraf Moltke Nassau Oldenburg Ostfriesland Posen "Prinzregent Luitpold" Rheinland Sachsen Seydlitz Thüringen "Von der Tann" Westfalen Württemberg
 	}
-	
+
 	battleship = {
 		Brandenburg "Kurfürst Friedrich Wilhelm" Weissenburg Wörth "Kaiser Friedrich III" "Kaiser Wilhelm II" "Kaiser Wilhelm Der Grosse" "Kaiser Karl Der Grosse" "Kaiser Barbarossa" Wittelsbach Wettin Zähringen Schwaben Mecklenburg Braunschweig Elsass Hessen Preussen Lothringen Deutschland Pommern Hannover Schlesien Schleswig-Holstein
 	}
-	
+
 	ironclad = {
 		Arminius Bremen Carola Charlotte Frankfurt "Friedrich Carl" "Friedrich der Grosse" "Grosser Kurfürst" Hamburg Hansa Kaiser "König Wilhelm" Kronprinz Leipzig Lübeck Marie Medusa Möwe Moltke Nixe Oldenburg Olga Otter Pfeil Preussen "Preussischer Adler" "Prinz Adalbert" Sophie
 	}

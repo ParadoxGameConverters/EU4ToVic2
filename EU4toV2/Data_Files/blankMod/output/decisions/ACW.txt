@@ -1,7 +1,7 @@
 political_decisions = {
 # North-American Minors
 	apply_for_USA_statehood = {
-		potential = {	
+		potential = {
 			exists = USA
 			USA = { government = democracy }
 			is_culture_group = USA
@@ -40,19 +40,19 @@ political_decisions = {
 				who = USA
 				value = 175
 			}
-			OR = {		
-				AND = {		
-					USA = {		
-						slavery = yes_slavery		
-					}		
-					slavery = yes_slavery		
-				}		
-				AND = {		
-					USA = {		
-						slavery = no_slavery		
-					}		
-					slavery = no_slavery		
-				}		
+			OR = {
+				AND = {
+					USA = {
+						slavery = yes_slavery
+					}
+					slavery = yes_slavery
+				}
+				AND = {
+					USA = {
+						slavery = no_slavery
+					}
+					slavery = no_slavery
+				}
 			}
 		}
 		effect = {
@@ -86,11 +86,11 @@ political_decisions = {
 				has_country_flag = haskingcotton
 			}
 		}
-		
+
 		allow = {
 			cotton = 500
 		}
-		
+
 		effect = {
 			set_country_flag = haskingcotton
 			prestige = 5
@@ -109,8 +109,8 @@ political_decisions = {
 			}
 		}
 	}
-	
-# USA	
+
+# USA
 	trail_of_tears = {
 		potential = {
 			OR = {
@@ -121,14 +121,14 @@ political_decisions = {
 				has_global_flag = marching_on_the_trail_of_tears
 			}
 		}
-		
+
 		allow = {
 			owns = 129
 			owns = 130
 			owns = 131
 			average_consciousness = 3
 		}
-		
+
 		effect = {
 			any_pop = {
 				limit = {
@@ -148,30 +148,30 @@ political_decisions = {
 				militancy = -1
 				move_pop = 130
 			}
-			130 = {		
-				add_core = CHE		
-			}		
-			131 = {		
-				add_core = CHE		
-			}		
-			129 = {		
-				add_core = CHE		
-			}		
-			145 = {		
-				remove_core = CHE		
-			}		
-			143 = {		
-				remove_core = CHE		
+			130 = {
+				add_core = CHE
+			}
+			131 = {
+				add_core = CHE
+			}
+			129 = {
+				add_core = CHE
+			}
+			145 = {
+				remove_core = CHE
+			}
+			143 = {
+				remove_core = CHE
 			}
 			add_accepted_culture = cherokee
 			set_global_flag = marching_on_the_trail_of_tears
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+
 	custers_expedition = {
 		potential = {
 			tag = USA
@@ -181,19 +181,19 @@ political_decisions = {
 			owns = 122
 			year = 1874
 		}
-		
+
 		allow = {
 			122 = {
 				units_in_province = 1
 			}
 		}
-		
+
 		effect = {
 			prestige = 1
 			set_country_flag = custers_expedition_sent
 		}
 	}
-	
+
 	enact_the_homestead_act = {
 		potential = {
 			tag = USA
@@ -203,11 +203,11 @@ political_decisions = {
 			}
 			year = 1862
 		}
-		
+
 		allow = {
 			prestige = 40
 		}
-		
+
 		effect = {
 			add_country_modifier = {
 				name = the_homestead_act
@@ -215,7 +215,7 @@ political_decisions = {
 			}
 		}
 	}
-			
+
 	bixby_letter = {
 		potential = {
 			tag = USA
@@ -224,17 +224,17 @@ political_decisions = {
 			}
 			war_with = CSA
 		}
-		
+
 		allow = {
 			war_exhaustion = 6
 		}
-		
+
 		effect = {
 			set_country_flag = bixby_letter_sent
 			war_exhaustion = -2
 		}
 	}
-	
+
 	enact_anaconda_plan = {
 		potential = {
 			tag = USA
@@ -243,13 +243,13 @@ political_decisions = {
 				has_global_flag = anaconda_plan_active
 			}
 		}
-		
+
 		allow = {
 			CSA = {
 				blockade = 0.8
 			}
 		}
-		
+
 		effect = {
 			CSA = {
 				add_country_modifier = {
@@ -260,7 +260,7 @@ political_decisions = {
 			set_global_flag = anaconda_plan_active
 		}
 	}
-	
+
 	shermans_march_to_the_sea = {
 		potential = {
 			tag = USA
@@ -273,13 +273,13 @@ political_decisions = {
 				owns = 2555
 				owns = 204
 			}
-		}		
+		}
 		allow = {
 			controls = 201
 			controls = 2555
 			controls = 204
 		}
-		
+
 		effect = {
 			set_country_flag = sherman_marched_to_the_sea
 			201 = {
@@ -342,7 +342,7 @@ political_decisions = {
 				}
 			}
 		}
-	}		
+	}
 	manifest_destiny = {
 		potential = {
 			tag = USA
@@ -452,11 +452,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 3
 		}
-		
+
 		effect = {
 			any_pop = {
 				consciousness = -1
@@ -466,7 +466,7 @@ political_decisions = {
 	}
 
 	clay_and_douglas_draft = {
-		
+
 		potential = {
 			tag = USA
 			average_consciousness = 3
@@ -476,11 +476,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 4
 		}
-		
+
 		effect = {
 			any_pop = {
 				consciousness = -2
@@ -488,9 +488,9 @@ political_decisions = {
 			set_country_flag = clay_and_douglas_draft_enacted
 		}
 	}
-	
+
 	corwin_amendment = {
-		
+
 		potential = {
 			tag = USA
 			average_consciousness = 4
@@ -500,11 +500,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 7
 		}
-		
+
 		effect = {
 			any_pop = {
 				consciousness = -2
@@ -512,7 +512,7 @@ political_decisions = {
 			set_country_flag = corwin_amendment_enacted
 		}
 	}
-	
+
 	fugitive_slave_act = {
 		potential = {
 			tag = USA
@@ -523,11 +523,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 5
 		}
-		
+
 		effect = {
 			any_state = {
 				limit = {
@@ -540,7 +540,7 @@ political_decisions = {
 			set_country_flag = fugitive_slave_act_enacted
 		}
 	}
-	
+
 	nashville_convention = {
 		potential = {
 			tag = USA
@@ -551,11 +551,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 6
 		}
-		
+
 		effect = {
 			any_state = {
 				limit = {
@@ -568,7 +568,7 @@ political_decisions = {
 			set_country_flag = nashville_convention_held
 		}
 	}
-	
+
 	ostend_manifesto = {
 		potential = {
 			tag = USA
@@ -582,11 +582,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 5
 		}
-		
+
 		effect = {
 			badboy = 6
 			any_greater_power = {
@@ -616,7 +616,7 @@ political_decisions = {
 			}
 		}
 	}
-	
+
 	kansas_nebraska_act = {
 		potential = {
 			tag = USA
@@ -627,11 +627,11 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 3
 		}
-		
+
 		effect = {
 			any_state = {
 				limit = {
@@ -648,7 +648,7 @@ political_decisions = {
 			set_country_flag = kansas_nebraska_act_acting
 		}
 	}
-	
+
 	wilmot_proviso = {
 		potential = {
 			tag = USA
@@ -659,7 +659,7 @@ political_decisions = {
 				has_global_flag = american_civil_war_has_happened
 			}
 		}
-		
+
 		allow = {
 			average_consciousness = 4
 			owns = 103
@@ -671,7 +671,7 @@ political_decisions = {
 			owns = 87
 			owns  = 89
 		}
-		
+
 		effect = {
 			any_state = {
 				limit = {
@@ -692,7 +692,7 @@ political_decisions = {
 			set_country_flag = wilmot_proviso_providing
 		}
 	}
-	
+
 	form_kellys_irish_brigade = {
 		potential = {
 			tag = CSA
@@ -701,11 +701,11 @@ political_decisions = {
 				has_country_flag = kellys_irish_brigade
 			}
 		}
-		
+
 		allow = {
 			war_exhaustion = 4
 		}
-		
+
 		effect = {
 			random_pop = {
 				limit = {
@@ -718,7 +718,7 @@ political_decisions = {
 			set_country_flag = kellys_irish_brigade
 		}
 	}
-	
+
 	raise_the_bonnie_blue_flag = {
 		potential = {
 			tag = CSA
@@ -729,11 +729,11 @@ political_decisions = {
 					}
 			}
 		}
-		
+
 		allow = {
 			war_with = USA
 		}
-		
+
 		effect = {
 
 			define_general = {
@@ -764,12 +764,12 @@ political_decisions = {
 			}
 			small_arms = 100
 			regular_clothes = 100
-			
+
 			add_country_modifier = {
 				name = the_bonnie_blue_flag
 				duration = 365
 			}
-			
+
 			set_country_flag = bonnie_blue_flag
 		}
 	}
@@ -788,7 +788,7 @@ political_decisions = {
 				has_country_flag = has_used_radical_reconstruction
 			}
 		}
-		
+
 		allow = {
 			NOT = {
 				average_militancy = 4
@@ -806,7 +806,7 @@ political_decisions = {
 			set_country_flag = has_used_radical_reconstruction
 		}
 	}
-	
+
 	annex_hawaii = {
 		potential = {
 			exists = HAW
@@ -814,12 +814,12 @@ political_decisions = {
 			HAW = { ai = yes }
 			NOT = { has_country_flag = annexed_hawaii }
 		}
-		
+
 		allow = {
 			revolution_n_counterrevolution = 1
 			is_sphere_leader_of = HAW
 		}
-		
+
 		effect = {
 			set_country_flag = annexed_hawaii
 			HAW_658 = {
@@ -836,7 +836,7 @@ political_decisions = {
 			inherit = HAW
 		}
 	}
-	
+
 	alaskan_purchase = {
 		potential = {
 			war = no
@@ -852,22 +852,22 @@ political_decisions = {
 				OR = {
 					owns = 1
 					owns = 2
-					owns = 3 
-					owns = 4 
-					owns = 5 
-					owns = 2599 
-					owns = 2630 
+					owns = 3
+					owns = 4
+					owns = 5
+					owns = 2599
+					owns = 2630
 					owns = 2631
 				}
 			}
 		}
-		
+
 		allow = {
 			prestige = 1
 			nationalism_n_imperialism = 1
 			money = 72000
 		}
-		
+
 		effect = {
 			USA_1 = {
 				add_core = USA
@@ -881,7 +881,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
+
 #	sell_alaska = {
 #		picture = map_alaska
 #		potential = {
@@ -895,14 +895,14 @@ political_decisions = {
 #			year = 1859
 #			USA = { NOT = { war_with = CSA } }
 #		}
-#		
+#
 #		allow = {
 #			war = no
 #			any_owned_province = {
 #				region = USA_1
 #			}
 #		}
-#		
+#
 #		effect = {
 #			set_country_flag = alaska_purchase_started
 #			prestige = 5
@@ -921,7 +921,7 @@ political_decisions = {
 #							region = CAN_13
 #							region = JAP_1088
 #						}
-#					}					
+#					}
 #				}
 #				set_country_flag = alaska_purchase_interest
 #			}
@@ -930,7 +930,7 @@ political_decisions = {
 #			factor = 1
 #		}
 #	}
-	
+
 	webster_ashburton_treaty = {
 		potential = {
 			tag = ENG
@@ -939,16 +939,16 @@ political_decisions = {
 				any_owned_province = { region = USA_247 }
 			}
 		}
-		
+
 		allow = {
 			owns = 250
 			NOT = { war_with = USA }
 		}
-		
+
 		effect = {
-			relation = {		
-				who = USA		
-				value = 100		
+			relation = {
+				who = USA
+				value = 100
 			}
 			250 = {
 				remove_core = ENG
@@ -960,14 +960,14 @@ political_decisions = {
 			prestige = 10
 			USA = { country_event = 44122 }
 			set_country_flag = webster_ashburton_signed
-			250 = {				#Caribou		
-				remove_core = CAN		
-			}		
-			249 = {				#Bangor		
-				remove_core = CAN		
+			250 = {				#Caribou
+				remove_core = CAN
+			}
+			249 = {				#Bangor
+				remove_core = CAN
 			}
 		}
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -983,6 +983,6 @@ political_decisions = {
 				}
 			}
 		}
-	
+
 	}
 }

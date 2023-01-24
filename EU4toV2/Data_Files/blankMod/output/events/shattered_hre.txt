@@ -1,11 +1,11 @@
 
-country_event = { 
+country_event = {
 	id = 250000
 	title = EVTNAME250001
 	desc = EVTDESC250001
-	is_triggered_only = yes 
+	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = EVTOPTA250001
 		all_core = {
 			remove_core = THIS
@@ -14,26 +14,26 @@ country_event = {
 	}
 }
 
-country_event = { 
+country_event = {
 	id = 250002
 	title = EVTNAME250002
 	desc = EVTDESC250002
 
-	trigger = { 
+	trigger = {
 		has_country_flag = emperor_hre
  		NOT = {
 			government = absolute_monarchy
 			government = prussian_constitutionalism
 			government = hms_government
 		}
-		has_global_flag = liberal_revolutions_should_now_fire 
+		has_global_flag = liberal_revolutions_should_now_fire
 	}
 
 	mean_time_to_happen = { months = 1 }
 
-	option = { 
+	option = {
 		name = EVTOPTA250002
-		clr_country_flag = emperor_hre 
+		clr_country_flag = emperor_hre
 		HLR = { all_core = { remove_core = HLR } }
 	}
 }
@@ -48,7 +48,7 @@ country_event = {
 	option = {
 		name = EVTOPTA250003
 		FROM = { inherit = THIS }
-   
+
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -106,7 +106,7 @@ country_event = {
 			}
 			remove_core = HLR
 		}
-		   
+
 		ai_chance = {
 			factor = 50
 		}

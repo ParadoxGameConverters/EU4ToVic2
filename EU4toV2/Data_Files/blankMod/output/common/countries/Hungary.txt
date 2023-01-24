@@ -227,39 +227,39 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		"Szent Istvan" Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós Pandúr Réka Turul Huszár Ulan 
+		"Szent Istvan" Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós Pandúr Réka Turul Huszár Ulan
 	}
 	ironclad = {
-		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan 
-		
-		
+		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan
+
+
 	}
 	manowar = {
-		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan 
-		
+		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan
+
 	}
 	cruiser = {
-		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan 
-		
+		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan
+
 	}
 	frigate = {
-		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan 
-		
+		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan
+
 	}
 	monitor = {
-		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan 
-		
-		
+		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós 	Pandúr Réka Turul Huszár Ulan
+
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós Pandúr Réka Turul Huszár Ulan 	
-		
-		
+		Zrinyi Árpád Szigetvár Sava Temes Bodrog Szamos Körös Maros Leitha Balaton Csepel Lika Orjen Tátra Triglav Dinara Csikós Pandúr Réka Turul Huszár Ulan
+
+
 	}
 }

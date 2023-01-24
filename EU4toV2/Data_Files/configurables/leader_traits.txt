@@ -1,10 +1,10 @@
 # General/Admiral conversion rules
-# 
+#
 # All four values (fire, shock, maneuver, siege) are read from the EU4 file.
 # The rules here set MINIMUM CONDITIONS for each (enabled) personality and background.
 # The special value "other" consists of the sum of all unnamed values
 # so if a personality specifies "fire" and "other", "other" means "shock + maneuver + siege".
-# 
+#
 # The first rule that matches is selected, so the better/more restrictive rules should be near the top of each section.
 # If some traits are not desired for conversion, simply omit them from the file.
 # Default rules are chosen to generally result in POSITIVE traits

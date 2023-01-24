@@ -92,7 +92,7 @@ unit_names = {
 		Áss Vanr Álfr Jötunn
 	}
 	ironclad = {
-		Ellida Sleipner Viking Frithjof Rjukan Sarpen Lougen Glommen 
+		Ellida Sleipner Viking Frithjof Rjukan Sarpen Lougen Glommen
 	}
 	manowar = {
 		Freia Desideira "St Olaf" "Kong Sverre" Ellida Nordssthernen Nornen Nidaros Ørnen
@@ -108,7 +108,7 @@ unit_names = {
 	}
 	clipper_transport = {
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		Heimdal "Fridtjof Nansen" Nordkapp

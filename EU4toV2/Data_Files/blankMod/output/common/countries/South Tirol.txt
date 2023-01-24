@@ -246,12 +246,12 @@ unit_names = {
 		"Trabant" "Taurus" "Vesta" "Dalmat" "Camälion" "Kopernik" "Drach" "Salamander"
 		"Aquila" "Sterneck"
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		"1. Klipperflottille" "2. Klipperflottille" "3. Klipperflottille" "4. Klipperflottille"
 		"5. Klipperflottille" "6. Klipperflottille" "7. Klipperflottille" "8. Klipperflottille"
 		"9. Klipperflottille" "10. Klipperflottille"
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		"Novara" "Schwarzenberg" "Helgoland" "Frundsberg" "Aurora" "Saida" "Nautilus"

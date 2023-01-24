@@ -164,7 +164,7 @@ unit_names = {
 		Diligente Móvil Navegante Neptuno Poderoso Reivindicador Remolcador República "San Juan" "San Lucas"
 		"San Marcos" "San Mateo" "San Pablo" "San Pedro" Sirena Tormenta Tritón Veloz Ventoso Zamora
 	}
-	steam_transport = { 
+	steam_transport = {
 		Diligente Móvil Navegante Neptuno Poderoso Reivindicador Remolcador República "San Juan" "San Lucas"
 		"San Marcos" "San Mateo" "San Pablo" "San Pedro" Sirena Tormenta Tritón Veloz Ventoso Zamora
 	}

@@ -185,11 +185,11 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Holstein "Herzog Friedrich" Kiel Gottorp Sonderburg Glücksburg Reichsfürst König Erbprinz Plön Segeberg "Up ewig ungedeelt" "Vertrag von Ripen" Altona Glückstadt 
+		Holstein "Herzog Friedrich" Kiel Gottorp Sonderburg Glücksburg Reichsfürst König Erbprinz Plön Segeberg "Up ewig ungedeelt" "Vertrag von Ripen" Altona Glückstadt
 		"Adolf I." "Christian Albrecht" "Karl Peter Ulrich" "Magnus von Wedderkop" "Uwe Jens Lornsen"
 	}
 	ironclad = {
-		Holstein "Herzog Friedrich" Kiel Gottorp Sonderburg Glücksburg Reichsfürst König Erbprinz Plön Segeberg 
+		Holstein "Herzog Friedrich" Kiel Gottorp Sonderburg Glücksburg Reichsfürst König Erbprinz Plön Segeberg
 		"Up ewig ungedeelt" "Vertrag von Ripen" Altona Glückstadt "Adolf I." "Christian Albrecht" "Karl Peter Ulrich" "Magnus von Wedderkop" "Uwe Jens Lornsen"
 	}
 	manowar = {
@@ -209,10 +209,10 @@ unit_names = {
 		"Up ewig ungedeelt" "Vertrag von Ripen" Altona Glückstadt "Adolf I." "Christian Albrecht" "Karl Peter Ulrich" "Magnus von Wedderkop" "Uwe Jens Lornsen"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Holstein "Herzog Friedrich" Kiel Gottorp Sonderburg Glücksburg Reichsfürst König Erbprinz Plön Segeberg

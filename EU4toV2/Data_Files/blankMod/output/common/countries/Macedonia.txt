@@ -104,10 +104,10 @@ unit_names = {
 		Skopje Bitola Kumanovo Prilep Tetovo
 	}
 	ironclad = {
-		Krum "Ivan Aleksandar" Levski Botev Aleksandrov 
+		Krum "Ivan Aleksandar" Levski Botev Aleksandrov
 	}
 	manowar = {
-		"Lyuben Karavelov" "Stoykov Rakovski" "Panayot Hitov" Karavelo "Stefan Karadzha" 
+		"Lyuben Karavelov" "Stoykov Rakovski" "Panayot Hitov" Karavelo "Stefan Karadzha"
 	}
 	cruiser = {
 		Maritsa Iskar Vit Osam Yantra
@@ -118,12 +118,12 @@ unit_names = {
 	monitor = {
 		Konstantinov Dalchev Debelyanov Voykikov Vazov
 	}
-	clipper_transport = { 
-		 
+	clipper_transport = {
+
 
 	}
-	steam_transport = { 
-		
+	steam_transport = {
+
 
 	}
 	commerce_raider = {

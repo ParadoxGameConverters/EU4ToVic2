@@ -1,4 +1,4 @@
-# The following regions and areas in africa will be turned into uncolonized land if that option 
+# The following regions and areas in africa will be turned into uncolonized land if that option
 # in converter is enabled - but only if owned by primitives (tags having westernization below 5
 # as defined in tech_groups.txt)
 

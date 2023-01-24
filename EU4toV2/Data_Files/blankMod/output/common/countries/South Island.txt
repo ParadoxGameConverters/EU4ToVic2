@@ -101,29 +101,29 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		
+
 	}
 	ironclad = {
-	
+
 	}
 	manowar = {
-	
+
 	}
 	cruiser = {
-	
+
 	}
 	frigate = {
-	
+
 	}
 	monitor = {
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		
+
 	}
 }

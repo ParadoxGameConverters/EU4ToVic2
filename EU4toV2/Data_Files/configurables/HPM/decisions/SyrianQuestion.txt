@@ -6,7 +6,7 @@ political_decisions = {
 		}
 		allow = {
 		}
-			
+
 		effect = {
 			TUR_855 = { # Cyprus
 				limit = {

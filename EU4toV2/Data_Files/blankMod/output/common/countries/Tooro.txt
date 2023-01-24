@@ -102,11 +102,11 @@ party = {
 unit_names = {
 	dreadnought = {
 		Abuja Ede Enugu Kaduna Kano Katsina Jos Owo Sokoto Zaria
-		
+
 	}
 	ironclad = {
 		Abuja Ede Enugu Kaduna Kano Katsina Jos Owo Sokoto Zaria
-		
+
 	}
 	manowar = {
 		Abuja Ede Enugu Kaduna Kano Katsina Jos Owo Sokoto Zaria
@@ -121,10 +121,10 @@ unit_names = {
 		Abuja Ede Enugu Kaduna Kano Katsina Jos Owo Sokoto Zaria
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Abuja Ede Enugu Kaduna Kano Katsina Jos Owo Sokoto Zaria

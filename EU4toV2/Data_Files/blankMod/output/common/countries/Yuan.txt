@@ -193,7 +193,7 @@ unit_names = {
 		Khubilai Jelme Jebe Subutai
 		"Yelü Chucai" Shikhikhutug "Sorqan Shira" "Khar Khiruge"
 		"Dörben Külü'üd" "Dörben Noyas"
-		
+
 	}
 	ironclad = {
 		Yingchang Karakorum Hohhot Chagaan
@@ -203,7 +203,7 @@ unit_names = {
 		Adai Elbeg Batu Mugali "Bo'orchu" Borokhula Chilaun
 		Khubilai Jelme Jebe Subutai
 		"Yelü Chucai" Shikhikhutug "Sorqan Shira" "Khar Khiruge"
-		"Dörben Külü'üd" "Dörben Noyas" 
+		"Dörben Külü'üd" "Dörben Noyas"
 	}
 	manowar = {
 		Yingchang Karakorum Hohhot Chagaan
@@ -246,10 +246,10 @@ unit_names = {
 		"Dörben Külü'üd" "Dörben Noyas"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Yingchang Karakorum Hohhot Chagaan

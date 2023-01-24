@@ -318,14 +318,14 @@
 		religion = catholic
 		size = 10000
 	}
-	
+
 	artisans = {
 		culture = irish
 		religion = catholic
 		size = 2000
 	}
 }
-#Dumfries (168000/42000 POPS) 
+#Dumfries (168000/42000 POPS)
 272 = {
 	aristocrats = {
 		culture = scottish

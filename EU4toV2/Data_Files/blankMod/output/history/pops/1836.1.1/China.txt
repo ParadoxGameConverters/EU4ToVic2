@@ -2768,7 +2768,7 @@
 		size = 265725
 	}
 }
-#Hainan (3424000/856000 POPS) #asian_minor = li   
+#Hainan (3424000/856000 POPS) #asian_minor = li
 1499 = {
 	aristocrats = {
 		culture = min
@@ -3027,7 +3027,7 @@
 	}
 }
 #Ruled by Portugal in 1836
-#Macao (22000/5500 POPS) 
+#Macao (22000/5500 POPS)
 1498 = {
 	bureaucrats = {
 		culture = portuguese

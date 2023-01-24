@@ -114,7 +114,7 @@
 		size = 2000
 	}
 }
-#uncolonized in 1836 
+#uncolonized in 1836
 #Djambala (28000/7000 POPS)
 1980 = {
 	aristocrats = {

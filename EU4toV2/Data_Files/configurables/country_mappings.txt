@@ -121,7 +121,7 @@ link = { v2 = TUR flag = is_turkey_flag } # Turkey
 link = { v2 = TUR flag = is_revolutionary_turkey_flag } # Turkey
 link = { eu4 = k_anatolia v2 = ANA } # Anatolia
 
-#British Isles 
+#British Isles
 link = { eu4 = CNN v2 = CNN } # Connacht
 link = { eu4 = c_connacht v2 = CNN } # Connacht
 link = { eu4 = d_connacht v2 = CNN } # Connacht
@@ -223,7 +223,7 @@ link = { eu4 = CHR v2 = CHR } # Chernigov
 link = { eu4 = d_chernigov v2 = CHR } # Chernigov
 link = { eu4 = OKA v2 = OKA } # Odoyev
 
-#France 
+#France
 link = { eu4 = ALE v2 = ALE } # Alencon
 link = { eu4 = ALS v2 = ALS } # Alsace
 link = { eu4 = d_alsace v2 = ALS } # Alsace
@@ -268,7 +268,7 @@ link = { eu4 = BER v2 = BEY } # Berry
 link = { eu4 = d_berry v2 = BEY } # Berry
 
 #HRE
-link = { eu4 = AAC v2 = AAC } # Aachen 
+link = { eu4 = AAC v2 = AAC } # Aachen
 link = { eu4 = c_julich v2 = AAC } # Julich => Aachen
 link = { eu4 = ANH v2 = ANH } # Anhalt
 link = { eu4 = c_anhalt v2 = ANH } # Anhalt
@@ -467,7 +467,7 @@ link = { eu4 = NED v2 = NET } # Netherlands
 link = { eu4 = UTR v2 = UTR } # Utrecht
 link = { eu4 = d_utr v2 = UTR } # Utrecht
 
-#Russia 
+#Russia
 link = { eu4 = ARM v2 = ARM } # Armenia
 link = { eu4 = e_armenia v2 = ARM } # (Greater) Armenia
 link = { eu4 = k_armenia v2 = ARM } # Armenia
@@ -516,7 +516,7 @@ link = { eu4 = GOL v2 = GRH } # Great Horde
 link = { eu4 = GLH v2 = GOL } # Golden Horde
 link = { eu4 = e_golden_horde v2 = GOL } # Golden Horde
 
-#Arabia 
+#Arabia
 link = { eu4 = ADE v2 = ADE } # Aden
 link = { eu4 = c_aden v2 = ADE } # Aden
 link = { eu4 = d_sanaa v2 = ADE } # Sanaa => Aden
@@ -565,7 +565,7 @@ link = { eu4 = k_yemen v2 = YEM } # Yemen
 link = { eu4 = HSN v2 = AYU } # Hisn Khayfa/Ayyubids
 link = { eu4 = BTL v2 = BTL } # Bitlis
 
-#Asia Minor  
+#Asia Minor
 link = { eu4 = AKK v2 = AKK } # Ak Koyunlu
 link = { eu4 = AYD v2 = AYD } # Aydin
 link = { eu4 = k_aydin v2 = AYD } # Aydin
@@ -632,7 +632,7 @@ link = { eu4 = KOK v2 = KOK } # Kokkand
 link = { eu4 = BUK v2 = BUK } # Bukhara
 link = { eu4 = c_bukhara v2 = BUK } # Bukhara
 
-#Persia 
+#Persia
 link = { v2 = TIM flag = is_gurkani_flag } # Gurkani => Timurid
 link = { v2 = PER flag = is_revolutionary_gurkani_flag } # Gurkani => Persia
 link = { eu4 = AFG v2 = AFG } # Afghanistan
@@ -654,7 +654,7 @@ link = { eu4 = GAZ v2 = GZK } # Gazikumukh
 link = { eu4 = IME v2 = IME } # Imereti
 link = { eu4 = c_imeretia v2 = IME } # Imereti
 link = { eu4 = TAB v2 = TAB } # Tabarestan
-link = { eu4 = d_mazandaran v2 = TAB } # Tabarestan	
+link = { eu4 = d_mazandaran v2 = TAB } # Tabarestan
 link = { eu4 = ORM v2 = ORM } # Hormuz
 #link = { eu4 = LRI v2 = XXX } # Lurestan => c_luristan
 #link = { eu4 = SIS v2 = XXX } # Sistan => d_sistan
@@ -1501,7 +1501,7 @@ link = { eu4 = MGU v2 = MGH } #Maghreb
 link = { eu4 = e_maghreb v2 = MGH } # Maghreb
 link = { eu4 = NSE v2 = NSE } #North Sea Empire
 
-# Random Content 
+# Random Content
 link = { eu4 = NYO v2 = MAN } # New York -> Manhattan
 #link = { eu4 = NYO v2 = UNY } The other one makes more sense
 link = { eu4 = NSC v2 = NOV } # Nova Scotia

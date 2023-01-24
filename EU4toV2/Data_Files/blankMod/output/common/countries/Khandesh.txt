@@ -125,10 +125,10 @@ unit_names = {
 		Niknaz "Nila Jahazi" Niloufa Sagar Salima Suhalia Shameena Yasmine
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Alia Aurangabad Devki Fatimah Godvari Gulbargah Jalsena "Kala Jahazi" Khan "Lal Jahazi" Nausena "Nav ka Yudh"

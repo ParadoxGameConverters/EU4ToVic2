@@ -1,6 +1,6 @@
-#Uman Region (116000) #see Trucial States.txt for balance of region  
-#under the rule of Oman in 1836  
-#Muscat (32000/8000 POPS)   
+#Uman Region (116000) #see Trucial States.txt for balance of region
+#under the rule of Oman in 1836
+#Muscat (32000/8000 POPS)
 1166 = {
 	aristocrats = {
 		culture = bedouin
@@ -110,7 +110,7 @@
 		size = 2000
 	}
 }
-#Suhar (16000/4000 POPS)   
+#Suhar (16000/4000 POPS)
 1169 = {
 	aristocrats = {
 		culture = bedouin
@@ -142,7 +142,7 @@
 		size = 3625
 	}
 }
-#Nizwa (24000/6000 POPS)   
+#Nizwa (24000/6000 POPS)
 1170 = {
 	aristocrats = {
 		culture = bedouin
@@ -198,7 +198,7 @@
 		size = 925
 	}
 }
-#Sur (24000/6000 POPS)   
+#Sur (24000/6000 POPS)
 1171 = {
 	aristocrats = {
 		culture = bedouin
@@ -278,7 +278,7 @@
 		size = 1100
 	}
 }
-#Duqm (20000/5000 POPS)   
+#Duqm (20000/5000 POPS)
 1172 = {
 	aristocrats = {
 		culture = bedouin
@@ -328,9 +328,9 @@
 		size = 925
 	}
 }
-#Hadramaut Region (36000) #see Yemen.txt for balance of region  
-#under the rule of Oman in 1836  
-#Salalah (20000/5000 POPS)   
+#Hadramaut Region (36000) #see Yemen.txt for balance of region
+#under the rule of Oman in 1836
+#Salalah (20000/5000 POPS)
 1174 = {
 	aristocrats = {
 		culture = bedouin

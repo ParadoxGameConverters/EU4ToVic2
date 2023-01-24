@@ -102,7 +102,7 @@ party = {
 unit_names = {
 	dreadnought = {
 		Makassar Luwuk Kendari Gowa Bulon Palu Bone Manado Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Watampone
-		
+
 	}
 	ironclad = {
 		Makassar Luwuk Kendari Gowa Bulon Palu Bone Manado Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Watampone
@@ -120,10 +120,10 @@ unit_names = {
 		Makassar Luwuk Kendari Gowa Bulon Palu Bone Manado Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Watampone
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Makassar Luwuk Kendari Gowa Bulon Palu Bone Manado Parepare Krakatau Morowali Teku "Randangan Panua" Peruhumpenai Mamuju Tukangbesi Watampone

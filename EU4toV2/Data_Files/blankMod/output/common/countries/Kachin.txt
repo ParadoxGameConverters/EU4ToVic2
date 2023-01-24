@@ -119,10 +119,10 @@ unit_names = {
 		Mytykina Dartsendo Gyantse Gartse Kachin Lhotse Makalu  Nagqu Nyingchi Nedong Pelbar Qamdo Shigatse Sakya Tinggri
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Mytykina Dartsendo Gyantse Gartse Kachin Lhotse Makalu  Nagqu Nyingchi Nedong Pelbar Qamdo Shigatse Sakya Tinggri

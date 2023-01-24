@@ -1,6 +1,6 @@
 #Halab Region (572000)  #see Turkey.txt for balance of region
 #under the rule of Egypt in 1836
-#Aleppo (316000/79000 POPS) #now part of Syria 
+#Aleppo (316000/79000 POPS) #now part of Syria
 897 = {
 	aristocrats = {
 		culture = turkish

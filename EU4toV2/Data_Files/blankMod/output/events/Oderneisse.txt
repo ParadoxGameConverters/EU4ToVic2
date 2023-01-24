@@ -3,7 +3,7 @@ country_event = {
 	title = EVTNAME5000100
 	desc = EVTDESC5000100
 	picture = treaty
-	
+
 	trigger = {
 		OR = {
 			is_culture_group = polish_culture_group
@@ -22,9 +22,9 @@ country_event = {
 		owns = 546 # Stettin
 		owns = 679 # Kolberg
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = STRING_OK
 		set_global_flag = polish_prussia
@@ -51,9 +51,9 @@ country_event = {
 	title = EVTNAME5000110
 	desc = EVTDESC5000110
 	picture = treaty
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = STRING_OK
 		547 = { secede_province = THIS }
@@ -67,7 +67,7 @@ country_event = {
 	title = EVTNAME5000101
 	desc = EVTDESC5000101
 	picture = treaty
-	
+
 	trigger = {
 		NOT = {
 			is_culture_group = polish_culture_group
@@ -82,14 +82,14 @@ country_event = {
 			tag = NGF
 			tag = PRU
 			is_culture_group = germanic
-		}		
+		}
 		has_global_flag = polish_prussia
 		owns = 546 # Stettin
 		owns = 679 # Kolberg
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = STRING_OK
 		clr_global_flag = polish_prussia
@@ -109,7 +109,7 @@ country_event = {
 	title = EVTNAME5000102
 	desc = EVTDESC5000102
 	picture = treaty
-	
+
 	trigger = {
 		OR = {
 			is_culture_group = polish_culture_group
@@ -132,9 +132,9 @@ country_event = {
 		}
 		is_independant = yes
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = STRING_OK
 		set_global_flag = polish_koenigsberg
@@ -156,7 +156,7 @@ country_event = {
 	title = EVTNAME5000103
 	desc = EVTDESC5000103
 	picture = treaty
-	
+
 	trigger = {
 		NOT = {
 			is_culture_group = polish_culture_group
@@ -171,13 +171,13 @@ country_event = {
 			tag = NGF
 			tag = PRU
 			is_culture_group = germanic
-		}		
+		}
 		has_global_flag = polish_koenigsberg
 		owns = 695 # Königsberg
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = STRING_OK
 		clr_global_flag = polish_koenigsberg
@@ -198,7 +198,7 @@ country_event = { # Give Kaliningrad to Russians
 	title = EVTNAME5000102
 	desc = EVTDESC5000102
 	picture = treaty
-	
+
 	trigger = {
 		OR = {
 			is_culture_group = polish_culture_group
@@ -217,9 +217,9 @@ country_event = { # Give Kaliningrad to Russians
 		is_independant = no
 		owns = 695 # Königsberg
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = EVTOPTA5000102
 		set_global_flag = polish_koenigsberg
@@ -243,9 +243,9 @@ country_event = {
 	title = EVTNAME5000114
 	desc = EVTDESC5000114
 	picture = treaty
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = EVTOPTA5000114
 		695 = { secede_province = THIS }
@@ -258,7 +258,7 @@ country_event = { # Give Memel to Lithuania
 	title = EVTNAME5000102
 	desc = EVTDESC5000102
 	picture = treaty
-	
+
 	trigger = {
 		OR = {
 			is_culture_group = polish_culture_group
@@ -279,9 +279,9 @@ country_event = { # Give Memel to Lithuania
 		NOT = { tag = LIT }
 		exists = LIT
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = EVTOPTA5000102
 		set_global_flag = polish_koenigsberg

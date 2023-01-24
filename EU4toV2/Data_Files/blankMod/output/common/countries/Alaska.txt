@@ -119,10 +119,10 @@ unit_names = {
 	Aleutia "Midnight Sun" Juneau Fairbanks Anchorage Badger Knik-Fairview Sitka Lakes Tanaina Ketchikan Kalifornsky Cicely Wasilla "Meadow Lakes" Kenai "Steele Creek" Kodiak Bethel "Chena Ridge" Sterling Gateway
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 	Aleutia "Midnight Sun" Juneau Fairbanks Anchorage Badger Knik-Fairview Sitka Lakes Tanaina Ketchikan Kalifornsky Cicely Wasilla "Meadow Lakes" Kenai "Steele Creek" Kodiak Bethel "Chena Ridge" Sterling Gateway

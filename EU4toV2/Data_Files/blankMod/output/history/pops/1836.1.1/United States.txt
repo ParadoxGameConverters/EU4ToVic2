@@ -7995,7 +7995,7 @@
 		religion = totemism
 		size = 200
 	}
-	
+
 	bureaucrats = {
 		culture = iroquoian
 		religion = totemism
@@ -8249,7 +8249,7 @@
 		religion = totemism
 		size = 475
 	}
-	
+
 	bureaucrats = {
 		culture = eastern_algonquian
 		religion = totemism
@@ -8360,7 +8360,7 @@
 		size = 6000
 	}
 }
-#Delaware Region (76000)  
+#Delaware Region (76000)
 #ruled by the USA
 #Dover (76000/19000 POPS)
 222 = {
@@ -8430,7 +8430,7 @@
 		size = 500
 	}
 }
-#Pennsylvania Region (1536000)  
+#Pennsylvania Region (1536000)
 #ruled by the USA
 #Philadelphia (468000/117000 POPS)
 223 = {
@@ -8780,7 +8780,7 @@
 		size = 25175
 	}
 }
-#New Jersey Region (340000)  
+#New Jersey Region (340000)
 #ruled by the USA
 #Newark (156000/39000 POPS)
 229 = {
@@ -8950,7 +8950,7 @@
 		size = 20525
 	}
 }
-#New York Region (2140000)  
+#New York Region (2140000)
 #ruled by the USA
 #New York (440000/110000 POPS)
 232 = {
@@ -9342,7 +9342,7 @@
 		size = 17725
 	}
 }
-#Connecticut Region (304000)  
+#Connecticut Region (304000)
 #ruled by the USA
 #Hartford (304000/76000 POPS)
 241 = {
@@ -9418,7 +9418,7 @@
 		size = 1475
 	}
 }
-#Rhode Island Region (104000)  
+#Rhode Island Region (104000)
 #ruled by the USA
 #Providence (104000/26000 POPS)
 242 = {
@@ -9494,7 +9494,7 @@
 		size = 475
 	}
 }
-#Massachusetts Region (660000)  
+#Massachusetts Region (660000)
 #ruled by the USA
 #Boston (444000/111000 POPS)
 243 = {
@@ -9712,7 +9712,7 @@
 		size = 19575
 	}
 }
-#Vermont Region (284000)  
+#Vermont Region (284000)
 #ruled by the USA
 #Montpelier (284000/71000 POPS)
 246 = {
@@ -9776,7 +9776,7 @@
 		size = 7475
 	}
 }
-#New Hampshire Region (276000)  
+#New Hampshire Region (276000)
 #ruled by the USA
 #Concord (POPS)
 247 = {
@@ -9828,7 +9828,7 @@
 		size = 62200
 	}
 }
-#Maine Region (432000)  
+#Maine Region (432000)
 #ruled by the USA
 #Lewiston (240000/60000 POPS)
 248 = {

@@ -3,19 +3,19 @@ country_event = {
 	title = THERAJTITLE
 	desc = THERAJDESC
 	picture = queenvictoria
-	
+
 	major = yes
 	fire_only_once = no
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		great_wars_enabled = yes
 		NOT = { has_global_flag = the_raj }
 		is_greater_power = yes
 	}
-	
+
 	mean_time_to_happen = { months = 1 }
-	
+
 	option = {
 		name = STRING_OK
 		set_global_flag = the_raj
@@ -49,11 +49,11 @@ country_event = {
 	title = INTRAJTITLE
 	desc = INTRAJDESC
 	picture = queenvictoria
-	
+
 	major = yes
 	fire_only_once = no
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		has_global_flag = the_raj
 		is_culture_group = south_asian
@@ -68,9 +68,9 @@ country_event = {
 		exists = yes
 		overlord = { capital_scope = { NOT = { continent = asia } } }
 	}
-	
+
 	mean_time_to_happen = { months = 0.001 }
-	
+
 	option = {
 		name = STRING_OK
 		overlord = { inherit = THIS }
@@ -81,18 +81,18 @@ country_event = {
 	title = IAMRAJTITLE
 	desc = IAMRAJDESC
 	picture = queenvictoria
-	
+
 	fire_only_once = no
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		is_independant = yes
 		tag = RJX
 		exists = yes
 	}
-	
+
 	mean_time_to_happen = { months = 0.001 }
-	
+
 	option = {
 		name = IAMRAJOPTA
 		HND = { annex_to = THIS } # If multiple Indias exist
@@ -110,10 +110,10 @@ country_event = {
 	title = ITSRAJTITLE
 	desc = ITSRAJDESC
 	picture = queenvictoria
-	
+
 	fire_only_once = no
 	allow_multiple_instances = no
-	
+
 	trigger = {
 		NOT = { is_culture_group = south_asian }
 		NOT = {
@@ -124,18 +124,18 @@ country_event = {
 			tag = RJX
 		}
 		is_greater_power = yes
-		any_owned_province = { 
+		any_owned_province = {
 			is_core = RJX
 			is_overseas = yes
 		}
 		NOT = { exists = RJX }
 		war = no
 	}
-	
+
 	mean_time_to_happen = {
 		months = 24
 	}
-	
+
 	option = {
 		name = STRING_OK
 		any_owned = {
@@ -153,7 +153,7 @@ province_event = {
 	title = EVTNAME5000004
 	desc = EVTDESC5000004
 	picture = arrested
-	
+
 	trigger = {
 		owner = { has_country_flag = the_gypsy_question }
 		GYP = { exists = no }
@@ -167,11 +167,11 @@ province_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 24
 	}
-	
+
 	option = {
 		name = EVTOPTA5000004
 		add_core = GYP
@@ -182,17 +182,17 @@ province_event = {
 	title = EVTNAME5000005
 	desc = EVTDESC5000005
 	picture = Egyptian
-	
+
 	trigger = {
 		province_id = 1760
 		NOT = { has_global_flag = egy_desert }
 		1758 = { empty = yes }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 5
 	}
-	
+
 	option = {
 		name = STRING_WHY
 		set_global_flag = egy_desert
@@ -208,17 +208,17 @@ province_event = {
 	title = EVTNAME5000006
 	desc = EVTDESC5000006
 	picture = Nile
-	
+
 	trigger = {
 		province_id = 1742
 		NOT = { has_global_flag = fezzan }
 		1741 = { empty = yes }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 5
 	}
-	
+
 	option = {
 		name = STRING_WHY
 		set_global_flag = fezzan
@@ -234,7 +234,7 @@ country_event = {
 	title = EVTNAME5000007
 	desc = EVTDESC5000007
 	picture = Ottoman
-	
+
 	trigger = {
 		OR = {
 			has_country_flag = vic2_country_MSY
@@ -248,11 +248,11 @@ country_event = {
 		PER = { exists = yes }
 		NOT = { has_global_flag = persian_minor }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 	}
-	
+
 	option = {
 		name = EVTOPTA500007
 		set_global_flag = persian_minor

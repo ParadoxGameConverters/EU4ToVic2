@@ -107,7 +107,7 @@ unit_names = {
 		"Puerto Deseado" Austral Blanco "Blanco Encalada" "Capitán Prat" Cochrane "Rio Grande" "Norte Chico" "Norte Grande" "Ojos del Salado"
 	}
 	manowar = {
-		Abtao Águila Araucano Chacabuco Fortunata Galvarino Lautaro Valdiva Potrillo "Puerto Aisen" 
+		Abtao Águila Araucano Chacabuco Fortunata Galvarino Lautaro Valdiva Potrillo "Puerto Aisen"
 	}
 	cruiser = {
 		Aguamarina Diamante Aquiles Esmeralda Llullaillaco Felipe Aconcagua Butacura Caburgua
@@ -118,11 +118,11 @@ unit_names = {
 	monitor = {
 		Liquiñe Butapichón Colo-Colo Curiñancu Guaiquimilla Huáscar Lientur "Pedro de Valdivia" Pelantaru Vilumilla
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		 Coihaique "Mamuil Malal" Caburgua Boldo Ancud Achao Maipo Quetrupillán Quiapo Rawson Vitacura "Puerto Montt" "Punta Arenas" Rancagua
 		"San José" "San Pedro" "San Rafael" "Santa Inés" "Santa María" Chillan Sarmiento Talca Temuco Cau-Cau
 	}
-	steam_transport = { 
+	steam_transport = {
 		Coihaique "Mamuil Malal" Caburgua Boldo Ancud Achao Maipo Quetrupillán Quiapo Rawson Vitacura "Puerto Montt" "Punta Arenas" Rancagua
 		"San José" "San Pedro" "San Rafael" "Santa Inés" "Santa María" Chillan Sarmiento Talca Temuco Cau-Cau
 	}

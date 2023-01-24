@@ -122,7 +122,7 @@ unit_names = {
 		Águila Avance Carguero Cóndor Coraje Creador Descubridor Éter Explorador Fénix
 		Halcón Inhundible Lázaro Oscuro Pegaso "San Antonio" "San Bernabé" "Santa Marta" Titán Volador
 	}
-	steam_transport = { 
+	steam_transport = {
 		Águila Avance Carguero Cóndor Coraje Creador Descubridor Éter Explorador Fénix
 		Halcón Inhundible Lázaro Oscuro Pegaso "San Antonio" "San Bernabé" "Santa Marta" Titán Volador
 	}

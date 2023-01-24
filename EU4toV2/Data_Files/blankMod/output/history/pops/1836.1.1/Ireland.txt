@@ -180,7 +180,7 @@
 		size = 20500
 	}
 }
-#Donegal (508000/127000 POPS) 
+#Donegal (508000/127000 POPS)
 257 = {
 	aristocrats = {
 		culture = irish
@@ -316,9 +316,9 @@
 	}
 
 }
-#Munster Region - 2244000 
+#Munster Region - 2244000
 #under rule of Britain 1836
-#Cork (890000/224000 POPS) 
+#Cork (890000/224000 POPS)
 260 = {
 	aristocrats = {
 		culture = irish
@@ -475,7 +475,7 @@
 	}
 
 }
-#Leinster Region - 1836000 
+#Leinster Region - 1836000
 #under rule of Britain 1836
 #Dublin (860000/215000 POPs)
 263 = {

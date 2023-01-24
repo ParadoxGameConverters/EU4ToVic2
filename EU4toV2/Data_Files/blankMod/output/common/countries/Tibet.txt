@@ -119,10 +119,10 @@ unit_names = {
 		Barkam Dartsendo Gyantse Gartse Lhasa Lhotse Makalu  Nagqu Nyingchi Nedong Pelbar Qamdo Shigatse Sakya Tinggri
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Barkam Dartsendo Gyantse Gartse Lhasa Lhotse Makalu  Nagqu Nyingchi Nedong Pelbar Qamdo Shigatse Sakya Tinggri

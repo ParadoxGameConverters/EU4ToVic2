@@ -180,7 +180,7 @@ unit_names = {
 		Audaz Cuencana Darwin Indestructible Ingapirca Intrépido "Lago Agrio" Marina Orellana Portoviejo
 		Puyeña Quiteña "San Gregorio" "San José" "San Miguel" "Santa María" Santiago "Santo Domingo" Tena Veloz
 	}
-	steam_transport = { 
+	steam_transport = {
 		Amenazante Arauca Auspicio Barranquilla Caquetá Catatumbo Chocó Estrella Florencia Guainía
 		Huila Indestructible "La Guajira" Leticia Manizales Montería Nariño Natividad Salvador Vaupés
 		Diligente Móvil Navegante Neptuno Poderoso Reivindicador Remolcador República "San Juan" "San Lucas"

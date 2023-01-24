@@ -46,7 +46,7 @@
 		religion = animist
 		size=25
 	}
-	
+
 	aristocrats=
 	{
 		culture = maranon

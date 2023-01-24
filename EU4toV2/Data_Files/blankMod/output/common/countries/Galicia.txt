@@ -214,11 +214,11 @@ unit_names = {
 		"Fénix" "Amazona" "Cisne" "Minerva" "N.Sra. da Graça" "Pérola" "Princesa Carlota" "Princesa" "Príncipe da Beira" "Tristão" "Ulisses" "Vénus" "Golfinho" "S. João Príncipe" "Thétis" "Activa" "Dom Fernando II e Glória" "Princesa de Abiena" Andorinha "Real Fonsor" "BoaVentura" Serpente Diligente Gaivota "Real Fonza" Benjamim Tritão
 	}
 	monitor = {
-		"Tâmega" "Sado" "Rio Lima" "Tejo" "Douro" "Quanza" "Bengo" "Mandovi" "Rio Ave" "Guadiana" "Tavira" "Faro" "Lagos" 
+		"Tâmega" "Sado" "Rio Lima" "Tejo" "Douro" "Quanza" "Bengo" "Mandovi" "Rio Ave" "Guadiana" "Tavira" "Faro" "Lagos"
 	}
 	clipper_transport = {
 	}
-	steam_transport = { 
+	steam_transport = {
 	}
 	commerce_raider = {
 		"Bartolomeu Dias" "Estefânia" "Duque da Terceira" "Sá da Bandeira" "Rainha de Portugal" "Mindelo";

@@ -1,15 +1,15 @@
-# This file allows chosen government forms and ideas to affect socio-political reforms, 
-# national value, starting technologies as well as starting tech groups and literacy. 
+# This file allows chosen government forms and ideas to affect socio-political reforms,
+# national value, starting technologies as well as starting tech groups and literacy.
 # For ideas to have an effect, entire idea group must be completed.
-# 
+#
 # Each government type and idea ranks various issues on a scale of 0 to 10 where:
 # 0 - Vehemently oppose or prevents (Over my dead body)
 # 5 - Couldn't care less / does not affect an issue
 # 10 - Strongly boosts / promotes
-# 
+#
 # If an issue is not listed, it counts as being at level 5 (ignored)
-# 
-# Issues recognized: 
+#
+# Issues recognized:
 # Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
 # National values: liberty, equality, order, literacy
 # Technologies: army, commerce, culture, industry, navy
@@ -281,14 +281,14 @@ spy_ideas = {
 	culture = 6
 	navy = 7
 	liberty = 3
-	order = 8	
+	order = 8
 }
 
 exploration_ideas = {
 	navy = 6
 	industry = 3
 	commerce = 6
-	equality = 3	
+	equality = 3
 }
 
 influence_ideas = {
@@ -358,7 +358,7 @@ defensive_ideas = {
 
 naval_ideas = {
 	navy = 7
-	industry = 6	
+	industry = 6
 }
 
 offensive_ideas = {
@@ -429,7 +429,7 @@ royal_education_ideas = {
 grand_court_ideas = {
 	culture = 8
 	equality = 6
-	commerce = 6	
+	commerce = 6
 }
 
 permanent_war_ideas = {

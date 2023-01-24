@@ -203,10 +203,10 @@ unit_names = {
 		Kurhessen Kassel Kurfürst "Graf Friedrich" "Graf Wilhelm" Knyphausen "Carl von Haynau" Fulda Hanau "Eisern Helm" Hersfeld
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Kurhessen Kassel Kurfürst "Graf Friedrich" "Graf Wilhelm" Knyphausen "Carl von Haynau" Fulda Hanau "Eisern Helm" Hersfeld

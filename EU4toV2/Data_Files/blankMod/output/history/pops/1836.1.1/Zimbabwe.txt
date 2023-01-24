@@ -1,6 +1,6 @@
-#Mashonaland Region (296000)  
+#Mashonaland Region (296000)
 #uncolonized in 1836/dominated by Mutapa in 1836
-#Harare (68000/17000 POPS) 
+#Harare (68000/17000 POPS)
 2068 = {
 	aristocrats = {
 		culture = shona
@@ -62,7 +62,7 @@
 		size = 1800
 	}
 }
-#Gweru (96000/24000 POPS) 
+#Gweru (96000/24000 POPS)
 2069 = {
 	aristocrats = {
 		culture = shona
@@ -94,7 +94,7 @@
 		size = 21850
 	}
 }
-#Mutare (96000/24000 POPS) 
+#Mutare (96000/24000 POPS)
 2070 = {
 	aristocrats = {
 		culture = shona
@@ -156,7 +156,7 @@
 		size = 1800
 	}
 }
-#Kariba (36000/9000 POPS) 
+#Kariba (36000/9000 POPS)
 2635 = {
 	aristocrats = {
 		culture = african_minor
@@ -248,9 +248,9 @@
 		size = 900
 	}
 }
-#Matabeleland Region (188000)  
+#Matabeleland Region (188000)
 #uncolonized in 1836/dominated by the Ndebele in 1836
-#Bulawayo (68000/17000 POPS) 
+#Bulawayo (68000/17000 POPS)
 2071 = {
 	aristocrats = {
 		culture = nguni
@@ -342,7 +342,7 @@
 		size = 1825
 	}
 }
-#Hwange (48000/64000 POPS) 
+#Hwange (48000/64000 POPS)
 2072 = {
 	aristocrats = {
 		culture = shona
@@ -434,7 +434,7 @@
 		size = 900
 	}
 }
-#Masvingo (72000/18000 POPS) 
+#Masvingo (72000/18000 POPS)
 2073 = {
 	aristocrats = {
 		culture = shona

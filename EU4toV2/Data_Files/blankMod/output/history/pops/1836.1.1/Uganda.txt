@@ -1,6 +1,6 @@
-#Uganda Region (1136000)  
+#Uganda Region (1136000)
 #uncolonized in 1836/dominated by Buganda in 1836
-#Entebbe (400000/100000 POPS) 
+#Entebbe (400000/100000 POPS)
 2019 = {
 	aristocrats = {
 		culture = baganda
@@ -80,7 +80,7 @@
 		size = 10000
 	}
 }
-#Mbarara (232000/53000 POPS) 
+#Mbarara (232000/53000 POPS)
 2020 = {
 	aristocrats = {
 		culture = baganda
@@ -178,7 +178,7 @@
 		size = 8550
 	}
 }
-#Masindi (192000/48000 POPS) 
+#Masindi (192000/48000 POPS)
 2021 = {
 	aristocrats = {
 		culture = african_minor
@@ -246,7 +246,7 @@
 		size = 8450
 	}
 }
-#Kitgum (104000/26000 POPS) 
+#Kitgum (104000/26000 POPS)
 2022 = {
 	aristocrats = {
 		culture = luo
@@ -314,7 +314,7 @@
 		size = 3000
 	}
 }
-#Jinja (208000/52000 POPS) 
+#Jinja (208000/52000 POPS)
 2023 = {
 	aristocrats = {
 		culture = baganda

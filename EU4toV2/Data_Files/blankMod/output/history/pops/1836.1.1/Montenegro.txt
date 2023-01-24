@@ -1,6 +1,6 @@
-#Montenegro Region (192000)  
-#under the rule of Ottoman Empire in 1836  
-#Ulcinj (36000/9000 POPS) 
+#Montenegro Region (192000)
+#under the rule of Ottoman Empire in 1836
+#Ulcinj (36000/9000 POPS)
 800 = {
 	clergymen = {
 		culture = serb
@@ -44,7 +44,7 @@
 		size = 825
 	}
 }
-#Niksic (52000/13000 POPS) 
+#Niksic (52000/13000 POPS)
 2569 = {
 	clergymen = {
 		culture = serb
@@ -94,8 +94,8 @@
 		size = 5825
 	}
 }
-#under the rule of Montenegro in 1836  
-#Cetinje (104000/26000 POPS) 
+#under the rule of Montenegro in 1836
+#Cetinje (104000/26000 POPS)
 2583 = {
 	bureaucrats = {
 		culture = serb
@@ -132,15 +132,15 @@
 		religion = orthodox
 		size = 23375
 	}
-	
+
 	farmers = {
 		culture = gypsy
 		religion = orthodox
 		size = 1000
 	}
 }
-#Kosovo-Sanjak Region (52000)  #see Serbia.txt for balance of region 
-#under the rule of Ottoman Empire in 1836  
+#Kosovo-Sanjak Region (52000)  #see Serbia.txt for balance of region
+#under the rule of Ottoman Empire in 1836
 #Pljevlja (52000/13000 POPS) #now part of Montenegro
 2577 = {
 	clergymen = {
@@ -196,9 +196,9 @@
 		size = 200
 	}
 }
-#Dalmatia Region (64000) #see Croatia.txt for balance of region 
-#under the rule of Austria in 1836  
-#Kotor (64000/16000 POPS) 
+#Dalmatia Region (64000) #see Croatia.txt for balance of region
+#under the rule of Austria in 1836
+#Kotor (64000/16000 POPS)
 2582 = {
 	clergymen = {
 		culture = croat

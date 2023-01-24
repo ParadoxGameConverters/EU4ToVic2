@@ -125,10 +125,10 @@ unit_names = {
 		"Syr Darya" "Bukhara" "Jalal Mingburnu" "Abu Mamun" "Abu Hasan Ali" "Altun Yash" Harun "Ismail Khandan"
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Khwarezm Urganj "Din Muhammad" "Yelu Dashi" Kunya "Amu Darya" "Anush Tigin" "Ala Aziz" "Ahmed Sanjar" "Ala Takish" "Jaxartes"

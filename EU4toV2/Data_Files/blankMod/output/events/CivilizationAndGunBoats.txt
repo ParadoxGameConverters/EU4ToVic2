@@ -2105,7 +2105,7 @@ country_event = {
 	id = 90910
 
 	is_triggered_only = yes
-	
+
 	trigger = {
 		NOT = { tag = CHI }
 		NOT = { tag = GXI }
@@ -2116,7 +2116,7 @@ country_event = {
 		NOT = { tag = MGL }
 		}
 
-	option = {				
+	option = {
 		name = "EVTOPTA90910"
 
 		prestige = 10
@@ -2148,34 +2148,34 @@ country_event = {
 	id = 90950
 
 	is_triggered_only = yes
-	
+
 	trigger = {
 		#
 		}
 
-	option = {				
+	option = {
 		name = "EVTOPTA90950"
 		casus_belli = {
 			target = FROM
 			type = make_puppet
 			months = 12
 		}
-		
+
 		relation = {
 			who = FROM
 			value = -100
 		}
-		
+
 	}
-	
-	option = {				
+
+	option = {
 		name = "EVTOPTB90950"
 
 		relation = {
 			who = FROM
 			value = 100
 		}
-		
+
 	}
 
 }

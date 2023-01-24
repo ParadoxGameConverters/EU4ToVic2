@@ -101,47 +101,47 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
 	}
 	ironclad = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
-		
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
+
+
 	}
 	manowar = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
+
 	}
 	cruiser = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
 	}
 	frigate = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
 	}
 	monitor = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
-		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia 
-		Dominion Discovery Atlantis "Leif Ericson" 
-		
+		Newfoundland Labrador "John Cabot" Hudson Kirke Bristol "Prince Edward" "Saint John" "Saint Lawrence" "Belle Isle" Placentia
+		Dominion Discovery Atlantis "Leif Ericson"
+
 	}
 }

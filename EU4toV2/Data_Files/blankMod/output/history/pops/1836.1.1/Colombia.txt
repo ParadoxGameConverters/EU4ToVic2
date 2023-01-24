@@ -249,7 +249,7 @@
 		religion = inti
 		size = 125
 	}
-	
+
 	aristocrats = {
 		culture = guajiro
 		religion = animist
@@ -335,7 +335,7 @@
 		religion = inti
 		size = 10575
 	}
-	
+
 	aristocrats = {
 		culture = guajiro
 		religion = animist
@@ -397,7 +397,7 @@
 		religion = inti
 		size = 10575
 	}
-	
+
 	aristocrats = {
 		culture = guajiro
 		religion = animist
@@ -525,7 +525,7 @@
 		religion = inti
 		size = 3100
 	}
-	
+
 	aristocrats = {
 		culture = guajiro
 		religion = animist
@@ -693,7 +693,7 @@
 		religion = animist
 		size = 25
 	}
-	
+
 	aristocrats = {
 		culture = maranon
 		religion = animist

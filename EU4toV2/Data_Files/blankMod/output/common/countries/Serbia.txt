@@ -143,13 +143,13 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Beograd "Kosovska Bitka" Petrovic Obrenovic Lazarevic Srbija 
+		Beograd "Kosovska Bitka" Petrovic Obrenovic Lazarevic Srbija
 	}
 	ironclad = {
-		Drava Drina Ivankovac "Milenko Stojkovic" Kragujevac "Pavle Bakic" 
+		Drava Drina Ivankovac "Milenko Stojkovic" Kragujevac "Pavle Bakic"
 	}
 	manowar = {
-		"Velika Morava" "Juzna Morava" Zlatibor Kopaonik Resava 
+		"Velika Morava" "Juzna Morava" Zlatibor Kopaonik Resava
 	}
 	cruiser = {
 		Karadžic Nemanjici Silni "Mihailo I" Jankovic
@@ -160,11 +160,11 @@ unit_names = {
 	monitor = {
 		Jadar Sava Dubalj Vladimira Nikolina
 	}
-	clipper_transport = { 
-		"Knjaz Mihailo" Zorana Zorica Miroslava Gorana 
+	clipper_transport = {
+		"Knjaz Mihailo" Zorana Zorica Miroslava Gorana
 
 	}
-	steam_transport = { 
+	steam_transport = {
 		Jaki Silni Snaži Marljivi Ustrajni
 
 	}

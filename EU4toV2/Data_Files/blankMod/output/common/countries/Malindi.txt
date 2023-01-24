@@ -101,28 +101,28 @@ party = {
 
 unit_names = {
 	dreadnought = {
-		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu		
+		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu
 	}
 	ironclad = {
-		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu		
+		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu
 	}
 	manowar = {
-		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu		
+		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu
 	}
 	cruiser = {
-		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu		
+		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu
 	}
 	frigate = {
-		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu		
+		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu
 	}
 	monitor = {
-		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu		
+		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		Mlima Moto Moshi Homu Ukungu Nyota Jua Maji Mwezi Mnyama Samaki Ndege Mbwa Nyoka Ua Damu

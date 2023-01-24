@@ -177,7 +177,7 @@ unit_names = {
 		"Almirante Williams" Austral Blanco "Blanco Encalada" "Capitán Prat" Cochrane "Isla de Pascua" "Norte Chico" "Norte Grande" "Ojos del Salado"
 	}
 	manowar = {
-		Abtao Águila Araucano Chacabuco Fortunata Galvarino Lautaro O'Higgins Potrillo "San Martín" 
+		Abtao Águila Araucano Chacabuco Fortunata Galvarino Lautaro O'Higgins Potrillo "San Martín"
 	}
 	cruiser = {
 		Aguamarina Diamante "Director Eyzaguirre" "Director Freire" Esmeralda Llullaillaco Parinacota "Presidente Errázuriz" "Presidente Pinto" Tupungato
@@ -188,11 +188,11 @@ unit_names = {
 	monitor = {
 		Anganemon Butapichón Colo-Colo Curiñancu Guaiquimilla Huáscar Lientur "Pedro de Valdivia" Pelantaru Vilumilla
 	}
-	clipper_transport = { 
+	clipper_transport = {
 		 Coihaique Concepción Copiapo "Del Toro" Iquique "La Serena" "Laguna Blanca" "Puerto Montt" "Punta Arenas" Rancagua
 		"San José" "San Pedro" "San Rafael" "Santa Inés" "Santa María" Santiago Sarmiento Talca Temuco Yulton
 	}
-	steam_transport = { 
+	steam_transport = {
 		Coihaique Concepción Copiapo "Del Toro" Iquique "La Serena" "Laguna Blanca" "Puerto Montt" "Punta Arenas" Rancagua
 		"San José" "San Pedro" "San Rafael" "Santa Inés" "Santa María" Santiago Sarmiento Talca Temuco Yulton
 	}

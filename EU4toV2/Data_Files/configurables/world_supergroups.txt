@@ -16,7 +16,7 @@ old_world = {
 	southern_africa_superregion = { assimilation = 2 }
 	near_east_superregion = { assimilation = 1 }
 	persia_superregion = { assimilation = 1 }
-	
+
 	# VN
 	austria_superregion = { assimilation = 1 }
 	balkans_superregion = { assimilation = 1 }

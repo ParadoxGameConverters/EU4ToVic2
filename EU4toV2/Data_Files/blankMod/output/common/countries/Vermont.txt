@@ -121,7 +121,7 @@ unit_names = {
 	ironclad = {
 		"New England" Connecticut Maine Massachusetts "New Hampshire" "Rhode Island" Vermont Boston Hartford Augusta Concord Providence
 		Montpelier "John Smith" Champlain
-		
+
 	}
 	manowar = {
 		"New England" Connecticut Maine Massachusetts "New Hampshire" "Rhode Island" Vermont Boston Hartford Augusta Concord Providence
@@ -138,17 +138,17 @@ unit_names = {
 	monitor = {
 		"New England" Connecticut Maine Massachusetts "New Hampshire" "Rhode Island" Vermont Boston Hartford Augusta Concord Providence
 		Montpelier "John Smith" Champlain
-		
+
 	}
 	clipper_transport = {
-		
+
 	}
 	steam_transport = {
-		
+
 	}
 	commerce_raider = {
 		"New England" Connecticut Maine Massachusetts "New Hampshire" "Rhode Island" Vermont Boston Hartford Augusta Concord Providence
 		Montpelier "John Smith" Champlain
-		
+
 	}
 }

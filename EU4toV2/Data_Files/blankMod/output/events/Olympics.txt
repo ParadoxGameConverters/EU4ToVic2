@@ -19,7 +19,7 @@ country_event = {
 		NOT = { has_country_flag = IOCMember }
 		year = 1893
 		war = no # Nation can NOT be at war at the time of invite
-		or = { 
+		or = {
 			is_greater_power = yes # Nation is a great power
 			prestige = 500 # Non-Euro/non GP need to be high prestige to get invite in this era
 			tag = GRE # Greece projected to host first games so has to get invite
@@ -29,7 +29,7 @@ country_event = {
 			}
 		}
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -41,7 +41,7 @@ country_event = {
 			factor = 0.8
 			year = 1895
 		}
-		
+
 		modifier = {
 			factor = 0.9
 			rank = 4
@@ -55,7 +55,7 @@ country_event = {
 	title = "EVTNAME23400"
 	desc = "EVTDESC23400"
 	picture = "Olympics"
-	
+
 
 	option = {
 		name = "EVTOPTA23400" # Join the IOC
@@ -74,7 +74,7 @@ country_event = {
 # 1st Olympiad - Greece gets first crack to host if it wants
 country_event = {
 
-	id = 23401 
+	id = 23401
 
 	trigger = {
 		tag = GRE # Greece hosted 1896 Olympics
@@ -90,7 +90,7 @@ country_event = {
 		NOT = { year = 1898 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -126,7 +126,7 @@ country_event = {
 # 1st Olympiad - Other nation hosts because GRE says no or doesn't exist
 country_event = {
 
-	id = 23402 
+	id = 23402
 
 	trigger = {
 		NOT = { has_global_flag = Host1Olympiad }
@@ -146,7 +146,7 @@ country_event = {
 		NOT = { year = 1898 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -207,7 +207,7 @@ country_event = {
 # 1st Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23403 # Attend 1896 Olympics 
+	id = 23403 # Attend 1896 Olympics
 
 	trigger = {
 		has_global_flag = Host1Olympiad
@@ -222,7 +222,7 @@ country_event = {
 		NOT = { year = 1898 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -273,7 +273,7 @@ country_event = {
 # 1st Olympiad - Host nation holds games
 country_event = {
 
-	id = 23404 # 1st games are held 
+	id = 23404 # 1st games are held
 
 	trigger = {
 		has_country_flag = Host1Olympiad
@@ -283,7 +283,7 @@ country_event = {
 		NOT = { year = 1899 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -312,7 +312,7 @@ country_event = {
 # 1st Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23405 # Win medal at 1896 Olympics 
+	id = 23405 # Win medal at 1896 Olympics
 
 	trigger = {
 		has_global_flag = Hold1Olympiad
@@ -321,7 +321,7 @@ country_event = {
 		year = 1896
 		NOT = { year = 1899 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -349,7 +349,7 @@ country_event = {
 # 2 Olympiad - getting a host nation
 country_event = {
 
-	id = 23406 
+	id = 23406
 
 	trigger = {
 		NOT = { has_global_flag = Host2Olympiad }
@@ -365,7 +365,7 @@ country_event = {
 		NOT = { year = 1902 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -373,7 +373,7 @@ country_event = {
 			factor = 3
 			has_country_flag = Host1Olympiad
 		}
-		
+
 		modifier = {
 			factor = 0.9
 			year = 1900
@@ -431,7 +431,7 @@ country_event = {
 # 2 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23407 # Attend 2 Games 
+	id = 23407 # Attend 2 Games
 
 	trigger = {
 		has_global_flag = Host2Olympiad
@@ -444,7 +444,7 @@ country_event = {
 		NOT = { year = 1902 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -495,7 +495,7 @@ country_event = {
 # 2 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23408 # 2 games are held 
+	id = 23408 # 2 games are held
 
 	trigger = {
 		has_country_flag = Host2Olympiad
@@ -505,7 +505,7 @@ country_event = {
 		NOT = { year = 1903 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -534,7 +534,7 @@ country_event = {
 # 2 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23409 # Win medal at 2 Olympics 
+	id = 23409 # Win medal at 2 Olympics
 
 	trigger = {
 		has_global_flag = Hold2Olympiad
@@ -543,7 +543,7 @@ country_event = {
 		year = 1900
 		NOT = { year = 1903 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -588,7 +588,7 @@ country_event = {
 		NOT = { year = 1906 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 		modifier = {
@@ -653,7 +653,7 @@ country_event = {
 # 3 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23411 # Attend 3 Games 
+	id = 23411 # Attend 3 Games
 
 	trigger = {
 		has_global_flag = Host3Olympiad
@@ -668,7 +668,7 @@ country_event = {
 		NOT = { year = 1906 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -719,7 +719,7 @@ country_event = {
 # 3 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23412 # 1st games are held 
+	id = 23412 # 1st games are held
 
 	trigger = {
 		has_country_flag = Host3Olympiad
@@ -729,7 +729,7 @@ country_event = {
 		NOT = { year = 1907 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -758,7 +758,7 @@ country_event = {
 # 3 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23413 # Win medal at 3 Olympics 
+	id = 23413 # Win medal at 3 Olympics
 
 	trigger = {
 		has_global_flag = Hold3Olympiad
@@ -767,7 +767,7 @@ country_event = {
 		year = 1904
 		NOT = { year = 1907 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -811,10 +811,10 @@ country_event = {
 		NOT = { year = 1910 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
-		
+
 		modifier = {
 			factor = 3
 			has_country_flag = Host3Olympiad
@@ -877,7 +877,7 @@ country_event = {
 # 4 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23415 # Attend 4 Games 
+	id = 23415 # Attend 4 Games
 
 	trigger = {
 		has_global_flag = Host4Olympiad
@@ -892,7 +892,7 @@ country_event = {
 		NOT = { year = 1910 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -943,7 +943,7 @@ country_event = {
 #4 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23416 # 4 games are held 
+	id = 23416 # 4 games are held
 
 	trigger = {
 		has_country_flag = Host4Olympiad
@@ -955,7 +955,7 @@ country_event = {
 		NOT = { year = 1911 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -984,7 +984,7 @@ country_event = {
 # 4 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23417 # Win medal at 4 Olympics 
+	id = 23417 # Win medal at 4 Olympics
 
 	trigger = {
 		has_global_flag = Hold4Olympiad
@@ -993,7 +993,7 @@ country_event = {
 		year = 1908
 		NOT = { year = 1911 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -1037,7 +1037,7 @@ country_event = {
 		NOT = { year = 1915 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1102,7 +1102,7 @@ country_event = {
 # 5 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23419 # Attend 5 Games 
+	id = 23419 # Attend 5 Games
 
 	trigger = {
 		has_global_flag = Host5Olympiad
@@ -1117,7 +1117,7 @@ country_event = {
 		NOT = { year = 1914 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1168,7 +1168,7 @@ country_event = {
 # 5 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23420 # 5 games are held 
+	id = 23420 # 5 games are held
 
 	trigger = {
 		has_country_flag = Host5Olympiad
@@ -1178,7 +1178,7 @@ country_event = {
 		NOT = { year = 1915 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1207,7 +1207,7 @@ country_event = {
 # 5 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23421 # Win medal at 5 Olympics 
+	id = 23421 # Win medal at 5 Olympics
 
 	trigger = {
 		has_global_flag = Hold5Olympiad
@@ -1216,7 +1216,7 @@ country_event = {
 		year = 1912
 		NOT = { year = 1915 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -1260,7 +1260,7 @@ country_event = {
 		NOT = { year = 1919 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1326,7 +1326,7 @@ country_event = {
 # 6 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23423 # Attend 6 Games 
+	id = 23423 # Attend 6 Games
 
 	trigger = {
 		has_global_flag = Host6Olympiad
@@ -1341,7 +1341,7 @@ country_event = {
 		NOT = { year = 1918 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1392,7 +1392,7 @@ country_event = {
 # 6 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23424 # 6 games are held 
+	id = 23424 # 6 games are held
 
 	trigger = {
 		has_country_flag = Host6Olympiad
@@ -1402,7 +1402,7 @@ country_event = {
 		NOT = { year = 1919 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1431,7 +1431,7 @@ country_event = {
 # 6 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23425 # Win medal at 6 Olympics 
+	id = 23425 # Win medal at 6 Olympics
 
 	trigger = {
 		has_global_flag = Hold6Olympiad
@@ -1440,7 +1440,7 @@ country_event = {
 		year = 1916
 		NOT = { year = 1919 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -1484,7 +1484,7 @@ country_event = {
 		NOT = { year = 1923 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1549,7 +1549,7 @@ country_event = {
 # 7 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23427 # Attend 7 Games 
+	id = 23427 # Attend 7 Games
 
 	trigger = {
 		has_global_flag = Host7Olympiad
@@ -1564,7 +1564,7 @@ country_event = {
 		NOT = { year = 1922 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1615,7 +1615,7 @@ country_event = {
 # 7 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23428 #7 games are held 
+	id = 23428 #7 games are held
 
 	trigger = {
 		has_country_flag = Host7Olympiad
@@ -1625,7 +1625,7 @@ country_event = {
 		NOT = { year = 1923 }
 		war = no # Nation can NOT be at war at the time of invite
 		}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1654,7 +1654,7 @@ country_event = {
 # 7 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23429 # Win medal at 7 Olympics 
+	id = 23429 # Win medal at 7 Olympics
 
 	trigger = {
 		has_global_flag = Hold7Olympiad
@@ -1663,7 +1663,7 @@ country_event = {
 		year = 1920
 		NOT = { year = 1923 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -1708,7 +1708,7 @@ country_event = {
 		NOT = { year = 1927 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1773,7 +1773,7 @@ country_event = {
 # 8 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23431 # Attend 8 Games 
+	id = 23431 # Attend 8 Games
 
 	trigger = {
 		has_global_flag = Host8Olympiad
@@ -1788,7 +1788,7 @@ country_event = {
 		NOT = { year = 1926 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1839,7 +1839,7 @@ country_event = {
 #8 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23432 # 7 games are held 
+	id = 23432 # 7 games are held
 
 	trigger = {
 		has_country_flag = Host8Olympiad
@@ -1849,7 +1849,7 @@ country_event = {
 		NOT = { year = 1927 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1878,7 +1878,7 @@ country_event = {
 # 8 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23433 # Win medal at 8 Olympics 
+	id = 23433 # Win medal at 8 Olympics
 
 	trigger = {
 		has_global_flag = Hold8Olympiad
@@ -1887,7 +1887,7 @@ country_event = {
 		year = 1924
 		NOT = { year = 1927 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -1931,7 +1931,7 @@ country_event = {
 		NOT = { year = 1931 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -1996,7 +1996,7 @@ country_event = {
 # 9 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23435 # Attend 9 Games 
+	id = 23435 # Attend 9 Games
 
 	trigger = {
 		has_global_flag = Host9Olympiad
@@ -2011,7 +2011,7 @@ country_event = {
 		NOT = { year = 1930 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -2062,7 +2062,7 @@ country_event = {
 # 9 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23436 # 9 games are held 
+	id = 23436 # 9 games are held
 
 	trigger = {
 		has_country_flag = Host9Olympiad
@@ -2072,7 +2072,7 @@ country_event = {
 		NOT = { year = 1931 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -2101,7 +2101,7 @@ country_event = {
 # 9 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23437 # Win medal at 9 Olympics 
+	id = 23437 # Win medal at 9 Olympics
 
 	trigger = {
 		has_global_flag = Hold9Olympiad
@@ -2110,7 +2110,7 @@ country_event = {
 		year = 1928
 		NOT = { year = 1931 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 
@@ -2154,7 +2154,7 @@ country_event = {
 		NOT = { year = 1935 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -2219,7 +2219,7 @@ country_event = {
 # 10 Olympiad - Send Delegation or No
 country_event = {
 
-	id = 23439 # Attend 10 Games 
+	id = 23439 # Attend 10 Games
 
 	trigger = {
 		has_global_flag = Host10Olympiad
@@ -2234,7 +2234,7 @@ country_event = {
 		NOT = { year = 1934 }
 		war = no #nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -2285,7 +2285,7 @@ country_event = {
 # 10 Olympiad - Host nation holds games
 country_event = {
 
-	id = 23440 # 10 games are held 
+	id = 23440 # 10 games are held
 
 	trigger = {
 		has_country_flag = Host10Olympiad
@@ -2295,7 +2295,7 @@ country_event = {
 		NOT = { year = 1935 }
 		war = no # Nation can NOT be at war at the time of invite
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 12
 
@@ -2324,7 +2324,7 @@ country_event = {
 # 10 Olympiad - Our nation won medals at the games
 country_event = {
 
-	id = 23441 # Win medal at 10 Olympics 
+	id = 23441 # Win medal at 10 Olympics
 
 	trigger = {
 		has_global_flag = Hold10Olympiad
@@ -2333,7 +2333,7 @@ country_event = {
 		year = 1932
 		NOT = { year = 1935 }
 	}
- 
+
 	mean_time_to_happen =  {
 		months = 18
 

@@ -1,6 +1,6 @@
-#Tripolitania Region (396000)  
-#under the rule of Ottoman Empire in 1836  
-#Tripoli (172000/43000 POPS) 
+#Tripolitania Region (396000)
+#under the rule of Ottoman Empire in 1836
+#Tripoli (172000/43000 POPS)
 1731 = {
 	aristocrats = {
 		culture = maghrebi
@@ -308,8 +308,8 @@
 		size = 4000
 	}
 }
-#Cyrenaica Region (232000)  
-#under the rule of Ottoman Empire in 1836  
+#Cyrenaica Region (232000)
+#under the rule of Ottoman Empire in 1836
 #Benghazi (124000/31000 POPS)
 1735 = {
 	aristocrats = {
@@ -538,7 +538,7 @@
 		size = 3000
 	}
 }
-#Kufrah Region (48000)  
+#Kufrah Region (48000)
 #uncolonized in 1836
 #Jaghbub (12000/3000 POPS)
 1738 = {
@@ -728,8 +728,8 @@
 		size = 900
 	}
 }
-#Fezzan Region (70000)  
-#under the indirect rule of Ottoman Empire in 1836  
+#Fezzan Region (70000)
+#under the indirect rule of Ottoman Empire in 1836
 #Murzuk (16000/4000 POPS)
 1741 = {
 	aristocrats = {

@@ -268,9 +268,9 @@ link = { name = "auserw‰hlte von perkunas" 	 title = "d_chosen_perkunas" 	 regio
 link = { name = "austerbotn" 	 title = "c_osterbotten" 	 region = "e_scandinavia" }
 link = { name = "austergautland" 	 title = "c_ostergotland" 	 region = "e_scandinavia" }
 link = { name = "austlandet" 	 title = "d_ostlandet" 	 region = "e_scandinavia" }
-link = { name = "austrasia" title = "k_lotharingia" region = "e_france" }		
-link = { name = "austrasie" title = "k_lotharingia" region = "e_france" }		
-link = { name = "austrasien" title = "k_lotharingia" region = "e_france" }		
+link = { name = "austrasia" title = "k_lotharingia" region = "e_france" }
+link = { name = "austrasie" title = "k_lotharingia" region = "e_france" }
+link = { name = "austrasien" title = "k_lotharingia" region = "e_france" }
 link = { name = "auvergne" 	 title = "d_auvergne" 	 region = "e_france" }
 link = { name = "auvernia" 	 title = "d_auvergne" 	 region = "e_france" }
 link = { name = "avanti" 	 title = "d_dadhipadra" 	 region = "e_rajastan" }
@@ -3703,8 +3703,8 @@ link = { name = "indien" title = "e_india" region = "e_india" }
 link = { name = "kara khitai" title = "e_kara_khitai" region = "e_kara_khitai" }
 link = { name = "kara khitaÔ" title = "e_kara_khitai" region = "e_kara_khitai" }
 link = { name = "great liao" title = "e_liao" region = "e_liao" } # Renamed Kyrgyz Khanate
-link = { name = "grand liao" title = "e_liao" region = "e_liao" } 
-link = { name = "groﬂ-liao" title = "e_liao" region = "e_liao" } 
+link = { name = "grand liao" title = "e_liao" region = "e_liao" }
+link = { name = "groﬂ-liao" title = "e_liao" region = "e_liao" }
 link = { name = "outremer" title = "e_outremer" region = "e_outremer" }
 link = { name = "slavia" title = "e_slavia" region = "e_slavia" }
 link = { name = "slavie" title = "e_slavia" region = "e_slavia" }
@@ -3719,7 +3719,7 @@ link = { name = "white horde" title = "e_white_horde" region = "e_white_horde" }
 link = { name = "horde blanche" title = "e_white_horde" region = "e_white_horde" }
 link = { name = "weiﬂe horde" title = "e_white_horde" region = "e_white_horde" }
 
-# Kingdoms 
+# Kingdoms
 link = { name = "lotharingia" title = "k_lotharingia" region = "e_hre" }
 link = { name = "pontus" title = "k_pontus" region = "e_byzantium" }
 link = { name = "armenian principalities" title = "k_armenia" region = "e_byzantium" }

@@ -119,12 +119,12 @@ unit_names = {
 	monitor = {
 		"Royal Sovereign" "Prince Albert" "Scorpion" "Wivern" "Cyclops" "Gorgon" "Hecate" "Hydra" "Cerberus" "Magdala" "Abyssinia" "Glatton" "Hotspur" "Rupert" "Belleisle" "Orion" "Conqueror" "Hero" "Severn" "Humber" "Mersey" "Abercrombie" "Havelock" "Raglan" "Roberts" "Lord Clive" "General Craufurd" "Earl of Peterborough" "Sir Thomas Picton" "Prince Eugene" "Prince Rupert" "Sir John Moore" "General Wolfe" "Marshal Ney" "Marshal Soult" "Gorgon" "Glatton" "Medusa" "Erebus" "Terror" "Robert" "Abercrombie"
 	}
-	clipper_transport = { 
-		
+	clipper_transport = {
+
 
 	}
-	steam_transport = { 
-		
+	steam_transport = {
+
 
 	}
 	commerce_raider = {
