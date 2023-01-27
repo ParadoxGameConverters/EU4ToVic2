@@ -1,9 +1,11 @@
 .vs
 packages
 Release/
+Release-Tests/
 ReleaseIntermediate/
 Release-Linux/
 Debug/
+Debug-Tests/
 DebugIntermediate/
 Analysis
 AnalysisIntermediate
