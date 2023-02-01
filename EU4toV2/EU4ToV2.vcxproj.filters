@@ -469,42 +469,6 @@
     <ClCompile Include="Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
       <Filter>Mappers\AfricaReset</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\Date.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\iconvlite.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Log.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Parser.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\StringUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\WinUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\GameVersion.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\targa.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Color.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
     </ClCompile>
@@ -547,9 +511,6 @@
     <ClCompile Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp">
       <Filter>Mappers\UnionTagsMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Country\ModCommons.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
@@ -573,15 +534,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Mods\ModNames.cpp">
       <Filter>EU4World\Mods</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ConverterVersion.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
-      <Filter>CommonItems\ModLoader</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\ProvinceRenamings\ProvinceRename.cpp">
       <Filter>Mappers\ProvinceRenamings</Filter>
@@ -609,12 +561,6 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\Pops\CustomPopShaping.cpp">
       <Filter>Mappers\Pops</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
-      <Filter>CommonItems\zip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1043,41 +989,8 @@
     <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h">
       <Filter>Mappers\AfricaReset</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\Date.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\iconvlite.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Log.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\OSCompatibilityLayer.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Parser.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ParserHelpers.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\StringUtils.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\CommonFunctions.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\GameVersion.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\targa.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Helpers\rakaly.h">
       <Filter>Helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Color.h">
-      <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.h">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
@@ -1121,12 +1034,6 @@
     <ClInclude Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.h">
       <Filter>Mappers\UnionTagsMapper</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\CommonRegexes.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ConvenientParser.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Country\ModCommons.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
@@ -1144,15 +1051,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Mods\ModNames.h">
       <Filter>EU4World\Mods</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ConverterVersion.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\ModLoader.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\ModParser.h">
-      <Filter>CommonItems\ModLoader</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\ProvinceRenamings\ProvinceRename.h">
       <Filter>Mappers\ProvinceRenamings</Filter>
@@ -1178,18 +1076,6 @@
     <ClInclude Include="Source\Mappers\Pops\CustomPopShaping.h">
       <Filter>Mappers\Pops</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\Mod.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\ModFilesystem.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\external\zip\src\miniz.h">
-      <Filter>CommonItems\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\external\zip\src\zip.h">
-      <Filter>CommonItems\zip</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1203,9 +1089,6 @@
     </Filter>
     <Filter Include="Vic2World">
       <UniqueIdentifier>{54d664c9-6ab6-495c-860c-285dad122e46}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CommonItems">
-      <UniqueIdentifier>{92d9302b-67c1-46ea-9493-b56e75598574}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\Provinces">
       <UniqueIdentifier>{865578c6-52ac-4ef0-8dc1-c168b677508a}</UniqueIdentifier>
@@ -1438,9 +1321,6 @@
     <Filter Include="Mappers\ReligiousGroups">
       <UniqueIdentifier>{26f2aa56-2c79-4c55-9757-7507b1a40e54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CommonItems\ModLoader">
-      <UniqueIdentifier>{3aa3310e-b8bc-405d-b796-3489b69fa32b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\ProvinceRenamings">
       <UniqueIdentifier>{56ba678d-2128-487e-a45f-7ff99d082b0b}</UniqueIdentifier>
     </Filter>
@@ -1449,9 +1329,6 @@
     </Filter>
     <Filter Include="Mappers\CultureGroupsMapper">
       <UniqueIdentifier>{a87f6587-9dcf-48ed-bbaa-55291221a475}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CommonItems\zip">
-      <UniqueIdentifier>{c58f745a-5119-410e-93d6-51fcdbe29a33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -131,44 +131,11 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
       <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\Date.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\iconvlite.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Log.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Parser.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\StringUtils.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\WinUtils.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\GameVersion.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMapping.cpp">
       <Filter>ConverterFiles\Mappers\CountryMappings</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp">
       <Filter>MapperTests\CountryMappings</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Color.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
       <Filter>ConverterFiles\Mappers\AcceptedCultureThresholds</Filter>
@@ -734,9 +701,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp">
       <Filter>ConverterFiles\Mappers\UnionTagsMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ActivePolicy.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
@@ -787,18 +751,6 @@
     </ClCompile>
     <ClCompile Include="MapperTests\CultureGroupsMapper\CultureGroupsMappingTests.cpp">
       <Filter>MapperTests\CultureGroupsMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
-      <Filter>ConverterFiles\commonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
-      <Filter>ConverterFiles\commonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
-      <Filter>ConverterFiles\commonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
-      <Filter>ConverterFiles\commonItems\zip</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\external\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
@@ -879,9 +831,6 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\SuperGroupMapper">
       <UniqueIdentifier>{88e40f2b-545c-4ad1-b53e-8931a8e8d5ae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConverterFiles\commonItems">
-      <UniqueIdentifier>{87c6ec85-b77f-4e5f-9685-fe52f9d29d40}</UniqueIdentifier>
     </Filter>
     <Filter Include="ConverterFiles\Mappers\CountryMappings">
       <UniqueIdentifier>{5a7d0b3e-be05-4c5e-b821-003d63baa3f2}</UniqueIdentifier>
@@ -1174,19 +1123,10 @@
     <Filter Include="MapperTests\CultureGroupsMapper">
       <UniqueIdentifier>{78f32389-075d-46fb-8c31-eb1aab1f5b86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConverterFiles\commonItems\ModLoader">
-      <UniqueIdentifier>{3c0fe895-cf13-45e4-a6c8-9dfaee3a94fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConverterFiles\commonItems\zip">
-      <UniqueIdentifier>{d8f7c7a7-24c7-4ebf-a39e-85bf4801996c}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mocks\Vic2CountryMock.h">
       <Filter>Mocks</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ConvenientParser.h">
-      <Filter>ConverterFiles\commonItems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
