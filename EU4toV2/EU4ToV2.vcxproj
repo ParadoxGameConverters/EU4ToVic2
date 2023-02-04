@@ -30,7 +30,7 @@
 		H:\Projects\Development\Boost\boost_1_57_0
 	</BOOST_INCLUDE>
     <TargetName>EU4ToVic2Converter</TargetName>
-    <OutDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2\</OutDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
