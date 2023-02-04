@@ -22,3 +22,4 @@ EU4toV2/cmake_install.cmake
 tests.xml
 *bz2
 lib/
+build/
