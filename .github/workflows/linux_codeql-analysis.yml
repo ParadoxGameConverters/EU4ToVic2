@@ -43,6 +43,11 @@ jobs:
        chmod u+x build_linux.sh
        ./build_linux.sh
 
+    - name: Run Tests
+      run: |
+       cd test/Release-Linux
+       ./EU4ToVic2Tests
+
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       
@@ -91,5 +96,10 @@ jobs:
        chmod u+x build_linux_foreign.sh
        ./build_linux_foreign.sh
 
-    - name: Perform CodeQL Analysis
+    - name: Run Tests
+      run: |
+       cd test/Release-Linux
+       ./EU4ToVic2Tests
+
+- name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
