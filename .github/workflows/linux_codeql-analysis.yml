@@ -28,10 +28,9 @@ jobs:
 
     - name: "Cloning selective submodules"
       run: |
-       git submodule update --init --recursive commonItems       
-       git -c submodule."googletest".update=none \
-           -c submodule."external/googletest".update=none \
-           -c submodule."external/zip".update=none \
+       git submodule update --init --recursive commonItems
+       git -c submodule."external/commonItems".update=none \
+           -c submodule."googletest".update=none \
            submodule update --init --recursive Fronter
 
     - name: Initialize CodeQL
@@ -68,9 +67,8 @@ jobs:
     - name: "Cloning selective submodules"
       run: |
        git submodule update --init --recursive commonItems       
-       git -c submodule."googletest".update=none \
-           -c submodule."external/googletest".update=none \
-           -c submodule."external/zip".update=none \
+       git -c submodule."external/commonItems".update=none \
+           -c submodule."googletest".update=none \
            submodule update --init --recursive Fronter
 
     - name: Initialize CodeQL
@@ -90,9 +88,6 @@ jobs:
       
     - name: Build solution
       run: |
-       # Link gcc-11 and g++-11 to their standard commands
-       sudo ln -s /usr/bin/gcc-11 /usr/local/bin/gcc
-       sudo ln -s /usr/bin/g++-11 /usr/local/bin/g++
        chmod u+x build_linux_foreign.sh
        ./build_linux_foreign.sh
 
