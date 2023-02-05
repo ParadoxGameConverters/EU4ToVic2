@@ -1,5 +1,5 @@
-#include "Configuration.h"
 #include "EU4ToVic2Converter.h"
+#include "Configuration.h"
 #include "EU4World/World.h"
 #include "Log.h"
 #include "Mappers/IdeaEffects/IdeaEffectMapper.h"

@@ -1,4 +1,4 @@
-#include "../EU4toV2/Source/Mappers/StateMapper/StateMapper.h"
+#include "../EU4ToVic2/Source/Mappers/StateMapper/StateMapper.h"
 #include "gtest/gtest.h"
 
 

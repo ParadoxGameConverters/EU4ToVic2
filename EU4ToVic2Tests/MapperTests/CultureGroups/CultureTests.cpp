@@ -163,7 +163,7 @@ TEST(Mappers_CultureTests, neocultureSettingManuallySetsRadicalismTo10)
 	ASSERT_EQ(10, culture.getRadicalism());
 }
 
-TEST(Mappers_CultureTests, cultureCanBeTransmogrifiedFromEU4ToV2)
+TEST(Mappers_CultureTests, cultureCanBeTransmogrifiedFromEU4ToVic2)
 {
 	std::stringstream input;
 	input << "primary = TAG\n";

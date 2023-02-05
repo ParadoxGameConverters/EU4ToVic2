@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         path:
-          - 'EU4toV2/Source'
+          - 'EU4ToVic2/Source'
           - 'EU4ToVic2Tests'
     steps:
     - uses: actions/checkout@v3

@@ -1,4 +1,4 @@
-#include "../EU4toV2/Source/Configuration.h"
+#include "../EU4ToVic2/Source/Configuration.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
