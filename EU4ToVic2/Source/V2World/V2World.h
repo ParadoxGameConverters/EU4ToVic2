@@ -1,6 +1,6 @@
 #ifndef WORLD_H
 #define WORLD_H
-#include "../../EU4toV2/Source/EU4World/Localization/EU4Localization.h"
+#include "../../EU4ToVic2/Source/EU4World/Localization/EU4Localization.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
 #include "../Mappers/AfricaReset/AfricaResetMapper.h"

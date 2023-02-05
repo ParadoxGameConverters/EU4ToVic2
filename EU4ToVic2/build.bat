@@ -10,7 +10,7 @@ rmdir Release /S /Q
 del ReleaseIntermediate/q
 rmdir ReleaseIntermediate /S /Q
 
-call %msBuildLocation% EU4ToV2.sln /p:Configuration=Release /m
+call %msBuildLocation% EU4ToVic2.sln /p:Configuration=Release /m
 
 
 cd Release

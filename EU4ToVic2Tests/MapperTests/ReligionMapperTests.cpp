@@ -1,4 +1,4 @@
-#include "../EU4toV2/Source/Mappers/ReligionMapper/ReligionMapper.h"
+#include "../EU4ToVic2/Source/Mappers/ReligionMapper/ReligionMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
