@@ -22,6 +22,7 @@ typedef struct ProvinceDetails
 	std::string climate;
 	std::string continent;
 	std::set<std::string> cores;
+	std::optional<std::string> hreCore;
 } ProvinceDetails;
 
 class ProvinceDetailsMapper: commonItems::parser

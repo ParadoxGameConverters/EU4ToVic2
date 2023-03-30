@@ -464,6 +464,8 @@ void V2::World::dropCores()
 			if (cacheItr->second.contains(*dominantCulture))
 				survivingCores.insert(cacheItr->first);
 		}
+		if (province->getHRECore())
+			survivingCores.insert(*province->getHRECore());
 		province->replaceCores(survivingCores);
 	}
 }
