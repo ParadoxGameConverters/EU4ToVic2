@@ -93,6 +93,7 @@ class Province
 	[[nodiscard]] const auto& getGeneratedNeoCultures() const { return generatedNeoCultures; }
 	[[nodiscard]] const auto& getSuperRegion() const { return superRegion; }
 	[[nodiscard]] const auto& getCores() const { return details.cores; }
+	[[nodiscard]] const auto& getHRECore() const { return details.hreCore; }
 
 	[[nodiscard]] std::optional<std::string> getDominantCulture();
 	[[nodiscard]] int getTotalPopulation() const;

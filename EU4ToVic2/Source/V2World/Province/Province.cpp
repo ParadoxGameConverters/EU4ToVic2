@@ -133,10 +133,12 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 				if (v2HreTag)
 				{
 					addCore(*v2HreTag);
+					details.hreCore = *v2HreTag;
 				}
 				else
 				{
 					addCore("HLR");
+					details.hreCore = "HLR";
 				}
 			}
 		}
