@@ -374,7 +374,8 @@ country_event = {
 		}
 		NOT = {	
 			tag = ISR 
-			}
+		}
+		NOT = { has_country_flag = new_world_nation }
 	}
 	
 	mean_time_to_happen = {
