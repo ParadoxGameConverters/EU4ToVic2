@@ -16,6 +16,8 @@ mappers::Culture::Culture(std::istream& theStream)
 
 void mappers::Culture::registerKeys()
 {
+	registerKeyword("country", commonItems::ignoreItem);
+	registerKeyword("province", commonItems::ignoreItem);
 	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
 		hpm = commonItems::singleString(theStream).getString();
 	});
