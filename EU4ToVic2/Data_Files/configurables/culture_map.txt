@@ -354,32 +354,32 @@ link = { vic2 = latvian eu4 = aestian region = livonia_area region = estonia_ing
 link = { vic2 = pruthenian eu4 = aestian }
 
 # South Slav - croatian, serbian, bulgarian, romanian, albanian
-link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = balkan_colonial eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = juzhno eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = balkan_colonial eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = oceania_superregion }
-link = { vic2 = crni eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = balkan_colonial eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = bosniak eu4 = croatian eu4 = serbian religion = sunni religion = shiite }
-link = { vic2 = macedonian eu4 = bulgarian region = serbia_area region = rascia_area region = macedonia_area region = northern_greece_area region = albania_area }
-link = { vic2 = macedonian eu4 = serbian eu4 = montenegrin region = macedonia_area region = bulgaria_area region = northern_greece_area region = albania_area }
-link = { vic2 = bosniak eu4 = bosnian eu4 = bosniak }
-link = { vic2 = croat eu4 = croatian }
-link = { vic2 = serb eu4 = serbian eu4 = montenegrin eu4 = balkan_colonial }
-link = { vic2 = bulgarian eu4 = sclavenian eu4 = bulgarian }
+link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = bosnian_new eu4 = slovene eu4 = slovene_new eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = croatian_new eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = serbian_new eu4 = balkan_colonial eu4 = bulgarian eu4 = bulgarian_new eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = juzhno eu4 = montenegrin eu4 = bosnian eu4 = bosnian_new eu4 = slovene eu4 = slovene_new eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = croatian_new eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = serbian_new eu4 = balkan_colonial eu4 = bulgarian eu4 = bulgarian_new eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = oceania_superregion }
+link = { vic2 = crni eu4 = montenegrin eu4 = bosnian eu4 = bosnian_new eu4 = slovene eu4 = slovene_new eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = croatian_new eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = serbian_new eu4 = balkan_colonial eu4 = bulgarian eu4 = bulgarian_new eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = bosniak eu4 = croatian eu4 = croatian_new eu4 = serbian eu4 = serbian_new religion = sunni religion = shiite }
+link = { vic2 = macedonian eu4 = bulgarian eu4 = bulgarian_new region = serbia_area region = rascia_area region = macedonia_area region = northern_greece_area region = albania_area }
+link = { vic2 = macedonian eu4 = serbian eu4 = serbian_new eu4 = montenegrin region = macedonia_area region = bulgaria_area region = northern_greece_area region = albania_area }
+link = { vic2 = bosniak eu4 = bosnian eu4 = bosnian_new eu4 = bosniak }
+link = { vic2 = croat eu4 = croatian eu4 = croatian_new }
+link = { vic2 = serb eu4 = serbian eu4 = serbian_new eu4 = montenegrin eu4 = balkan_colonial }
+link = { vic2 = bulgarian eu4 = sclavenian eu4 = bulgarian eu4 = bulgarian_new }
 link = { vic2 = albanian eu4 = albanian eu4 = illyrian eu4 = arbereshe eu4 = arvanite }		
-link = { vic2 = slovene eu4 = carantanian eu4 = slovene eu4 = slovenian }
+link = { vic2 = slovene eu4 = carantanian eu4 = slovene eu4 = slovene_new eu4 = slovenian }
 
 # West Slav - polish, schlesian, czech, slovak
-link = { vic2 = novysvet eu4 = czech eu4 = moravian eu4 = silesian eu4 = slovak eu4 = chrobatian eu4 = old_pommeranian eu4 = sorbian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = jizni eu4 = czech eu4 = moravian eu4 = silesian eu4 = slovak eu4 = chrobatian eu4 = old_pommeranian eu4 = sorbian region = oceania_superregion }
-link = { vic2 = hnedy eu4 = czech eu4 = moravian eu4 = silesian eu4 = slovak eu4 = chrobatian eu4 = old_pommeranian eu4 = sorbian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = nowyswiat eu4 = mazovian eu4 = venedian eu4 = polish eu4 = wendish eu4 = sorbian eu4 = schlesian eu4 = kashubian eu4 = polabian eu4 = sorbs eu4 = west_slavic_colonial eu4 = lithuanian eu4 = old_pommeranian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = poludniowy eu4 = mazovian eu4 = venedian eu4 = polish eu4 = wendish eu4 = sorbian eu4 = schlesian eu4 = kashubian eu4 = polabian eu4 = sorbs eu4 = west_slavic_colonial eu4 = lithuanian eu4 = old_pommeranian region = oceania_superregion }
-link = { vic2 = czarny eu4 = mazovian eu4 = venedian eu4 = polish eu4 = wendish eu4 = sorbian eu4 = schlesian eu4 = kashubian eu4 = polabian eu4 = sorbs eu4 = west_slavic_colonial eu4 = lithuanian eu4 = old_pommeranian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = polish eu4 = mazovian eu4 = venedian eu4 = polish eu4 = west_slavic_colonial eu4 = schlesian }
-link = { vic2 = slovak eu4 = slovak eu4 = chrobatian }
-link = { vic2 = czech eu4 = czech eu4 = moravian eu4 = silesian }
+link = { vic2 = novysvet eu4 = czech eu4 = czech_new eu4 = moravian eu4 = silesian eu4 = slovak eu4 = slovak_new eu4 = chrobatian eu4 = old_pommeranian eu4 = sorbian eu4 = sorbian_new region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = jizni eu4 = czech eu4 = czech_new eu4 = moravian eu4 = silesian eu4 = slovak eu4 = slovak_new eu4 = chrobatian eu4 = old_pommeranian eu4 = sorbian eu4 = sorbian_new region = oceania_superregion }
+link = { vic2 = hnedy eu4 = czech eu4 = czech_new eu4 = moravian eu4 = silesian eu4 = slovak eu4 = slovak_new eu4 = chrobatian eu4 = old_pommeranian eu4 = sorbian eu4 = sorbian_new region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = nowyswiat eu4 = mazovian eu4 = venedian eu4 = polish eu4 = polish_new eu4 = wendish eu4 = sorbian eu4 = sorbian_new eu4 = schlesian eu4 = schlesian_new eu4 = kashubian eu4 = polabian eu4 = sorbs eu4 = west_slavic_colonial eu4 = lithuanian eu4 = old_pommeranian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = poludniowy eu4 = mazovian eu4 = venedian eu4 = polish eu4 = polish_new eu4 = wendish eu4 = sorbian eu4 = sorbian_new eu4 = schlesian eu4 = schlesian_new eu4 = kashubian eu4 = polabian eu4 = sorbs eu4 = west_slavic_colonial eu4 = lithuanian eu4 = old_pommeranian region = oceania_superregion }
+link = { vic2 = czarny eu4 = mazovian eu4 = venedian eu4 = polish eu4 = polish_new eu4 = wendish eu4 = sorbian eu4 = sorbian_new eu4 = schlesian eu4 = schlesian_new eu4 = kashubian eu4 = polabian eu4 = sorbs eu4 = west_slavic_colonial eu4 = lithuanian eu4 = old_pommeranian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = polish eu4 = mazovian eu4 = venedian eu4 = polish eu4 = polish_new eu4 = west_slavic_colonial eu4 = schlesian eu4 = schlesian_new }
+link = { vic2 = slovak eu4 = slovak eu4 = slovak_new eu4 = chrobatian }
+link = { vic2 = czech eu4 = czech eu4 = czech_new eu4 = moravian eu4 = silesian }
 link = { vic2 = oldpommeranian eu4 = old_pommeranian }
-link = { hpm = western_slavic eu4 = sorbian eu4 = polabian eu4 = sorbs eu4 = wendish eu4 = kashubian }
-link = { vic2 = sorbian eu4 = sorbian eu4 = polabian eu4 = sorbs eu4 = wendish eu4 = kashubian }
+link = { hpm = western_slavic eu4 = sorbian eu4 = sorbian_new eu4 = polabian eu4 = sorbs eu4 = wendish eu4 = kashubian }
+link = { vic2 = sorbian eu4 = sorbian eu4 = sorbian_new eu4 = polabian eu4 = sorbs eu4 = wendish eu4 = kashubian }
 
 # Carpathian - hungarian, romanian, transylvanian
 link = { vic2 = ujvilag eu4 = hungarian eu4 = magyar eu4 = magyar_colonial eu4 = szaszok eu4 = kulfoldi eu4 = szekely region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
@@ -397,14 +397,14 @@ link = { vic2 = kulfoldi eu4 = kulfoldi }
 link = { vic2 = romanian eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = moldovian eu4 = romanian_colonial eu4 = vlach eu4 = wallachian }
 
 # East Slav - russian, byelorussian, ruthenian
-link = { vic2 = alaskan eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = hudson_bay_region region = canada_region region = cascadia_region }
-link = { vic2 = kholodnovoynsky eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region region = southeast_america_region region = mississippi_region region = rio_grande_region }
-link = { vic2 = novvymir eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = yuzhny eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = oceania_superregion }
-link = { vic2 = smugly eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = russian eu4 = russian eu4 = ilmenian eu4 = radimich eu4 = severian eu4 = novgorodian eu4 = ryazanian eu4 = krivich eu4 = vyatich }
-link = { vic2 = ukrainian eu4 = antean eu4 = ruthenian  eu4 = volhynian eu4 = drevlian eu4 = red_ruthenian }
-link = { vic2 = byelorussian eu4 = byelorussian eu4 = dulebian }
+link = { vic2 = alaskan eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = russian_new eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = ryazanian_new eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = byelorussian_new eu4 = ruthenian eu4 = ruthenian_new eu4 = ukrainian region = hudson_bay_region region = canada_region region = cascadia_region }
+link = { vic2 = kholodnovoynsky eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = russian_new eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = ryazanian_new eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = byelorussian_new eu4 = ruthenian eu4 = ruthenian_new eu4 = ukrainian region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region region = southeast_america_region region = mississippi_region region = rio_grande_region }
+link = { vic2 = novvymir eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = russian_new eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = ryazanian_new eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = byelorussian_new eu4 = ruthenian eu4 = ruthenian_new eu4 = ukrainian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = yuzhny eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = russian_new eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = ryazanian_new eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = byelorussian_new eu4 = ruthenian eu4 = ruthenian_new eu4 = ukrainian region = oceania_superregion }
+link = { vic2 = smugly eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = russian_new eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = ryazanian_new eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = byelorussian_new eu4 = ruthenian eu4 = ruthenian_new eu4 = ukrainian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = russian eu4 = russian eu4 = russian_new eu4 = ilmenian eu4 = radimich eu4 = severian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = ryazanian_new eu4 = krivich eu4 = vyatich }
+link = { vic2 = ukrainian eu4 = antean eu4 = ruthenian eu4 = ruthenian_new eu4 = volhynian eu4 = drevlian eu4 = red_ruthenian }
+link = { vic2 = byelorussian eu4 = byelorussian eu4 = byelorussian_new eu4 = dulebian }
 #Generic Russian (split) from CK2 converted
 link = { vic2 = byelorussian eu4 = russian_culture region = white_ruthenia_area }
 link = { vic2 = byelorussian eu4 = russian_culture region = smolensk_area }
@@ -541,7 +541,7 @@ link = { vic2 = ainu eu4 = ainu eu4 = aynu }
 link = { vic2 = hakka eu4 = hakka }
 link = { vic2 = miao eu4 = miao }
 link = { vic2 = min eu4 = chimin }
-link = { vic2 = zhuang eu4 = zhuang eu4 = baizu}
+link = { vic2 = zhuang eu4 = zhuang eu4 = zhuang_new eu4 = baizu}
 link = { vic2 = yi eu4 = yi }
 link = { vic2 = yue eu4 = cantonese }
 
