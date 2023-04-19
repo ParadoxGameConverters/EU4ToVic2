@@ -209,6 +209,14 @@ bourgeois_dictatorship = {
 
 # Administrative Ideas
 
+infrastructure_ideas = {
+	commerce = 6
+	industry = 7
+	army = 4
+	navy = 4
+	trade_unions = 6
+}
+
 administrative_ideas = {
 	industry = 6
 	commerce = 6
@@ -274,6 +282,12 @@ diplomatic_ideas = {
 	culture = 7
 	liberty = 6
 	liberal = 6
+}
+
+court_ideas = {
+	vote_franchise = 6
+	political_parties = 7
+	culture = 6
 }
 
 spy_ideas = {
@@ -409,6 +423,12 @@ indigenous_ideas = {
 	army = 6
 	navy = 3
 	commerce = 3
+}
+
+mercenary_ideas = {
+	army = 6
+	industry = 4
+	commerce = 6
 }
 
 ### 1356
