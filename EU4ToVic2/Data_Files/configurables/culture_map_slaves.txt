@@ -41,7 +41,7 @@ link = { vic2 = afro_antillean eu4 = louisianans eu4 = valencian eu4 = provencal
 link = { vic2 = afro_slavic eu4 = merya eu4 = tavastian eu4 = chuvash eu4 = finnish eu4 = finnish eu4 = udmurt eu4 = karelian eu4 = mari_culture eu4 = estonian eu4 = ingrian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki eu4 = vepsian eu4 = bjarmian }
 
 # Slavic
-link = { vic2 = afro_slavic eu4 = krivich eu4 = vyatich eu4 = drevlian eu4 = radimich eu4 = dulebian eu4 = arvanite eu4 = slovene eu4 = wenedyk eu4 = sclavenian eu4 = carantanian eu4 = croatian eu4 = slovene eu4 = schlesian eu4 = kashubian eu4 = sorbian eu4 = sorbs eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = montenegrin eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak eu4 = czech eu4 = moravian eu4 = silesian eu4 = slovak eu4 = mazovian eu4 = polish eu4 = serbian eu4 = antean eu4 = russian eu4 = circassian eu4 = dagestani eu4 = ilmenian eu4 = permic_culture eu4 = kishinyov eu4 = meshchera eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki eu4 = polabian eu4 = sorbs eu4 = old_pommeranian eu4 = arbereshe eu4 = chrobatian eu4 = red_ruthenian }
+link = { vic2 = afro_slavic eu4 = krivich eu4 = vyatich eu4 = drevlian eu4 = radimich eu4 = dulebian eu4 = arvanite eu4 = slovene eu4 = slovene_new eu4 = wenedyk eu4 = sclavenian eu4 = carantanian eu4 = croatian eu4 = croatian_new eu4 = slovene eu4 = schlesian eu4 = schlesian_new eu4 = kashubian eu4 = sorbian eu4 = sorbian_new eu4 = sorbs eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = serbian_new eu4 = montenegrin eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = bulgarian_new eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosnian_new eu4 = bosniak eu4 = czech eu4 = czech_new eu4 = moravian eu4 = silesian eu4 = slovak eu4 = slovak_new eu4 = mazovian eu4 = polish eu4 = polish_new eu4 = serbian eu4 = antean eu4 = russian eu4 = russian_new eu4 = circassian eu4 = dagestani eu4 = ilmenian eu4 = permic_culture eu4 = kishinyov eu4 = meshchera eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = novgorodian_new eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = byelorussian_new eu4 = ruthenian eu4 = ruthenian_new eu4 = ukrainian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki eu4 = polabian eu4 = sorbs eu4 = old_pommeranian eu4 = arbereshe eu4 = chrobatian eu4 = red_ruthenian }
 
 # Carpathian
 link = { vic2 = afro_carpathian eu4 = wallachian eu4 = csango eu4 = aromanian eu4 = hungarian eu4 = pannonian eu4 = magyar eu4 = magyar_colonial eu4 = szaszok eu4 = romanian eu4 = moldovan eu4 = transylvanian eu4 = moldovian eu4 = romanian_colonial eu4 = vlach eu4 = dacian eu4 = multavian eu4 = scordiscian eu4 = kulfoldi eu4 = szekely }
@@ -112,7 +112,7 @@ link = { vic2 = ainu eu4 = ainu }
 link = { vic2 = hakka eu4 = hakka }
 link = { vic2 = miao eu4 = miao }
 link = { vic2 = min eu4 = chimin }
-link = { vic2 = zhuang eu4 = zhuang }
+link = { vic2 = zhuang eu4 = zhuang eu4 = zhuang_new }
 link = { vic2 = yi eu4 = yi }
 link = { vic2 = yue eu4 = cantonese }
 
