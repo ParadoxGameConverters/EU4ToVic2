@@ -54,7 +54,7 @@ link = { v2 = sunni_heresy eu4 = abadites eu4 = quranism eu4 = qadariyya eu4 = k
 link = { v2 = mahayana eu4 = confucianism eu4 = mahayana }
 link = { v2 = theravada eu4 = buddhism }
 link = { v2 = sikh eu4 = sikhism }
-link = { v2 = hindu eu4 = hinduism }
+link = { v2 = hindu eu4 = hinduism eu4 = ajivika } # Ajivika could be its own religion, but it would need to be added.
 link = { v2 = shinto eu4 = shinto }
 link = { v2 = jain eu4 = jain eu4 = jainism }
 link = { v2 = gelugpa eu4 = vajrayana }
