@@ -17,8 +17,7 @@ link = { v2 = polish_culture_group eu4 = west_slavic }
 link = { v2 = east_slavic eu4 = east_slavic }
 link = { v2 = baltic eu4 = baltic }
 link = { v2 = levantine eu4 = byzantine eu4 = chaldean }
-link = { v2 = turko_semitic eu4 = turko_semitic }
-link = { v2 = caucasian eu4 = caucasian }
+link = { v2 = turko_semitic eu4 = turko_semitic eu4 = caucasian }
 link = { v2 = arab eu4 = maghrebi }
 link = { v2 = iranian_turanian eu4 = iranian eu4 = scythian_group }
 link = { v2 = central_asian eu4 = altaic eu4 = tartar eu4 = oghuz }
