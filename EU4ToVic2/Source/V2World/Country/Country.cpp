@@ -535,11 +535,11 @@ void V2::Country::buildCanals()
 	for (const auto& prov: srcCountry->getProvinces())
 	{
 		if (prov->hasGreatProject("suez_canal"))
-			decisions.insert("build_suez_canal");
+			decisions.insert("enable_suez_canal");
 		if (prov->hasGreatProject("kiel_canal"))
-			decisions.insert("build_kiel_canal");
+			decisions.insert("enable_kiel_canal");
 		if (prov->hasGreatProject("panama_canal"))
-			decisions.insert("build_panama_canal");
+			decisions.insert("enable_panama_canal");
 	}
 }
 
