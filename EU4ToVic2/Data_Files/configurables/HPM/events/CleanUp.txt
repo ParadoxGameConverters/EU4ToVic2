@@ -1772,6 +1772,7 @@ country_event = {
             tag = IRE
         }
         NOT = { has_country_flag = post_colonial_country }
+        NOT = { has_country_flag = new_world_nation }
     }
 
     mean_time_to_happen = { months = 12 }
