@@ -106,6 +106,7 @@ political_decisions = {
             any_country = {
                 limit = {
                     is_culture_group = THIS
+                    NOT = { primary_culture = dummy }
                     is_greater_power = no
                     sphere_owner = {
                         OR = {
