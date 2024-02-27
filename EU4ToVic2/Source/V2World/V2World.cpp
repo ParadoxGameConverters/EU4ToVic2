@@ -2345,7 +2345,11 @@ void V2::World::copyHpmFiles() const
 	}
 
 	// localisation
-	commonItems::CopyFolder("configurables/HPM/localisation", out + "/localisation");
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/localisation"))
+	{
+		fs::remove(out + "/localisation/" + file);
+		fs::copy_file("configurables/HPM/localisation/" + file, out + "/localisation/" + file);
+	}
 
 	// flag for vic2tohoi4
 	std::ofstream flagFile("output/" + theConfiguration.getOutputName() + "/hybridization.txt");
