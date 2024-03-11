@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\EU4ToVic2\Source\Configuration.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4ToVic2Converter.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Army\EU4Army.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Army\EU4Regiment.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\Countries.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4ActiveIdeas.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4ActivePolicy.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4Country.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4CountryFlags.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4CountryModifier.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4CustomColors.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4GovernmentSection.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4NationalSymbol.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4ReformStackSection.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Country\EU4Technology.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Diplomacy\EU4Agreement.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Diplomacy\EU4Diplomacy.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\History\CountryHistory.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\History\CountryHistoryDate.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Leader\EU4Leader.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Leader\EU4LeaderID.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Localization\EU4Localization.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Mods\ModNames.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\NationMerger\MergeBlock.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\NationMerger\NationMergeParser.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Provinces\DateItems.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Provinces\EU4Province.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Provinces\PopRatio.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Provinces\ProvinceBuildings.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Provinces\ProvinceHistory.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Provinces\Provinces.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Regions\Area.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Regions\Areas.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Regions\Region.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Regions\Regions.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Regions\SuperRegions.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Relations\EU4Empire.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Relations\EU4RelationDetails.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Relations\EU4Relations.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Religions\ReligionGroup.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Religions\Religions.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Wars\EU4War.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\Wars\EU4WarDetails.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\EU4World\World.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Helpers\TechValues.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\AfricaReset\AfricaResetMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\AgreementMapper\AgreementMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Buildings\Building.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Buildings\Buildings.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ColonialFlags\ColonialFlag.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ColonialTags\ColonialTag.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CountryFlags\CountryFlags.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CountryMappings\CountryMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CountryMappings\CountryMappings.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureGroups\Culture.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureGroups\CultureGroup.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureGroups\CultureGroupsManager.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureMapper\CultureMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryInventions\FactoryInventionDetails.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryInventions\FactoryInventionEffect.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryTechs\FactoryTechDetails.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryTechs\FactoryTechMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryTypes\FactoryType.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryTypes\FactoryTypeInputs.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FactoryTypes\FactoryTypeMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\FlagColors\FlagColorMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Geography\ClimateMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Geography\Continents.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Geography\TerrainDataMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\GovernmentMapper\GovernmentMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\MinorityPops\MinorityPop.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\MinorityPops\MinorityPopMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\NavalBases\BuildingPosition.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\NavalBases\NavalBase.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\NavalBases\NavalBaseMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\PartyNames\PartyName.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\PartyNames\PartyNameMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\PartyTypes\PartyType.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\PartyTypes\PartyTypeMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Pops\CustomPopShaping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Pops\PopInstance.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Pops\PopMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Pops\PopTypes.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\PortProvinces\PortProvinces.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ProvinceRenamings\ProvinceRename.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ProvinceRenamings\ProvinceRenamings.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\RegionLocalizations\RegionLocalizations.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ReligiousGroups\Religion.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ReligiousGroups\ReligiousGroup.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\ReligiousGroups\ReligiousGroups.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\RGORandomization\Bucket.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\RGORandomization\BucketList.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\StartingInventionMapper\StartingInventionLimit.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\StartingInventionMapper\StartingInventionMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\StartingTechMapper\StartingTech.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\StartingTechMapper\StartingTechMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\StateMapper\StateMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\SuperGroupMapper\Assimilation.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\TechGroups\TechGroups.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\TechSchools\TechSchool.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\TechSchools\TechSchools.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Titles\TitleMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Titles\TitleMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\UnitTypes\UnitType.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\Unreleasables\Unreleasables.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\VNColonialMapper\VNColonialMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\VNColonialMapper\VNColonialMapping.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\Mappers\WarGoalMapper\WarGoalMapper.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Army\Army.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Army\Regiment.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Country\Country.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Country\CountryDetails.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Country\ModCommons.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Country\UnitNames.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Decisions\HPMDecisions.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Diplomacy\Agreement.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Diplomacy\Diplomacy.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Diplomacy\Relation.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Flags\Flags.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Flags\FlagUtils.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Leader\Leader.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Localisation\Localisation.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\MappingChecker\MappingChecker.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outAgreement.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outArmy.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outCountry.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outCultureGroups.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outFactory.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outHistory.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outLeader.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outLocalisation.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outModFile.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outParty.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outPop.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outProvince.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outReforms.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outRegiment.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outRelation.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outReligiousGroups.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outUncivReforms.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outUnitNames.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Output\outWar.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Party\Party.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Pop\Pop.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Province\Province.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Province\ProvinceNameParser.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Reforms\Reforms.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\Reforms\UncivReforms.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\State\State.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\V2World.cpp" />
+    <ClCompile Include="..\EU4ToVic2\Source\V2World\War\War.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\EU4ToVic2\Source\Configuration.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4ToVic2Converter.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Army\EU4Army.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Army\EU4Regiment.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\ColonialRegions\ColonialRegion.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\ColonialRegions\ColonialRegions.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\Countries.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4ActiveIdeas.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4ActivePolicy.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4Country.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4CountryFlags.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4CountryModifier.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4CustomColors.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4GovernmentSection.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4NationalSymbol.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4ReformStackSection.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Country\EU4Technology.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Diplomacy\EU4Agreement.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Diplomacy\EU4Diplomacy.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\History\CountryHistory.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\History\CountryHistoryDate.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Leader\EU4Leader.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Leader\EU4LeaderID.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Localization\EU4Localization.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Mods\ModNames.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\NationMerger\MergeBlock.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\NationMerger\NationMergeParser.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Provinces\DateItems.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Provinces\EU4Province.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Provinces\PopRatio.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Provinces\ProvinceBuildings.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Provinces\ProvinceHistory.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Provinces\Provinces.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Regions\Area.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Regions\Areas.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Regions\Region.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Regions\Regions.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Regions\SuperRegions.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Relations\EU4Empire.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Relations\EU4RelationDetails.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Relations\EU4Relations.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Religions\ReligionGroup.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Religions\Religions.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Wars\EU4War.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\Wars\EU4WarDetails.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\EU4World\World.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Helpers\rakaly.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Helpers\TechValues.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\AfricaReset\AfricaResetMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\AgreementMapper\AgreementMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Buildings\Building.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Buildings\Buildings.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ColonialFlags\ColonialFlag.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ColonialFlags\ColonialFlagRegion.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ColonialTags\ColonialTag.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ColonialTags\ColonialTagsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CountryFlags\CountryFlags.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CountryFlags\CountryFlagsMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CountryMappings\CountryMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CountryMappings\CountryMappings.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CulturalUnions\CulturalUnion.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CulturalUnions\CulturalUnionMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureGroups\Culture.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureGroups\CultureGroup.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureGroups\CultureGroupsManager.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureMapper\CultureMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\CultureMapper\CultureMappingRule.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryCounts\FactoryStartingCounts.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryInventions\FactoryInventionDetails.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryInventions\FactoryInventionEffect.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryInventions\FactoryInventionMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryTechs\FactoryTechDetails.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryTechs\FactoryTechMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryTypes\FactoryType.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryTypes\FactoryTypeInputs.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FactoryTypes\FactoryTypeMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\FlagColors\FlagColorMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Geography\ClimateMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Geography\Continents.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Geography\TerrainDataMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\GovernmentMapper\GovernmentMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\IdeaEffects\IdeaEffectMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\IdeaEffects\IdeaEffects.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\LeaderTraits\LeaderTrait.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\LeaderTraits\LeaderTraitMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\LeaderTraits\LeaderTraitTypes.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\MinorityPops\MinorityPop.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\MinorityPops\MinorityPopMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\NavalBases\BuildingPosition.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\NavalBases\NavalBase.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\NavalBases\NavalBaseMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\PartyNames\PartyName.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\PartyNames\PartyNameMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\PartyTypes\PartyType.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\PartyTypes\PartyTypeMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Pops\CustomPopShaping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Pops\PopInstance.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Pops\PopMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Pops\PopTypes.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\PortProvinces\PortProvinces.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ProvinceRenamings\ProvinceRename.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ProvinceRenamings\ProvinceRenamings.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\RegimentCosts\RegimentCostsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\RegionLocalizations\RegionLocalizations.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ReligionMapper\ReligionMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ReligionMapper\ReligionMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ReligiousGroups\Religion.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ReligiousGroups\ReligiousGroup.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\ReligiousGroups\ReligiousGroups.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\RGORandomization\Bucket.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\RGORandomization\BucketList.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\StartingInventionMapper\StartingInventionDetails.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\StartingInventionMapper\StartingInventionLimit.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\StartingInventionMapper\StartingInventionMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\StartingTechMapper\StartingTech.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\StartingTechMapper\StartingTechMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\StateMapper\StateMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\SuperGroupMapper\Assimilation.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\SuperGroupMapper\SuperGroupMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\SuperGroupMapper\SuperRegion.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\TechGroups\TechGroups.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\TechGroups\TechGroupsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\TechSchools\TechSchool.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\TechSchools\TechSchoolMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\TechSchools\TechSchools.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Titles\TitleMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Titles\TitleMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\UnionTagsMapper\UnionTagsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\UnitTypes\UnitType.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\UnitTypes\UnitTypeMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\Unreleasables\Unreleasables.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\VNColonialMapper\VNColonialMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\VNColonialMapper\VNColonialMapping.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\Mappers\WarGoalMapper\WarGoalMapper.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Army\Army.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Army\Regiment.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Country\Country.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Country\CountryDetails.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Country\ModCommons.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Country\UnitNames.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Diplomacy\Agreement.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Diplomacy\Diplomacy.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Diplomacy\Relation.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Factory\Factory.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Flags\Flags.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Flags\FlagUtils.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Leader\Leader.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Localisation\Localisation.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\MappingChecker\MappingChecker.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Output\ModFile.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Output\output.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Party\Party.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Pop\Pop.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Province\Province.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Province\ProvinceNameParser.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Reforms\Reforms.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\Reforms\UncivReforms.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\State\State.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\V2World.h" />
+    <ClInclude Include="..\EU4ToVic2\Source\V2World\War\War.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{1499903e-0d18-453a-98a2-c1fe773b249c}</ProjectGuid>
+    <RootNamespace>EU4ToVic2lib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)lib\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)lib;$(SolutionDir)commonItems\pch;$(SolutionDir)commonItems;$(SolutionDir)commonItems\external\zip\src;$(SolutionDir)EU4ToVic2\Source\Mappers;$(SolutionDir)EU4ToVic2\Source;$(SolutionDir)EU4ToVic2\Source\EU4World;$(SolutionDir)EU4ToVic2\Source\V2World;$(SolutionDir)EU4ToVic2\Source\Helpers</AdditionalIncludeDirectories>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeaderOutputFile>$(SolutionDir)lib\pch.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>$(SolutionDir)lib\common.pdb</ProgramDataBaseFileName>
+      <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>pch.lib;CommonItems.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

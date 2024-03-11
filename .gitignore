@@ -1,9 +1,11 @@
 .vs
 packages
 Release/
+Release-Tests/
 ReleaseIntermediate/
 Release-Linux/
 Debug/
+Debug-Tests/
 DebugIntermediate/
 Analysis
 AnalysisIntermediate
@@ -14,8 +16,10 @@ testResults
 *.sdf
 *.VC.db
 *.cppcheck
-EU4toV2/build
-EU4toV2/cmake_install.cmake
+EU4ToVic2/build
+EU4ToVic2/cmake_install.cmake
 .gitmodules
 tests.xml
 *bz2
+lib/
+build/

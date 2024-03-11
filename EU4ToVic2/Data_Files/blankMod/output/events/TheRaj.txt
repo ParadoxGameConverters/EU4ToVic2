@@ -1,0 +1,261 @@
+country_event = {
+	id = 50000000	# extra 0 to avoid conflict with HPM
+	title = THERAJTITLE
+	desc = THERAJDESC
+	picture = queenvictoria
+	
+	major = yes
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		great_wars_enabled = yes
+		NOT = { has_global_flag = the_raj }
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = STRING_OK
+		set_global_flag = the_raj
+		ENG_1236 = { add_core = RJX remove_core = HND }
+		ENG_1247 = { add_core = RJX remove_core = HND }
+		ENG_1251 = { add_core = RJX remove_core = HND }
+		ENG_1252 = { add_core = RJX remove_core = HND }
+		ENG_1258 = { add_core = RJX remove_core = HND }
+		ENG_1261 = { add_core = RJX remove_core = HND }
+		ENG_1264 = { add_core = RJX remove_core = HND }
+		ENG_1275 = { add_core = RJX remove_core = HND }
+		ENG_1291 = { add_core = RJX remove_core = HND }
+		ENG_1297 = { add_core = RJX remove_core = HND }
+		ENG_1304 = { add_core = RJX remove_core = HND }
+		ENG_1305 = { add_core = RJX remove_core = HND }
+		ENG_1317 = { add_core = RJX remove_core = HND }
+		#ENG_1321 = { add_core = RJX remove_core = HND } # Sri Lanka and Maldives
+		ENG_1343 = { add_core = RJX remove_core = HND }
+		HYD_1283 = { add_core = RJX remove_core = HND }
+		NAG_1277 = { add_core = RJX remove_core = HND }
+		MYS_1314 = { add_core = RJX remove_core = HND }
+		    1593 = { add_core = RJX remove_core = HND }
+		SIN_1288 = { add_core = RJX remove_core = HND }
+		KAL_1221 = { add_core = RJX remove_core = HND }
+		PAN_1224 = { add_core = RJX remove_core = HND }
+		PAN_1227 = { add_core = RJX remove_core = HND }
+	}
+}
+country_event = {
+	id = 50000010	# extra 0 to avoid conflict with HPM
+	title = INTRAJTITLE
+	desc = INTRAJDESC
+	picture = queenvictoria
+	
+	major = yes
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		has_global_flag = the_raj
+		is_culture_group = south_asian
+		NOT = {
+			tag = HND # India
+			tag = HDU # Pakistan
+			tag = NEP
+			tag = BHU
+			tag = RJX
+		}
+		is_independant = no
+		exists = yes
+		overlord = { capital_scope = { NOT = { continent = asia } } }
+	}
+	
+	mean_time_to_happen = { months = 0.001 }
+	
+	option = {
+		name = STRING_OK
+		overlord = { inherit = THIS }
+	}
+}
+country_event = {
+	id = 5000002
+	title = IAMRAJTITLE
+	desc = IAMRAJDESC
+	picture = queenvictoria
+	
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		is_independant = yes
+		tag = RJX
+		exists = yes
+	}
+	
+	mean_time_to_happen = { months = 0.001 }
+	
+	option = {
+		name = IAMRAJOPTA
+		HND = { annex_to = THIS } # If multiple Indias exist
+		HDU = { annex_to = THIS }
+		change_tag = HND
+		release_vassal = HDU
+		all_core = { add_core = HND remove_core = RJX }
+		# Partition of India-Pakistan
+		HDU = { all_core = { add_core = HDU remove_core = RJX remove_core = HND } }
+	}
+}
+
+country_event = {
+	id = 5000003
+	title = ITSRAJTITLE
+	desc = ITSRAJDESC
+	picture = queenvictoria
+	
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		NOT = { is_culture_group = south_asian }
+		NOT = {
+			tag = HND # India
+			tag = HDU # Pakistan
+			tag = NEP
+			tag = BHU
+			tag = RJX
+		}
+		is_greater_power = yes
+		any_owned_province = { 
+			is_core = RJX
+			is_overseas = yes
+		}
+		NOT = { exists = RJX }
+		war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = STRING_OK
+		any_owned = {
+			limit = {
+				is_core = RJX
+			}
+			secede_province = RJX
+		}
+		create_vassal = RJX
+	}
+}
+
+province_event = {
+	id = 5000004
+	title = EVTNAME5000004
+	desc = EVTDESC5000004
+	picture = arrested
+	
+	trigger = {
+		owner = { has_country_flag = the_gypsy_question }
+		GYP = { exists = no }
+		is_capital = no
+		NOT = { is_core = GYP }
+		any_pop = {
+			has_pop_culture = gypsy
+			OR = {
+				strata = rich
+				type = craftsmen
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = EVTOPTA5000004
+		add_core = GYP
+	}
+}
+province_event = {
+	id = 5000005
+	title = EVTNAME5000005
+	desc = EVTDESC5000005
+	picture = Egyptian
+	
+	trigger = {
+		province_id = 1760
+		NOT = { has_global_flag = egy_desert }
+		1758 = { empty = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	option = {
+		name = STRING_WHY
+		set_global_flag = egy_desert
+		1758 = {
+			add_core = THIS
+			change_controller = THIS
+			secede_province = THIS
+		}
+	}
+}
+province_event = {
+	id = 5000006
+	title = EVTNAME5000006
+	desc = EVTDESC5000006
+	picture = Nile
+	
+	trigger = {
+		province_id = 1742
+		NOT = { has_global_flag = fezzan }
+		1741 = { empty = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	option = {
+		name = STRING_WHY
+		set_global_flag = fezzan
+		1741 = {
+			add_core = THIS
+			change_controller = THIS
+			secede_province = THIS
+		}
+	}
+}
+country_event = {
+	id = 5000007
+	title = EVTNAME5000007
+	desc = EVTDESC5000007
+	picture = Ottoman
+	
+	trigger = {
+		OR = {
+			has_country_flag = vic2_country_MSY
+			AND = {
+				has_country_flag = vic2_country_RDL
+				NOT = { exists = KUR }
+			}
+			has_country_flag = vic2_country_MGR
+			has_country_flag = vic2_country_ARL
+		}
+		PER = { exists = yes }
+		NOT = { has_global_flag = persian_minor }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = EVTOPTA500007
+		set_global_flag = persian_minor
+		PER = { inherit = THIS }
+	}
+}

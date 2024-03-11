@@ -1,8 +1,8 @@
 #ifndef VIC2_COUNTRY_MOCK_H
 #define VIC2_COUNTRY_MOCK_H
 
-#include "../../EU4toV2/Source/EU4World/Country/EU4Country.h"
-#include "../../EU4toV2/Source/V2World/Country/Country.h"
+#include "../../EU4ToVic2/Source/EU4World/Country/EU4Country.h"
+#include "../../EU4ToVic2/Source/V2World/Country/Country.h"
 #include "gmock/gmock.h"
 
 class mockVic2Country: public V2::Country

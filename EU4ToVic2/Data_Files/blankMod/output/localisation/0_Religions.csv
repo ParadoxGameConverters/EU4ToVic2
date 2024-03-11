@@ -1,0 +1,185 @@
+KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X
+#ADDED RELIGIOUS GROUPS;;;;;;;;;;;;;;x
+dummy_g;&;&;&;&;&;;;;;;&;&;;x
+euro_pagan;European Pagan;Paganisme Européen;Europäisch. Heidentum;Pogañstwo Europejskie;Paganismo Europeo;;;;;;Paganismo Europeu;Åâğîïåéñê. ßçû÷åñòâî;;x
+gnostic_g;Gnostic;Gnosticisme;Gnostizismus;Gnostycyzm;Gnosticismo;;;;;;Gnosticismo;Ãíîñòèöèñì;;x
+indian;Indian;Paganisme Indien;Indisch. Heidentum;Pogañstwo Indyjskie;Paganismo Indio;;;;;;Paganismo Indiano;Èíäèéñê. ßçû÷åñòâî;;x
+mena_pagan;Middle Eastern Pagan;Paganisme Moyen-Oriental;Nahöstlich. Heidentum;Pogañstwo Bliskowschodnie;Paganismo Medioriental;;;;;;Paganismo Medioriental;Áëèæíåâîñòî÷í. ßçû÷åñòâî;;x
+red_pagan;American Pagan;Paganisme Américain;Amerikanisch. Heidentum;Pogañstwo Amerikañskie;Paganismo Americano;;;;;;Paganismo Americano;Àìåğèêàíñê. ßçû÷åñòâî;;x
+zoroastrian_group;Zoroastrianism;Zoroastrisme;Zoroastrismus;Zoroastryzm;Zoroastrismo;;;;;;Zoroastrismo;Çîğîàñòğèçì;;x
+#ADDED RELIGIONS;;;;;;;;;;;;;;x
+dummy_religion;(Religion);(Religion);(Religion);(Religia);(Religión);;;;;;(Religião);(Ğåëèãèÿ);;x
+noreligion;Atheist;Athéistes;Atheistisch;Bezbo¿noœæ;Atea;;;;;;Ateu;Àòåèñòè;;x
+adamites;Adamitism;Adamites;Adamitisch;Adamityzm;Adanita;;;;;;Adamitismo;Àäàìèòñêèå;;x
+arab_pagan;Bedouin Paganism;Païens Bédouins;Beduinisch-Heidnisch;Pogañstwo Beduiñskie;Pagana Beduina;;;;;;Paganismo beduíno;Áåäóèíñêèå ßçû÷åñêèå;;x
+arian;Arianism;Arianites;Arianisch;Arianizm;Arriana;;;;;;Arianismo;Àğèàíñêèå;;x
+aztec_reformed;Aztec;Aztèques;Aztekisch;Aztecstwo;Azteca;;;;;;Asteca;Àöòåêñêèå;;x
+baltic_pagan;Baltic Pagan;Païens Baltiques;Baltisch Heidnisch;Pogañstwo Ba³tyckie;Pagana Báltica;;;;;;Pagão Báltico;Áàëòèéñêèå ßçû÷åñêèå;;x
+baltic_pagan_reformed;Baltic;Baltiques;Baltisch;Ba³tycstwo;Báltica;;;;;;Báltico;Áàëòèéñêèå;;x
+bektashi;Bektashi;Bektachis;Bektaschi;Bektaszijja;Bektashí;;;;;;Bektashi;Áåêòàøè;;x
+bogomilist;Bogomilist;Bogomilites;Bogomilisch;Bogomili;Bogomila;;;;;;Bogomilista;Áîãîìèëû;;x
+canaanite;Canaanite;Cananéens;Kanaanitisch;Kananejstwo;Cananea;;;;;;Cananeu;Êàíààíèòè;;x
+cathar;Cathar;Cathares;Katharisch;Katarzy;Cátara;;;;;;Cátaro;Êàòàğû;;x
+catholic_heresy;Catholic Heresy;Hérétiques Catholiques;Katholisch-Ketzerisch;Katolickie Kacerstwo;Herética Católica;;;;;;Heresia Católica;Êàòîëè÷åñêèå Åğåòèêè;;x
+cybelene;Cybelene;Cybelènes;Kybeles Kultisch;Kybeleñstwo;Cybelene;;;;;;Cybelene;Êèáåëàñêèå;;x
+druidist;Druidism;Druidistes;Druidisch;Druidyzm;Druidica;;;;;;Druidismo;Äğóèäñêèå;;x
+druze;Druze;Druzes;Druse;Druzyjstwo;Drusa;;;;;;Druze;Äğóçñêèå;;x
+finnish_pagan;Finnish Pagan;Païens Finlandais;Finnisch Heidnisch;Pogañstwo Fiñskie;Pagana Finlandesa;;;;;;Pagão Finlandês;Ôèíñêèå ßçû÷åñêèå;;x
+finnish_pagan_reformed;Finnish;Finlandais;Finnisch;Fiñstwo;Finlandesa;;;;;;Finlandês;Ôèíñêèå;;x
+fraticelli;Fraticelli;Fraticelles;Fraticelli;Fraticelli;Fraticelli;;;;;;Fraticelli;Ôğàòè÷åëëè;;x
+generic_pagan;Pagan;Païens;Heidnisch;Pogañstwo;Pagana;;;;;;Pagão;ßçû÷åñêèå;;x
+german_pagan;Irminism;Irministes;Iriminisch;Irmiñstwo;Irminesa;;;;;;Irminismo;Èğìèíñêèå;;x
+gnostic;Gnosticism;Gnostiques;Gnostisch;Gnostycyzm;Gnóstica;;;;;;Gnosticismo;Ãíîñòè÷åñêèå;;x
+hellenic_pagan;Hellenic;Helléniques;Hellenisch;Helleñstwo;Helénica;;;;;;Helênico;İëëèíèñòè÷åñêèå;;x
+hetanism;Theodism;Theodistes;Theodisch;Teodistwo;Teodista;;;;;;Teodista;Òåîäèñêèå;;x
+hurufi;Hurufi;Hurufites;Hurufi;Hurufijja;Hurufí;;;;;;Hurufi;Õóğóôèòû;;x
+hussite;Hussite;Hussites;Hussitisch;Husytyzm;Husita;;;;;;Hussita;Ãóñòèû;;x
+ibadi;Ibadi;Ibadites;Ibadit;Ibadytyzm;Ibadí;;;;;;Ibadi;Èáàäèòû;;x
+iberian_pagan;Iberian;Ibériques;Iberisch;Iberyjstwo;Ibérica;;;;;;Ibérico;Èáåğèéñêèå;;x
+iconoclast;Iconoclast;Iconoclastes;Ikonoklastisch;Ikonoklazm;Iconoclasta;;;;;;Iconoclasta;Èêîíîáîğ÷åñêèå;;x
+inca_reformed;Incan;Incas;Inkaisch;Inkajstwo;Inca;;;;;;Inca;Èíêè;;x
+inti;Inti;Intis;Intis Kultisch;Intistwo;Inti;;;;;;Inti;Èíòè;;x
+jain;Jain;Jaïnistes;Dschainisch;Dÿinizm;Jainista;;;;;;Jain;Äæàéíñêèå;;x
+jewish_heresy;Jewish Heresy;Hérétiques Juifs;Jüdisch Ketzerisch;¯ydowskie Kacerstwo;Herética Judía;;;;;;Heresia Judaica;Æèäîâñêèå Åğåòèêè;;x
+karaite;Karaite;Karaïtes;Karait;Karaimizm;Caraíta;;;;;;Caraíta;Êàğàèìñêèå;;x
+kemetic;Kemetism;Kémétistes;Kemetisch;Kemetyzm;Kemética;;;;;;Kemetismo;Êåìåòè÷åñêèå;;x
+kharijite;Kharijite;Kharidjites;Charidschit;Charyd¿yzm;Kariyí;;;;;;Kharijite;Õàğèäæèòû;;x
+lollard;Lollard;Lollards;Lollard;Lollardzi;Lolarda;;;;;;Lollard;Ëîëëàğäû;;x
+manichean;Manichean;Manichéens;Manichäisch;Manicheizm;Maniquea;;;;;;Maniquean;Ìàíèõåéñêèå;;x
+mardukism;Mardukism;Mardoukistes;Mardukisch;Mardukstwo;Mardukí;;;;;;Mardukism;Ìàğäóêñêèå;;x
+mayan;Mayan;Mayan;Maya;Mayan;Mayan;;;;;;Mayan;ìàéÿ;;x
+mazdaki;Mazdaki;Mazdakistes;Mazdakitisch;Mazdakijstwo;Mazdakí;;;;;;Mazdaki;Ìàçäàêèòñêèå;;x
+megalithic;Megalithic;Megalithic;Megalithisch;Megalithic;Megalithic;;;;;;Megalithic;Ìåãàëèòè÷åñêèé;;x
+messalian;Messalian;Messaliens;Messalianisch;Messalianie;Euquita;;;;;;Messalian;Ìåññàëèàíñêèå;;x
+mithraism;Mithraism;Mithraïstes;Mithraskultisch;Mitraizm;Mitraica;;;;;;Mitraísmo;Ìèòğàèñòñêèå;;x
+monophysite;Monophysite;Monophysites;Monophysitisch;Monofizytyzm;Monofisita;;;;;;Monofisita;Ìîíîôèçèòñêèå;;x
+monothelite;Monothelite;Monothélites;Monotheletisch;Monoteletyzm;Monotelista;;;;;;Monotelita;Ìîíîôåëèñêèå;;x
+muism;Muism;Muistes;Mu;Muijstwo;Muí;;;;;;Muismo;Ìóñîêû;;x
+nahuatl;Nahuatl;Nahuatles;Nahuatl;Nahuatlstwo;Náhuatl;;;;;;Náuatl;Íàóàòëü;;x
+nestorian;Nestorian;Nestoriens;Nestorianisch;Nestorianizm;Nestorianista;;;;;;Nestoriano;Íåñòîğèàíñêèå;;x
+norse_pagan;Norse Pagan;Païens Nordiques;Nordisch Heidnisch;Pogañstwo Nordyjskie;Pagana Nórdica;;;;;;Pagão Nórdico;Ñêàíäèíàâñêèå ßçû÷åñêèå;;x
+norse_pagan_reformed;Odinism;Odinisme;Odinisch;Odyñstwo;Odinista;;;;;;Odinista;Îäèíñêèå;;x
+orthodox_heresy;Orthodox Heresy;Hérétique Orthodoxe;Orthodox Ketzerisch;Prawos³awne Kacerstwo;Herética Ortodoxa;;;;;;Heresia Ortodoxa;Ïğàâîñëàâíûå Åğåòèêè;;x
+pagan_religion_reformed;Reformed Pagan;Païens Réformés;Reformiert Heidnisch;Pogañstwo Reformijskie;Pagana Reformada;;;;;;Reformed Pagan;Ïğåîáğàçîâàííûå ßçû÷åñêèå;;x
+paulician;Paulician;Pauliciens;Paulikianisch;Paulicjanie;Paulista;;;;;;Paulician;Ïàâëèêèàíå;;x
+pre_schism;Chalcedonian;Calcédoniens;Chalcedonisch;Chalcedoñstwo;Calcedonia;;;;;;Calcedônico;Õàëêèäîíñêèå;;x
+protestant_heresy;Protestant Heresy;Hérétiques Protestantes;Evangelisch Ketzerisch;Protestanckie Kacerstwo;Herética Protestante;;;;;;Heresia Protestante;Ïğîòåñòàíòû Åğåòèêè;;x
+ritualistic;Ritualistic;Ritualistic;Ritualistisch;Ritualistic;Ritualistic;;;;;;Ritualistic;Ğèòóàëèñòè÷åñêèé;;x
+samaritan;Samaritan;Samaritains;Samariter;Samarytanizm;Samaritana;;;;;;Samaritano;Ñàìàğèòÿíñêèå;;x
+scythian_pagan;Scythian;Scythes;Skythisch;Scytyjstwo;Escita;;;;;;Cita;Ñêèôñêèå;;x
+shamanism;Fetishist;Fétichistes;Fetischist;Fetyszyzm;Fetichista;;;;;;Fetichista;Ôåòèøèñòñêèå;;x
+shiite_heresy;Shiite Heresy;Hérétiques Chiites;Schiitisch Ketzerisch;Szyicke Kacerstwo;Herética Chiita;;;;;;Heresia Xiita;Øèéòñêèå Åğåòèêè;;x
+siberian_pagan_reformed;Turumism;Turumistes;Turumisch;Turumiszm;Turumí;;;;;;Turumism;Òóğóìñêèå;;x
+slavic_pagan_reformed;Slavic;Slaves;Slawisch;S³owiañstwo;Eslava;;;;;;Eslavo;Ñëàâÿíñêèå;;x
+sunni_heresy;Sunni Heresy;Hérétiques Sunnites;Sunnitisch Ketzerisch;Sunnicke Kacerstwo;Herética Sunita;;;;;;Heresia Sunita;Ñóííèòû Åğåòèêè;;x
+tengri_pagan;Tengri Pagan;Païens Tengristes;Tengri-Heidnisch;Tengrijskie Pogañstwo;Pagana Tengrista;;;;;;Tengri Pagan;Òåíãğèàíñêèå ßçû÷åñêèå;;x
+tengri_pagan_reformed;Tengri;Tengristes;Tengris Kultisch;Tengrijstwo;Tengriana;;;;;;Tengri;Òåíãğèàíñêèå;;x
+tibet_bon;Bön;Bön;Bön;Bön;Bön;;;;;;Bön;Áîí;;x
+totemism;Totemism;Totémistes;Totemistisch;Totemizm;Totemista;;;;;;Totemismo;Òîòåìèñòè÷åñêèå;;x
+waldensian;Waldensian;Vaudois;Waldensisch;Waldensi;Valdense;;;;;;Valdense;Âàëüäåíñû;;x
+west_african_pagan_reformed;West African;Africains Occidentaux;Westafrikanisch;Zachodnioafrykañstwo;Africana Occidental;;;;;;Africano Ocidental;Çàïàäíîàôğèêàíñêèå;;x
+yazidi;Yazidi;Yézidis;Jesidisch;Jezydyzm;Yazidí;;;;;;Yazidi;Åçèäû;;x
+zamolxism;Zamolxism;Zamolxistes;Zamolxisch;Zamolxizm;Zamolxista;;;;;;Zamolxismo;Çàëìîêñèñêèå;;x
+zikri;Zikri;Zikris;Zikrit;Zikryci;Zikrí;;;;;;Zikri;Çèêğè;;x
+zoroastrian;Zoroastrian;Zoroastriens;Zoroastrisch;Zaratusztrianizm;Zoroastriana;;;;;;Zoroastrista;Çîğîàñòğèéñêèå;;x
+zoroastrian_heresy;Zoroastrian Heresy;Hérétiques Zoroastriens;Zoroastrisch Ketzerisch;Zaratusztriañskie Kacerstwo;Herética Zoroastriana;;;;;;Heresia Zoroastriana;Çîğîàñòğèéñêèå Åğåòèêè;;x
+zun_pagan_reformed;Zun;Zunistes;Zunisch;Zunizm;Zuní;;;;;;Zun;Çóí;;x
+#RELIGIONS FOR THE DIPLO SCREEN;;;;;;;;;;;;;;x
+zzz_religions;Religions;Religions;Religionen;Religie;Religiones;;;;;;Religiões;Ğåëèãèè;;x
+zzz_religion_adamites;§HReligion§!: Adamitism;§HReligion§!: Adamites;§HReligion§!: Adamitisch;§HReligia§!: Adamityzm;§HReligión§!: Adanita;;;;;;§HReligião§!: Adamitismo;§HĞåëèãèÿ§!: Àäàìèòñêèå;;x
+zzz_religion_animist;§HReligion§!: Animist;§HReligion§!: Animistes;§HReligion§!: Animistisch;§HReligia§!: Animizm;§HReligión§!: Animista;;;;;;§HReligião§!: Animista;§HĞåëèãèÿ§!: Àíèìèñòè÷åñêèå;;x
+zzz_religion_arab_pagan;§HReligion§!: Bedouin Paganism;§HReligion§!: Païens Bédouins;§HReligion§!: Beduinisch-Heidnisch;§HReligia§!: Pogañstwo Beduiñskie;§HReligión§!: Pagana Beduina;;;;;;§HReligião§!: Paganismo beduíno;§HĞåëèãèÿ§!: Áåäóèíñêèå ßçû÷åñêèå;;x
+zzz_religion_arian;§HReligion§!: Arianism;§HReligion§!: Arianites;§HReligion§!: Arianisch;§HReligia§!: Arianizm;§HReligión§!: Arriana;;;;;;§HReligião§!: Arianismo;§HĞåëèãèÿ§!: Àğèàíñêèå;;x
+zzz_religion_aztec_reformed;§HReligion§!: Aztec;§HReligion§!: Aztèques;§HReligion§!: Aztekisch;§HReligia§!: Aztecstwo;§HReligión§!: Azteca;;;;;;§HReligião§!: Asteca;§HĞåëèãèÿ§!: Àöòåêñêèå;;x
+zzz_religion_baltic_pagan;§HReligion§!: Baltic Pagan;§HReligion§!: Païens Baltiques;§HReligion§!: Baltisch Heidnisch;§HReligia§!: Pogañstwo Ba³tyckie;§HReligión§!: Pagana Báltica;;;;;;§HReligião§!: Pagão Báltico;§HĞåëèãèÿ§!: Áàëòèéñêèå ßçû÷åñêèå;;x
+zzz_religion_baltic_pagan_reformed;§HReligion§!: Baltic;§HReligion§!: Baltiques;§HReligion§!: Baltisch;§HReligia§!: Ba³tycstwo;§HReligión§!: Báltica;;;;;;§HReligião§!: Báltico;§HĞåëèãèÿ§!: Áàëòèéñêèå;;x
+zzz_religion_bektashi;§HReligion§!: Bektashi;§HReligion§!: Bektachis;§HReligion§!: Bektaschi;§HReligia§!: Bektaszijja;§HReligión§!: Bektashí;;;;;;§HReligião§!: Bektashi;§HĞåëèãèÿ§!: Áåêòàøè;;x
+zzz_religion_bogomilist;§HReligion§!: Bogomilist;§HReligion§!: Bogomilites;§HReligion§!: Bogomilisch;§HReligia§!: Bogomili;§HReligión§!: Bogomila;;;;;;§HReligião§!: Bogomilista;§HĞåëèãèÿ§!: Áîãîìèëû;;x
+zzz_religion_canaanite;§HReligion§!: Canaanite;§HReligion§!: Cananéens;§HReligion§!: Kanaanitisch;§HReligia§!: Kananejstwo;§HReligión§!: Cananea;;;;;;§HReligião§!: Cananeu;§HĞåëèãèÿ§!: Êàíààíèòè;;x
+zzz_religion_cathar;§HReligion§!: Cathar;§HReligion§!: Cathares;§HReligion§!: Katharisch;§HReligia§!: Katarzy;§HReligión§!: Cátara;;;;;;§HReligião§!: Cátaro;§HĞåëèãèÿ§!: Êàòàğû;;x
+zzz_religion_catholic;§HReligion§!: Catholic;§HReligion§!: Catholiques;§HReligion§!: Katholisch;§HReligia§!: Katolicyzm;§HReligión§!: Católica;;;;;;§HReligião§!: Católico;§HĞåëèãèÿ§!: Êàòîëèêè;;x
+zzz_religion_catholic_heresy;§HReligion§!: Catholic Heresy;§HReligion§!: Hérétiques Catholiques;§HReligion§!: Katholisch-Ketzerisch;§HReligia§!: Katolickie Kacerstwo;§HReligión§!: Herética Católica;;;;;;§HReligião§!: Heresia Católica;§HĞåëèãèÿ§!: Êàòîëè÷åñêèå Åğåòèêè;;x
+zzz_religion_coptic;§HReligion§!: Coptic;§HReligion§!: Coptes;§HReligion§!: Koptisch;§HReligia§!: Koptyjsk;§HReligión§!: Copta;;;;;;§HReligião§!: Copta;§HĞåëèãèÿ§!: Êîïòû;;x
+zzz_religion_cybelene;§HReligion§!: Cybelene;§HReligion§!: Cybelènes;§HReligion§!: Kybeles Kultisch;§HReligia§!: Kybeleñstwo;§HReligión§!: Cybelene;;;;;;§HReligião§!: Cybelene;§HĞåëèãèÿ§!: Êèáåëàñêèå;;x
+zzz_religion_druidist;§HReligion§!: Druidism;§HReligion§!: Druidistes;§HReligion§!: Druidisch;§HReligia§!: Druidyzm;§HReligión§!: Druidica;;;;;;§HReligião§!: Druidismo;§HĞåëèãèÿ§!: Äğóèäñêèå;;x
+zzz_religion_druze;§HReligion§!: Druze;§HReligion§!: Druzes;§HReligion§!: Druse;§HReligia§!: Druzyjstwo;§HReligión§!: Drusa;;;;;;§HReligião§!: Druze;§HĞåëèãèÿ§!: Äğóçñêèå;;x
+zzz_religion_dummy_religion;§HReligion§!: (Religion);§HReligion§!: (Religion);§HReligion§!: (Religion);§HReligia§!: (Religia);§HReligión§!: (Religión);;;;;;§HReligião§!: (Religião);§HĞåëèãèÿ§!: (Ğåëèãèÿ);;x
+zzz_religion_finnish_pagan;§HReligion§!: Finnish Pagan;§HReligion§!: Païens Finlandais;§HReligion§!: Finnisch Heidnisch;§HReligia§!: Pogañstwo Fiñskie;§HReligión§!: Pagana Finlandesa;;;;;;§HReligião§!: Pagão Finlandês;§HĞåëèãèÿ§!: Ôèíñêèå ßçû÷åñêèå;;x
+zzz_religion_finnish_pagan_reformed;§HReligion§!: Finnish;§HReligion§!: Finlandais;§HReligion§!: Finnisch;§HReligia§!: Fiñstwo;§HReligión§!: Finlandesa;;;;;;§HReligião§!: Finlandês;§HĞåëèãèÿ§!: Ôèíñêèå;;x
+zzz_religion_fraticelli;§HReligion§!: Fraticelli;§HReligion§!: Fraticelles;§HReligion§!: Fraticelli;§HReligia§!: Fraticelli;§HReligión§!: Fraticelli;;;;;;§HReligião§!: Fraticelli;§HĞåëèãèÿ§!: Ôğàòè÷åëëè;;x
+zzz_religion_gelugpa;§HReligion§!: Gelugpa;§HReligion§!: Gelugpa;§HReligion§!: Gelugpa;§HReligia§!: Gelug;§HReligión§!: Budista Gelugpa;;;;;;§HReligião§!: Budista Gelug;§HĞåëèãèÿ§!: Ãåëóãïà;;x
+zzz_religion_generic_pagan;§HReligion§!: Pagan;§HReligion§!: Païens;§HReligion§!: Heidnisch;§HReligia§!: Pogañstwo;§HReligión§!: Pagana;;;;;;§HReligião§!: Pagão;§HĞåëèãèÿ§!: ßçû÷åñêèå;;x
+zzz_religion_german_pagan;§HReligion§!: Irminism;§HReligion§!: Irministes;§HReligion§!: Iriminisch;§HReligia§!: Irmiñstwo;§HReligión§!: Irminesa;;;;;;§HReligião§!: Irminismo;§HĞåëèãèÿ§!: Èğìèíñêèå;;x
+zzz_religion_gnostic;§HReligion§!: Gnosticism;§HReligion§!: Gnostiques;§HReligion§!: Gnostisch;§HReligia§!: Gnostycyzm;§HReligión§!: Gnóstica;;;;;;§HReligião§!: Gnosticismo;§HĞåëèãèÿ§!: Ãíîñòè÷åñêèå;;x
+zzz_religion_hellenic_pagan;§HReligion§!: Hellenic;§HReligion§!: Helléniques;§HReligion§!: Hellenisch;§HReligia§!: Helleñstwo;§HReligión§!: Helénica;;;;;;§HReligião§!: Helênico;§HĞåëèãèÿ§!: İëëèíèñòè÷åñêèå;;x
+zzz_religion_hetanism;§HReligion§!: Theodism;§HReligion§!: Theodistes;§HReligion§!: Theodisch;§HReligia§!: Teodistwo;§HReligión§!: Teodista;;;;;;§HReligião§!: Teodista;§HĞåëèãèÿ§!: Òåîäèñêèå;;x
+zzz_religion_hindu;§HReligion§!: Hindu;§HReligion§!: Hindous;§HReligion§!: Hindu;§HReligia§!: Hinduizm;§HReligión§!: Hindú;;;;;;§HReligião§!: Hindu;§HĞåëèãèÿ§!: Èíäàèñòû;;x
+zzz_religion_hurufi;§HReligion§!: Hurufi;§HReligion§!: Hurufites;§HReligion§!: Hurufi;§HReligia§!: Hurufijja;§HReligión§!: Hurufí;;;;;;§HReligião§!: Hurufi;§HĞåëèãèÿ§!: Õóğóôèòû;;x
+zzz_religion_hussite;§HReligion§!: Hussite;§HReligion§!: Hussites;§HReligion§!: Hussitisch;§HReligia§!: Husytyzm;§HReligión§!: Husita;;;;;;§HReligião§!: Hussita;§HĞåëèãèÿ§!: Ãóñòèû;;x
+zzz_religion_ibadi;§HReligion§!: Ibadi;§HReligion§!: Ibadites;§HReligion§!: Ibadit;§HReligia§!: Ibadytyzm;§HReligión§!: Ibadí;;;;;;§HReligião§!: Ibadi;§HĞåëèãèÿ§!: Èáàäèòû;;x
+zzz_religion_iberian_pagan;§HReligion§!: Iberian;§HReligion§!: Ibériques;§HReligion§!: Iberisch;§HReligia§!: Iberyjstwo;§HReligión§!: Ibérica;;;;;;§HReligião§!: Ibérico;§HĞåëèãèÿ§!: Èáåğèéñêèå;;x
+zzz_religion_iconoclast;§HReligion§!: Iconoclast;§HReligion§!: Iconoclastes;§HReligion§!: Ikonoklastisch;§HReligia§!: Ikonoklazm;§HReligión§!: Iconoclasta;;;;;;§HReligião§!: Iconoclasta;§HĞåëèãèÿ§!: Èêîíîáîğ÷åñêèå;;x
+zzz_religion_inca_reformed;§HReligion§!: Incan;§HReligion§!: Incas;§HReligion§!: Inkaisch;§HReligia§!: Inkajstwo;§HReligión§!: Inca;;;;;;§HReligião§!: Inca;§HĞåëèãèÿ§!: Èíêè;;x
+zzz_religion_inti;§HReligion§!: Inti;§HReligion§!: Intis;§HReligion§!: Intis Kultisch;§HReligia§!: Intistwo;§HReligión§!: Inti;;;;;;§HReligião§!: Inti;§HĞåëèãèÿ§!: Èíòè;;x
+zzz_religion_jain;§HReligion§!: Jain;§HReligion§!: Jaïnistes;§HReligion§!: Dschainisch;§HReligia§!: Dÿinizm;§HReligión§!: Jainista;;;;;;§HReligião§!: Jain;§HĞåëèãèÿ§!: Äæàéíñêèå;;x
+zzz_religion_jewish;§HReligion§!: Jewish;§HReligion§!: Juifs;§HReligion§!: Jüdisch;§HReligia§!: Judaizm;§HReligión§!: Judía;;;;;;§HReligião§!: Judaico;§HĞåëèãèÿ§!: Æèäîâñêèå;;x
+zzz_religion_jewish_heresy;§HReligion§!: Jewish Heresy;§HReligion§!: Hérétiques Juifs;§HReligion§!: Jüdisch Ketzerisch;§HReligia§!: ¯ydowskie Kacerstwo;§HReligión§!: Herética Judía;;;;;;§HReligião§!: Heresia Judaica;§HĞåëèãèÿ§!: Æèäîâñêèå Åğåòèêè;;x
+zzz_religion_karaite;§HReligion§!: Karaite;§HReligion§!: Karaïtes;§HReligion§!: Karait;§HReligia§!: Karaimizm;§HReligión§!: Caraíta;;;;;;§HReligião§!: Caraíta;§HĞåëèãèÿ§!: Êàğàèìñêèå;;x
+zzz_religion_kemetic;§HReligion§!: Kemetism;§HReligion§!: Kémétistes;§HReligion§!: Kemetisch;§HReligia§!: Kemetyzm;§HReligión§!: Kemética;;;;;;§HReligião§!: Kemetismo;§HĞåëèãèÿ§!: Êåìåòè÷åñêèå;;x
+zzz_religion_kharijite;§HReligion§!: Kharijite;§HReligion§!: Kharidjites;§HReligion§!: Charidschit;§HReligia§!: Charyd¿yzm;§HReligión§!: Kariyí;;;;;;§HReligião§!: Kharijite;§HĞåëèãèÿ§!: Õàğèäæèòû;;x
+zzz_religion_lollard;§HReligion§!: Lollard;§HReligion§!: Lollards;§HReligion§!: Lollard;§HReligia§!: Lollardzi;§HReligión§!: Lolarda;;;;;;§HReligião§!: Lollard;§HĞåëèãèÿ§!: Ëîëëàğäû;;x
+zzz_religion_mahayana;§HReligion§!: Mahayana;§HReligion§!: Mahayana;§HReligion§!: Mahayana;§HReligia§!: Mahayana;§HReligión§!: Budista Mahayana;;;;;;§HReligião§!: Budista Maaiana;§HĞåëèãèÿ§!: Ìàõàÿíà;;x
+zzz_religion_manichean;§HReligion§!: Manichean;§HReligion§!: Manichéens;§HReligion§!: Manichäisch;§HReligia§!: Manicheizm;§HReligión§!: Maniquea;;;;;;§HReligião§!: Maniquean;§HĞåëèãèÿ§!: Ìàíèõåéñêèå;;x
+zzz_religion_mardukism;§HReligion§!: Mardukism;§HReligion§!: Mardoukistes;§HReligion§!: Mardukisch;§HReligia§!: Mardukstwo;§HReligión§!: Mardukí;;;;;;§HReligião§!: Mardukism;§HĞåëèãèÿ§!: Ìàğäóêñêèå;;x
+zzz_religion_mayan;§HReligion§!: Mayan;§HReligion§!: Mayan;§HReligion§!: Maya;§HReligia§!: Mayan;§HReligión§!: Mayan;;;;;;§HReligião§!: Mayan;§HĞåëèãèÿ§!: ìàéÿ;;x
+zzz_religion_mazdaki;§HReligion§!: Mazdaki;§HReligion§!: Mazdakistes;§HReligion§!: Mazdakitisch;§HReligia§!: Mazdakijstwo;§HReligión§!: Mazdakí;;;;;;§HReligião§!: Mazdaki;§HĞåëèãèÿ§!: Ìàçäàêèòñêèå;;x
+zzz_religion_megalithic;§HReligion§!: Megalithic;§HReligion§!: Megalithic;§HReligion§!: Megalithisch;§HReligia§!: Megalithic;§HReligión§!: Megalithic;;;;;;§HReligião§!: Megalithic;§HĞåëèãèÿ§!: Ìåãàëèòè÷åñêèé;;x
+zzz_religion_messalian;§HReligion§!: Messalian;§HReligion§!: Messaliens;§HReligion§!: Messalianisch;§HReligia§!: Messalianie;§HReligión§!: Euquita;;;;;;§HReligião§!: Messalian;§HĞåëèãèÿ§!: Ìåññàëèàíñêèå;;x
+zzz_religion_mithraism;§HReligion§!: Mithraism;§HReligion§!: Mithraïstes;§HReligion§!: Mithraskultisch;§HReligia§!: Mitraizm;§HReligión§!: Mitraica;;;;;;§HReligião§!: Mitraísmo;§HĞåëèãèÿ§!: Ìèòğàèñòñêèå;;x
+zzz_religion_monophysite;§HReligion§!: Monophysite;§HReligion§!: Monophysites;§HReligion§!: Monophysitisch;§HReligia§!: Monofizytyzm;§HReligión§!: Monofisita;;;;;;§HReligião§!: Monofisita;§HĞåëèãèÿ§!: Ìîíîôèçèòñêèå;;x
+zzz_religion_monothelite;§HReligion§!: Monothelite;§HReligion§!: Monothélites;§HReligion§!: Monotheletisch;§HReligia§!: Monoteletyzm;§HReligión§!: Monotelista;;;;;;§HReligião§!: Monotelita;§HĞåëèãèÿ§!: Ìîíîôåëèñêèå;;x
+zzz_religion_muism;§HReligion§!: Muism;§HReligion§!: Muistes;§HReligion§!: Mu;§HReligia§!: Muijstwo;§HReligión§!: Muí;;;;;;§HReligião§!: Muismo;§HĞåëèãèÿ§!: Ìóñîêû;;x
+zzz_religion_nahuatl;§HReligion§!: Nahuatl;§HReligion§!: Nahuatles;§HReligion§!: Nahuatl;§HReligia§!: Nahuatlstwo;§HReligión§!: Náhuatl;;;;;;§HReligião§!: Náuatl;§HĞåëèãèÿ§!: Íàóàòëü;;x
+zzz_religion_nestorian;§HReligion§!: Nestorian;§HReligion§!: Nestoriens;§HReligion§!: Nestorianisch;§HReligia§!: Nestorianizm;§HReligión§!: Nestorianista;;;;;;§HReligião§!: Nestoriano;§HĞåëèãèÿ§!: Íåñòîğèàíñêèå;;x
+zzz_religion_noreligion;§HReligion§!: Atheist;§HReligion§!: Athéistes;§HReligion§!: Atheistisch;§HReligia§!: Bezbo¿noœæ;§HReligión§!: Atea;;;;;;§HReligião§!: Ateu;§HĞåëèãèÿ§!: Àòåèñòè;;x
+zzz_religion_norse_pagan;§HReligion§!: Norse Pagan;§HReligion§!: Païens Nordiques;§HReligion§!: Nordisch Heidnisch;§HReligia§!: Pogañstwo Nordyjskie;§HReligión§!: Pagana Nórdica;;;;;;§HReligião§!: Pagão Nórdico;§HĞåëèãèÿ§!: Ñêàíäèíàâñêèå ßçû÷åñêèå;;x
+zzz_religion_norse_pagan_reformed;§HReligion§!: Odinism;§HReligion§!: Odinisme;§HReligion§!: Odinisch;§HReligia§!: Odyñstwo;§HReligión§!: Odinista;;;;;;§HReligião§!: Odinista;§HĞåëèãèÿ§!: Îäèíñêèå;;x
+zzz_religion_orthodox;§HReligion§!: Orthodox;§HReligion§!: Orthodoxes;§HReligion§!: Orthodox;§HReligia§!: Prawos³awie;§HReligión§!: Ortodoxa;;;;;;§HReligião§!: Ortodoxo;§HĞåëèãèÿ§!: Ïğàâîñëàâíûå;;x
+zzz_religion_orthodox_heresy;§HReligion§!: Orthodox Heresy;§HReligion§!: Hérétique Orthodoxe;§HReligion§!: Orthodox Ketzerisch;§HReligia§!: Prawos³awne Kacerstwo;§HReligión§!: Herética Ortodoxa;;;;;;§HReligião§!: Heresia Ortodoxa;§HĞåëèãèÿ§!: Ïğàâîñëàâíûå Åğåòèêè;;x
+zzz_religion_pagan_religion_reformed;§HReligion§!: Reformed Pagan;§HReligion§!: Païens Réformés;§HReligion§!: Reformiert Heidnisch;§HReligia§!: Pogañstwo Reformijskie;§HReligión§!: Pagana Reformada;;;;;;§HReligião§!: Reformed Pagan;§HĞåëèãèÿ§!: Ïğåîáğàçîâàííûå ßçû÷åñêèå;;x
+zzz_religion_paulician;§HReligion§!: Paulician;§HReligion§!: Pauliciens;§HReligion§!: Paulikianisch;§HReligia§!: Paulicjanie;§HReligión§!: Paulista;;;;;;§HReligião§!: Paulician;§HĞåëèãèÿ§!: Ïàâëèêèàíå;;x
+zzz_religion_pre_schism;§HReligion§!: Chalcedonian;§HReligion§!: Calcédoniens;§HReligion§!: Chalcedonisch;§HReligia§!: Chalcedoñstwo;§HReligión§!: Calcedonia;;;;;;§HReligião§!: Calcedônico;§HĞåëèãèÿ§!: Õàëêèäîíñêèå;;x
+zzz_religion_protestant;§HReligion§!: Protestant;§HReligion§!: Protestants;§HReligion§!: Protestantisch;§HReligia§!: Protestantyzm;§HReligión§!: Protestante;;;;;;§HReligião§!: Protestante;§HĞåëèãèÿ§!: Ïğîòåñòàíòû;;x
+zzz_religion_protestant_heresy;§HReligion§!: Protestant Heresy;§HReligion§!: Hérétiques Protestantes;§HReligion§!: Evangelisch Ketzerisch;§HReligia§!: Protestanckie Kacerstwo;§HReligión§!: Herética Protestante;;;;;;§HReligião§!: Heresia Protestante;§HĞåëèãèÿ§!: Ïğîòåñòàíòû Åğåòèêè;;x
+zzz_religion_ritualistic;§HReligion§!: Ritualistic;§HReligion§!: Ritualistic;§HReligion§!: Ritualistisch;§HReligia§!: Ritualistic;§HReligión§!: Ritualistic;;;;;;§HReligião§!: Ritualistic;§HĞåëèãèÿ§!: Ğèòóàëèñòè÷åñêèé;;x
+zzz_religion_samaritan;§HReligion§!: Samaritan;§HReligion§!: Samaritains;§HReligion§!: Samariter;§HReligia§!: Samarytanizm;§HReligión§!: Samaritana;;;;;;§HReligião§!: Samaritano;§HĞåëèãèÿ§!: Ñàìàğèòÿíñêèå;;x
+zzz_religion_scythian_pagan;§HReligion§!: Scythian;§HReligion§!: Scythes;§HReligion§!: Skythisch;§HReligia§!: Scytyjstwo;§HReligión§!: Escita;;;;;;§HReligião§!: Cita;§HĞåëèãèÿ§!: Ñêèôñêèå;;x
+zzz_religion_shamanism;§HReligion§!: Fetishist;§HReligion§!: Fétichistes;§HReligion§!: Fetischist;§HReligia§!: Fetyszyzm;§HReligión§!: Fetichista;;;;;;§HReligião§!: Fetichista;§HĞåëèãèÿ§!: Ôåòèøèñòñêèå;;x
+zzz_religion_shiite;§HReligion§!: Shiite;§HReligion§!: Chiites;§HReligion§!: Schiitisch;§HReligia§!: Szyizm;§HReligión§!: Chiíta;;;;;;§HReligião§!: Xiita;§HĞåëèãèÿ§!: Øèéòñêèå;;x
+zzz_religion_shiite_heresy;§HReligion§!: Shiite Heresy;§HReligion§!: Hérétiques Chiites;§HReligion§!: Schiitisch Ketzerisch;§HReligia§!: Szyicke Kacerstwo;§HReligión§!: Herética Chiita;;;;;;§HReligião§!: Heresia Xiita;§HĞåëèãèÿ§!: Øèéòñêèå Åğåòèêè;;x
+zzz_religion_shinto;§HReligion§!: Shinto;§HReligion§!: Shintoïstes;§HReligion§!: Shinto;§HReligia§!: Szyntoizm;§HReligión§!: Sintoísta;;;;;;§HReligião§!: Xintoísta;§HĞåëèãèÿ§!: Ñèíòîèñòñêèå;;x
+zzz_religion_siberian_pagan_reformed;§HReligion§!: Turumism;§HReligion§!: Turumistes;§HReligion§!: Turumisch;§HReligia§!: Turumiszm;§HReligión§!: Turumí;;;;;;§HReligião§!: Turumism;§HĞåëèãèÿ§!: Òóğóìñêèå;;x
+zzz_religion_sikh;§HReligion§!: Sikh;§HReligion§!: Sikhs;§HReligion§!: Sikh;§HReligia§!: Sikhizm;§HReligión§!: Sij;;;;;;§HReligião§!: Siquismo;§HĞåëèãèÿ§!: Ñèêõè;;x
+zzz_religion_slavic_pagan_reformed;§HReligion§!: Slavic;§HReligion§!: Slaves;§HReligion§!: Slawisch;§HReligia§!: S³owiañstwo;§HReligión§!: Eslava;;;;;;§HReligião§!: Eslavo;§HĞåëèãèÿ§!: Ñëàâÿíñêèå;;x
+zzz_religion_sunni;§HReligion§!: Sunni;§HReligion§!: Sunnites;§HReligion§!: Sunnitisch;§HReligia§!: Sunnizm;§HReligión§!: Sunní;;;;;;§HReligião§!: Sunita;§HĞåëèãèÿ§!: Ñóííèòû;;x
+zzz_religion_sunni_heresy;§HReligion§!: Sunni Heresy;§HReligion§!: Hérétiques Sunnites;§HReligion§!: Sunnitisch Ketzerisch;§HReligia§!: Sunnicke Kacerstwo;§HReligión§!: Herética Sunita;;;;;;§HReligião§!: Heresia Sunita;§HĞåëèãèÿ§!: Ñóííèòû Åğåòèêè;;x
+zzz_religion_tengri_pagan;§HReligion§!: Tengri Pagan;§HReligion§!: Païens Tengristes;§HReligion§!: Tengri-Heidnisch;§HReligia§!: Tengrijskie Pogañstwo;§HReligión§!: Pagana Tengrista;;;;;;§HReligião§!: Tengri Pagan;§HĞåëèãèÿ§!: Òåíãğèàíñêèå ßçû÷åñêèå;;x
+zzz_religion_tengri_pagan_reformed;§HReligion§!: Tengri;§HReligion§!: Tengristes;§HReligion§!: Tengris Kultisch;§HReligia§!: Tengrijstwo;§HReligión§!: Tengriana;;;;;;§HReligião§!: Tengri;§HĞåëèãèÿ§!: Òåíãğèàíñêèå;;x
+zzz_religion_theravada;§HReligion§!: Theravada;§HReligion§!: Theravada;§HReligion§!: Theravada;§HReligia§!: Therawada;§HReligión§!: Budista Theravada;;;;;;§HReligião§!: Budista Teravada;§HĞåëèãèÿ§!: Òõåğàâàäà;;x
+zzz_religion_tibet_bon;§HReligion§!: Bön;§HReligion§!: Bön;§HReligion§!: Bön;§HReligia§!: Bön;§HReligión§!: Bön;;;;;;§HReligião§!: Bön;§HĞåëèãèÿ§!: Áîí;;x
+zzz_religion_totemism;§HReligion§!: Totemism;§HReligion§!: Totémistes;§HReligion§!: Totemistisch;§HReligia§!: Totemizm;§HReligión§!: Totemista;;;;;;§HReligião§!: Totemismo;§HĞåëèãèÿ§!: Òîòåìèñòè÷åñêèå;;x
+zzz_religion_waldensian;§HReligion§!: Waldensian;§HReligion§!: Vaudois;§HReligion§!: Waldensisch;§HReligia§!: Waldensi;§HReligión§!: Valdense;;;;;;§HReligião§!: Valdense;§HĞåëèãèÿ§!: Âàëüäåíñû;;x
+zzz_religion_west_african_pagan_reformed;§HReligion§!: West African;§HReligion§!: Africains Occidentaux;§HReligion§!: Westafrikanisch;§HReligia§!: Zachodnioafrykañstwo;§HReligión§!: Africana Occidental;;;;;;§HReligião§!: Africano Ocidental;§HĞåëèãèÿ§!: Çàïàäíîàôğèêàíñêèå;;x
+zzz_religion_yazidi;§HReligion§!: Yazidi;§HReligion§!: Yézidis;§HReligion§!: Jesidisch;§HReligia§!: Jezydyzm;§HReligión§!: Yazidí;;;;;;§HReligião§!: Yazidi;§HĞåëèãèÿ§!: Åçèäû;;x
+zzz_religion_zamolxism;§HReligion§!: Zamolxism;§HReligion§!: Zamolxistes;§HReligion§!: Zamolxisch;§HReligia§!: Zamolxizm;§HReligión§!: Zamolxista;;;;;;§HReligião§!: Zamolxismo;§HĞåëèãèÿ§!: Çàëìîêñèñêèå;;x
+zzz_religion_zikri;§HReligion§!: Zikri;§HReligion§!: Zikris;§HReligion§!: Zikrit;§HReligia§!: Zikryci;§HReligión§!: Zikrí;;;;;;§HReligião§!: Zikri;§HĞåëèãèÿ§!: Çèêğè;;x
+zzz_religion_zoroastrian;§HReligion§!: Zoroastrian;§HReligion§!: Zoroastriens;§HReligion§!: Zoroastrisch;§HReligia§!: Zaratusztrianizm;§HReligión§!: Zoroastriana;;;;;;§HReligião§!: Zoroastrista;§HĞåëèãèÿ§!: Çîğîàñòğèéñêèå;;x
+zzz_religion_zoroastrian_heresy;§HReligion§!: Zoroastrian Heresy;§HReligion§!: Hérétiques Zoroastriens;§HReligion§!: Zoroastrisch Ketzerisch;§HReligia§!: Zaratusztriañskie Kacerstwo;§HReligión§!: Herética Zoroastriana;;;;;;§HReligião§!: Heresia Zoroastriana;§HĞåëèãèÿ§!: Çîğîàñòğèéñêèå Åğåòèêè;;x
+zzz_religion_zun_pagan_reformed;§HReligion§!: Zun;§HReligion§!: Zunistes;§HReligion§!: Zunisch;§HReligia§!: Zunizm;§HReligión§!: Zuní;;;;;;§HReligião§!: Zun;§HĞåëèãèÿ§!: Çóí;;x
+#NORELIGION EVENT FIXES;;;;;;;;;;;;;;x
+EVTNAMERELIGI;State your religion;Indiquez votre religion;Geben Sie Ihre Religion an;Podaj swoj¹ religiê;Declara tu religión;Dichiara la tua religione;Mondja el vallását;Uveïte své náboenství;Mondja el vallását;Geef je religie aan;;Óêàæèòå ñâîş ğåëèãèş;Ilmoita uskonto;x
+EVTDESCRELIGI;The developers of Victoria II, while adding religion to countries, forgot to add a way to check what religion a country is. Now, you can do it, thanks to this event, by looking among the Accepted Cultures.;Les développeurs de Victoria II, tout en ajoutant la religion aux pays, ont oublié d'ajouter un moyen de vérifier quelle religion est un pays. Maintenant, vous pouvez le faire, grâce à cet événement, en regardant parmi les cultures acceptées.;Die Entwickler von Victoria II haben beim Hinzufügen von Religion zu Ländern vergessen, eine Möglichkeit hinzuzufügen, um zu überprüfen, welche Religion ein Land ist. Dank dieses Ereignisses können Sie dies jetzt tun, indem Sie sich die akzeptierten Kulturen ansehen.;Twórcy Victorii II, dodaj¹c religiê do krajów, zapomnieli dodaæ sposób sprawdzenia, jak¹ religi¹ jest dany kraj. Teraz mo¿esz to zrobiæ, dziêki temu wydarzeniu, przegl¹daj¹c Akceptowane Kultury.;Los desarrolladores de Victoria II, mientras agregaban religión a los países, olvidaron agregar una forma de verificar qué religión es un país. Ahora, puedes hacerlo, gracias a este evento, mirando entre las Culturas Aceptadas.;Gli sviluppatori di Victoria II, pur aggiungendo la religione ai paesi, hanno dimenticato di aggiungere un modo per verificare quale religione è un paese. Ora, puoi farlo, grazie a questo evento, guardando tra le culture accettate.;A Victoria II fejlesztõi, miközben vallást adtak az országokhoz, elfelejtettek hozzá egy módszert annak ellenõrzésére, hogy mi az a vallás egy országban. Az eseménynek köszönhetõen megteheti az elfogadott kultúrák körében.;Vıvojáøi Victoria II, zatímco pøidávání náboenství do zemí, zapomnìli pøidat zpùsob, jak zkontrolovat, jaké náboenství je zemì. Nyní to mùete udìlat díky této události tím, e se podíváte mezi Pøijaté kultury.;A Victoria II fejlesztõi, miközben vallást adtak az országokhoz, elfelejtettek hozzá egy módszert annak ellenõrzésére, hogy mi az a vallás egy országban. Az eseménynek köszönhetõen megteheti az elfogadott kultúrák körében.;De ontwikkelaars van Victoria II vergaten, terwijl ze religie aan landen toevoegden, een manier toe te voegen om te controleren welke religie een land is. Nu kunt u het dankzij dit evenement doen door tussen de geaccepteerde culturen te kijken.;;Ğàçğàáîò÷èêè Victoria II, äîáàâëÿÿ ğåëèãèş â ñòğàíû, çàáûëè äîáàâèòü ñïîñîá ïğîâåğèòü, êàêàÿ ğåëèãèÿ â ñòğàíå. Òåïåğü, áëàãîäàğÿ ıòîìó ñîáûòèş, âû ìîæåòå ñäåëàòü ıòî, ïîñìîòğåâ ñğåäè ïğèíÿòûõ êóëüòóğ.;Vaikka Victoria II: n kehittäjät lisäsivät uskontoa maihin, unohtivat lisätä tavan tarkistaa, mikä uskonto maa on. Nyt voit tehdä sen tämän tapahtuman ansiosta etsimällä hyväksyttyjä kulttuureja.;x
+EVTOPTARELIGI;Ok.;D'accord.;Ok.;Ok.;Okay.;Ok.;Rendben.;Ok.;Rendben.;Ok.;Ok.;Õîğîøî.;Ok.;x
+EVTNAMERELNEW;The $COUNTRY_ADJ$ Temple;Le temple $COUNTRY_ADJ$;Der $COUNTRY_ADJ$e Tempel;Œwi¹tynia $COUNTRY_ADJ$;El Templo $COUNTRY_ADJ$;Il tempio $COUNTRY_ADJ$;A $COUNTRY_ADJ$ templom;Chrám $COUNTRY_ADJ$;A $COUNTRY_ADJ$ templom;De $COUNTRY_ADJ$ Tempel;O Templo $COUNTRY_ADJ$;$COUNTRY_ADJ$ Õğàì;$COUNTRY_ADJ$-temppeli;x
+EVTDESCRELNEW;My $MONARCHTITLE$, the clergy keeps pressing for your word on the religion of the country, regardless of secularism.;Mon $MONARCHTITLE$, le clergé ne cesse de faire valoir votre parole sur la religion du pays, quelle que soit la laïcité.;Mein $MONARCHTITLE$, der Klerus drängt immer wieder auf Ihr Wort zur Religion des Landes, unabhängig vom Säkularismus.;Mój $MONARCHTITLE$, duchowieñstwo naciska na wasze s³owa na temat religii kraju, niezale¿nie od sekularyzmu.;Mi $MONARCHTITLE$, el clero sigue presionando por su palabra sobre la religión del país, independientemente del secularismo.;Mio $MONARCHTITLE$, il clero continua a insistere per la tua parola sulla religione del Paese, indipendentemente dal secolarismo.;Saját $MONARCHTITLE$, a papság továbbra is szorgalmazza az ország vallásával kapcsolatos szavait, függetlenül a szekularizmustól.;Mùj $MONARCHTITLE$, duchovní stále tlaèí na vaše slovo o náboenství zemì, bez ohledu na sekularismus.;Saját $MONARCHTITLE$, a papság továbbra is szorgalmazza az ország vallásával kapcsolatos szavait, függetlenül a szekularizmustól.;Mijn $MONARCHTITLE$, de geestelijkheid blijft aandringen op uw woord over de religie van het land, ongeacht het secularisme.;Meu $MONARCHTITLE$, o clero continua pressionando por sua palavra sobre a religião do país, independentemente do secularismo.;Ìîé $MONARCHTITLE$, äóõîâåíñòâî ïğîäîëæàåò íàñòàèâàòü íà âàøåì ñëîâå î ğåëèãèè ñòğàíû, íåçàâèñèìî îò ñåêóëÿğèçìà.;Minun $MONARCHTITLE$, papit jatkavat painostusta sanasi suhteen maan uskontoon, maallisuudesta riippumatta.;x
+EVTOPTARELNEW;What do the people in $CAPITAL$ pray to?;Que prient les gens de $CAPITAL$?;Wofür beten die Leute in $CAPITAL$?;O co modl¹ siê ludzie z $CAPITAL$?;¿A qué rezan las personas en $CAPITAL$?;Cosa pregano le persone in $CAPITAL$?;Mit imádkoznak a $CAPITAL$ emberek?;Co se lidé v $CAPITAL$ modlí?;Mit imádkoznak a $CAPITAL$ emberek?;Waar bidden de mensen in $CAPITAL$ voor?;O que as pessoas em $CAPITAL$ oram?;Î ÷åì ìîëÿòñÿ ëşäè â $CAPITAL$?;Mihin $CAPITAL$ ihmiset rukoilevat?;x
