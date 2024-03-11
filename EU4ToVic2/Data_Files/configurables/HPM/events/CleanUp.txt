@@ -1772,6 +1772,7 @@ country_event = {
             tag = IRE
         }
         NOT = { has_country_flag = post_colonial_country }
+        NOT = { has_country_flag = new_world_nation }
     }
 
     mean_time_to_happen = { months = 12 }
@@ -4429,9 +4430,24 @@ country_event = {
                 exists = yes
                 vassal_of = FROM
             }
-            country_event = 6016824
+            country_event = 6016820
         }
         inherit = FROM
+    }
+}
+
+#Vassal Transfer During Unification - Vassal Gets Informed
+country_event = {
+    id = 6016820
+    title = "EVTNAME6016820"
+    desc = "EVTDESC6016820"
+    picture = "danishgovernment"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT6016820OPTA"
+        FROM = { country_event = 6016824 }
     }
 }
 

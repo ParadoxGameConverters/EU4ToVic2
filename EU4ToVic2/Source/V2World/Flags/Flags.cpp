@@ -382,8 +382,8 @@ void V2::Flags::createCustomFlags() const
 			else
 			{
 				if (!commonItems::DoesFileExist(sourceFlagPath))
-					throw std::runtime_error("Could not find " + sourceFlagPath);
-				throw std::runtime_error("Could not find " + sourceEmblemPath);
+					throw std::runtime_error("Could not find " + sourceFlagPath + " for " + V2Tag);
+				throw std::runtime_error("Could not find " + sourceEmblemPath + " for " + V2Tag);
 			}
 		}
 	}

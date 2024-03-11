@@ -639,6 +639,7 @@ country_event = {
 				tag = KNI
 				tag = TEU
 				tag = LIV
+				tag = ITP
 			}
 			NOT = { government = theocracy }
 		}

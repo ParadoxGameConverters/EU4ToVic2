@@ -1194,7 +1194,7 @@
 	link = { eu4 = 2976 eu4 = 4731 v2 = 751 } # Perugia, Spoleto -> Perugia
 	link = { eu4 = 119 eu4 = 2977 v2 = 752 } # Ancona, Urbino -> Ancona
 	link = { eu4 = 117 v2 = 747 v2 = 748 } # Siena -> Siena, Grosseto
-	link = { eu4 = 115 v2 = 745 } # Pisa -> Leghorn
+	link = { eu4 = 115 v2 = 745 v2 = 1981 } # Pisa -> Leghorn, Elba
 	link = { eu4 = 116 eu4 = 2978 v2 = 744 } # Firenze, Arezzo -> Florence
 	link = { eu4 = 2980 v2 = 746 v2 = 740 } # Lucca -> Lucca, Massa
 	link = { eu4 = 4730 v2 = 741 } # Bologna -> Bologna
@@ -2109,7 +2109,7 @@
 	link = { comment = "# African Wastelands" }
 	link = { eu4 = 1173 v2 = 2004 v2 = 2079 v2 = 2084 } # Namibia -> Mocamedes, Otjozondjii, Nomabeb
 	link = { eu4 = 1801 v2 = 2080 v2 = 2081 v2 = 2082 v2 = 2076 v2 = 2075 v2 = 2077 v2 = 2085 v2 = 2078 v2 = 2086 v2 = 2095 v2 = 2074 v2 = 2574 v2 = 2008 v2 = 2005 v2 = 2007 v2 = 2006 v2 = 2013 } # Kalahari -> Otjivanda, Luhonono, Epako, Nokaneng, Serowe, Tsabong, Nugouses, Otjomuise, Aixa-aibes, Dikathong, Gaborone, Mochudi, Ondjiva, Huambo, Mavinga, Kuito, Mongu
-	link = { eu4 = 1797 v2 = 1997 v2 = 1996 v2 = 1995 v2 = 1981 v2 = 1976 v2 = 1975 v2 = 1980 v2 = 1992 v2 = 1993 v2 = 1998 } # Northern Congo Basin -> Mungbane, Kisangani, Gemena, Elba, Makokou, Moanda, Djambala, Basoko, Irebu, Baramo
+	link = { eu4 = 1797 v2 = 1997 v2 = 1996 v2 = 1995 v2 = 1976 v2 = 1975 v2 = 1980 v2 = 1992 v2 = 1993 v2 = 1998 } # Northern Congo Basin -> Mungbane, Kisangani, Gemena, Makokou, Moanda, Djambala, Basoko, Irebu, Baramo
 	link = { eu4 = 1796 v2 = 1959 v2 = 1962 v2 = 1966 v2 = 1965 v2 = 1970 v2 = 1969 v2 = 1845 v2 = 1846 v2 = 1844 v2 = 1843 v2 = 1971 v2 = 1968 v2 = 1967 v2 = 1963 v2 = 1960 v2 = 1822 v2 = 1823 } # Central Africa -> Yaounde, Bertoua, Nola, Bangui, Bangassou, Zemio, Bahr el Ghazal, Lado, Bor, Waw, Ndele, Bossangoa, Bouar, Ngaoundere, Bafoussam, Am Timan, Mongo
 	link = { eu4 = 1793 v2 = 1773 v2 = 1775 v2 = 1779 v2 = 1782 v2 = 1781 v2 = 1696 } # El Djouf -> Saguia el-Hamra, Nouakchott, Shingit, Bir Murghayn, Walata, Cape Juby
 	link = { eu4 = 2251 v2 = 1895 v2 = 1896 v2 = 1891 v2 = 1889 v2 = 1890 v2 = 1886 v2 = 1885 v2 = 1883 } # Guinea -> Daloa, Man, Zwedru, Bopolu, Gbarnga, Bo, Falaba, Beyla

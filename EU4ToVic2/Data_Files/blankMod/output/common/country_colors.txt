@@ -1618,7 +1618,7 @@ CRS = { # Corsica
     color3= { 131 101 85  }
 }
 
-CRT = { # Carinthia
+CTI = { # Carinthia
     color1= { 255 255 0  }
     color2= { 255 0 0  }
     color3= { 255 255 0  }

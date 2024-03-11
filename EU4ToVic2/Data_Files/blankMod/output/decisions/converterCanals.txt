@@ -1,0 +1,45 @@
+political_decisions = {
+    enable_kiel_canal = {
+        picture = build_kiel_canal
+
+        potential = {
+            always = no
+        }
+        effect = {
+            enable_canal = 1
+            369 = { set_province_flag = kiel_canal }
+        }
+        ai_will_do = {
+            factor = 0
+        }
+    }
+    
+    enable_suez_canal = {
+        picture = suezcanal
+        potential = {
+            always = no
+        }
+        effect = {
+            enable_canal = 2
+            1755 = { set_province_flag = suez_canal }
+            set_global_flag = suez_canal_built
+        }
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    enable_panama_canal = {
+        picture = build_panama_canal
+        potential = {
+            always = no
+        }
+        effect = {
+            enable_canal = 3
+            1723 = { set_province_flag = panama_canal }
+        }
+        ai_will_do = {
+            factor = 0
+        }
+    }   
+}
