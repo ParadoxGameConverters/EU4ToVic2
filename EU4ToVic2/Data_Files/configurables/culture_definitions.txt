@@ -2077,6 +2077,36 @@ romantic = {
 			"d'Paisadu" "d'Durgalu" "d'Calvu" "d'Sartena" Bukhtišu Qatwais Nimru Gazartu Odaenathus Septimius
 			Septimàyya }
 	}
+	romanoindian = {
+		color = { 204 76 102 }
+
+		first_names = { Abbondãnshpolò Abbondpolò Abelarãjo Amritnarayan Achille Achalrãjo Adãlbervo Adelfo Adelmpolò Adelmo Atrone Adrimano Agapivo Aghostimano Aimone Alamanmano Alarigho
+			Albamano Alberigho Albervo Albimano Alboimano Alcideve Altrobrandimano Alearãjo Aleramo Alessandro Alesspolò Alighiero Alvise Ambrogpolò Amedeo Anastaspolò Andrea Angelò Annibale
+			Anselmo Anvonimano Anvonpolò Anvonpolòtvo Arcibaltro Arderigho Armantro Armanolfo Arrigho Arsenpolò Artempolò Ascanpolò Asvorre Atemanolfo Attilpolò Augusvo Aurelpolò Ausilpolò
+			Ausonpolò Averatro Ashshò Ashshòne Baldãssarre Baltrovimano Barnaba Barvolòmeo Basilpolò Bhassimano Bhasso Battista Bheltramano Bhenedetvo Bhenvenuvo Bherarãjo Bhernabò Bhernarãjo
+			Bhervo Bhervoltro Bigpolò Bonaventura Bonifagholò Borso Brumano Bruvo Buonghonte Bhuoso Bhadãr Bhilpolò Bhòjo Bhòvormano Callisvo Camillò Canditro Cangrandeve Carlò Casspolò
+			Casvore Cataltro Cavone Cegho Cesare Chiffretro Chimano Ciro Ciughpolò Claudpolò Clemente Comita Comanone Cornelpolò Corradimano Corratro Cosimo Cosma Costante Costantimano
+			Costanshò Crisvoforo Damimano Davideve Demetrolò Dolòniso Doménigho Durante Eduarãjo Elpolò Emmanuele Ennpolò Enrigho Enshpolò Enshò Erghole Eriprantro Ermeneviltro Evvãrore
+			Eugenpolò Eshpolò Eshshelimano Fabrishpolò Fausvo Federigho Felishe Ferdinantro Ferrughpolò Filippo Folòrellò Flavolò Folgho Fortunavo Fosgho Franshesgho Fresgho Jabriele
+			Jabrimano Jaetamano Jalasso Jaleashshò Jaleovvãro Jaspare Jasvone Gelaspolò Gentile Geraltro Gerarãjo Germamano Gerolamo Gherarãjo Gicinvo Gighomo Gin Ginfrangho Ginleone Gimano
+			Gibervo Gilbervo Golòlpolò Golòrdãmano Golòrpolò Golòvonni Giulpolò Giuseppe Goffretro Greghorpolò Gualtiero Guarnivo Guerrimano Guglielmo Guitro Guitrone Hammiravormano Harpale Harsa Harshapolò Hirapale
+			Guiglitrore Iaghopo Ivimano Inmanoshenshò Ippolivo Isnarãjo Jaghopo Jagatpale Chamale Chanhad Chanvorpale Lambervo Lantrolfo Lantrone Lanfrangho Lattanshòlò Lashsharimano Lashsharo
+			Lealtro Leonarãjo Leone Leonellò Leopoltro Libero Lolònellò Livpolò Lotrovigho Lorenshò Luca Luchimano Lucpolò Luivi Ladãhachandro Lacshmandevo Locpolò Madãnapolò Madãnavormano Maharoana
+			Malacresta Manfretro Manuele
+			Margho Marimano Marimano Marpolò Marsiglpolò Martimano Massimo Mastimano Matteo Merigho Michelangelò Michele Naravormano Narayanapolò Narpale Nayapolò Napoleone Nasharomano Nesvore Nigholò Nighola
+			Nimano Nolfo Obervo Obishshimano Obishshò Ottrone Omero Omanorpolò Oreste Orlantro Ottavolò Ovvãrobomano Ovvãrone Pagamano Pancrashpolò Pantrolfo Paolò Pasquale
+			Patrishpolò Pellegrimano Pericle Pietro Polò Prospero Rafaellò Radule Raimontro Rainero Raineri Righarãjo Rinaltro Rishsharãjo Robervo Rotrolfo Rolantro
+			Rampale Rampolò Rana Rangraj Rangrãjo Rosso Ruvvãriero Salinguerra Salvovore Salvestro Sante Saverpolò Scirra Sebastimano Seghontrovvãro Serafimano Serpolò Sesvo Settimpolò Severimano Severo
+			Silvomano Silvestro Simone Simonevvãro Sinibaltro Sinushellò Soshshò Spinevvãro Stefamano Stenvore Taddeo Tedãltro Tedice Teotroro Tibaltro Tishimano Tommaso
+			Torghotrorpolò Torquavo Ubaltro Ubervo Ugho Ughoghpolòne Ugholimano Umbervo Urbamano Valentimano Valerpolò Vinshentellò Vinshenshò Virvimanolò Vitale Vivvãrore Vivvãrorpolò Vinayacapolò Vindhyavorman
+			Viramdevo Viravormano Virsinghadevo Yasovormano Zaghari }
+		
+		last_names = { "Orshini" "da Monferrãvò" "Dantrolò" "Spimanolò" "Moncadã" "da Lãncani" "Palivvãri" "Ventimivli" "da Delhi" "da Pãtaliputri" "Sormedelli" "da Sabran"
+			"da Saboya" "Mastropiero" "da Busca" "Aleramicci" "Visconti" "Ordelòffo" "Faliero" "Silvipolò" "Contarini" "Chatyuri" "Chanvra" "Chumanochale" "Ajaca"
+			"Cedi" "Dasarãtho" "Salisuca" "Savadhanva" "Jahadvalò" "Dharoivvãrale" "Octavinpolò" "Verinpolò" "Marcinpolò" "Valentininpolò" "Caesarpolò"
+			"Auvistulòus" "da Guptò" "da Gãma" }
+	}
+	
 	union = SPQ
 }
 
@@ -2608,6 +2638,23 @@ pan_romanian = {
 		Salajan Samsonovici Schitiu Scodrea Slaniceanu Steflea Tatarascu Tenescu Vaitoianu Zottu
 		}
 	}
+	olbian = {
+		color = { 232 94 38 }
+
+		first_names = { Adrian Alexandru Andrei Anton Artur Bogdan Carol Cezar Constantin Constin
+		Cosmin Daniel Dumitru Emanuel Eremia Eugen Ferdinand Flaviu Florea Gheorghe
+		Grigore Henric Horatiu Iacob Ilie Ioan Ion "Ion Emanuel" Iosif Iulian
+		Iuliu Laurentiu Leontin Luca Lucian Mihai Mircea Nicolae Ovidiu Petru
+		Radu Sergiu Silviu Simion Stefan Valeriu Vasile Victor Vintila Vlad
+		}
+
+		last_names = { Angelescu Antonescu Argetoianu Averescu Baldescu Barozzi Berindei Cernat Christecu Cihoski
+		Ciuperca Coanda Crainiceanu Critescu Culcer Cuza "de Hohenzollern" Dona Dragalina Dumitrescu
+		Falcoianu Florescu Gardescu Grigorescu Froza Harjeu Holban Iancovescu Iliasevici Iliescu
+		Ionascu Ionescu Ionitiu Koslinski Lahovary Lupescu Mardarescu Murgescu Poenaru Prezan
+		Salajan Samsonovici Schitiu Scodrea Slaniceanu Steflea Tatarascu Tenescu Vaitoianu Zottu
+		}
+	}
 	union = ROM 
 }
 
@@ -2757,6 +2804,14 @@ polish_culture_group = {
 	}
 	oldpommeranian = {
 		color = {64 122 186}
+		
+		first_names = { Aleksander Andrzej Antoni Aron Barnim Bartosz Bedrich Bezprzym Blazej Bogislaw Bohdan Bohumir Boleslaw Borzywoj Bozydar Branimir Branislav Bretislav Casimir Ctibor Dobieslaw Dobromil Drosuk Dytryk Frantisek Gawel Grzegorz Havel Jacenty Jakub Jakusz Janusz Jaromar Jaromil Jaromir Jaroslav Jedrzej Jindrich Jiri Jozef Juliusz Kajetan Kamil Karel Kasper Kazimierz Kliment Kolman Kornel Kresimir Krzesla  Krzysztof Lech Leszek Lubomir Lucjan Ludvik Marek Marian Martin Mateusz Mieszko Mikolas Miloslaw Milosz Miroslaw Mscislaw Msciwo  Oldrich Ondrej Otokar Patryk Pawel Piotr Prendota Przemysl Przybyslaw Radomil Radomir Radoslav Rostislav Ryszard Sambor Sobiesalv Stanislaw Strasz Swietopelk Swietoslaw Szczepan Szczesny Szymon Tadeusz Tomasz Udalrich Urjasz Vojtech Waclaw Walenty Wratyslaw Wawrzyniec Vaclav Wincenty Wislaw Wladyslaw Wlodek Wlodzimierz Wlodzislaw Zbigniew Zdenek Zdislav Zygmunt }
+		
+		last_names = { Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" }
+		radicalism = 10
+	}
+	strombian = {
+		color = { 61 109 79 }
 		
 		first_names = { Aleksander Andrzej Antoni Aron Barnim Bartosz Bedrich Bezprzym Blazej Bogislaw Bohdan Bohumir Boleslaw Borzywoj Bozydar Branimir Branislav Bretislav Casimir Ctibor Dobieslaw Dobromil Drosuk Dytryk Frantisek Gawel Grzegorz Havel Jacenty Jakub Jakusz Janusz Jaromar Jaromil Jaromir Jaroslav Jedrzej Jindrich Jiri Jozef Juliusz Kajetan Kamil Karel Kasper Kazimierz Kliment Kolman Kornel Kresimir Krzesla  Krzysztof Lech Leszek Lubomir Lucjan Ludvik Marek Marian Martin Mateusz Mieszko Mikolas Miloslaw Milosz Miroslaw Mscislaw Msciwo  Oldrich Ondrej Otokar Patryk Pawel Piotr Prendota Przemysl Przybyslaw Radomil Radomir Radoslav Rostislav Ryszard Sambor Sobiesalv Stanislaw Strasz Swietopelk Swietoslaw Szczepan Szczesny Szymon Tadeusz Tomasz Udalrich Urjasz Vojtech Waclaw Walenty Wratyslaw Wawrzyniec Vaclav Wincenty Wislaw Wladyslaw Wlodek Wlodzimierz Wlodzislaw Zbigniew Zdenek Zdislav Zygmunt }
 		
@@ -3000,6 +3055,30 @@ east_slavic = {
 
 		last_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
+	berzanian = {
+		color = { 79 153 38 }
+
+		first_names = { Alekhey Andrey Anton Arkadyy Borys Dmytro Fiodor Hryhoryy Ivan Lavr Leonid Lev
+		Mykhayil Mykola Nikita Oleksandr Pavel Petro Roman Semion Serhyy Valeryy
+		Viktor Volodymyr Vladyslav Yuryy }
+
+		last_names = { Bezruchko Chernyakhovs'kyy Dyachenko Hamula Hrihoriyev Hrekov Ivanenko Ivanov
+		Krapustians'kyy Kondratenko Leshchenko Lesh·chinskyy "Omelyanovych-Pavlenko"
+		Paskevych Petlyura Radchenko Shevchenko Skoropads'kyy Stefaniv Tymoshenko Vitovs'kyy }
+		radicalism = 10
+    }
+	vapian = {
+		color = { 96 119 56 }
+
+		first_names = { Alekhey Andrey Anton Arkadyy Borys Dmytro Fiodor Hryhoryy Ivan Lavr Leonid Lev
+		Mykhayil Mykola Nikita Oleksandr Pavel Petro Roman Semion Serhyy Valeryy
+		Viktor Volodymyr Vladyslav Yuryy }
+
+		last_names = { Bezruchko Chernyakhovs'kyy Dyachenko Hamula Hrihoriyev Hrekov Ivanenko Ivanov
+		Krapustians'kyy Kondratenko Leshchenko Lesh·chinskyy "Omelyanovych-Pavlenko"
+		Paskevych Petlyura Radchenko Shevchenko Skoropads'kyy Stefaniv Tymoshenko Vitovs'kyy }
+		radicalism = 10
+    }
 	novvymir = {
 		color = {27 103 87}
 
@@ -3065,6 +3144,42 @@ east_slavic = {
 	}
 	
 	union = RUS
+}
+
+atlanto_slavic_group = {
+	leader = european
+	unit = AustriaHungaryGC
+	
+	vinolan = {
+		color = { 96 119 158 }
+
+		first_names = { Adam Aleksander Antoni Boleslaw Bonawentura Bronislaw Dezydery Edmund Edward Emil
+		Eustachy Felicjan Franciszek Gustaw Henryk Ignacy Jakub Jan Jedrzej Józef
+		Juliusz Karol Kazimierz Klemens Konstanty Lech Leon Leopold Lucjan Ludwik
+		Maciej Marceli Marian Mariusz Melchior Michal Mieczyslaw Roman Romuald Samuel
+		Stanislaw Stefan Tadeusz Tomasz Waclaw Wilhelm Witold Wladyslaw Wojciech Zygmunt }
+
+		last_names = { Bem Bór-Komorowski Brzóska Chalasinski Chlapowski Chlopicki Chrzanowski Dabrowski Dembinski Fabryvy
+		Hauke-Boask Iszikowski Jasinski Klicki Konopczynski Krukowiecki Kruszewski Langiewicz Madalinski Mieroslawski
+		Mikolajczyk Mokronowski Niepokólczycki Ostrowski Pac Pilsudski Poniatowski Potocki Pradzynski Radziwill
+		Rokossowski Rola-Zymierski Rómmel Rózicky Rybinski Rydz-Smigly Sanguszko Skrzynecki Soltyk Sowinski
+		Taczanowski Traugutt Wawrzecki Wieniawa-Dlugoszowski Wybicki Wysocki Zajaczek Zaluski Zamoyski Zeligowski }
+	}
+	olovian = {
+		color = { 130 96 158 }
+
+		first_names = { Adam Aleksander Antoni Boleslaw Bonawentura Bronislaw Dezydery Edmund Edward Emil
+		Eustachy Felicjan Franciszek Gustaw Henryk Ignacy Jakub Jan Jedrzej Józef
+		Juliusz Karol Kazimierz Klemens Konstanty Lech Leon Leopold Lucjan Ludwik
+		Maciej Marceli Marian Mariusz Melchior Michal Mieczyslaw Roman Romuald Samuel
+		Stanislaw Stefan Tadeusz Tomasz Waclaw Wilhelm Witold Wladyslaw Wojciech Zygmunt }
+
+		last_names = { Bem Bór-Komorowski Brzóska Chalasinski Chlapowski Chlopicki Chrzanowski Dabrowski Dembinski Fabryvy
+		Hauke-Boask Iszikowski Jasinski Klicki Konopczynski Krukowiecki Kruszewski Langiewicz Madalinski Mieroslawski
+		Mikolajczyk Mokronowski Niepokólczycki Ostrowski Pac Pilsudski Poniatowski Potocki Pradzynski Radziwill
+		Rokossowski Rola-Zymierski Rómmel Rózicky Rybinski Rydz-Smigly Sanguszko Skrzynecki Soltyk Sowinski
+		Taczanowski Traugutt Wawrzecki Wieniawa-Dlugoszowski Wybicki Wysocki Zajaczek Zaluski Zamoyski Zeligowski }
+	}
 }
 
 baltic = {
@@ -3324,6 +3439,23 @@ baltic = {
 		Sikkar Sirk Tõnisson Uluots Vaga Veske Vilbaste Vilms "von Uexküll" Warma
 		}
 	}
+	zvejian = {
+		color = { 94 89 56 }
+
+		first_names = { Aadu Alar Aleksander Andrus Artur August Bernard Dmitri Eduard Eerik
+		Elmar Ernst Georg Gustav Haman Harri Heino Hendrik Hjalmar Ivari
+		Jaan Jakob Johannes Joosep Juhan Julius Jüri Kaarel Kalev Konstantin
+		Lennart Ludvig Madis Mart Mikhel Nigul Olev Paavo Peeter Pent
+		Ragnar Siiri Sven Tarmo Tõnis Toomas Uno Valmar Villwm Voldemar
+		}
+
+		last_names = { Aamisepp Aavik Adams Anvel Barbarus Bornhöhe Eenpalu Hint Hurt Jaakson
+		Kangro Kint Klaasen Koern Kõiv Kotli Kumari Kupine Kuusik Leppik
+		Lipping Lohk Mäe Männil Moora Natus Nurkse Nurmekund Õkva Öpik
+		Orkivu Päts Perna Piiper Poska Puusepp Ränk Rei Reinman Siinmaa
+		Sikkar Sirk Tõnisson Uluots Vaga Veske Vilbaste Vilms "von Uexküll" Warma
+		}
+	}
 	union = UBD
 }
 
@@ -3441,6 +3573,24 @@ levantine = {
 		color = {180 120 180}
 		first_names = { Alimbeg Arsen Aslanbek Bakhva Batraz Besik Digor Dzhambolat Dzhumbulad Elbrus Evgeny Georgy Ibragim Iron Issa Jasz Khasan Leonid Leri Merabi Roho Ruslan Soslan Styr Taymuraz Trialeti Tugan Vadim Vasily Zaur } 
 		last_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
+	}
+	
+	nemedian = {
+		color = { 198 216 56 }
+		first_names = { Alimbeg Arsen Aslanbek Bakhva Batraz Besik Digor Dzhambolat Dzhumbulad Elbrus Evgeny Georgy Ibragim Iron Issa Jasz Khasan Leonid Leri Merabi Roho Ruslan Soslan Styr Taymuraz Trialeti Tugan Vadim Vasily Zaur } 
+		last_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
+	}
+	
+	yarkamii = {
+		color = { 155 51 168 }
+		first_names = { 
+			Alimbeg Arsen Aslanbek Bakhva Batraz Besik Digor Dzhambolat Dzhumbulad Elbrus Evgeny Georgy Ibragim Iron Issa Jasz Khasan Leonid Leri Merabi Roho Ruslan Soslan Styr Taymuraz Trialeti Tugan Vadim Vasily Zaur
+			Ytarim Lyam Naradeve Candre Nandake Maisês Gôdigasos Phadious Spithamês Omrasmakos Amôspados Danarasmakos Pharnakiôn Ouarzbalos Iôdesmagos Maldras
+		} 
+		last_names = { 
+			Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov
+			Yarkam Kausika Agarid Lyam Ytarim
+		}
 	}
 	
 	maghreb_arabic = {
@@ -3648,6 +3798,18 @@ turko_semitic = {
 		#	Abdulayev Abdurakhmanov Akhmadov Aliev Aslanbekov Barayev Basayev Dudayev Dudin Džabrailov Džokharov Elmurzaev Ibragimov Isaev Kadyrov Khasanov Kurbanov Magomedov Maskhadov Mayrbekov Murtazaliev Musaev Otarsultanov
 		#	Sadulaev Sagaipov Šapiev Šišhani Taymaskhanov Tsarnaev Umarov Vagabov Vakhaev Varayev Yamadaev Yandarbiev Zelimkhanov
 		#}
+	}
+	caspian = {
+		color = { 181 143 99 }
+		first_names = {
+			Smbat Khachik Ashot Arsham Zariadres Hamazasp Vardan Artawazd Mzez Eruand Orontes Mithranes Kherkhes Khozrid Sames Arshames Trdat Tigran Zareh Artashes
+			Arshak Vagharsh Khosrow Varazdat Vasak Ashusha Varazvaghan Hmayeak Vahan Sahak Zarmihr Nikhor
+		}
+		
+		last_names = { 
+			Abeghean Amatuni Andzevatsi Artsruni Bagean Bznuni Dimaksean Ensayatsi Gabeghean Gntuni Gnunid Habuzhean Hashteank Hawnuni Kajberuni Kamsarakan Koghean
+			Mamikonean Manawazean Mandakuni Paluni Oroduni Eruanduni Orontid Ropsean
+		}
 	}
 	pecheneg = {
 		color = { 83 52 79 }
@@ -4221,6 +4383,60 @@ iranian_turanian = {
 			Kausikan Sakkan Kasakid Yarkamid Bharukid Cadotid Lyamid Kunlayad
 		}
 	}
+	indo_scythian = {
+		color = { 204 25 76 }
+		first_names = {
+			Airawanta Ajatasatru Ajite Alp Ambare Ampratasarme Amrataraksite Amratodane Anande
+			Anathapindike Aniruddhe Andhave Anktsas Arjune Aranemi Arnyartate Arslam Arthadarsi
+			Aryamarg Aryaske Aryatewe Aryawarme Aryottame Asokamitre Asokaraksite Asoke Asarte
+			Astawi Atakke Atidivakare Atyuccagami Atraikatte Bimbasare Caitike Caiytiska Cakravar
+			Cakule Candramukhe Candravasu Candre Caracate Cina Cinatyuti Citre Cittaraksite Cowaske
+			Dandakamal Devarakste Dhanike Dipankar Dirghanakhe Dravyasvare Durmukhe Ekasrinke
+			Erkatsole Esmine Etrise Gayakasyape Gayasirs Gaye Gunacamdre Gunasampade Hariscandre
+			Hastake Hetubalike Indradhvaje Indratewe Indre Indriske Issapake Jatisrone Jetavam
+			Jñanacamndre Jñanaghose Jñanakame Jñanakupte Jñanamokse Jñanasene Jñanasome
+			Jñanasthite Jñanawirye Kadike Kalodaye Kalyanamokse Kalyanavraddhi Kalyanawartane
+			Kanake Kanaske Kanthake Kapilavarne Kapilavastu Kas Kasyap Katakarni Kaundinye
+			Kauravye Kausal Kemarcune Kentarske Kercampey Kercapiske Kerdipole Kereptanne Kimne
+			Klenkarako Klpapatre Klyotiska Kotile Koysam Ksemankare Ksmarjune Ksmawarme Ksmate
+			Ksmateworsa Ksmika Kulkera Kumarapunye Kumpante Kunacamttrakau Kunacamttre
+			Kwirapabhadra Lariska Mahasammate Mahisvare Manisvare Mitrakseme Mitraske Mitre
+			Moksasene Moksasome Moksawarme Molyoke Mukalanti Munkhare Murdhagate Nandabala
+			Nandake Nande Nandipale Nasme Natte Naradeve Nirot Nupura Nyagrodhe Padmakesar
+			Padmottare Pakacandre PaN_casikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
+			Pravare Priyadeve Ptompile Puñaiyse Puñakame Puñaraksite Puñicamndre Punyamitre
+			Purtas Rahule Raktadewe Ratnacuda Ratnasikhi Rsivadam Rudramukhe Rudrasarme Sagare 
+			Samantatir Samcite Samghatrate Sanavasi Sanghasarme Sankene Sanum Saputanase Sarasike
+			Sarmacamdre Sarsire Satuma Satyake Satyaraksite Sidhasamgha Siladewe Silamitre Silarakite
+			Silaraksi Silasoma Silavande Silawarne Silayase Silopake Simpraye Siñcake Sinke Sinku
+			Skanatatte Skwarle Slacamndre Solarke Some Srestake Sudarse Sudas Suddhodane Sujate
+			Sukase Suklodane Sunaksatre Sunetre Sutasome Sutate Swarnabuspe Swarnatepe Tarmacandre
+			Tarmaraksite Tenare Tohkem Tonke Tukik Tunka Tusi Udanalankar Udayi Ulkamukhe Uluke
+			Upage Upagupte Upanande Uposathe Urbilvakasyape Uttaraphalguni Uttare Vaisravane
+			Vaitike Varddhane Vidusake Vimalapuspe Vinaise Visale Wamsok Warwattaske Waryaruci
+			Waryasene Wasampile Wasave Wiryadewe Wiryamitre Wiryasanti Wiryasiñi Wisikke
+			Wrauske Yanayase Yarpalaske Yasa Yasawine Yase Yasonaka Yastare Yonge Yonu Ype
+			Yudhisthire Yugaraje
+		}
+		last_names = {
+			Kausalid Gankari Tenarian Ytarimid Tripuskaran Dantapurian
+			Baransian Yurpaskan Rohinian Vaidan Vaisalian Iksvakuian
+			Kausikan Sakkan Kasakid Yarkamid Bharukid Cadotid Lyamid Kunlayad
+		}
+	}
+	indo_parthian = {
+		color = { 155 61 102 }
+		first_names = {
+			Abdagas Ara Aram Aramu Arbaces Ardashir Argishti Ariovast Arkha Armin Arsaces Arsames Artabanus Artabazus Artasyras Artavazd 
+			Artaxias Aryanes Asheri Asina Ashina Astashpa Astyages Atamaita Aturpat Bagayash Bayad Chosroes Cyaxares Cyrus Darius Deioces 
+			Evagoras Fravarti Gaumata Gobryas Gotarzes Haldita Hidarnes Hydarnes Manchihr Mardonius Martiya Mazaces Megabyzus Menua Nambed 
+			Napad Orodes Orxines Osroes Oxydates Pacorus Peucestas Phraates Phraortes Rusa 	Sames Sarduri Sarsamas Savaces Shapur Sinatruces 
+			Tigraios Tigranes Tiridates Umamaita Upadarma Vahbarz Vardanes Vologases Vonones Xerxes
+		}
+		last_names = {
+			Amestris Amytis Anzaza Artazostre Artystone Atossa Barsine Damaspia Mandane Parmys Parysatis Phaedymia Rinu Stateira Vashti
+		}
+	}
 	tocharian = {
 		color = { 4 61 188 }
 		first_names = {
@@ -4259,6 +4475,19 @@ iranian_turanian = {
 		last_names = {
 			Arkwi Erkent Karweñe Kaum Lykaške Meñe Samudtar Šana Šaumo Šcirye Totka
 			Aršiññe Gushi Asmires Garinei Thagures Kušiññe Oichardes Piades Rabanes Siziges
+		}
+	}
+	elamite = {
+		color = { 124 135 132 }
+		first_names = {
+			Abdagas Ara Aram Aramu Arbaces Ardashir Argishti Ariovast Arkha Armin Arsaces Arsames Artabanus Artabazus Artasyras Artavazd 
+			Artaxias Aryanes Asheri Asina Ashina Astashpa Astyages Atamaita Aturpat Bagayash Bayad Chosroes Cyaxares Cyrus Darius Deioces 
+			Evagoras Fravarti Gaumata Gobryas Gotarzes Haldita Hidarnes Hydarnes Manchihr Mardonius Martiya Mazaces Megabyzus Menua Nambed 
+			Napad Orodes Orxines Osroes Oxydates Pacorus Peucestas Phraates Phraortes Rusa 	Sames Sarduri Sarsamas Savaces Shapur Sinatruces 
+			Tigraios Tigranes Tiridates Umamaita Upadarma Vahbarz Vardanes Vologases Vonones Xerxes
+		}
+		last_names = {
+			Amestris Amytis Anzaza Artazostre Artystone Atossa Barsine Damaspia Mandane Parmys Parysatis Phaedymia Rinu Stateira Vashti
 		}
 	}
 	dinajidad = {
@@ -4552,6 +4781,26 @@ south_asian = {
 		
 		last_names = { Singh Kunwar Bahadur Dhillon Nalwa Ahluwalia Ramgarhia Mal Mulraj }
 	}
+	neo_mitanni = {
+		color = { 56 38 12 }
+
+		first_names = { 
+			Artatama Artashumara Atal-s'en Biridaswa Kikkuli Kirta Mattiwaza Parattarna Parsatatar S'atar-mat Sattawaza
+			Shaushtatar Shuttarna Tehiptilla Tis'ata Tushrata Priyamazdha Priyashva Indrauta
+		}
+		last_names = { 
+			Chawda Bhil Kathi Maitraka Varahas Calukya Solanki Sankhyavat Jhuti Kahlon Nagra Utpala Karkota Jewlia Kacchapaghata
+			Vagada Gujar Burdak Chhinda Panwar Bargujar Guhilot Dahiya Ghanshani Lohi Notanni "Washukanni Kadamba" Gaitonde
+			Ruddha Sinda Nandelid Satadhanva Katyuri Kangra
+		}
+	}
+	dom = {
+		color = { 114 1 1 }
+
+		first_names = { Chetan Fakirbhai Jivraj Madhavsingh Khemchand Manubhai Bharatsingh Balwantry Chabildas Maniraj }
+		
+		last_names = { Pansara Vaghela Solanki Modhvadia Mehta Baro Parmar }
+	}
 	union = HND
 }
 
@@ -4683,6 +4932,12 @@ southeast_asian = {
 	}
 	karen = {
 		color = {99 88 122}
+		first_names = { Po La Paban Hkun Maung Papw Sao Saw }
+		
+		last_names = { Che Baw U Lawi Lasa Pyatin "Law Paw" Kyi Pun Nge Bye Kye }
+	}
+	pyu = {
+		color = { 145 22 1 }
 		first_names = { Po La Paban Hkun Maung Papw Sao Saw }
 		
 		last_names = { Che Baw U Lawi Lasa Pyatin "Law Paw" Kyi Pun Nge Bye Kye }
@@ -4983,6 +5238,42 @@ native_central_american = {
 		"Itz" "Itzcuintli" "Macehualli" "Malinalli" "Mazatl" "Miquiztli" "Nezahual" "Nochtli" "Ocelotl" 
 		"Ollin" "Otli" "Ozomatli" "Pipiltin" "Pochtecatl" "Quauhtli" "Quauitl" "Quiautl" "Tecpatl" 
 		"Tecuhtli" "Tepetl" "Tetl" "Tlantli" "Tochtli" "Toltecatl" "Xochitl"}
+	}
+	euro_mayan = { #Mayan invaders of Europe
+		color = { 127 25 178 }
+
+		first_names = { Ahkinxoc Ahmetakkukul Ahmok Ahnakukpech Ahpop-Achi Arana Bakan Balam Bor Canek Chaob Chiam Hnuyg Kayom Kíin Kukumatz 
+			Mochcouoh Nachancan Nohochacyum Pacal "Quitze Balam" Tecunuman Vataki Yumcaax Zotz }
+
+		last_names = { "Can Ek" "Balam Quitze" "Kan Boar" "Yax Kuk Mok" "Ah Can" "Vahxaqui Caam" "Ah Cacao" "Cham Bahlun" 
+			"Pacal Balam" "Yaxum Balam" "Butz Chan" "Chaan Muan" "Yax Pac" "Ahpop-Achi" "Kan Bahlun Mo" Cocom 
+			Pacal Ahmok Arana Bakan Bor Cocaib Cocoja Conache Cotuja Gucamatz Hnuyg Kayom Kukumatz 
+			Mochcouoh Nohochacyum Oxib Queh Tecunuman Tutul Xiu Tziquin Vataki Yumcaaz Zotz Ahkinxok "Cu Ix" 
+			Ahmik Anoki Chogan Dasan Elki Honon Jacy Len }
+	}
+	euro_olmec = { #Olmec invaders of Europe
+		color = { 76 45 89 }
+
+		first_names = { Ahkinxoc Ahmetakkukul Ahmok Ahnakukpech Ahpop-Achi Arana Bakan Balam Bor Canek Chaob Chiam Hnuyg Kayom Kíin Kukumatz 
+			Mochcouoh Nachancan Nohochacyum Pacal "Quitze Balam" Tecunuman Vataki Yumcaax Zotz }
+
+		last_names = { "Can Ek" "Balam Quitze" "Kan Boar" "Yax Kuk Mok" "Ah Can" "Vahxaqui Caam" "Ah Cacao" "Cham Bahlun" 
+			"Pacal Balam" "Yaxum Balam" "Butz Chan" "Chaan Muan" "Yax Pac" "Ahpop-Achi" "Kan Bahlun Mo" Cocom 
+			Pacal Ahmok Arana Bakan Bor Cocaib Cocoja Conache Cotuja Gucamatz Hnuyg Kayom Kukumatz 
+			Mochcouoh Nohochacyum Oxib Queh Tecunuman Tutul Xiu Tziquin Vataki Yumcaaz Zotz Ahkinxok "Cu Ix" 
+			Ahmik Anoki Chogan Dasan Elki Honon Jacy Len }
+	}
+	euro_tol = { #Tol invaders of Europe
+		color = { 178 17 204 }
+
+		first_names = { Ahkinxoc Ahmetakkukul Ahmok Ahnakukpech Ahpop-Achi Arana Bakan Balam Bor Canek Chaob Chiam Hnuyg Kayom Kíin Kukumatz 
+			Mochcouoh Nachancan Nohochacyum Pacal "Quitze Balam" Tecunuman Vataki Yumcaax Zotz }
+
+		last_names = { "Can Ek" "Balam Quitze" "Kan Boar" "Yax Kuk Mok" "Ah Can" "Vahxaqui Caam" "Ah Cacao" "Cham Bahlun" 
+			"Pacal Balam" "Yaxum Balam" "Butz Chan" "Chaan Muan" "Yax Pac" "Ahpop-Achi" "Kan Bahlun Mo" Cocom 
+			Pacal Ahmok Arana Bakan Bor Cocaib Cocoja Conache Cotuja Gucamatz Hnuyg Kayom Kukumatz 
+			Mochcouoh Nohochacyum Oxib Queh Tecunuman Tutul Xiu Tziquin Vataki Yumcaaz Zotz Ahkinxok "Cu Ix" 
+			Ahmik Anoki Chogan Dasan Elki Honon Jacy Len }
 	}
 }
 
@@ -6852,6 +7143,13 @@ barbarian = {
 
 		last_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
 	}
+	old_burgundian = {
+		color = { 91 56 56 }
+
+		first_names = { Abbo Aega Agobard Allowin Arnulf Asselin Berno Berthaire Bruno Cassyon Cheldric Childebrand Clodomir Clotaire Corbinian Dodo Ebroin Ebrulf Emme Evroult Faro Gerold Grifo Grimbald Hartmut Helinand Hildebold Hildeprand Humbert Imbert Jocelin Lambert Lanfranc Lebuin Letard Liudhard Liudolf Lul Mansuet Omer Reginar Reol Richomer Rothad Sergi Sicho Vedast Werinbert Willibrord Zwentibold }
+
+		last_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
+	}
 	suebi = {
 		color = {60 220 200 }
 		first_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
@@ -6866,6 +7164,49 @@ barbarian = {
 
 		last_names = { Aelfwig Alfstan Athelred Auchenceter Auchterworthy Bloccsham Brownlowe Burgwine Cerdic Coldren Cuthberht Cwmcott Ecgred Estmund Gardyner Glover Godwinsson Gorbold Hrothsige Hwitmann Lea Leofwine Purcell Unred Wolfsige Wulfstan Wyndham Wynstan Wyther }
 	}
+	
+	anglo_suebi = {
+		color = { 214 186 186 }
+		first_names = { 
+			Ædekisor Ædikrik Ægimadüs Ægriulfum Ælamirond Ælgæsster Ænila Ænsuaror Ærgorvitüs Æriamir Ærosinda Æudeka
+			Badamundüs Bædemariüs Bædereidik Bætariüs Baudemirond Bekilla Berteirond Bonesindüs Boniza Kagildik Kartemirond
+			Scharæeriki Kommundüs Krodemirond Dagareidüs Daildüs Damirond Dokemirond Donazariüs Donegildüs Dulkemirüs Eborik
+			Egenor Eimirond Eirigu Eisindüs Eldegotüs Eldesindüs Elperiko Engomirond Ensædüs Ermarik Evosindik Fagildüs
+			Felmirond Fræenk Fræemuldik Freidikædüs Froatingüs Fromildüs Frumeirond Gardingüs Gaudesindik Gomeidei
+			Gomulfüs Gresumarüs Gudesteüs Gumariüs Gundivædik Guntato Gunterotis Heremigar Hermerik Hespanisko Hildemir
+			Hilderik Hunisko Hunisküs Lödegæssti Löderigüs Lödulfüs Lövædik Lodemirond Magitüs Mæareidüs Mæarik Mædræss
+			Markosendüs Mæsssilan Mervigiüs Mirond Moderidik Nandariküs Nantildik Neufila Nitigis Notariüs Odamirond Odemundüs
+			Oderiküs Onemirond Onoriküs Osdulfüs Osoriko Ostromirüs Otuædik Pabregildüs Pantard Pantinüs Pappinüs Peideræegildu
+			Pennor Peipinüs Provareidik Küdesendik Küdulfüs Kuidemirond Kuideriküs Ragimirond Ragolfüs Rakeriküs Randinüs
+			Randuariüs Ranisklüs Reschiar Reschila Refulfo Reirigüs Remismund Remisol Renderiküs Rischard Rischimund Rodikmiro
+			Roelindüs Romanisko Romarigüs Sagatüs Saxomero Segomirüs Sentariüs Seskutüs Sisulfüs Spanariüs Spoderigo Suavariüs
+			Sunila Töbæd Tödereidüs Thödemar Todegogia Træssmiræe Træssoldi Tumtuldik Uittimer Veneidaror Veremund
+			Vermudik Viamundüs Vidrædüs Villisendik Vistremirond Zamariüs Zendæssindik Görg Günther Yakob
+			Vældemar Otto Peter Fillipp Vilhelm Volfgæeng Volfræm Yohann
+			Gotfried Steffæen Mærtin Lübert Alæerik Lüdikolf
+		}
+
+		last_names = { 
+			Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler
+			Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle
+		}
+	}
+	
+	wigazan = {
+		color = { 178 178 178 }
+		first_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
+
+		last_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
+	}
+	
+	indo_germanic = {
+		color = { 84 25 10 }
+		first_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
+
+		last_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
+	}
+	
+	
 }
 anti_human = {
 	leader = no_leader
@@ -8547,6 +8888,114 @@ celtic = {
 			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
 		}
 	}
+	ghasettian = {
+		color = { 56 86 45 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	betwani = {
+		color = { 12 68 33 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	vinetan = {
+		color = { 76 102 10 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	galatian_celtic = {
+		color = { 17 178 140 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	cenabian = {
+		color = { 56 104 22 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	plashurii = {
+		color = { 35 153 153 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
 	celtic_american = {
 		color = { 246 22 39 }
 
@@ -8821,6 +9270,159 @@ tyrrhenian = {
 	}
 	lemnian = {
 		color = { 244 101 234 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	qutumi = {
+		color = { 51 124 211 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	tulari = {
+		color = { 130 147 226 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	karthazian = {
+		color = { 15 99 102 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	mutnian = {
+		color = { 45 94 132 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	nerian = {
+		color = { 112 20 186 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	lanistian = {
+		color = { 45 94 132 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	fasenian = {
+		color = { 63 201 219 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	sazlei = {
+		color = { 79 58 191 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	falan = {
+		color = { 33 38 81 }
 		male_names = {
 			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
 			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
@@ -9131,4 +9733,12 @@ zzz_religions = {
 	zzz_religion_dummy_religion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_megalithic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_ritualistic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_illyric = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_marite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_nuragic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_ajivika = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_bamar = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_waaqi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mithraic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hurrian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }
