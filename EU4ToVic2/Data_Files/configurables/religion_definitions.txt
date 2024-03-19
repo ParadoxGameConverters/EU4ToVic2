@@ -207,6 +207,10 @@ indian = {
 		color = { 0.3 0.8 0 }
 		icon = 58
 	}
+	ajivika = {
+		color = { 0.1 0.6 0.0 }
+		icon = 78
+	}
 }
 
 eastern = {
@@ -234,6 +238,11 @@ eastern = {
 	muism = {
 		icon = 57
 		color = { 0.1 0.3 0.85 }
+		pagan = yes
+	}
+	bamar = {
+		icon = 79
+		color = { 0.57 0.26 0.33 }
 		pagan = yes
 	}
 }
@@ -279,6 +288,11 @@ pagan = {
 		color = { 0.05 0.21 0.07 }
 		pagan = yes
 	}
+	waaqi = {
+		icon = 80
+		color = { 0.95 0.10 0.35 }
+		pagan = yes
+	}
 }
 mena_pagan = {
 	kemetic = {
@@ -313,6 +327,11 @@ mena_pagan = {
 	megalithic = {
 		icon = 73
 		color = { 0.43 0.13 0.07 }
+		pagan = yes
+	}
+	hurrian = {
+		icon = 82
+		color = { 0.45 0.46 0.92 }
 		pagan = yes
 	}
 }
@@ -365,6 +384,21 @@ euro_pagan = {
 	iberian_pagan = {
 		icon = 70
 		color = { 0.91 0.71 0.82 }
+		pagan = yes
+	}
+	illyric = {
+		icon = 75
+		color = { 0.15 0.46 0.6 }
+		pagan = yes
+	}
+	marite = {
+		icon = 76
+		color = { 0.62 0.80 0.80 }
+		pagan = yes
+	}
+	nuragic = {
+		icon = 77
+		color = { 0.57 0.60 0.47 }
 		pagan = yes
 	}
 }
@@ -422,6 +456,10 @@ zoroastrian = {
 		icon = 28
 		color = { 1.0 0.8 0.2 }
 		pagan = yes
+	}
+	mithraic = { #Ancient religion of the Medes, different from the later Roman mystery cult
+		icon = 81
+		color = { 0.68 0.87 0.18 }
 	}
 }
 dummy_g = {

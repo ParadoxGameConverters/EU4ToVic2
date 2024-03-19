@@ -54,11 +54,12 @@ link = { v2 = sunni_heresy eu4 = abadites eu4 = quranism eu4 = qadariyya eu4 = k
 link = { v2 = mahayana eu4 = confucianism eu4 = mahayana }
 link = { v2 = theravada eu4 = buddhism }
 link = { v2 = sikh eu4 = sikhism }
-link = { v2 = hindu eu4 = hinduism eu4 = ajivika } # Ajivika could be its own religion, but it would need to be added.
+link = { v2 = hindu eu4 = hinduism }
 link = { v2 = shinto eu4 = shinto }
 link = { v2 = jain eu4 = jain eu4 = jainism }
 link = { v2 = gelugpa eu4 = vajrayana }
 link = { v2 = muism eu4 = muism }
+link = { v2 = ajivika eu4 = ajivika }
 
 # Major Pagans
 link = { v2 = animist eu4 = animism eu4 = pagan_religion_reformed eu4 = converted_siberian_pagan eu4 = dreamtime }
@@ -89,6 +90,12 @@ link = { v2 = west_african_pagan_reformed eu4 = west_african_pagan_reformed }
 link = { v2 = zamolxism eu4 = zamolxism eu4 = zalmoxian_pagan_reformed }
 link = { v2 = megalithic eu4 = megalithic_pagan_reformed }
 link = { v2 = ritualistic eu4 = ritualistic_pagan_reformed }
+link = { v2 = illyric eu4 = illyric_pagan_reformed }
+link = { v2 = marite eu4 = marite_pagan_reformed }
+link = { v2 = nuragic eu4 = nuragic_pagan_reformed }
+link = { v2 = bamar eu4 = bamar_pagan_reformed }
+link = { v2 = waaqi eu4 = waaqi_pagan_reformed }
+link = { v2 = hurrian eu4 = hurrian_pagan_reformed }
 
 link = { v2 = inca_reformed eu4 = inca_reformed }
 link = { v2 = zun_pagan_reformed eu4 = zun_pagan_reformed eu4 = zunism eu4 = atenism }
@@ -119,12 +126,19 @@ link = { v2 = animist eu4 = armazic_pagan }
 link = { v2 = animist eu4 = heptadic_pagan }
 link = { v2 = animist eu4 = zalmoxian_pagan }
 link = { v2 = animist eu4 = ritualistic_pagan }
+link = { v2 = animist eu4 = illyric_pagan }
+link = { v2 = animist eu4 = marite_pagan }
+link = { v2 = animist eu4 = nuragic_pagan }
+link = { v2 = animist eu4 = bamar_pagan }
+link = { v2 = animist eu4 = waaqi_pagan }
+link = { v2 = animist eu4 = hurrian_pagan }
 
 #Zoroastrian
 link = { v2 = zoroastrian eu4 = zoroastrian }
 link = { v2 = manichean eu4 = manichean }
 link = { v2 = mazdaki eu4 = mazdaki }
 link = { v2 = zoroastrian_heresy eu4 = zoroastrian_heresy eu4 = khurmazta eu4 = zurvanism eu4 = zurvanist eu4 = gayomarthianism eu4 = khurramism eu4 = mandaeism }
+link = { v2 = mithraic eu4 = mithraic } #Ancient religion of the Medes, different from the later Roman mystery cult
 
 #Judaism
 link = { v2 = jewish eu4 = jewish }
