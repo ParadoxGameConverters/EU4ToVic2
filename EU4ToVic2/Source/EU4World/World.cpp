@@ -148,6 +148,11 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 
 void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion)
 {
+	revolutionParser.registerKeyword("revolution_target", [this](std::istream& theStream) {
+		revolutionTargetString = commonItems::getString(theStream);
+	});
+	revolutionParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
 	registerKeyword("EU4txt", [](std::istream& theStream) {
 	});
 	registerKeyword("date", [this](std::istream& theStream) {
@@ -272,8 +277,13 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 			}
 		}
 	});
+	// Old Style (up to 1.32)
 	registerKeyword("revolution_target", [this](std::istream& theStream) {
 		revolutionTargetString = commonItems::getString(theStream);
+	});
+	// New style (1.33 and onwards)
+	registerKeyword("revolution", [this](std::istream& theStream) {
+		revolutionParser.parseStream(theStream);
 	});
 	registerKeyword("celestial_empire", [this](std::istream& theStream) {
 		const EU4Empire empireBlock(theStream);
