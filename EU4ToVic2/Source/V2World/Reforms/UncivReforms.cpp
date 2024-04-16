@@ -2,7 +2,7 @@
 #include "../Country/Country.h"
 #include "../Province/Province.h"
 
-V2::UncivReforms::UncivReforms(const int westernizationProgress, const double milFocus, const double socioEcoFocus, Country* country)
+V2::UncivReforms::UncivReforms(const int westernizationProgress, const double milFocus, const double socioEcoFocus, Country* country, bool hpm)
 {
 	int westernizationCost[16];
 	westernizationCost[0] = 15;
@@ -40,21 +40,43 @@ V2::UncivReforms::UncivReforms(const int westernizationProgress, const double mi
 
 	// Get all valid military reforms
 	auto milProgress = westernizationProgress * milFocus;
-	for (unsigned int i = 8; i < 16; i++)
+	if (hpm)
 	{
-		if (milProgress >= westernizationCost[i] - 0.001)
+		if (milProgress >= westernizationCost[9] - 0.001)
 		{
-			reforms[i] = true;
-			milProgress -= westernizationCost[i];
+			reforms[9] = true; // yes_foreign_weapons
+			milProgress -= westernizationCost[9];
 		}
-		else
+
+		if (milProgress >= westernizationCost[8] - 0.001)
 		{
-			reforms[i] = false;
+			reforms[8] = true; // yes_foreign_training
+		}
+	}
+	else
+	{
+		for (unsigned int i = 8; i < 16; i++)
+		{
+			if (milProgress >= westernizationCost[i] - 0.001)
+			{
+				reforms[i] = true;
+				milProgress -= westernizationCost[i];
+			}
+			else
+			{
+				reforms[i] = false;
+			}
 		}
 	}
 
 	// Use remaining progress to get any reforms in preferred category
 	auto remainingProgress = socioEconProgress + milProgress;
+
+	if (hpm) // No progress transfer
+	{
+		remainingProgress = 0;
+	}
+
 	if (socioEconProgress >= milProgress)
 	{
 		for (unsigned int i = 0; i < 8; i++)
