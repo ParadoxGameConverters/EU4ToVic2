@@ -10,7 +10,7 @@ class UncivReforms
 {
   public:
 	UncivReforms() = default;
-	UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, Country* country);
+	UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, Country* country, bool hpm = false);
 
 	friend std::ostream& operator<<(std::ostream& output, const UncivReforms& uncivReforms);
 
