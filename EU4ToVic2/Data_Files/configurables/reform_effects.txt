@@ -62,6 +62,20 @@ siamese_absolutism = { order = 9 reactionary = 6 liberty = 2 }
 confucian_bureaucracy = { order = 6 literacy = 6 culture = 6 }
 germanic_monarchy = { order = 6 reactionary = 7 culture = 4 }
 eastern_monarchy = { order = 4 reactionary = 4 liberty = 7 liberal = 6 }
+arabic_plutocracy_reform = { liberty = 7 liberal = 6 }
+austrian_absolute_monarchy = { order = 10 reactionary = 6 }
+merchant_aristocracy_reform = { equality = 3 order = 7 reactionary = 7 commerce = 7 }
+andean_empire_reform = { order = 9 reactionary = 7 army = 6 equality = 3 liberty = 3 }
+aztec_empire_reform = { order = 7 liberty = 6 }
+nahuatl_monarchy_reform = { order = 8 army = 6 }
+maya_confederation_reform = { equality = 8 army = 6 culture = 7 }
+divine_kingship_reform = { order = 9 reactionary = 9 army = 6 equality = 3 liberty = 3 }
+gothic_monarchy_reform = { order = 6 army = 6 }
+empire_of_trebizond = { order = 8 reactionary = 8 culture = 6 }
+crusader_nobility_reform = { order = 9 reactionary = 10 army = 6 equality = 3 liberty = 3 }
+ayyubid_dynasty = { order = 6 reactionary = 7 culture = 6 }
+apostolic_kingdom = { order = 9 reactionary = 9 army = 6 equality = 3 liberty = 3 }
+imperial_hungarian_government = { order = 8 reactionary = 8 culture = 6 }
 
 # Monarchy 2 - Tech
 enforce_privileges_reform = { army = 7 culture = 3 order = 6 }
@@ -77,6 +91,24 @@ black_army_reform = { army = 6 equality = 6 reactionary = 4 }
 legion_of_honor_reform = { equality = 7 army = 6 }
 imperial_nobility_reform = { culture = 7 equality = 6 reactionary = 4 }
 uparaja_reform = { order = 7 reactionary = 8 culture = 6 }
+TIM_plunder_economy = { industry = 0 culture = 2 equality = 2 }
+russian_mercenary_guard_reform = { army = 6 order = 8 }
+ayyubid_high_command = { army = 6 }
+german_franconian_reform = { culture = 6 equality = 3 }
+german_westphalian_reform = { literacy = 6 culture = 6 equality = 3 }
+german_rhenish_reform = { culture = 7 }
+german_lower_saxon_reform = { commerce = 6 navy = 6 }
+german_prussian_reform = { army = 8 culture = 3 }
+german_austrian_reform = { order = 7 culture = 7 }
+german_saxon_reform = { industry = 6 }
+german_bavarian_reform = { culture = 6 reactionary = 7 }
+german_swiss_reform = { army = 6 commerce = 6 }
+german_swabian_reform = { commerce = 6 industry = 6 }
+german_other_reform = { culture = 6 }
+seven_provinces_reform = { army = 6 equality = 4 }
+cuman_lancers_reform = { army = 6 industry = 4 }
+bergordnung_reforms_reform = { industry = 7 }
+vozove_hradby_reform = { army = 6 }
 
 # Monarchy 3 - Voting
 centralize_reform = { upper_house_composition = 2 vote_franchise = 2 voting_system = 2 }
@@ -89,6 +121,10 @@ liberte_reform = { equality = 9 liberal = 8 voting_system = 8 vote_franchise = 8
 fraternite_reform = { equality = 3 vote_franchise = 3 upper_house_composition = 2 }
 examination_system_reform = { upper_house_composition = 6 vote_franchise = 7 voting_system = 6 }
 corvee_reform = { navy = 7 upper_house_composition = 4 vote_franchise = 4 }
+timurid_diwan_reform = { upper_house_composition = 2 vote_franchise = 2 voting_system = 3 }
+integrated_ottoman_officials = { upper_house_composition = 4 vote_franchise = 4 voting_system = 2 }
+continue_the_renaissance_reform = { literacy = 7 vote_franchise = 3 upper_house_composition = 2 culture = 6 }
+extend_the_unio_trium_nationum_reform = { upper_house_composition = 2 vote_franchise = 2 voting_system = 2 }
 
 # Monarchy 4 - Literacy
 clergy_in_administration_reform = { literacy = 3 }
@@ -102,6 +138,7 @@ revolutionary_principle_reform = { army = 6 liberal = 6  equality = 6 literacy =
 equality_principle_reform = { equality = 9 culture = 7 liberal = 6 literacy = 6 }
 imperial_principle_reform = { order = 8 culture = 4 army = 6 literacy = 3 }
 sakdina_system_reform = { literacy = 6 liberal = 7 }
+chinampa_farms_reform = { literacy = 3 industry = 6 }
 
 # Monarchy 5 - Parties and Meetings
 parliamentary_reform = { political_parties = 7 public_meetings = 7 }
@@ -114,12 +151,14 @@ integrated_sejmiks = { public_meetings = 8 political_parties = 6 }
 feuillant_reform = { public_meetings = 7 political_parties = 7 liberty = 4 }
 two_chamber_reform = { political_parties = 10 liberty = 8 public_meetings = 10 }
 imperial_decree_reform = { political_parties = 1 public_meetings = 1 }
+german_cultural_disunity_reform = { political_parties = 7 equality = 8 }
 
 # Monarchy 6 - Slavery, Press Rights, Trade Unions
 letat_cest_moi_reform = { slavery = 0 press_rights = 0 trade_unions = 0 political_parties = 0 }
 regional_representation_reform = { press_rights = 6 trade_unions = 8 }
 consulate_reform = { trade_unions = 7 public_meetings = 8 }
 military_electorate_reform = { press_rights = 3 commerce = 3 trade_unions = 2 army = 6 political_parties = 2 }
+merchant_representation_reform = { press_rights = 6 trade_unions = 9 navy = 6 }
 
 # Monarchy 7 - Press Rights, Trade Unions
 political_absolutism_reform = { press_rights = 2 trade_unions = 3 political_parties = 0 }
@@ -162,6 +201,7 @@ kongsi_federation = { equality = 8 liberal = 8 industry = 7 }
 millenarian_theocracy_reform = { enforce = presidential_dictatorship literacy = 8 reactionary = 8 order = 9 }
 canton_government = { culture = 7 equality = 6 commerce = 7 }
 italian_monarchy = { liberty = 6 reactionary = 7 liberal = 7 political_parties = 9 army = 6 navy = 6 }
+city_alliance_reform = { equality = 8 liberal = 8 culture = 7 }
 
 # Republic 2 - National Value and UH
 republican_authoritarianism_reform = { order = 7 reactionary = 6 }
@@ -171,6 +211,7 @@ council_of_captains_reform = { order = 7 navy = 8 industry = 4 }
 articles_of_agreement_reform = { order = 4 commerce = 6 }
 smugglers_haven_reform = { liberty = 8 commerce = 8 industry = 2 }
 egalite_reform = { liberty = 10 liberal = 9 }
+support_state_reform = { liberal = 8 vote_franchise = 8 }
 
 # Republic 3 - National Value and Voting
 frequent_elections_reform = { equality = 6 upper_house_composition = 7 vote_franchise = 7 voting_system = 6}
@@ -181,6 +222,7 @@ consolidate_power_in_doge_reform = { enforce = presidential_dictatorship order =
 consolidate_power_in_cities_reform = { voting_system = 7 vote_franchise = 4 commerce = 8 }
 legislative_assembly_reform = { liberty = 6 liberal = 7 vote_franchise = 8 }
 national_constituent_reform = { trade_unions = 9 commerce = 7 liberty = 6 }
+ven_promissione_ducale_reform = { liberty = 6 liberal = 7 vote_franchise = 8 }
 
 # Republic 4 - Voting system
 provincial_governments_reform = { voting_system = 10 }
@@ -205,6 +247,7 @@ revolutionary_council_reform = { liberty = 6 army = 6 trade_unions = 6 }
 # Republic 7 - Literacy
 political_principle_reform = { literacy = 9 }
 moral_principle_reform = { literacy = 3 }
+modern_economics_reform = { literacy = 6 commerce = 7 liberty = 6 }
 
 # Republic 8 - Vote franchise, Public meetings
 landholders_reform = { vote_franchise = 2 public_meetings = 6 }
@@ -223,6 +266,7 @@ strengthen_executive_powers_reform = { order = 9 liberty = 4 reactionary = 6 cul
 reinforce_republican_values_reform = { liberty = 6 liberal = 7 culture = 7 }
 president_for_life_reform = { enforce = presidential_dictatorship }
 government_for_people_reform = { liberty = 9 army = 7 }
+orangist_stadholders_reform = { order = 8 liberty = 4 reactionary = 6 culture = 4 }
 
 # Republic basic, ignored
 republic_mechanic = {}
@@ -268,6 +312,7 @@ papacy_reform = { order = 10 literacy = 10 }
 holy_state_reform = { order = 8 literacy = 8 }
 crusader_order_reform = { order = 9 literacy = 2 army = 7 }
 sufi_reform = { order = 7 literacy = 6 }
+blood_theocracy_reform = { order = 7 literacy = 3 }
 
 # Theocracy 2 - Literacy, Tech
 internal_mission_reform = { literacy = 7 industry = 6 culture = 6 }
