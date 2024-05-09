@@ -9,7 +9,6 @@ TEST(EU4World_EU4WarDetailsTests, primitivesDefaultToDefaults)
 	ASSERT_TRUE(details.warGoalType.empty());
 	ASSERT_TRUE(details.targetTag.empty());
 	ASSERT_TRUE(details.warGoalClass.empty());
-	ASSERT_FALSE(details.startDate.isSet());
 }
 
 TEST(EU4World_EU4WarDetailsTests, detailsCanBeAddedMultipleTimes)

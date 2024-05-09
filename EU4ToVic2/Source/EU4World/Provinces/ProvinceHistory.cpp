@@ -97,7 +97,7 @@ void EU4::ProvinceHistory::buildPopRatios(const double assimilationFactor)
 		return;
 
 	auto endDate = theConfiguration.getLastEU4Date();
-	if (endDate > HARD_ENDING_DATE || !endDate.isSet())
+	if (endDate > HARD_ENDING_DATE || endDate == date(1, 1, 1))
 		endDate = HARD_ENDING_DATE;
 
 	std::string startCulture;
