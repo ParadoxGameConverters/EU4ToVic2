@@ -6,8 +6,8 @@ TEST(Mappers_PartyTypeTests, primitivesDefaultToDefaults)
 	std::stringstream input;
 	const mappers::PartyType mapper(input);
 
-	ASSERT_FALSE(mapper.getEndDate().isSet());
-	ASSERT_FALSE(mapper.getEndDate().isSet());
+	ASSERT_EQ(mapper.getStartDate(), date(1, 1, 1));
+	ASSERT_EQ(mapper.getEndDate(), date(1, 1, 1));
 	ASSERT_TRUE(mapper.getIdeology().empty());
 	ASSERT_TRUE(mapper.getName().empty());
 }
