@@ -4,7 +4,7 @@
 # These are colonies, they can be integrated or not, depending on their liberty desire and config settings.
 # They are turned into vassals if not annexed.
 # -> Colonies must be listed as vassals as well, otherwise they will be released if not directly annexed through settings.
-colonies = { colony colonial crown_colony private_enterprise self_governing_colony }
+colonies = { colony colonial crown_colony private_enterprise self_governing_colony european_colony }
 
 # Onesiders boost relations and give some extra influence over target
 onesiders = { guarantee }
@@ -13,7 +13,7 @@ onesiders = { guarantee }
 doublesiders = { royal_marriage alliance }
 
 # Tributaries are sphered, set doublesided military access, and boost relations over target
-tributaries = { tributary_state cultural_sphere_of_influence_subject }
+tributaries = { tributary_state cultural_sphere_of_influence_subject nahuatl_tributary }
 
 # Vassals are sphered, boosted relations, set with high influence, doublesided military access and reduced prestige.
 # We've included subjects expanded vassal types (they all go into puppets). Expand the list as needed, it will automatically be applied.
@@ -24,4 +24,5 @@ peasant_vassal pirate_brotherhood_vassal imperial_tributary_state sister_republi
 mandala_trade_vassal integrated_tribe_subject dutch_province_subject revolution_subject persian_satrapy 
 naval_march trade_outpost integrated_personal_union brother_kingdom iqta_vassal papal_sanctuary_subject 
 imperial_feud_subject pagan_chiefdom native_reserve crown_colony private_enterprise self_governing_colony 
-core_eyalet trade_protectorate appanage eyalet hereditary_pronoia_subject_type pronoia_subject_type }
+core_eyalet trade_protectorate appanage eyalet hereditary_pronoia_subject_type pronoia_subject_type theodoro_personal_union
+incorporated_vassal mongol_brother_realm soyurghal_subject_type }
