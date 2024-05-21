@@ -526,9 +526,6 @@
     <Filter Include="MapperTests\UnionTagsMapper">
       <UniqueIdentifier>{a10535b0-deeb-4a34-b065-f36408863a8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConverterFiles\EU4World\Country">
-      <UniqueIdentifier>{c1674661-8eff-458b-a61c-233f04e6f357}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\ProvinceRenamings">
       <UniqueIdentifier>{4b9b72ec-8ed8-4238-9737-7462cb3d881d}</UniqueIdentifier>
     </Filter>
