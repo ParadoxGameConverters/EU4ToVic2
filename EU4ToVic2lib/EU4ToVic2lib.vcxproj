@@ -400,7 +400,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)lib;$(SolutionDir)commonItems\pch;$(SolutionDir)commonItems;$(SolutionDir)commonItems\external\zip\src;$(SolutionDir)EU4ToVic2\Source\Mappers;$(SolutionDir)EU4ToVic2\Source;$(SolutionDir)EU4ToVic2\Source\EU4World;$(SolutionDir)EU4ToVic2\Source\V2World;$(SolutionDir)EU4ToVic2\Source\Helpers</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
