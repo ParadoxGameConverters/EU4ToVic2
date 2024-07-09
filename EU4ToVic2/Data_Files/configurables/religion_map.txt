@@ -48,7 +48,7 @@ link = { v2 = ibadi eu4 = ibadi }
 link = { v2 = kharijite eu4 = kharijite }
 
 link = { v2 = sunni eu4 = islamic } #Before Shia schism
-link = { v2 = sunni_heresy eu4 = abadites eu4 = quranism eu4 = qadariyya eu4 = khawariji eu4 = haruriyyah eu4 = wahhabi eu4 = mahdi eu4 = salafi eu4 = twelver eu4 = zayid eu4 = ismaili eu4 = uwaisi eu4 = quamatian }
+link = { v2 = sunni_heresy eu4 = abadites eu4 = quranism eu4 = qadariyya eu4 = khawariji eu4 = haruriyyah eu4 = wahhabi eu4 = mahdi eu4 = salafi eu4 = twelver eu4 = zayid eu4 = ismaili eu4 = uwaisi eu4 = quamatian eu4 = barghawata }
 
 #Eastern
 link = { v2 = mahayana eu4 = confucianism eu4 = mahayana }
