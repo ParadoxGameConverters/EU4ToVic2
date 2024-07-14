@@ -255,7 +255,7 @@ north_american = {
 	cultures = {
 	# Metis
 	metis
-	# North american
+	# North American
 	siouan iroquoian cherokee sonoran eskaleut central_algonquian na_dene penutian plains_algonquian eastern_algonquian muskogean caddoan native_american_minor
 	# HPM
 	dakota pueblo inuit cree navajo
@@ -266,7 +266,7 @@ mesoamerican = {
 	westernization = 1
 	industry = 0
 	cultures = {
-	# Central american
+	# Central American
 	zapotec tarascan mayan nahua neteotoquiliztlitekatl
 	}
 }
@@ -275,7 +275,7 @@ south_american = {
 	westernization = 1
 	industry = 0
 	cultures = {
-	# Carribean
+	# Caribbean
 	guajiro carribean
 	}
 }
@@ -284,7 +284,7 @@ andean = {
 	westernization = 1
 	industry = 0
 	cultures = {
-	# South american
+	# South American
 	chibchan maranon quechua aimara amazonian tupi je guarani patagonian araucanian chacoan 
 	# Uh 
 	noculture dummy

@@ -1,6 +1,6 @@
 ## WHAT THIS FILE DOES ###
 # It asks every culture, "If a pop of this culture and this religion, possibly in these locations, owned a slave, what would be that slave's culture?"
-# Answer is - it depends. Europeans would probably have african pops speaking their language, for example afro_slovak.
+# Answer is - it depends. Europeans would probably have African pops speaking their language, for example afro_slovak.
 # Other cultures would likely enslave their own people so amazonian would own other amazonians - thus no change in slave culture.
 # 
 # If a culture is not listed here, then slaves owned by that culture will be african_minor, UNLESS the province where this happens is in 
@@ -37,7 +37,7 @@ link = { vic2 = afro_brazilian eu4 = portugese eu4 = celtiberian eu4 = galician 
 #French
 link = { vic2 = afro_antillean eu4 = louisianans eu4 = valencian eu4 = provencal eu4 = limousin eu4 = poitevin eu4 = auvergnat eu4 = vivaro_alpine eu4 = champenois eu4 = orleanais eu4 = berrichon eu4 = angevin_culture eu4 = lorrainian eu4 = frencharab eu4 = quebecois eu4 = gaulic eu4 = picard eu4 = celtic_breton eu4 = poitou eu4 = arpitan eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton eu4 = wallonian eu4 = old_frankish eu4 = frankish eu4 = angevin eu4 = gallo eu4 = lengadocian eu4 = provancale eu4 = siculo_norman eu4 = laessin }
 
-#Finno-Ugric - afro_slavic is not entirelly correct but eh.
+#Finno-Ugric - afro_slavic is not entirely correct but eh.
 link = { vic2 = afro_slavic eu4 = merya eu4 = tavastian eu4 = chuvash eu4 = finnish eu4 = finnish eu4 = udmurt eu4 = karelian eu4 = mari_culture eu4 = estonian eu4 = ingrian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki eu4 = vepsian eu4 = bjarmian }
 
 # Slavic
@@ -93,7 +93,7 @@ link = { vic2 = patagonian eu4 = patagonian eu4 = het }
 link = { vic2 = araucanian eu4 = huarpe eu4 = mapuche }
 link = { vic2 = chacoan eu4 = chacoan eu4 = mataco }
 
-# Carribean
+# Caribbean
 link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_area region = popayan_area region = venezuela_area }
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = carib }

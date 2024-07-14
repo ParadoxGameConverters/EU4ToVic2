@@ -26,7 +26,7 @@ link = { tag = ENG culture = british } #Great Britain
 link = { tag = ENG culture = english } #England
 link = { tag = ENG culture = irish } #Ireland
 link = { tag = ENG culture = scottish } #Scotland
-link = { tag = ENG tag = HSC culture = pictish } #Pitcland
+link = { tag = ENG tag = HSC culture = pictish } #Pictland
 link = { tag = ENG culture = welsh } #Wales
 link = { tag = ENG culture = guillaumois } # Normandy^2
 
