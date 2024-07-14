@@ -2764,7 +2764,7 @@ province_event = {
 	}
 }
 
-# Supressing the Rite?
+# Suppressing the Rite?
 province_event = {
 	id = 15250
 	title = "EVTNAME15250"

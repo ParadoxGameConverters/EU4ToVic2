@@ -587,7 +587,7 @@ link = { tag = ZIM capital = 2068 }
 link = { tag = OSP capital = 487 primary_culture = oldspain }
 link = { tag = VAN capital = 706 primary_culture = vandal civilized = yes }
 
-# Further addictions
+# Further additions
 link = { tag = ENS primary_culture = danish add_accepted_culture = union civilized = yes capital = 372 }
 link = { tag = SRB primary_culture = sorbian religion = catholic capital = 549 civilized = yes }
 link = { tag = DNL primary_culture = elsinorian add_accepted_culture = danish civilized = yes capital = 278 }

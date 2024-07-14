@@ -18,7 +18,7 @@ reactionary_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = presidential_dictatorship
 		presidential_dictatorship = absolute_monarchy
@@ -49,7 +49,7 @@ reactionary_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -217,7 +217,7 @@ fascist_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = fascist_dictatorship
 		presidential_dictatorship = fascist_dictatorship
@@ -248,7 +248,7 @@ fascist_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -418,7 +418,7 @@ communist_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = proletarian_dictatorship
@@ -449,7 +449,7 @@ communist_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -630,7 +630,7 @@ anarcho_liberal_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = bourgeois_dictatorship
 		presidential_dictatorship = bourgeois_dictatorship
@@ -661,7 +661,7 @@ anarcho_liberal_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -825,7 +825,7 @@ nationalist_rebels = {
 	area = nation_culture 				# Stays within provinces of their culture
 	break_alliance_on_win = no
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = presidential_dictatorship
@@ -1041,7 +1041,7 @@ pan_nationalist_rebels = {
 	area = culture_group
 	break_alliance_on_win = no
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = presidential_dictatorship
@@ -1071,7 +1071,7 @@ pan_nationalist_rebels = {
 	
 	occupation_mult = 3.0			# The amount of strength this rebel gains from taking provinces
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -1314,7 +1314,7 @@ carlist_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = absolute_monarchy
 		presidential_dictatorship = absolute_monarchy
@@ -1345,7 +1345,7 @@ carlist_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -1486,7 +1486,7 @@ boxer_rebels = {
 	area = nation 					# Stays within the nation
 	
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = absolute_monarchy
 		presidential_dictatorship = absolute_monarchy
@@ -1517,7 +1517,7 @@ boxer_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -1710,7 +1710,7 @@ red_shirts = {
 	
 	area = nation
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = presidential_dictatorship
@@ -1740,7 +1740,7 @@ red_shirts = {
 	
 	occupation_mult = 3.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -1986,7 +1986,7 @@ indian_sepoys = {
 	
 	area = culture_group
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = presidential_dictatorship
@@ -2016,7 +2016,7 @@ indian_sepoys = {
 	
 	occupation_mult = 3.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -2220,7 +2220,7 @@ liberal_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = democracy
 		presidential_dictatorship = democracy
@@ -2251,7 +2251,7 @@ liberal_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 0.5
@@ -2425,7 +2425,7 @@ unciv_reactionary_rebels = {
 	area = nation 					# Stays within the nation
 	break_alliance_on_win = yes
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = absolute_monarchy
 		presidential_dictatorship = absolute_monarchy
@@ -2456,7 +2456,7 @@ unciv_reactionary_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = 
 	{
 		factor = 1
@@ -2611,7 +2611,7 @@ sioux_nation = {
 	
 	area = culture_group
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = presidential_dictatorship
@@ -2641,7 +2641,7 @@ sioux_nation = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 
 	will_rise = 
 	{
@@ -2732,7 +2732,7 @@ apache = {
 	
 	area = culture_group
 	
-	# <this is the governement in the country> = <this is what the rebels want>
+	# <this is the government in the country> = <this is what the rebels want>
 	government = {
 		proletarian_dictatorship = proletarian_dictatorship
 		presidential_dictatorship = presidential_dictatorship
@@ -2762,7 +2762,7 @@ apache = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 
 	will_rise = 
 	{
@@ -2893,7 +2893,7 @@ christino_rebels = {
 	
 	occupation_mult = 1.0			# The amount of strength this rebel gains from taking provinces	
 
-	# triggers a general rising, modifier will be multiplied with the countrys army strength and compared to the factions strenght
+	# triggers a general rising, modifier will be multiplied with the country's army strength and compared to the factions strength
 	will_rise = {
 		factor = 0.5
 		modifier = {
