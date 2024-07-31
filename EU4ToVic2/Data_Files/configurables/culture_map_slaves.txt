@@ -262,6 +262,7 @@ link = { vic2 = african_minor eu4 = bemba }
 # Animals
 link = { vic2 = polar_bears eu4 = jan_mayenese }
 link = { vic2 = horse eu4 = equine }
+link = { vic2 = red_panda eu4 = red_panda }
 
 # noculture
 link = { vic2 = dummy eu4 = noculture }

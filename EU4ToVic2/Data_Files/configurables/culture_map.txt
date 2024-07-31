@@ -769,7 +769,8 @@ link = { vic2 = indo_germanic eu4 = indo_germanic }
 link = { vic2 = assyrian eu4 = babylonian eu4 = syriac eu4 = assyrian eu4 = chaldean eu4 = cardukoi }
 
 # Animals / Non-humans
-link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear eu4 = red_panda }
+link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear }
+link = { vic2 = red_panda eu4 = jan_mayenese eu4 = red_panda }
 link = { vic2 = horse eu4 = equine eu4 = horse }
 link = { vic2 = cat eu4 = cat }
 link = { vic2 = dog_culture eu4 = dog_culture }
