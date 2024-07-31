@@ -10289,6 +10289,30 @@ country_event = {
 		primary_culture = tocharian
 	}
 }
+
+country_event = {
+ id = 1002941
+ title = EVTNAME000002
+ desc = EVTDESC000002
+ picture = "Demonstration"
+ 
+ trigger = {
+  OR = { primary_culture = noculture primary_culture = dummy }
+  total_pops = 1 capital_scope = {
+   pop_majority_culture = red_panda
+  }
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.001
+ }
+ 
+ option = {
+  name = EVTOPTA000002
+  primary_culture = red_panda
+ }
+}
+
 ##
 
 country_event = {

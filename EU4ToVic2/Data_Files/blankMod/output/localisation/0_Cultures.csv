@@ -1,4 +1,4 @@
-KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X
+KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;SWEDISH;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X
 noculturegroup;Unknown;Inconnue;Unbekannte;Nieznany;Desconocida;Sconosciuta;Ismeretlen;Neznámı;Ismeretlen;Onbekend;Desconhecida;Íåèçâåñòíàÿ;Tuntematon;x
 noculture;Unknown;Inconnue;Unbekannte;Nieznany;Desconocida;Sconosciuta;Ismeretlen;Neznámı;Ismeretlen;Onbekend;Desconhecida;Íåèçâåñòíàÿ;Tuntematon;x
 adelphic;Adelphic;Adelphique;Adelphisch;Adelfska;Adelfica;Adelfica;Adelphic;Adelphic;Adelphic;Adelphic;Adélfica;Àäåëôñêàÿ;Adelphic;x
@@ -142,6 +142,7 @@ gypsy;Romani (Gypsy);Romanie (Bohémienne);Roma (Zigeunerisch);Cygañska;Romaní (G
 harari;Harari;Hararie;Aderi;Harari;Harari;Harari;Harari;Harari;Harari;Harari;Harari;Õàğàğè;Harari;x
 harpeian;Harpeian;Harpéienne;Harpeisch;Harpejska;Arpeña;Arpeiana;Harpeian;Harpeian;Harpeian;Harpeian;Harpeiana;Ãàğïåéñêàÿ;Harpeian;x
 hedgehog_culture;Hedgehog;Hérisson;Igel;Je¿ynowa;Erizo;Riccio;Jeek;Sündisznó;Egel;Ouriço;Ouriço;¨æ;Siili;x
+red_panda;Red Panda;Panda rouge;Roter Panda;Czerwona panda;Panda rojo;Panda rosso;Röd panda;Cervená panda;Vörös panda;Rode panda;Panda vermelho;;Punainen panda;x
 heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Õıéæıíü;Heiren;x
 hilterian;Hilterian;Hiltérienne;Hilterisch;Hilterska;Hilteriana;Hilteriana;Hilterian;Hilterian;Hilterian;Hilterian;Hilteriana;Ãèëüòåğñêàÿ;Hilterian;x
 hindustani_proper;Hindustani;Hindoustani;Hindustani;Hindustanski;Indostánico;Hindustani;Hindusztáni;Hindustánskı;Hindusztáni;Hindoestaans;Hindustani;Khindustani;Hindustani;x

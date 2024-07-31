@@ -197,6 +197,7 @@ link = { tag = DUK culture = duck_culture } # Duckburg
 link = { tag = DRK culture = dragon_culture } # Akavir
 link = { tag = ELE culture = elephant_culture } # Eleph
 link = { tag = HEG culture = hedgehog_culture } # Mobian
+link = { tag = RPN culture = red_panda } # Repandia
 
 #IMP:CK3
 link = { tag = OSP culture = oldspain } #Pre-Roman Iberia

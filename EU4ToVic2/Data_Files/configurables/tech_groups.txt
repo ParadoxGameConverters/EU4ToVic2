@@ -56,7 +56,7 @@ western = {
 	# Slave
 	afro_norse afro_american afro_caribbean afro_italian afro_caribeno afro_brazilian afro_antillean
 	# Animals
-	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture
+	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture red_panda
 	# Other stuff
 	nuragic oldspain illyrian vandal pie_american pie_australian pie_african lusitanian
 	# Thracian-Dacian
