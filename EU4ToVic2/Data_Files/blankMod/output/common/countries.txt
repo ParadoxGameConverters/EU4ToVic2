@@ -369,6 +369,7 @@ HND 		="countries/India.txt"
 # East Asia
 QIN		="countries/Qing.txt"
 AIN     =   "countries/Ainu.txt"
+KHA     =   "countries/MongolKhanate.txt"
 
 # Americas
 AZT 	= "countries/Aztec.txt"
