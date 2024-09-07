@@ -1480,6 +1480,15 @@ political_decisions = {
                     }
                 }
             }
+            DOM = {
+                all_core = {
+                    OR = {
+                        owned_by = THIS
+                        owner = { in_sphere = THIS }
+                        owner = { vassal_of = THIS }
+                    }
+                }
+            }
             2222 = {
                 OR = {
                     owned_by = THIS
@@ -1493,6 +1502,7 @@ political_decisions = {
             prestige = 20
             2222 = { add_core = ATC }
             CUB = { all_core = { add_core = ATC } }
+            DOM = { all_core = { add_core = ATC } }
             change_tag = ATC
         }
 
