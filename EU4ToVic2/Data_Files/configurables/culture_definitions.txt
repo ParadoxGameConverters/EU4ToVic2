@@ -4794,7 +4794,7 @@ south_asian = {
 			Ruddha Sinda Nandelid Satadhanva Katyuri Kangra
 		}
 	}
-	dom = {
+	dom_culture = {
 		color = { 114 1 1 }
 
 		first_names = { Chetan Fakirbhai Jivraj Madhavsingh Khemchand Manubhai Bharatsingh Balwantry Chabildas Maniraj }
