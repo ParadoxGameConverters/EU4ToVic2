@@ -773,7 +773,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 		totalTechs = totalTechs - srcCountry->getDipTech();
 		const auto militaryDev = srcCountry->getMilTech() / totalTechs;
 		const auto socioEconDev = srcCountry->getAdmTech() / totalTechs;
-		uncivReforms = UncivReforms(lround(civLevel), militaryDev, socioEconDev, this);
+		uncivReforms = UncivReforms(lround(civLevel), militaryDev, socioEconDev, this, theConfiguration.isHpmEnabled());
 	}
 }
 

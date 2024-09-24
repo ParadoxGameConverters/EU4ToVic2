@@ -105,6 +105,8 @@ class World: commonItems::parser
 
 	// export data for hoi4
 	std::vector<std::pair<std::string, HistoricalEntry>> historicalData;
+
+	parser revolutionParser;
 };
 } // namespace EU4
 

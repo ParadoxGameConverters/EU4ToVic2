@@ -441,6 +441,7 @@ link = { tag = RJX primary_culture = marathi religion = hindu government = hms_g
 link = { tag = RMG civilized = yes capital = 741 }
 link = { tag = RML government = hms_government civilized = yes capital = 815 }
 link = { tag = RPL government = democracy civilized = yes capital = 36 }
+link = { tag = RPN primary_culture = red_panda civilized = yes capital = 1612 }
 link = { tag = RUM civilized = yes capital = 873 }
 link = { tag = RVA government = democracy civilized = yes capital = 593 }
 link = { tag = RWA capital = 2034 }
@@ -587,7 +588,7 @@ link = { tag = ZIM capital = 2068 }
 link = { tag = OSP capital = 487 primary_culture = oldspain }
 link = { tag = VAN capital = 706 primary_culture = vandal civilized = yes }
 
-# Further addictions
+# Further additions
 link = { tag = ENS primary_culture = danish add_accepted_culture = union civilized = yes capital = 372 }
 link = { tag = SRB primary_culture = sorbian religion = catholic capital = 549 civilized = yes }
 link = { tag = DNL primary_culture = elsinorian add_accepted_culture = danish civilized = yes capital = 278 }

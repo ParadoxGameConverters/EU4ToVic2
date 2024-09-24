@@ -23,6 +23,7 @@ class TechGroups: commonItems::parser
 	int industry = 5;
 	std::set<std::string> cultures;
 	std::set<std::string> hpmCultures;
+	int hpmWesternization = 0;
 };
 } // namespace mappers
 

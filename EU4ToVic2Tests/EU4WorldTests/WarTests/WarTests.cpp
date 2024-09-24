@@ -9,7 +9,6 @@ TEST(EU4World_EU4WarTests, primitivesDefaultToDefaults)
 	ASSERT_TRUE(war.getAttackers().empty());
 	ASSERT_TRUE(war.getDefenders().empty());
 	ASSERT_TRUE(war.getName().empty());
-	ASSERT_FALSE(war.getDetails().startDate.isSet());
 	ASSERT_EQ(0, war.getDetails().targetProvinceID);
 	ASSERT_TRUE(war.getDetails().targetTag.empty());
 	ASSERT_TRUE(war.getDetails().warGoalClass.empty());

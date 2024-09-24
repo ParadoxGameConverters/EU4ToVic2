@@ -22,6 +22,9 @@ mappers::TechGroups::TechGroups(std::istream& theStream)
 		const auto& cultureList = commonItems::getStrings(theStream);
 		hpmCultures.insert(cultureList.begin(), cultureList.end());
 	});
+	registerKeyword("hpm_westernization", [this](std::istream& theStream) {
+		hpmWesternization = commonItems::getInt(theStream);
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	parseStream(theStream);
@@ -29,4 +32,6 @@ mappers::TechGroups::TechGroups(std::istream& theStream)
 
 	if (theConfiguration.isHpmEnabled() && !hpmCultures.empty())
 		cultures = hpmCultures;
+	if (theConfiguration.isHpmEnabled() && hpmWesternization != 0)
+		westernization = hpmWesternization;
 }

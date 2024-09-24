@@ -1,6 +1,6 @@
 #############################################################################
 #                                                                            #
-#  These events deal with neighboring countries of similar ideologies        #
+#  These events deal with neighbouring countries of similar ideologies        #
 #                gaining closer relations with each other                    #
 #                                                                            #
 #############################################################################

@@ -369,6 +369,7 @@ HND 		="countries/India.txt"
 # East Asia
 QIN		="countries/Qing.txt"
 AIN     =   "countries/Ainu.txt"
+KHA     =   "countries/MongolKhanate.txt"
 
 # Americas
 AZT 	= "countries/Aztec.txt"
@@ -622,6 +623,7 @@ DUK		= "countries/Duckburg.txt"
 DRK		= "countries/Akavir.txt"
 ELE		= "countries/Eleph.txt"
 HEG		= "countries/Mobian.txt"
+RPN		= "countries/Repandia.txt"
 
 #Others - 1.28bis additions
 ABK		= "countries/Abkhazia.txt"

@@ -56,7 +56,7 @@ western = {
 	# Slave
 	afro_norse afro_american afro_caribbean afro_italian afro_caribeno afro_brazilian afro_antillean
 	# Animals
-	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture
+	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture red_panda
 	# Other stuff
 	nuragic oldspain illyrian vandal pie_american pie_australian pie_african lusitanian
 	# Thracian-Dacian
@@ -105,6 +105,7 @@ ottoman = {
 
 muslim = {
 	westernization = 6
+	hpm_westernization = 2
 	industry = 2
 	cultures = {
 	# Arabic
@@ -128,6 +129,7 @@ muslim = {
 
 indian = {
 	westernization = 5
+	hpm_westernization = 2
 	industry = 2
 	cultures = {
 	# Indian
@@ -143,6 +145,7 @@ indian = {
 
 east_african = {
 	westernization = 4
+	hpm_westernization = 1
 	industry = 0
 	cultures = {
 	# Horn
@@ -158,6 +161,7 @@ east_african = {
 
 central_african = {
 	westernization = 3
+	hpm_westernization = 1
 	industry = 0
 	cultures = {
 	# North central
@@ -177,10 +181,19 @@ central_african = {
 
 chinese = {
 	westernization = 4
+	hpm_westernization = 3
 	industry = 2
 	cultures = {
 	# East Asian
-	dongren nanren heiren japanese manchu beifaren nanfaren korean ainu hakka miao min zhuang yi yue xiyeren beieren naiyeren
+	dongren nanren heiren manchu beifaren nanfaren korean ainu hakka miao min zhuang yi yue xiyeren beieren naiyeren
+	}
+}
+
+indochinese = {
+	westernization = 4
+	hpm_westernization = 2
+	industry = 2
+	cultures = {
 	# Khmer
 	thegioimoi phianam dhen vietnamese khmer
 	# Malay
@@ -192,8 +205,19 @@ chinese = {
 	}
 }
 
+japanese = {
+	westernization = 4
+	hpm_westernization = 5
+	industry = 2
+	cultures = {
+	# Just Japan
+	japanese
+	}
+}
+
 nomad_group = {
 	westernization = 3
+	hpm_westernization = 1
 	industry = 1
 	cultures = {
 	# Altaic
@@ -203,6 +227,7 @@ nomad_group = {
 
 sub_saharan = {
 	westernization = 2
+	hpm_westernization = 1
 	industry = 0
 	cultures = {
 	# Sahelian
@@ -230,7 +255,7 @@ north_american = {
 	cultures = {
 	# Metis
 	metis
-	# North american
+	# North American
 	siouan iroquoian cherokee sonoran eskaleut central_algonquian na_dene penutian plains_algonquian eastern_algonquian muskogean caddoan native_american_minor
 	# HPM
 	dakota pueblo inuit cree navajo
@@ -241,7 +266,7 @@ mesoamerican = {
 	westernization = 1
 	industry = 0
 	cultures = {
-	# Central american
+	# Central American
 	zapotec tarascan mayan nahua neteotoquiliztlitekatl
 	}
 }
@@ -250,7 +275,7 @@ south_american = {
 	westernization = 1
 	industry = 0
 	cultures = {
-	# Carribean
+	# Caribbean
 	guajiro carribean
 	}
 }
@@ -259,7 +284,7 @@ andean = {
 	westernization = 1
 	industry = 0
 	cultures = {
-	# South american
+	# South American
 	chibchan maranon quechua aimara amazonian tupi je guarani patagonian araucanian chacoan 
 	# Uh 
 	noculture dummy
