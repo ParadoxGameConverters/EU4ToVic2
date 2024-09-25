@@ -334,6 +334,11 @@ mena_pagan = {
 		color = { 0.45 0.46 0.92 }
 		pagan = yes
 	}
+	hattian = {
+		icon = 83
+		color = { 0.78 0.78 0.78 }
+		pagan = yes
+	}
 }
 euro_pagan = {
 	norse_pagan_reformed= {
