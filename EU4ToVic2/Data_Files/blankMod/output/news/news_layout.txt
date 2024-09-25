@@ -565,6 +565,124 @@ style =
 				}
 			}
 			picture = "news/RME_default_newspaper_title.dds"
+		}
+
+		# Punic ###################
+		case = {
+			trigger = { 
+				or = {
+					and = {
+						is_culture_group = punic 
+						ruling_party_ideology = communist
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							is_culture_group = punic 
+							ruling_party_ideology = communist
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							is_culture_group = punic 
+							ruling_party_ideology = communist
+						}
+					}					
+				}
+			}
+			picture = "news/punic_communist_newspaper_title.dds"
+		}
+
+		case = {
+			trigger = { 
+				or = {
+					and = {
+						is_culture_group = punic 
+						ruling_party_ideology = fascist
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							is_culture_group = punic 
+							ruling_party_ideology = fascist
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							is_culture_group = punic 
+							ruling_party_ideology = fascist
+						}
+					}					
+				}
+			}
+			picture = "news/punic_facist_newspaper_title.dds"
+		}
+
+		case = {
+			trigger = { 
+				or = {
+					and = {
+						is_culture_group = punic 
+						ruling_party_ideology = reactionary
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							is_culture_group = punic 
+							ruling_party_ideology = reactionary
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							is_culture_group = punic 
+							ruling_party_ideology = reactionary
+						}
+					}					
+				}
+			}
+			picture = "news/punic_reactionary_newspaper_title.dds"
+		}
+
+		case =	{
+			trigger = { 
+				or = {
+					and = {
+						is_culture_group = punic 
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							is_culture_group = punic 
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							is_culture_group = punic 
+						}
+					}					
+				}
+			}
+			picture = "news/punic_default_newspaper_title.dds"
 		}		
 		
 		

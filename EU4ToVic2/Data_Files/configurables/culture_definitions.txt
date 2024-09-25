@@ -7758,6 +7758,22 @@ punic = {
 			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
 		}
 	}	
+	neo_hyksos = {
+		color = { 148 173 143 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
 }
 varangian_g = {
 	leader = european
@@ -9754,4 +9770,5 @@ zzz_religions = {
 	zzz_religion_waaqi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_mithraic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_hurrian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hattian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }

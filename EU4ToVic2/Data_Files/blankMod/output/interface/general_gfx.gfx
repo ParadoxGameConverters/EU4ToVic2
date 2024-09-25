@@ -8,7 +8,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_icon_religion"
 		texturefile = "gfx\\interface\\icon_religion.tga"
-		noOfFrames = 82
+		noOfFrames = 83
 		norefcount = yes
 	}
 	spriteType = {

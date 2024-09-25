@@ -203,6 +203,7 @@ link = { vic2 = ychibarku eu4 = ychibarku }
 link = { vic2 = liphocaneth eu4 = liphocaneth }
 link = { vic2 = mysehi eu4 = mysehi }
 link = { vic2 = phoenician eu4 = phoenician }
+link = { vic2 = neo_hyksos eu4 = neo_hyksos }
 
 # Varangian
 link = { vic2 = varangian_american eu4 = miklagardrian eu4 = varangian eu4 = mena_german region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }

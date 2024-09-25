@@ -96,6 +96,7 @@ link = { v2 = nuragic eu4 = nuragic_pagan_reformed }
 link = { v2 = bamar eu4 = bamar_pagan_reformed }
 link = { v2 = waaqi eu4 = waaqi_pagan_reformed }
 link = { v2 = hurrian eu4 = hurrian_pagan_reformed }
+link = { v2 = hattian eu4 = hattian_pagan_reformed }
 
 link = { v2 = inca_reformed eu4 = inca_reformed }
 link = { v2 = zun_pagan_reformed eu4 = zun_pagan_reformed eu4 = zunism eu4 = atenism }
@@ -132,6 +133,7 @@ link = { v2 = animist eu4 = nuragic_pagan }
 link = { v2 = animist eu4 = bamar_pagan }
 link = { v2 = animist eu4 = waaqi_pagan }
 link = { v2 = animist eu4 = hurrian_pagan }
+link = { v2 = animist eu4 = hattian_pagan }
 
 #Zoroastrian
 link = { v2 = zoroastrian eu4 = zoroastrian }
