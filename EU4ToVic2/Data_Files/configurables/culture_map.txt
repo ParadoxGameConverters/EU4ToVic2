@@ -179,8 +179,8 @@ link = { vic2 = afer eu4 = chadian }
 link = { vic2 = latin eu4 = roman eu4 = latin_colonial } #Should be only Italy, but who can be sure?
 
 # Punic
-link = { vic2 = punic_american eu4 = carthaginian eu4 = ythalonim eu4 = phoenician eu4 = ualonuth eu4 = sicorathi eu4 = symacom eu4 = ysthyalm eu4 = sythchy eu4 = ynnocho eu4 = mlachthi eu4 = inythmum eu4 = gadolite eu4 = bythlimmoth eu4 = sidonian eu4 = taliaite eu4 = lacanite eu4 = epicrateian eu4 = pmpese eu4 = ythbynuthi eu4 = ychibarku eu4 = liphocaneth eu4 = mysehi region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }
-link = { vic2 = punic_australian eu4 = carthaginian eu4 = ythalonim eu4 = phoenician eu4 = ualonuth eu4 = sicorathi eu4 = symacom eu4 = ysthyalm eu4 = sythchy eu4 = ynnocho eu4 = mlachthi eu4 = inythmum eu4 = gadolite eu4 = bythlimmoth eu4 = sidonian eu4 = taliaite eu4 = lacanite eu4 = epicrateian eu4 = pmpese eu4 = ythbynuthi eu4 = ychibarku eu4 = liphocaneth eu4 = mysehi region = oceania_superregion }
+link = { vic2 = punic_american eu4 = carthaginian eu4 = ythalonim eu4 = phoenician eu4 = ualonuth eu4 = sicorathi eu4 = symacom eu4 = ysthyalm eu4 = sythchy eu4 = ynnocho eu4 = mlachthi eu4 = inythmum eu4 = gadolite eu4 = bythlimmoth eu4 = sidonian eu4 = taliaite eu4 = lacanite eu4 = epicrateian eu4 = pmpese eu4 = ythbynuthi eu4 = ychibarku eu4 = liphocaneth eu4 = mysehi eu4 = alasiyan eu4 = ugaritic region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }
+link = { vic2 = punic_australian eu4 = carthaginian eu4 = ythalonim eu4 = phoenician eu4 = ualonuth eu4 = sicorathi eu4 = symacom eu4 = ysthyalm eu4 = sythchy eu4 = ynnocho eu4 = mlachthi eu4 = inythmum eu4 = gadolite eu4 = bythlimmoth eu4 = sidonian eu4 = taliaite eu4 = lacanite eu4 = epicrateian eu4 = pmpese eu4 = ythbynuthi eu4 = ychibarku eu4 = liphocaneth eu4 = mysehi eu4 = alasiyan eu4 = ugaritic region = oceania_superregion }
 link = { vic2 = carthaginian eu4 = carthaginian eu4 = punic }
 link = { vic2 = ythalonim eu4 = ythalonim }
 link = { vic2 = ualonuth eu4 = ualonuth }
@@ -204,6 +204,8 @@ link = { vic2 = liphocaneth eu4 = liphocaneth }
 link = { vic2 = mysehi eu4 = mysehi }
 link = { vic2 = phoenician eu4 = phoenician }
 link = { vic2 = neo_hyksos eu4 = neo_hyksos }
+link = { vic2 = alasiyan eu4 = alasiyan }
+link = { vic2 = ugaritic eu4 = ugaritic }
 
 # Varangian
 link = { vic2 = varangian_american eu4 = miklagardrian eu4 = varangian eu4 = mena_german region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }
@@ -222,11 +224,13 @@ link = { vic2 = spaniolic eu4 = spanish_greek }
 link = { vic2 = galatian eu4 = gaulish_greek } #This mapping is not for Galatian Celts, who use galatian_celtic instead
 
 # Hittite
-link = { vic2 = hittite_american eu4 = luwian eu4 = lydian eu4 = lycian eu4 = hittite eu4 = phrygian eu4 = isaurian eu4 = paphlagonian region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }
-link = { vic2 = hittite_australian eu4 = luwian eu4 = lydian eu4 = lycian eu4 = hittite eu4 = phrygian eu4 = isaurian eu4 = paphlagonian region = oceania_superregion }
+link = { vic2 = hittite_american eu4 = luwian eu4 = lydian eu4 = lycian eu4 = hittite eu4 = phrygian eu4 = isaurian eu4 = paphlagonian eu4 = trojan eu4 = kizzuwatnan region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }
+link = { vic2 = hittite_australian eu4 = luwian eu4 = lydian eu4 = lycian eu4 = hittite eu4 = phrygian eu4 = isaurian eu4 = paphlagonian eu4 = trojan eu4 = kizzuwatnan region = oceania_superregion }
 link = { vic2 = luwian eu4 = luwian eu4 = paphlagonian }
 link = { vic2 = lydian eu4 = lydian eu4 = lycian }
 link = { vic2 = hittite_g eu4 = hittite eu4 = cilician }
+link = { vic2 = trojan eu4 = trojan }
+link = { vic2 = kizzuwatnan eu4 = kizzuwatnan }
 
 #Colonial Italian
 link = { vic2 = italoamericano eu4 = ladin eu4 = dalmatian eu4 = old_lombard eu4 = tuscian eu4 = spoletan eu4 = beneventine eu4 = salernian eu4 = veronese eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano eu4 = oltremare region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region }
@@ -715,6 +719,8 @@ link = { vic2 = somali eu4 = somali eu4 = cushitic_colonial }
 link = { vic2 = harari eu4 = harari }
 link = { vic2 = oromo eu4 = ethiopian eu4 = oromo }
 link = { vic2 = afar eu4 = afar }
+link = { vic2 = per_sheklesh eu4 = per_sheklesh }
+link = { vic2 = niwt_ipt eu4 = niwt_ipt }
 
 # The Congo - bakongo, luba, lunda, mbundu
 link = { vic2 = mongo eu4 = kuba eu4 = yaka provinceid = 1797 } # Northern Congo Basin
@@ -767,7 +773,20 @@ link = { vic2 = old_burgundian eu4 = old_burgundian }
 link = { vic2 = wigazan eu4 = wigazan }
 link = { vic2 = anglo_suebi eu4 = anglo_suebi }
 link = { vic2 = indo_germanic eu4 = indo_germanic }
-link = { vic2 = assyrian eu4 = babylonian eu4 = syriac eu4 = assyrian eu4 = chaldean eu4 = cardukoi }
+link = { vic2 = assyrian eu4 = babylonian eu4 = syriac eu4 = assyrian eu4 = chaldean eu4 = cardukoi eu4 = eblaite }
+link = { vic2 = sumerian eu4 = sumerian }
+
+#Pre-Greek
+link = { vic2 = pelasgian eu4 = pelasgian }
+link = { vic2 = minoan eu4 = minoan }
+link = { vic2 = cycladic eu4 = cycladic }
+
+#Pre-Anatolian
+link = { vic2 = hatti eu4 = hatti }
+
+#Hurro-Urartian
+link = { vic2 = hurrian_culture eu4 = hurrian_culture }
+link = { vic2 = gutian eu4 = gutian }
 
 # Animals / Non-humans
 link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear }

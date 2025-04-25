@@ -11,6 +11,7 @@ afro_italian;Afro-Italian;Afro-Italienne;Afroitalienisch;Afrow³oska;Afro-Italian
 afro_norse;Afro-Norse;Afro-Norroise;Afronordisch;Afronorweska;Afro-Nórdica;Afro-germanico;Afro-germán;Afro-germánski;Afro-germán;Afro-Germaans;Afro-Nórdica;Àôğîñêàíäèíàâñêàÿ;Afro-saksalainen;x
 afro_slavic;Afro-Slavic;Afro-Slave;Afroslawisch;Afros³owiañska;Afro-Eslava;Afro-slavo;Afro-szláv;Afro-slovanské;Afro-szláv;Afro-Slavische;Afro-Eslava;Àôğîñëîâåíñêàÿ;Afro-slaavilainen;x
 alan;Alan;Alaine;Alanisch;Alañska;Alana;Alano;Alan;Alan;Alan;Alan;Alana;Àëàíñêàÿ;Alan;x
+alasiyan;Alashiyan;Alashiyan;Alaschijisch;Alashiyan;Alasiyan;Alashiyan;Alashiyan;Alashiyan;Alashiyan;Alashiyan;Alashiyan;Àëàøèéàí;Alashiyan;x
 alaskan;Alaskan;Alaskienne;Alaskisch;Alaskijska;Alasqueña;Alascana;Alaszkai;Aljašskı;Alaszkai;Alaska;Alasquiana;Àëÿñêèíñêàÿ;Alaskan;x
 alexandrine;Alexandrine;Alexandrine;Alexandriner;Aleksandryjska;Alejandrina;Alessandrino;Alexandriai;Alexandrine;Alexandriai;Alexandrijn;Alexandrina;Àëåêñàíäğèéñêàÿ;Aleksandriini;x
 algonquish;Algonquish;Algonquiaise;Algonkinisch;Algonkiñska;Algonqueña;Algonchiese;Algonquish;Algonquish;Algonquish;Algonquish;Algonquinesa;Àëãîíêèíñêàÿ;Algonquish;x
@@ -76,6 +77,7 @@ chibchan;Chibchan;Chibcha;Chibcha;Czibczañska;Chibchense;Chibchano;Chibchan;Chib
 coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;Coigriche;x
 copts;Copts;Copte;Koptisch;Koptyjska;Copta;Copta;Kopt;Koptské;Kopt;Coptisch;Copta;Êîïòñêàÿ;Koptilainen;x
 crni;Crni;Tzeurnie;Zrni;Tzerñska;Tzerní;Crni;Crni;Crni;Crni;Crni;Crni;Öîğíàÿ;Crni;x
+cycladic;Cycladic;Cycladique;Kykladen;Cyklady;Cicládica;Cycladic;Cycladic;Cycladic;Cycladic;Cycladic;Cycladic;Êèêëàäñêèé;Cycladic;x
 czarny;Czarny;Tcharnie;Tscharnisch;Czarna;Charní;Czarny;Czarny;Czarny;Czarny;Czarny;Czarny;×àğíàÿ;Czarny;x
 dacian;Dacian;Dace;Dakisch;Dacka;Dacia;Dacia;Dacian;Dacian;Dacian;Dacian;Dácia;Äàêñêàÿ;Dacian;x
 dacian_african;Daciafrican;Daçafricaine;Dakafrikanisch;Dakafrykañska;Daciafricana;Daciafricana;Daciafrican;Daciafrican;Daciafrican;Daciafrican;Daciafricana;Äàêüàôğèêàíñêàÿ;Daciafrican;x
@@ -137,12 +139,14 @@ guillaumois;Gallo;Gallo;Gallo;Gallo;Gallo;Gallo;Gallo;Gallo;Gallo;Gallo;Gallo;Ga
 guiscard;Guiscard;Guiscarde;Guiskardisch;Guiscardska;Guiscarda;Guiscarda;Guiscard;Guiscard;Guiscard;Guiscard;Guiscarda;Ãâèñêàğñêàÿ;Guiscard;x
 guldfjallling;Guldfjallling;Gouldfyallingue;Guldfjallling;Guldfjallling;Guldfyallingue;Guldfiallinga;Guldfjallling;Guldfjallling;Guldfjallling;Guldfjallling;Guldafyalínga;Ãóëäôÿëèíãñêàÿ;Guldfjallling;x
 guney;Güney;Güney;Güney;Gynej;Güney;Güney;Güney;Güney;Güney;Güney;Güney;Ãşíåé;Güney;x
+gutian;Gutian;Gutian;Gutische;Gutian;Gutian;Gutian;Gutian;Gutian;Gutian;Gutian;Gutian;Ãóòèàí;Gutian;x
 guyanese;Guyanese;Guyanaise;Guyanisch;Gujañska;Guyanesa;Guianase;Guyanai;Guyanskı;Guyanai;Guyanees;Guyanesa;Ãàéàíñêàÿ;Guyanalainen;x
 gypsy;Romani (Gypsy);Romanie (Bohémienne);Roma (Zigeunerisch);Cygañska;Romaní (Gitana);Gitano (Zingaro);Roma (Cigány);Romani (Cikánští);Roma (Cigány);Romani (Zigeuner);Romani (Cigana);Öûãàíñêàÿ;Romani (Gypsy);x
 harari;Harari;Hararie;Aderi;Harari;Harari;Harari;Harari;Harari;Harari;Harari;Harari;Õàğàğè;Harari;x
 harpeian;Harpeian;Harpéienne;Harpeisch;Harpejska;Arpeña;Arpeiana;Harpeian;Harpeian;Harpeian;Harpeian;Harpeiana;Ãàğïåéñêàÿ;Harpeian;x
 hedgehog_culture;Hedgehog;Hérisson;Igel;Je¿ynowa;Erizo;Riccio;Jeek;Sündisznó;Egel;Ouriço;Ouriço;¨æ;Siili;x
 red_panda;Red Panda;Panda rouge;Roter Panda;Czerwona panda;Panda rojo;Panda rosso;Röd panda;Cervená panda;Vörös panda;Rode panda;Panda vermelho;;Punainen panda;x
+hattian;Hattian;Hattien;Hattianisch;Hattyjski;Hatti;Hattian;Hattian;Hattian;Hattian;Hattian;Hattiano;Õàòòñêèé;;x
 heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Heiren;Õıéæıíü;Heiren;x
 hilterian;Hilterian;Hiltérienne;Hilterisch;Hilterska;Hilteriana;Hilteriana;Hilterian;Hilterian;Hilterian;Hilterian;Hilteriana;Ãèëüòåğñêàÿ;Hilterian;x
 hindustani_proper;Hindustani;Hindoustani;Hindustani;Hindustanski;Indostánico;Hindustani;Hindusztáni;Hindustánskı;Hindusztáni;Hindoestaans;Hindustani;Khindustani;Hindustani;x
@@ -157,6 +161,8 @@ hopeajokan;Hopeajokan;Hopéaïoquienne;Hopeajokisch;Hopeajokska;Hopeayocana;Opeagi
 horse;Equine;Jument;Pferd;Koñska;Yegua;Equino;Ló;Konì;Ló;Paarden;Égua;Ëîøàäèíàÿ;Hevos-;x
 hulwud;Hulwud;Houlvoude;Hulwuder;Chulwudska;Hulwud;Hulwud;Hulwud;Hulwud;Hulwud;Hulwud;Hulwud;Õóëâóä;Hulwud;x
 hunsrik;Hunsrik;Hounsriquoise;Hunsrückisch;Hunsrik;Hunsriqueana;Hunsrichiana;Hunsrik;Hunsrik;Hunsrik;Hunsrik;Hunsriqueana;Õóíñğşêñêàÿ;Hunsrik;x
+hurrian_culture;Hurrian;Hourrite;Hurrische;Hurycki;Hurrita;Hurrian;Hurrian;Hurrian;Hurrian;Hurrian;Hurrian;Õóğğèòñêèé;Hurrian;x
+hurro_urartian;Hurro-Urartian;Hurro-Urartien;Hurro-Urartäisch;Hurro-Urartianski;Hurro-Urartiano;Hurro-Urartian;Hurro-Urartian;Hurro-Urartian;Hurro-Urartian;Hurro-Urartian;Hurro-Urartian;Õóğğèòî-Óğàğòñêèé;Hurro-Urartian;x
 hvitrduptling;Hvítrduptling;Vitredouptelingue;Witrduptling;Chwitrduptlingska;Vitraduplingue;Vitrduptlinga;Hvítrduptling;Hvítrdrupling;Hvítrduptling;Hvítrduptling;Vitradupalinga;Ãâèòğäóïòëèíãñêàÿ;Hvítrduptling;x
 ifriqi;Ifriqi;Ifriqui;Ifriqi;Ifrikska;Ifriqi;Ifrichi;Ifriqi;Ifriqi;Ifriqi;Ifriqi;Ifriqi;Èôğèêè;Ifriqi;x
 illyrian;Illyrian;Illyrienne;Illyrisch;Iliryjska;Iliria;Illirico;Illyrian;Illyrian;Illyrian;Illyrian;Ilíria;Èëëèğèéñêàÿ;Illyrian;x
@@ -184,6 +190,7 @@ karthazian;Karthazian;Karthazian;Karthazian;Karthazian;Karthazian;Karthazian;Kar
 kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Kefficho;Êåôôè÷î;Kefficho;x
 kepejokian;Kepejokian;Képéyoquienne;Kepejokisch;Kepejokska;Kepeyoquia;Chepegiochiana;Kepejokian;Kepejokian;Kepejokian;Kepejokian;Quepêyoquia;Êåïåüîêñêàÿ;Kepejokian;x
 kholodnovoynsky;Kholodnovoynsky;Kholodnovoïnsoise;Cholodnowojnski;Cholodnovojñska;Jolodnovoynesa;Colodnovoinsca;Kholodnovoynsky;Kholodnovoynsky;Kholodnovoynsky;Kholodnovoynsky;Kholodnovoinesa;Õîëîäíîâîéíñêàÿ;Kholodnovoynsky;x
+kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Kizzuwatnisch;Kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Kizzuwatnan;Êèööóâàòíàí;Kizzuwatnan;x
 kleinvenedig;Kleinvenedic;Klaïnvénitienne;Kleinvenezianisch;Klajnwenecka;Klaynveneciana;Clainveneziana;Kleinvenetian;Kleinvenetian;Kleinvenetian;Kleinvenetian;Clâinvenedense;Êëÿéíâåíåöèàíñêàÿ;Kleinvenetian;x
 knaanic;Knaanic;Knaanique;Knaanisch;Knaañska;Knaaní;Cnaanico;Knaanic;Knaanic;Knaanic;Knaanic;Canaã;Êíààíèòñêàÿ;Knaanic;x
 kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Kuba;Cuba;Êóáà;Kuba;x
@@ -215,6 +222,7 @@ maximilianish;Maximilianish;Maximiliennoise;Maximilianisch;Maksymiliañska;Maximi
 meashighcaw;Meashighcaw;Michaïcô;Mieschajko;Miszajkowska;Meashighcaw;Misciaicà;Mísajka;Míšajka;Mísajka;Misjaëka;Mixaicã;Ìèéøàéêîâ;Mišaika;x
 meksikan;Meksikan;Méquesicaine;Meksikanisch;Meksikañska;Meksicana;Megsicana;Meksikan;Meksikan;Meksikan;Meksikan;Mêquesicã;Ìåêúñèêàíñêàÿ;Meksikan;x
 mesican;Mesican;Mésicaine;Mesikanisch;Mesykañska;Mesicana;Mesichese;Mesikán;Mesican;Mesikán;Mesican;Mesicana;Ìåñèêàíñêàÿ;Mesikaani;x
+minoan;Minoan;Minoen;Minoisch;Minojski;Minoico;Minoan;Minoan;Minoan;Minoan;Minoan;Minoan;Ìèíîéñêèé;Minoan;x
 misrayim;Misrayim;Misrayim;Misrayim;Misrayim;Misrayim;Mizraglim;Misrayim;Misrayim;Misrayim;Misrayim;Misrayim;Ìèñğàéì;Misrayim;x
 mizrahi;Mizrahi;Mizrahi;Mizrahi;Mizrahi;Mizrahi;Mizraita;Mizrahi;Mizrahi;Mizrahi;Mizrahi;Mizrahi;Ìèöğàõè;Mizrahi;x
 mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Mlachthi;Ìëàêòè;Mlachthi;x
@@ -243,6 +251,7 @@ nerian;Nerian;Nerian;Nerian;Nerian;Nerian;Nerian;Nerian;Nerian;Nerian;Nerian;Ner
 neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;Neteotoquiliztlitekatl;x
 newswiss;Neoswiss;Néosuisse;Neuschweizerisch;Neoszwajcarska;Neosuiza;Neosvizzera;Neoswiss;Neoswiss;Neoswiss;Neoswiss;Neo-Suíça;Íîâîøâåéöàğñêàÿ;Neoswiss;x
 nieuwereld;Nieuwereld;Niouviralte;Neuwelterisch;Niuwiroltska;Nyuvirolte;Nieuwereld;Nieuwereld;Nieuwereld;Nieuwereld;Nieuwereld;Niuvírolte;Íüşâèğîëüòñêàÿ;Nieuwereld;x
+niwt_ipt;Niwt-Ipt;Niwt-Ipt;Niwt-Iptisch;Niwt-Ipt;Niwt-Ipt;Niwt-Ipt;Niwt-Ipt;Niwt-Ipt;Niwt-Ipt;Niwt-Ipt;Niwt-Ipt;Íèşò-Èïò;Niwt-Ipt;x
 non_human;Non-Human;Animal;Tierisch;Zwierzê;Animal;Non umano;Nem emberi;Non-Human;Nem emberi;Niet menselijk;Animal;Æèâîòíàÿ;Ei ihminen;x
 noric;Noric;Norique;Norisch;Norikska;Nórica;Norica;Noric;Noric;Noric;Noric;Nórica;Íîğèêñêàÿ;Noric;x
 notios;Notios;Notios;Notios;Notios;Notios;Notios;Notios;Notios;Notios;Notios;Notios;Íîòèîñ;Notios;x
@@ -272,7 +281,9 @@ outremer;d'Outremer;Outremeroise;Obderseeländisch;Utrmerska;Allendelmarina;Croci
 overnissian;Overnissian;Outrenéissienne;Obderneißerisch;Zanyska;Allendelneissiana;Oltranissiana;Overnissian;Overnissian;Overnissian;Overnissian;Transneissiana;Çàíûññêàÿ;Overnissian;x
 palmyrene;Palmyrene;Palmyrene;Palmyrisch;Palmyrene;Palmyrene;Palmyrene;Palmyrene;Palmyrene;Palmyrene;Palmyrene;Palmyrene;Ğ¿Ğ°Ğ»ÑŒĞ¼Ğ¸Ñ€ĞµĞ½Ğ°;Palmyrene;x
 pecheneg;Pecheneg;Petchénègue;Petschenegisch;Pieczyñska;Pechenega;Pecenega;Pecheneg;Pecheneg;Pecheneg;Pecheneg;Pechenegue;Ïå÷åíåæñêàÿ;Pecheneg;x
+pelasgian;Pelasgian;Pélasgien;Pelasgisch;Pelazgijski;Pelasgo;Pelasgian;Pelasgian;Pelasgian;Pelasgian;Pelasgian;Pelasgian;Ïåëàñãè÷åñêèé;Pelasgian;x
 penutian;Penutian;Pénutienne;Penutisch;Penutiañska;Penutí;Penuziano;Peneut Nyelv;Penutian;Peneut Nyelv;Penutian;Penutiana;Ïåíóòèéñêàÿ;Penutian;x
+per_sheklesh;Per-Sheklesh;Per-Sheklesh;Per-Shekleschisch;Per-Sheklesh;Per-Sheklesh;Per-Sheklesh;Per-Sheklesh;Per-Sheklesh;Per-Sheklesh;Per-Sheklesh;Per-Sheklesh;Ïåğ-Øåêëåø;Per-Sheklesh;x
 phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Phianam;Ïõÿíàì;Phianam;x
 phoenician;Phoenician;Phénicienne;Phönizisch;Fenicka;Fenicia;Fenicia;föníciai;fénicki;föníciai;Fenicisch;Fenícia;Ôèíèêèéñêàÿ;Foinikialainen;x
 phrygian;Phrygian;Phrygienne;Phrygisch;Frygijska;Frigia;Frigia;Frígiai;Phrygian;Frígiai;Frygisch;Frígia;Ôğèãèéñêàÿ;Phrygian;x
@@ -321,6 +332,7 @@ strombian;Strombian;Strombien;Strombisch;Strombian;Estrombio;Strombiana;Strombia
 sudic;Sudic;Soudique;Sudikisch;Sudikska;Sudica;Sudic;Sudic;Sudicki;Sudic;Sudic;Sudica;Ñóäèêñêàÿ;Sudic;x
 sudreicher;Südreicher;Sudraïcheuse;Südreichisch;Sydrajcherska;Sudráyjera;Südreicher;Südreicher;Südreicher;Südreicher;Südreicher;Sulráiquera;Ñşäğåéõåğñêàÿ;Südreicher;x
 suebi;Suebi;Suève;Suebisch;Swebijska;Sueva;Svevo;Szvébek;Suebi;Szvébek;Suebi;Sueva;Ñâåâñêàÿ;Sveba;x
+sumerian;Sumerian;Sumérien;Sumerisch;Sumeryjski;Sumerio;Sumerian;Sumerian;Sumerian;Sumerian;Sumerian;Sumerian;Sumerian;Øóìåğñêèé;x
 sureno;Sureño;Sourégno;Surenjo;Surenjo;Sureña;Suregno;Sureño;Sureño;Sureño;Sureño;Surenha;Ñóğåíüî;Sureño;x
 surinamian;Surinamese;Surinamienne;Surinamisch;Surinamska;Surinamesa;Surinamese;Surinamesei;Surinamština;Surinamesei;Surinaams;Surinamense;Ñóğèíàìñêàÿ;Surinamilainen;x
 suurjokian;Suurjokian;Sourioquienne;Suurjokisch;Suurjokska;Suryoquia;Surgiochiana;Suurjokian;Suurjokian;Suurjokian;Suurjokian;Surioquia;Ñóğüîêÿíñêàÿ;Suurjokian;x
@@ -339,12 +351,14 @@ thulean;Thulean;Thuléenne;Thulisch;Thulejska;Tulesa;Tuleese;Thulean;Thulean;Thul
 tocharian;Tocharian;Tokharienne;Tocharisch;Tocharska;Tocaria;Tocaria;Tocharian;Tocharian;Tocharian;Tochaars;Tocariana;Òîõàğñêàÿ;Tokarilainen;x
 tounensois;Tounensois;Tounensoise;Tounensois;Tun¹suañska;Tunensesa;Tounensese;Tounensois;Tounensois;Tounensois;Tounensois;Tunansesa;Òóíåíñâàñêàÿ;Tounensois;x
 trattoloyan;Trattoloyan;Trattoloïenne;Trattoloisch;Trattolojska;Trattoloya;Trattoloiana;Trattoloyan;Trattoloyan;Trattoloyan;Trattoloyan;Trattoloiana;Òğàòòîëîéñêàÿ;Trattoloyan;x
+trojan;Trojan;Troyen;Trojisch;Trojanski;Troyano;Trojan;Trojan;Trojan;Trojan;Trojan;Trojan;Òğîÿíñêèé;Trojan;x
 tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Tulari;Òóëàğè;Tulari;x
 tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Tupi;Òóïè;Tupi;x
 tyrrhafrican;Tyrrh-African;Tyrrhafricaine;Tyrrhafrikanisch;Tyrafrykañska;Tirrafricana;Tirrafricana;Tyrrh-afrikai;Tyrh-africki;Tyrrh-afrikai;Tyrrh-Afrikaan;Tirrafricana;Òèğğàôğèêàíñêàÿ;Tyrrh-afrikkalainen;x
 tyrrhaustralian;Tyrrh-Australian;Tyrrhaustralienne;Tyrrhaustralisch;Tyraustraljska;Tirraustraliana;Tirraustraliana;Tyrrh-ausztrál;Tyrrh-australskı;Tyrrh-ausztrál;Tyrrh-Australiër;Tirraustraliana;Òèğğàâñòğàëèéñêàÿ;Tyrrh-australialainen;x
 tyrrhenian;Tyrrhenian;Tyrrhénien;Tyrrhenisch;Tyrreñska;Tirreno;Tirrena;Tirrén;Tyrhénski;Tirrén;Tyrreense;Tirreno;Òèğğåíñêàÿ;Tyrrhenan;x
 ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Ualonuth;Óàëîíóò;Ualonuth;x
+ugaritic;Ugaritic;Ougaritique;Ugaritisch;Ugarycki;Ugarítico;Ugaritic;Ugaritic;Ugaritic;Ugaritic;Ugaritic;Ugaritic;Óãàğèòñêèé;Ugaritic;x
 ujvilag;Újvilág;Ouivilague;Újvilág;Újvilág;Újvilág;Uivilag;Újvilág;Újvilág;Újvilág;Újvilág;Újvilág;Óéâèëàã;Újvilág;x
 ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;Ultramar;x
 undead;Undead;Morte-Vivante;Untot;Nieumar³a;No-Muerta;Undead;Élõhalott;Nemrtvi;Élõhalott;undead;Morta-Viva;Íåæèâàÿ;Undead;x
