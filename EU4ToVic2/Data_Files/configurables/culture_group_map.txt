@@ -39,17 +39,18 @@ link = { v2 = gothic_g eu4 = gothic_group }
 link = { v2 = romantic eu4 = roman_group }
 link = { v2 = non_human eu4 = equine_group eu4 = cat_group eu4 = bear_group eu4 = hedgehog_group eu4 = duck_group eu4 = dog_group eu4 = elephant_group eu4 = dragon_group eu4 = red_panda_group }
 link = { v2 = punic eu4 = punic_group eu4 = old_mashriqi }
-link = { v2 = hittite_g eu4 = hittite_group }
+link = { v2 = hittite_g eu4 = hittite_group eu4 = hatti_group }
 link = { v2 = balkan eu4 = dacian_group }
 link = { v2 = tyrrhenian eu4 = tyrrhenian }
 link = { v2 = pan_albanian eu4 = albanian_g }
 link = { v2 = old_italian eu4 = old_lombard_g }
 link = { v2 = celtic eu4 = celtiberian_g eu4 = celts eu4 = scordiscian_g }
+link = { v2 = hurro_urartian eu4 = hurrian_group }
+link = { v2 = pre_indo_european eu4 = pre_greek_group }
 
 # these are known vic2 groups we have defined and potentially use, but we can't map and *particular* culture group into them as only chosen cultures go here.
 #link = { v2 = beneluxian eu4 =  }
 #link = { v2 = pan_swiss eu4 =  }
-#link = { v2 = pre_indo_european eu4 =  }
 #link = { v2 = pan_romanian eu4 =  }
 #link = { v2 = czecho_slovak_culture_group eu4 =  }
 #link = { hpm = indo_iranian eu4 =  }

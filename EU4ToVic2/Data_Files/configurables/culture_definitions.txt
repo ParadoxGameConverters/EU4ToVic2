@@ -776,6 +776,60 @@ pre_indo_european = {
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
 	}
+	pelasgian = { #Greek Names
+		color = { 204 145 61 }
+
+		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
+		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
+		Ionnis Kítsos Konstantínos Kyriákos Kyriakoúlis Leonídas Makários Márkos Míchael Militiadis
+		Nikólaos Odysséas Óthon Panagiótis Pavlos Pétros Sofoklís Sotíris Spyridíon Spýros
+		Stáïkos Stéfanos Stylianós Themistoklís Theódoros Tharývoulos Tzannís Vásos Víktor Zinóvios
+		}
+
+		last_names = { Charalámpis Christákis-Zográfos Daglis Dousmanis Foúmis Gonatás Chatzianéstis Kallérgis Kanáris Katsimiros
+		Kolokotrónis Kondýlis Kountouriótis Kriezís Makriiánnis Mános Mavrokordátos Mavrovouniótis Metaxás Moúskos
+		Níder Othonaíos Paláskas Pan'galos Papadiamantópoulos Papadópoulos Papágos Papoúlas Parakevópoulos Plapoútas
+		Plastíras Sapountzákis Saráfis Smolénskis Sofoúlis Soútsos Spyromílios Staïkópoulos Stanotas "tis Elládas"
+		Trikoúpis Tsakalótos Tsolákoglou Typáldos-Alfonsátos Tzavélas Vássos Venizélos Voúlgaris Zaïmis Zymvrakákis
+		}
+		radicalism = 10
+	}
+	minoan = { #Greek Names
+		color = { 13 13 13 }
+
+		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
+		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
+		Ionnis Kítsos Konstantínos Kyriákos Kyriakoúlis Leonídas Makários Márkos Míchael Militiadis
+		Nikólaos Odysséas Óthon Panagiótis Pavlos Pétros Sofoklís Sotíris Spyridíon Spýros
+		Stáïkos Stéfanos Stylianós Themistoklís Theódoros Tharývoulos Tzannís Vásos Víktor Zinóvios
+		}
+
+		last_names = { Charalámpis Christákis-Zográfos Daglis Dousmanis Foúmis Gonatás Chatzianéstis Kallérgis Kanáris Katsimiros
+		Kolokotrónis Kondýlis Kountouriótis Kriezís Makriiánnis Mános Mavrokordátos Mavrovouniótis Metaxás Moúskos
+		Níder Othonaíos Paláskas Pan'galos Papadiamantópoulos Papadópoulos Papágos Papoúlas Parakevópoulos Plapoútas
+		Plastíras Sapountzákis Saráfis Smolénskis Sofoúlis Soútsos Spyromílios Staïkópoulos Stanotas "tis Elládas"
+		Trikoúpis Tsakalótos Tsolákoglou Typáldos-Alfonsátos Tzavélas Vássos Venizélos Voúlgaris Zaïmis Zymvrakákis
+		}
+		radicalism = 10
+	}
+	cycladic = { #Greek Names
+		color = { 102 102 102 }
+
+		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
+		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
+		Ionnis Kítsos Konstantínos Kyriákos Kyriakoúlis Leonídas Makários Márkos Míchael Militiadis
+		Nikólaos Odysséas Óthon Panagiótis Pavlos Pétros Sofoklís Sotíris Spyridíon Spýros
+		Stáïkos Stéfanos Stylianós Themistoklís Theódoros Tharývoulos Tzannís Vásos Víktor Zinóvios
+		}
+
+		last_names = { Charalámpis Christákis-Zográfos Daglis Dousmanis Foúmis Gonatás Chatzianéstis Kallérgis Kanáris Katsimiros
+		Kolokotrónis Kondýlis Kountouriótis Kriezís Makriiánnis Mános Mavrokordátos Mavrovouniótis Metaxás Moúskos
+		Níder Othonaíos Paláskas Pan'galos Papadiamantópoulos Papadópoulos Papágos Papoúlas Parakevópoulos Plapoútas
+		Plastíras Sapountzákis Saráfis Smolénskis Sofoúlis Soútsos Spyromílios Staïkópoulos Stanotas "tis Elládas"
+		Trikoúpis Tsakalótos Tsolákoglou Typáldos-Alfonsátos Tzavélas Vássos Venizélos Voúlgaris Zaïmis Zymvrakákis
+		}
+		radicalism = 10
+	}
 }
 	
 scandinavian = {
@@ -3623,8 +3677,34 @@ levantine = {
 			Iyob Iyoben Eapen Kuriakos Kurien Cheriyan Vargisa Kuruvilla }
 		last_names = { Ahmadi Algafari Assadi Homsi Nasser }
 	}
+	sumerian = { #Names from I:R's Bronze Age: Reborn mod
+		color = { 43 13 0 }
+		first_names = { Alulim Alalngar En-men-lu-ana En-men-gal-ana Dumuzid En-sipad-zid-ana En-men-dur-ana Ubra-tutu Mesh-ki-ang-gasher Enmerkar Lugalbanda
+			Dumuzid Dumuzi Gilgamesh Ur-Nungal Udul-klama "La-ba Shum" En-un-tarah-ana Mesh-he Melem-ana Lugal-kitun Mesh-Ane-pada Mesh-ki-ang-Nuna
+			Elulu Balulu Hadanish En-shag-kush-ana Lugal-kinishe-dudu Lugal-ure Agrgandea Nanni Mesh-ki-ang-Nanna Lugal-Ane-mundu Unzi Undalulu Urur
+			Puzur-Nirah Ishu-Il Shu-suen Puzur-Suen Ur-Zababa Zumudar Usi-watar Eshtar-muti Ishme-Shamash Shu-ilishu Nanniya Lugal-zage-si Ur-ningin
+			Ur-gigir Kuda Puzur-ili Ur-Utu Lugal-melem En-hegal Lugal-sha-engur Ur-Nanshe Ur-nina Akurgal Eannatum Enannatum Entemena Enentarzi Lugalanda
+			Urukagina Lugal-ushumgal Puzer-Mama Ur-Utu Ur-Mama Lu-Baba Lugula Kaku Kakug Ur-Baba Gudea Ur-Ningirsu Pirigme Ugme Ur-gar Nam-mahani
+			Utu-hengal Ur-Namma Ur-Nammu Shulgi Amar-Suena Shu-Suen Ibbi-Suen }
+		last_names = { Nanniya-Meskilak Sabit-Nanshe Akurgal-Geshtinanna Lugula-Ningal Udul-Utu Shulgi-Ninhursag Kakug-Ninlil Nanni-Enlil Enmerkar-Ninazu Melem-Ishtaran Pirigme-Ishkur
+ 			Puzur-Nintinugga Lugula-Ereshkigal Zumudar-Nisaba Nanni-Dumuzid Ishu-Enki Gar-Nanna Ishu-Inanna }
+	}
 	copts = {
 		color = {250 236 127}
+
+		first_names = { Seka Khayu Tiu Thesh Neheb Wazner Mekh "Iry-Hor" Sekhen Serqer Narmer "Hor-Aha" Djer Djet Den Semerkhet "Qa'a" Sneferka Raneb Nynetjer Senedj Neferkara Hudjefa Djoser Sekhemkhet Sanakht Khaba Huni Sneferu Khufu Khafre Djdefre Menkaure Thamphtis Userkaf Sahure Neferefre Shepseskare Nyuserre Unas Teti "Dejkadre Shemai" Neferkare Merenhor Nikare Intef "Sankhkare Mentuhotep" Menkare Segerseni Senusret Nerikare Sonbef Sebkay Sobekhotep Dedumose Sheeshi Nehesy Sheneh Semenre Rahotep "Nebpehtire Ahmose" Amenhotep Thutmose  "Awybre Hor" Akhenaten Tutankhamun Ramesses Herihor Piankh Pinedjem Masaharta Menkheperre Smendes Pinedjem }
+
+		last_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
+	}
+	per_sheklesh = {
+		color = { 153 163 0 }
+
+		first_names = { Seka Khayu Tiu Thesh Neheb Wazner Mekh "Iry-Hor" Sekhen Serqer Narmer "Hor-Aha" Djer Djet Den Semerkhet "Qa'a" Sneferka Raneb Nynetjer Senedj Neferkara Hudjefa Djoser Sekhemkhet Sanakht Khaba Huni Sneferu Khufu Khafre Djdefre Menkaure Thamphtis Userkaf Sahure Neferefre Shepseskare Nyuserre Unas Teti "Dejkadre Shemai" Neferkare Merenhor Nikare Intef "Sankhkare Mentuhotep" Menkare Segerseni Senusret Nerikare Sonbef Sebkay Sobekhotep Dedumose Sheeshi Nehesy Sheneh Semenre Rahotep "Nebpehtire Ahmose" Amenhotep Thutmose  "Awybre Hor" Akhenaten Tutankhamun Ramesses Herihor Piankh Pinedjem Masaharta Menkheperre Smendes Pinedjem }
+
+		last_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
+	}
+	niwt_ipt = {
+		color = { 199 176 102 }
 
 		first_names = { Seka Khayu Tiu Thesh Neheb Wazner Mekh "Iry-Hor" Sekhen Serqer Narmer "Hor-Aha" Djer Djet Den Semerkhet "Qa'a" Sneferka Raneb Nynetjer Senedj Neferkara Hudjefa Djoser Sekhemkhet Sanakht Khaba Huni Sneferu Khufu Khafre Djdefre Menkaure Thamphtis Userkaf Sahure Neferefre Shepseskare Nyuserre Unas Teti "Dejkadre Shemai" Neferkare Merenhor Nikare Intef "Sankhkare Mentuhotep" Menkare Segerseni Senusret Nerikare Sonbef Sebkay Sobekhotep Dedumose Sheeshi Nehesy Sheneh Semenre Rahotep "Nebpehtire Ahmose" Amenhotep Thutmose  "Awybre Hor" Akhenaten Tutankhamun Ramesses Herihor Piankh Pinedjem Masaharta Menkheperre Smendes Pinedjem }
 
@@ -7774,6 +7854,38 @@ punic = {
 			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
 		}
 	}
+	alasiyan = {
+		color = { 201 110 0 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ugaritic = {
+		color = { 130 143 120 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
 }
 varangian_g = {
 	leader = european
@@ -8823,6 +8935,61 @@ hittite_g = {
 			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
 		}
 	}
+	trojan = {
+		color = { 110 163 117 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	kizzuwatnan = {
+		color = { 161 214 168 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	hatti = { #Pre-Anatolian, using Georgian names for now
+		color = { 135 125 179 }
+
+		first_names = { Akaki Alexander Andria Bagrat Besarion David Dimitri Eduard Ekvtime Evgeni
+		Filipp Galaktion Georgi German Givi Grigol Ilia Ioseb Irakli Ivane
+		Jansung Jemal Kaikhosro Konstantine Leo Levan Luka Meliton Mikheil Murman
+		Nikoloz Noe Otar Polikarp Radish Revaz Sargis Sergo Shalva Solomon
+		Sulkhan Teimuraz Tingiz Vakhtang Valerian Vasil Vladimer Zakharia Zurab Zviad
+		}
+
+		last_names = { Abkhazi Amilakhvari Avalishvili Bagratuni Bakradze Balanchivadze Barakadze Chabukiani Chavchanadze Chkhubianashvili
+		Cholokashvili Chubinashvili Dodashvili Eliava Gabashvili Gokhieli Gordeli Javakhisvili Jugashvili Jugheli
+		Kakabadze Kandelaki Kartvelishvili Kavtaradze Kereselidze Khelaia Khvitia Kvinitadze Leselidze Maglakelidze
+		Makharadze Mazniashvili Mikeladze Muskhelishvili Nioradze Nutsubideze Otskheli Ramishvili
+		Razikashvili Sabinin Shanidze Sukhisvili Tabidze Takaishvili Tsereteli Tsintsadze Uznadze Zhordania
+		}
+	}
 }
 celtic = {
 	leader = european
@@ -9669,6 +9836,57 @@ old_italian = {
 			Sicinius Tarpeius Tineius Titius Valerius Asinius Vetius Cassius Decimius Egnatius
 			Gavius Gellius Herennius Obellius Ofilius Oppidius Opsidius Otacilius Paccius
 			Pacidius Papius Papinius Percennius Petreius Pontius Scutarius Vibius "Pontius Pilatus"
+		}
+	}
+}
+hurro_urartian = {
+	leader = european
+	unit = EuropeanGC
+	hurrian_culture = { #Names from I:R's Bronze Age:Reborn mod
+		color = { 89 92 209 }
+		first_names = {
+			Biridaswa Kikkula Kirta Mattiwaza Parattarna Parsatatar Sattawaza Saushtatar Shuttarna Tehiptilla Tushratta Abi-tisan
+			Adal-seni Aga-tisan Agap-eli Agap-tanu Aya-zi Aka-ya Aki-ya Aki-yan Aki-ra Aku-ya Alla-e Allae-kiyazi Allai-az Alli-turah Amma-ta-n Amman-kiyazi
+			Amman-tahi Ammen-ammume Ammen-ki Ammin-na Ana-ta-n Anis-hurpe Anis-kipa-l Anni-kabi Anni-sar Ara-zah Arda-kanda Arim-adal Arip-hurmis Arip-Negal
+			Arip-Tesub Ari-tupki Arip-turi Ari-ab Arip-an Arriyuk Aru-pa Aru-pal Arzi-hip Asar-musni Asa-kka Asma-ate Asmun-saki Asta-kuzi Astu Astua-unna
+			Asu-zi Atta-ha-n Atta-za Attu-Aya Attu-e Attu-ki Attu-zar Awi-yazi Awis-na Azi-za-n Azu-na-n Azzu Azzu-e Azzu-eli Azzu-ka Azzu-kki Azzu-nni Ehli
+			Ehlip-adal Ehlip-sarri Ela-ni Ela-pi Elan-kiyazi Elan-saki Elan-za Ela-patal Ela-paraluh Elen-za Elili-s Elili-sa Elum-sehir-e Enis-agum Eni-ya
+			Etem-meni Ete-ya Ewe Ewe-ni Ewenni-kki Hama-nna Hame-za Hapa-luk Hapi-ya Hapu-ri Hari-pan Hari-ya Hari-yazu Hazip-adal Hazip-aranzih Hazi-pa Hazi-pa-n
+			Hazip-Kakka Hazip-Kuzuli Hazip-Nawar Hazip-saki Hazip-saya Hazip-sarri Hazip-Tesub Hazip-ulme Hazu-ka-n Herzu-k Hui-zzi Hupa-zza Hupa-za-n Iku-za
+			Illu-te Ilu-Ila Ilu-Ili Ima-ku Inna-ha-n Ira-he Iwari Iza-mu Izi-za Iza-n Izza-ni Izzu-nni Kabi Kabi-ata Kabi-pursa Kabi-ta Kabi-ta-ya Kabi-ya
+			Kai-ta Kali-ya Kana-n Kani-pa-n Kanni Kannu-kka Kanzu Kari-ta-n Kari-ya Katir-he Katu-li Kilip-sarri Kili-ya Kilum-allai Kilum-ana Kimma Kinum-adal
+			Kinzi-ya Kipa-r Kipi-ri Kipu-seni Kiyazi Kizzi-ya Kupa-m Kupa-n Kuppi-ya Kuta-te Kutti Kuwari-ya Kuza-n Kuza-ri-na Kuza-zzi Kuzi Kuzuh-adal
+			Kuzu-zari Kuza-ri Memen-kanazi Memen-ki Memen-saki Mema-nna Menna Mulu-ka-n Muza-n-adal Muza-ni Muzu-m Muzum-eni Nana-kka Nana-ta-n Nani-ku
+			Nanip-naya Nanip-sawri Nani-ya Nawar-adal Nawar-kanazi Nawar-zi Nenis-naya Nergal-adal Nikir-sarri Nubar-ela Nubar-sarri Nubar-wari Nuki-za-n
+			Nupa-ta Nupa-tiya Nupu-ri Nupu-ta Nuza-pa Nuza-wari Nuzu-kka Paban-sarri Pahar-mi Pai-la Pai-pa Paip-sarri Paki-annae Paki-la Paku-zi Pala-Ila
+			Pala-mi Pala-n Pandi Pandi-ya Papu-zi Paru-ri Patala-n Patalla Pata-ni-te Pinzi-ya Pirhen-saki Pirhu-na Pir-kina Pir-kinnu Pir-paya Piru-ya-n
+			Pisr-uhli Pthu-na Piz-kina Puhe-n Puh-tani Purama-n Puram-zi Purra-n Puta-ma-n Puta-n Sadum-naya Sadun-sarri Sahis-menni Saki-ya-n Sama-his
+			Sama-hul Samba-ri Sanin-naya Sa-pi-lum-kiyazi Sas-karu Sat-pa Satta-kiyazi Sattu-ri Sazu-e Sazum-sarri Sahhi-ya Sehlip-sarri Sehlum-naya
+			Sehrum-nirzi Seh-saya Sena-m Sena-ya Senip-sarri Senis-wari Senu-urhi Serum-naya Ser-za-n Sewa-ni Sewum-sarri Sime-tagup Sim-kinna Sinim-sali
+			Sinis-tar-e Sinu-ka Sukrum-nawar Sukrum-Tesub Suk-siya Sur-e Sur-siya Susa-ki Taga-zi Tagi Tagis-nati-e Tagu-zza Tahi Tahi-ya Tahu-k Tahu-za-n
+			Tai-ra Tai-zi Taki-ki Taki-ya Taku-na Talmu-asihi Tamaku-meni TAmar-tahi Tamaru Tamar-zi Tami Tamma Tanu-ta Tapu-zi Tarma-ri-s Tasap-kildi
+			Tata-ra Tatta Tawe-nna Tidi-ka-n Tis-ulme Tisan-ki Tiswen-adal Tizi-ha-n Tizwi-na Tuli-s Tundi Tupki Turip-seni Turum-nadki Tuza-na Tuza-ya
+			Ullu-ki Ullum-tisni Ullu-ni Ullu-ri Ullu-waru Ulme Una-kka Unap-sarri Unap-se Unap-tagi Una-tis Una-ya Uni-na Un-takki Unus-kiyazi Ura-ki
+			Urra-n Usse Uski-za-n Ussu-ultu Usta-ni Ustan-sarri Ustap-adal Ustap-kiris Usta-ya Uti-na Uwe-hul-e Uza-na Uzi Uzzi-ya Uzzu Uzu-li Uzu-na-n
+			Wari-kipa Wari-muza Wari-taldu Zata-n Zaza-naya Zazi-ya Zigi Zigil-tanu-m Zika-n Zina-ki Zirbi-kuni Ziri-ta-n Zirri Zitu-ya Ziwe-ni Ziza-pa-n
+			Zuna-n Zunna Zunzu-m Zuwe-ne Zuza-n Zuzu Zip-musni
+		}
+		last_names = {
+			Atal-sen-Teshub Biridaswa-Kumarbi Kikkula-Shaushka Kirta-Hebat Mattiwaza-Sharruma Parattarna-Shimegi Parsatatar-Kushuh Sattawaza-Hutena Saushtatar-Hutelluri
+ 			Shuttarna-Sumuqan Tehiptilla-Ashtabil Tushratta-Ningal Hui-zzi-Tashmisu Hupa-zza-Kubaba Elhip-ninu-Ashtabil Iku-za-Ebrimusha Nana-kka-Nabarbi Ilu-Ila-Pirinki
+ 			Tagis-nati-e-Hebat Tagu-zza-Sharruma Uzu-na-n-Nubadig Wari-kipa-Pirinki Zuzu-Tashmisu Tadukhepa-Allani Ahahuia-Ebrimusha Ahassunu-Nubadig
+		}
+	}
+	gutian = { #Names from I:R's Bronze Age:Reborn mod
+		color = { 140 10 33 }
+		first_names = {
+			Inkishush Zarlagab Shulme Yarlagash Silulumesh Silulu Inimabakesh Igeshaush Yarlagab Ibate Yarla Kurum Apilkin La-erabum Irarum Ibranum Hablum
+ 			Puzur-Suen Yarlaganda Tirigan Duga Ilu-An Yarlangab Erridupizir Imta Nibia Sarlagab
+		}
+		last_names = {
+			Agum-Duniash Arshanta-Gidar Gab-Indash Hurba-Bugash Gurzar-Duzagash Shipta-Alban Gandash-Mirizir Kunigi-Maruttash Badar-Akmul Dakash-Laguda Mushia-Kassu
+ 			Purna-Sah Ipashi-Sali Ashlulu-Kamulla Uzibi-Nanai Kadash-Miriash Hala-Shihu Ukin-Shipak Barhu-Shikme Ambaru-Shugurra Gabnila-Sah Kukla-Shimalia Apa-Zini
+ 			Huta-Tassi Manudi-Turgu Ulam-Kassu
 		}
 	}
 }
