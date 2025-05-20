@@ -4,7 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-V2::ModCommons::ModCommons(const std::string& tag, const std::string& filename)
+V2::ModCommons::ModCommons(const std::string& tag, const std::filesystem::path& filename)
 {
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		colorString = commonItems::stringOfItem(theStream).getString();
@@ -25,10 +25,10 @@ V2::ModCommons::ModCommons(const std::string& tag, const std::string& filename)
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
-	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
-		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
-	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/history/countries/" + tag + " - " + filename))
-		parseFile(theConfiguration.getVic2Path() + "/history/countries/" + tag + " - " + filename);
+	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "common/countries" / filename))
+		parseFile(theConfiguration.getVic2Path() / "common/countries" / filename);
+	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "history/countries" / std::filesystem::path(tag + " - " + filename.string())))
+		parseFile(theConfiguration.getVic2Path() / "history/countries" / std::filesystem::path(tag + " - " + filename.string()));
 	clearRegisteredKeywords();
 
 	setPartyDates();

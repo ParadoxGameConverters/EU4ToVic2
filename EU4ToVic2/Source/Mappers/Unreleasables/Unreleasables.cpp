@@ -9,7 +9,7 @@ mappers::Unreleasables::Unreleasables()
 	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
-	parseFile("configurables/unreleasable_tags.txt");
+	parseFile(std::filesystem::path("configurables/unreleasable_tags.txt"));
 }
 
 bool mappers::Unreleasables::isTagReleasable(const std::string& tag) const

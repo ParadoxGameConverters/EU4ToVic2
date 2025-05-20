@@ -7,7 +7,7 @@ mappers::AgreementMapper::AgreementMapper()
 {
 	Log(LogLevel::Info) << "Parsing Agreement Types.";
 	registerKeys();
-	parseFile("configurables/agreement_types.txt");
+	parseFile(std::filesystem::path("configurables/agreement_types.txt"));
 	clearRegisteredKeywords();
 }
 

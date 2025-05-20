@@ -27,8 +27,8 @@ class Country: commonItems::parser
 	Country() = default;
 	Country(std::string countryTag, const GameVersion& theVersion, std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
-	void readFromCommonCountry(const std::string& fileName,
-		 const std::string& fullFileName); // Add any additional information available from the specified country file.
+	void readFromCommonCountry(const std::filesystem::path& fileName,
+		 const std::filesystem::path& fullFileName); // Add any additional information available from the specified country file.
 	void setLocalizationName(const std::string& language, const std::string& incName);
 	void setLocalizationAdjective(const std::string& language, const std::string& incAdjective);
 	void addProvince(const std::shared_ptr<Province>& province);

@@ -17,7 +17,7 @@ void mappers::SuperGroupMapper::init()
 	});
 	registerRegex("[a-zA-Z0-9\\_]+", commonItems::ignoreItem);
 
-	parseFile("configurables/world_supergroups.txt");
+	parseFile(std::filesystem::path("configurables/world_supergroups.txt"));
 	clearRegisteredKeywords();
 }
 

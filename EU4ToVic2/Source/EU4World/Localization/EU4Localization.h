@@ -12,8 +12,8 @@ class EU4Localization
   public:
 	void initializeFromEU4Installation();
 
-	void readFromAllFilesInFolder(const std::string& folderPath);
-	void readFromFile(const std::string& fileName);
+	void readFromAllFilesInFolder(const std::filesystem::path& folderPath);
+	void readFromFile(const std::filesystem::path& fileName);
 	void readFromStream(std::istream& theStream);
 
 	[[nodiscard]] std::optional<std::string> getText(const std::string& key, const std::string& language) const;

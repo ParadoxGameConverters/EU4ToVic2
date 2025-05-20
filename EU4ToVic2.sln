@@ -32,6 +32,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EU4ToVic2lib", "EU4ToVic2li
 		{3B8EC8C8-4066-46F7-851D-EB762C39C140} = {3B8EC8C8-4066-46F7-851D-EB762C39C140}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zip", "commonItems\zip\zip.vcxproj", "{BD9BC07A-F4AC-44A3-AC06-6FDE91181C7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -49,6 +51,8 @@ Global
 		{3B8EC8C8-4066-46F7-851D-EB762C39C140}.Release|x64.Build.0 = Release|x64
 		{1499903E-0D18-453A-98A2-C1FE773B249C}.Release|x64.ActiveCfg = Release|x64
 		{1499903E-0D18-453A-98A2-C1FE773B249C}.Release|x64.Build.0 = Release|x64
+		{BD9BC07A-F4AC-44A3-AC06-6FDE91181C7C}.Release|x64.ActiveCfg = Release|x64
+		{BD9BC07A-F4AC-44A3-AC06-6FDE91181C7C}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

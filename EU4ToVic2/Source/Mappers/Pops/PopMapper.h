@@ -9,7 +9,7 @@ class PopMapper: commonItems::parser
 {
   public:
 	PopMapper() = default;
-	explicit PopMapper(const std::string& fileName);
+	explicit PopMapper(const std::filesystem::path& fileName);
 	explicit PopMapper(std::istream& theStream);
 
 	[[nodiscard]] const auto& getProvincePops() const { return provincePops; }

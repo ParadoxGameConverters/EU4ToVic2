@@ -29,7 +29,7 @@ class ProvinceDetailsMapper: commonItems::parser
 {
   public:
 	ProvinceDetailsMapper() = default;
-	explicit ProvinceDetailsMapper(const std::string& filename);
+	explicit ProvinceDetailsMapper(const std::filesystem::path& filename);
 	explicit ProvinceDetailsMapper(std::istream& theStream);
 
 	[[nodiscard]] const auto& getProvinceDetails() const { return provinceDetails; }

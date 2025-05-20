@@ -233,7 +233,7 @@ std::set<std::string> V2::Flags::determineAvailableFlags()
 {
 	std::set<std::string> availableFlags;
 
-	const std::vector<std::string> availableFlagFolders = {"flags", theConfiguration.getVic2Path() + "/gfx/flags"};
+	const std::vector<std::filesystem::path> availableFlagFolders = {"flags", theConfiguration.getVic2Path() / "gfx/flags"};
 
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
@@ -284,21 +284,21 @@ void V2::Flags::output() const
 
 void V2::Flags::createOutputFolders()
 {
-	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx"))
+	if (!std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "gfx"))
 	{
-		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx";
+		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName().string() << "/gfx";
 		exit(-1);
 	}
-	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx/flags"))
+	if (!std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "gfx/flags"))
 	{
-		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx/flags";
+		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName().string() << "/gfx/flags";
 		exit(-1);
 	}
 }
 
 void V2::Flags::copyFlags() const
 {
-	const std::vector<std::string> availableFlagFolders = {"flags", theConfiguration.getVic2Path() + "/gfx/flags"};
+	const std::vector<std::filesystem::path> availableFlagFolders = {"flags", theConfiguration.getVic2Path() / "gfx/flags"};
 	for (const auto& tagMapping: tagMap)
 	{
 		const auto V2Tag = tagMapping.first;
@@ -308,12 +308,12 @@ void V2::Flags::copyFlags() const
 			auto flagFileFound = false;
 			for (auto availableFolderItr = availableFlagFolders.begin(); availableFolderItr != availableFlagFolders.end() && !flagFileFound; ++availableFolderItr)
 			{
-				const auto sourceFlagPath = *availableFolderItr + '/' + flagTag + flagFileSuffix;
+				const auto sourceFlagPath = *availableFolderItr / std::filesystem::path(flagTag + flagFileSuffix);
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					const auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + flagFileSuffix;
-					commonItems::TryCopyFile(sourceFlagPath, destFlagPath);
+					const auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / std::filesystem::path(V2Tag + flagFileSuffix);
+					std::filesystem::copy_file(sourceFlagPath, destFlagPath);
 				}
 			}
 		}

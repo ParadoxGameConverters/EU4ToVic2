@@ -7,7 +7,7 @@ mappers::FactoryTypeMapper::FactoryTypeMapper()
 {
 	Log(LogLevel::Info) << "Determining factory allocation rules.";
 	registerKeys();
-	parseFile(theConfiguration.getVic2Path() + "/common/production_types.txt");
+	parseFile(theConfiguration.getVic2Path() / "common/production_types.txt");
 	clearRegisteredKeywords();
 
 	factoryTechs = std::make_unique<FactoryTechMapper>();

@@ -2,7 +2,7 @@
 #include "CommonRegexes.h"
 #include "ParserHelpers.h"
 
-mappers::PopMapper::PopMapper(const std::string& fileName)
+mappers::PopMapper::PopMapper(const std::filesystem::path& fileName)
 {
 	registerKeys();
 	parseFile(fileName);

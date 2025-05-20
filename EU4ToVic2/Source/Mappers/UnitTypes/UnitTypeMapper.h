@@ -16,7 +16,7 @@ class UnitTypeMapper
 
   private:
 	std::map<std::string, UnitType> unitTypeMap;
-	void addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename);
+	void addUnitFileToRegimentTypeMap(const std::filesystem::path& directory, const std::filesystem::path& filename);
 };
 }; // namespace mappers
 

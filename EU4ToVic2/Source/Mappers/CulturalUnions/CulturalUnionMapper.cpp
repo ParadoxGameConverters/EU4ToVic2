@@ -10,7 +10,7 @@ mappers::CulturalUnionMapper::CulturalUnionMapper(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-mappers::CulturalUnionMapper::CulturalUnionMapper(const std::string& filename)
+mappers::CulturalUnionMapper::CulturalUnionMapper(const std::filesystem::path& filename)
 {
 	registerKeys();
 	parseFile(filename);

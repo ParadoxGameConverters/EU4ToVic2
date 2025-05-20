@@ -71,21 +71,21 @@ class Configuration: commonItems::parser
 
 	void instantiate(std::istream& theStream,
 		 const commonItems::ConverterVersion& converterVersion,
-		 bool (*DoesFolderExist)(const std::string& path2),
-		 bool (*doesFileExist)(const std::string& path3));
+		 bool (*DoesFolderExist)(const std::filesystem::path& path2),
+		 bool (*doesFileExist)(const std::filesystem::path& path3));
 
 	void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
 	void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
 	void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
-	void setOutputName(const std::string& name) { outputName = name; }
-	void setActualName(const std::string& name) { actualName = name; }
+	void setOutputName(const std::filesystem::path& name) { outputName = name; }
+	void setActualName(const std::filesystem::path& name) { actualName = name; }
 	void setMods(const Mods& theMods) { mods = theMods; }
 	void setEU4Version(const GameVersion& _version) { version = _version; }
 	void setEU4RandomSeed(int seed) { eu4Seed = seed; }
 	void setHybridMod(HYBRIDMOD theMod) { hybridMod = theMod; }
 	void setEurocentrism(EUROCENTRISM centrism) { euroCentric = centrism; }
 	void setVN() { vn = true; }
-	void verifyHPMInstallPath(bool (*DoesFolderExist)(const std::string& path2));
+	void verifyHPMInstallPath(bool (*DoesFolderExist)(const std::filesystem::path& path2));
 	void swapInstallationPathToHPM();
 
 	[[nodiscard]] auto getPopShaping() const { return popShaping; }
@@ -120,19 +120,23 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getMods() const { return mods; }
 
   private:
-	static void verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
-	static void verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
-	static void verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
+	static void verifyEU4Path(const std::filesystem::path& path,
+		 bool (*DoesFolderExist)(const std::filesystem::path& path2),
+		 bool (*doesFileExist)(const std::filesystem::path& path3));
+	static void verifyVic2Path(const std::filesystem::path& path,
+		 bool (*DoesFolderExist)(const std::filesystem::path& path2),
+		 bool (*doesFileExist)(const std::filesystem::path& path3));
+	static void verifyVic2DocumentsPath(const std::filesystem::path& path, bool (*DoesFolderExist)(const std::filesystem::path& path2));
 	void setOutputName();
 	void verifyEU4Version(const commonItems::ConverterVersion& converterVersion) const;
 	void verifyVic2Version(const commonItems::ConverterVersion& converterVersion) const;
 
 	// options from configuration.txt
-	std::string EU4SaveGamePath;
-	std::string EU4Path;
-	std::string EU4DocumentsPath;
-	std::string Vic2Path;
-	std::string VanillaVic2Path;
+	std::filesystem::path EU4SaveGamePath;
+	std::filesystem::path EU4Path;
+	std::filesystem::path EU4DocumentsPath;
+	std::filesystem::path Vic2Path;
+	std::filesystem::path VanillaVic2Path;
 	std::string resetProvinces = "no";
 	double MaxLiteracy = 1.0;
 	LIBERTYDESIRE libertyThreshold = LIBERTYDESIRE::Loyal;
@@ -154,9 +158,9 @@ class Configuration: commonItems::parser
 	date lastEU4Date;
 	date startEU4Date = date("1000.1.1");
 	int eu4Seed = 0;
-	std::string outputName;			  // actual output name
-	std::string incomingOutputName; // from configuration file
-	std::string actualName;			  // Not normalized like outputName
+	std::filesystem::path outputName;			// actual output name
+	std::filesystem::path incomingOutputName; // from configuration file
+	std::filesystem::path actualName;			// Not normalized like outputName
 	Mods mods;
 	bool vn = false; // Voltaire's nightmare global flag
 	bool HPMverified = false;
@@ -167,7 +171,7 @@ extern Configuration theConfiguration;
 class ConfigurationFile: commonItems::parser
 {
   public:
-	explicit ConfigurationFile(const std::string& filename, const commonItems::ConverterVersion& converterVersion);
+	explicit ConfigurationFile(const std::filesystem::path& filename, const commonItems::ConverterVersion& converterVersion);
 	~ConfigurationFile() = default;
 	ConfigurationFile() = delete;
 	ConfigurationFile(const ConfigurationFile&) = delete;

@@ -25,7 +25,7 @@ mappers::CountryMappings::CountryMappings():
 
 	Log(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
-	parseFile("configurables/country_mappings.txt");
+	parseFile(std::filesystem::path("configurables/country_mappings.txt"));
 	clearRegisteredKeywords();
 }
 
@@ -33,8 +33,7 @@ mappers::CountryMappings::CountryMappings(std::istream& mainStream,
 	 std::istream& titleMapperStream,
 	 std::istream& v2RegionsStream,
 	 std::istream& colonialTagStream):
-	 titleMapper(std::make_unique<TitleMapper>(titleMapperStream)),
-	 colonialTagMapper(std::make_unique<ColonialTagMapper>(colonialTagStream)),
+	 titleMapper(std::make_unique<TitleMapper>(titleMapperStream)), colonialTagMapper(std::make_unique<ColonialTagMapper>(colonialTagStream)),
 	 v2provinceRegionsMapper(std::make_unique<V2ProvinceRegionsMapper>(v2RegionsStream))
 
 {
