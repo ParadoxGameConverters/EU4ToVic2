@@ -1107,7 +1107,5 @@ bool V2::Country::isCountryOutsideVNScope(const mappers::ProvinceMapper& provinc
 		if (!provinceMapper.getEU4ProvinceNumbers(province.first).empty())
 			outside = false;
 
-	if (tag == "PIC")
-		Log(LogLevel::Debug) << "PIC returning " << outside;
 	return outside;
 }

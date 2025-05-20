@@ -35,7 +35,6 @@ mappers::CountryMappings::CountryMappings(std::istream& mainStream,
 	 std::istream& colonialTagStream):
 	 titleMapper(std::make_unique<TitleMapper>(titleMapperStream)), colonialTagMapper(std::make_unique<ColonialTagMapper>(colonialTagStream)),
 	 v2provinceRegionsMapper(std::make_unique<V2ProvinceRegionsMapper>(v2RegionsStream))
-
 {
 	registerKeys();
 	parseStream(mainStream);
