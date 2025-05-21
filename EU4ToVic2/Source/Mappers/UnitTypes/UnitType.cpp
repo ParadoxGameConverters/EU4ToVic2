@@ -13,7 +13,7 @@ mappers::UnitType::UnitType(std::istream& theStream)
 		strength = 24;
 }
 
-mappers::UnitType::UnitType(const std::string& filePath)
+mappers::UnitType::UnitType(const std::filesystem::path& filePath)
 {
 	registerKeys();
 	parseFile(filePath);

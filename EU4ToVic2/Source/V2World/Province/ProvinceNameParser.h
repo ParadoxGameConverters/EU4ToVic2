@@ -16,7 +16,7 @@ class ProvinceNameParser
   private:
 	std::map<int, std::string> provinceNames;
 
-	void importProvinceLocalizations(const std::string& file);
+	void importProvinceLocalizations(const std::filesystem::path& file);
 };
 } // namespace V2
 #endif // PROVINCE_NAME_PARSER_H

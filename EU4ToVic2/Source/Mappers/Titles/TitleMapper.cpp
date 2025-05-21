@@ -9,7 +9,7 @@ mappers::TitleMapper::TitleMapper()
 {
 	Log(LogLevel::Info) << "Loading Known Titles.";
 	registerKeys();
-	parseFile("configurables/title_map.txt");
+	parseFile(std::filesystem::path("configurables/title_map.txt"));
 	clearRegisteredKeywords();
 }
 

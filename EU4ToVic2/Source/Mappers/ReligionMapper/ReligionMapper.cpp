@@ -10,7 +10,7 @@ mappers::ReligionMapper::ReligionMapper()
 {
 	Log(LogLevel::Info) << "Parsing religion mappings.";
 	registerKeys();
-	parseFile("configurables/religion_map.txt");
+	parseFile(std::filesystem::path("configurables/religion_map.txt"));
 	clearRegisteredKeywords();
 }
 
@@ -45,21 +45,22 @@ void mappers::ReligionMapper::scrapeCustomReligions()
 {
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (commonItems::DoesFolderExist(mod.path + "/common/religions/"))
+		if (commonItems::DoesFolderExist(mod.path / "common/religions"))
 		{
-			for (const auto& fileName: commonItems::GetAllFilesInFolder(mod.path + "/common/religions/"))
+			for (const auto& fileName: commonItems::GetAllFilesInFolder(mod.path / "common/religions"))
 			{
-				if (fileName.find("99_converted_") == 0)
+				auto filenameString = fileName.string();
+				if (filenameString.find("99_converted_") == 0)
 				{
 					// This is one of ours.
-					const auto pos = fileName.find("-from-");
+					const auto pos = filenameString.find("-from-");
 					if (pos == std::string::npos || pos <= 13)
 					{
-						Log(LogLevel::Error) << "Religion Mapper: Cannot import filename: " << fileName;
+						Log(LogLevel::Error) << "Religion Mapper: Cannot import filename: " << filenameString;
 						continue;
 					}
-					auto target = fileName.substr(3, pos - 3);								  // "converted_dynamic_faith_102"
-					auto source = fileName.substr(pos + 6, fileName.size() - 10 - pos); // shaving off .txt extension, "orthodox"
+					auto target = filenameString.substr(3, pos - 3);										  // "converted_dynamic_faith_102"
+					auto source = filenameString.substr(pos + 6, filenameString.size() - 10 - pos); // shaving off .txt extension, "orthodox"
 					if (eu4ToVic2ReligionMap.count(source))
 					{
 						auto destination = eu4ToVic2ReligionMap[source];

@@ -7,7 +7,7 @@ mappers::TerrainDataMapper::TerrainDataMapper()
 {
 	Log(LogLevel::Info) << "Loading Terrain Data.";
 	registerKeys();
-	parseFile("configurables/terrain_data.txt");
+	parseFile(std::filesystem::path("configurables/terrain_data.txt"));
 	clearRegisteredKeywords();
 }
 

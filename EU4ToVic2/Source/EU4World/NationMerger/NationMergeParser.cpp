@@ -5,7 +5,7 @@
 EU4::NationMergeParser::NationMergeParser()
 {
 	registerKeys();
-	parseFile("configurables/merge_nations.txt");
+	parseFile(std::filesystem::path("configurables/merge_nations.txt"));
 	clearRegisteredKeywords();
 }
 

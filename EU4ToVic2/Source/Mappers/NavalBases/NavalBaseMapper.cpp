@@ -9,7 +9,7 @@ mappers::NavalBaseMapper::NavalBaseMapper()
 {
 	Log(LogLevel::Info) << "Finding coastal provinces.";
 	registerKeys();
-	parseFile(theConfiguration.getVic2Path() + "/map/positions.txt");
+	parseFile(theConfiguration.getVic2Path() / "map/positions.txt");
 	clearRegisteredKeywords();
 }
 

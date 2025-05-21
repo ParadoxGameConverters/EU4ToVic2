@@ -8,7 +8,7 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 {
 	const std::set<std::string> skip = {"AAA", "REB", "ALL", "CAT", "NAP", "YUE", "HRE", "MIN", "YAO", "GUR"};
 
-	std::ofstream outLoc("output/" + theConfiguration.getOutputName() + "/localisation/02_NNM_gtfo.csv");
+	std::ofstream outLoc("output" / theConfiguration.getOutputName() / "localisation/02_NNM_gtfo.csv");
 	if (!outLoc.is_open())
 		Log(LogLevel::Debug) << "Could not open 02_NNM_gtfo.csv for writing!";
 	outLoc << ";;;;;;;;;;;;x,,,,,,,,,,,,,\n";
@@ -21,7 +21,7 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 	outLoc << "gtfo_disabled_desc;The 'Release Vassal' decisions will disappear from this game session and won't reappear again. You won't be able to use these "
 				 "decisions again for this game.;;;;;;;;;;;;x,,\n";
 
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/decisions/gtfo.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "decisions/gtfo.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not open gtfo.txt for writing!");
 	output << "political_decisions = {\n";
@@ -79,8 +79,8 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 		else
 		{
 			const auto& commonCountryFile = country->getCommonCountryFile();
-			const auto& dotPos = commonCountryFile.find_first_of('.');
-			countryName = commonCountryFile.substr(0, dotPos);
+			const auto& dotPos = commonCountryFile.string().find_first_of('.');
+			countryName = commonCountryFile.string().substr(0, dotPos);
 		}
 
 		output << "\n";
@@ -122,7 +122,7 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 {
 	const std::set<std::string> skip = {"AAA", "REB", "ALL", "CAT", "NAP", "YUE", "HRE", "MIN", "YAO"};
 
-	std::ofstream outLoc("output/" + theConfiguration.getOutputName() + "/localisation/00_HPM_return_cores.csv");
+	std::ofstream outLoc("output" / theConfiguration.getOutputName() / "localisation/00_HPM_return_cores.csv");
 	if (!outLoc.is_open())
 		Log(LogLevel::Debug) << "Could not open 00_HPM_return_cores.csv for writing!";
 	outLoc << ";;;;;;;;;;;;x,,,,,,,,,,,,,\n";
@@ -135,7 +135,7 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 	outLoc << "return_core_disabled_desc;The 'Return Cores' decisions will disappear from this game session and won't reappear again. You won't be able to use "
 				 "these decisions again for this game.;;;;;;;;;;;;x,,\n";
 
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/decisions/Return_cores.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "decisions/Return_cores.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not open Return_cores.txt for writing!");
 	output << "political_decisions = {\n";
@@ -199,8 +199,8 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 		else
 		{
 			const auto& commonCountryFile = country->getCommonCountryFile();
-			const auto& dotPos = commonCountryFile.find_first_of('.');
-			countryName = commonCountryFile.substr(0, dotPos);
+			const auto& dotPos = commonCountryFile.string().find_first_of('.');
+			countryName = commonCountryFile.string().substr(0, dotPos);
 		}
 
 		output << "\n";

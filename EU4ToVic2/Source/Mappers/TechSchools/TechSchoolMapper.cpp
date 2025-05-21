@@ -6,7 +6,7 @@
 mappers::TechSchoolMapper::TechSchoolMapper()
 {
 	registerKeys();
-	parseFile(theConfiguration.getVic2Path() + "/common/technology.txt");
+	parseFile(theConfiguration.getVic2Path() / "common/technology.txt");
 	clearRegisteredKeywords();
 }
 

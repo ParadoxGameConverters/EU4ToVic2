@@ -2,7 +2,7 @@
 #include "CommonRegexes.h"
 #include "ParserHelpers.h"
 
-mappers::ProvinceDetailsMapper::ProvinceDetailsMapper(const std::string& filename)
+mappers::ProvinceDetailsMapper::ProvinceDetailsMapper(const std::filesystem::path& filename)
 {
 	registerKeys();
 	parseFile(filename);

@@ -7,7 +7,7 @@ mappers::PartyTypeMapper::PartyTypeMapper()
 {
 	Log(LogLevel::Info) << "Parsing party detail blobs.";
 	registerKeys();
-	parseFile("configurables/party_blobs.txt");
+	parseFile(std::filesystem::path("configurables/party_blobs.txt"));
 	clearRegisteredKeywords();
 }
 

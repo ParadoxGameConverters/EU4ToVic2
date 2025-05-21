@@ -10,28 +10,28 @@ mappers::RegionLocalizations::RegionLocalizations()
 {
 	Log(LogLevel::Info) << "Parsing Region Localizations.";
 
-	auto locFiles = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation/");
+	auto locFiles = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() / "localisation");
 	for (const auto& locFile: locFiles)
 	{
-		auto position = locFile.find("l_english");
+		auto position = locFile.string().find("l_english");
 		if (position != std::string::npos)
 		{
 			auto locMap = chopFile(locFile);
 			engLocalisations.insert(locMap.begin(), locMap.end());
 		}
-		position = locFile.find("l_french");
+		position = locFile.string().find("l_french");
 		if (position != std::string::npos)
 		{
 			auto locMap = chopFile(locFile);
 			fraLocalisations.insert(locMap.begin(), locMap.end());
 		}
-		position = locFile.find("l_spanish");
+		position = locFile.string().find("l_spanish");
 		if (position != std::string::npos)
 		{
 			auto locMap = chopFile(locFile);
 			spaLocalisations.insert(locMap.begin(), locMap.end());
 		}
-		position = locFile.find("l_german");
+		position = locFile.string().find("l_german");
 		if (position != std::string::npos)
 		{
 			auto locMap = chopFile(locFile);
@@ -42,11 +42,11 @@ mappers::RegionLocalizations::RegionLocalizations()
 							  << gerLocalisations.size();
 }
 
-std::map<std::string, std::string> mappers::RegionLocalizations::chopFile(const std::string& locFile) const
+std::map<std::string, std::string> mappers::RegionLocalizations::chopFile(const std::filesystem::path& locFile) const
 {
-	auto theFile = std::ifstream(fs::u8path(theConfiguration.getEU4Path() + "/localisation/" + locFile));
+	auto theFile = std::ifstream(theConfiguration.getEU4Path() / "localisation" / locFile);
 	if (!theFile.is_open())
-		throw std::runtime_error("Cannot open area/region localizations at " + theConfiguration.getEU4Path() + "/localisation/" + locFile);
+		throw std::runtime_error("Cannot open area/region localizations at " + theConfiguration.getEU4Path().string() + "/localisation/" + locFile.string());
 
 	std::map<std::string, std::string> storedLocs;
 	std::string line;

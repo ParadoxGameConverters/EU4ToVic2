@@ -236,21 +236,21 @@ void V2::Diplomacy::sphereHRE(bool hreDecentralized, const std::shared_ptr<Count
 
 void V2::Diplomacy::output() const
 {
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/diplomacy");
 
-	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");
+	std::ofstream alliances("output" / theConfiguration.getOutputName() / "history/diplomacy/Alliances.txt");
 	if (!alliances.is_open())
 		throw std::runtime_error("Could not create alliances history file!");
 
-	std::ofstream guarantees("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt");
+	std::ofstream guarantees("output" / theConfiguration.getOutputName() / "history/diplomacy/Guarantees.txt");
 	if (!guarantees.is_open())
 		throw std::runtime_error("Could not create guarantees history file!");
 
-	std::ofstream puppetStates("output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt");
+	std::ofstream puppetStates("output" / theConfiguration.getOutputName() / "history/diplomacy/PuppetStates.txt");
 	if (!puppetStates.is_open())
 		throw std::runtime_error("Could not create puppet states history file!");
 
-	std::ofstream unions("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt");
+	std::ofstream unions("output" / theConfiguration.getOutputName() / "history/diplomacy/Unions.txt");
 	if (!unions.is_open())
 		throw std::runtime_error("Could not create unions history file!");
 

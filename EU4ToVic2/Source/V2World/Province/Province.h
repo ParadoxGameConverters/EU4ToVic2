@@ -46,7 +46,7 @@ struct Demographic
 class Province
 {
   public:
-	Province(std::string _filename,
+	Province(std::filesystem::path _filename,
 		 const mappers::ClimateMapper& climateMapper,
 		 const mappers::TerrainDataMapper& terrainDataMapper,
 		 const ProvinceNameParser& provinceNameParser,
@@ -129,7 +129,7 @@ class Province
   private:
 	int provinceID = 0;
 	std::string name;
-	std::string filename;
+	std::filesystem::path filename;
 	int vanillaPopulation = 0;
 	double slaveProportion = 0.0;
 	bool coastal = false;

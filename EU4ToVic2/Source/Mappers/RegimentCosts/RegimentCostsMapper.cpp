@@ -7,7 +7,7 @@ mappers::RegimentCostsMapper::RegimentCostsMapper()
 {
 	Log(LogLevel::Info) << "Parsing regiment costs";
 	registerKeys();
-	parseFile("configurables/regiment_costs.txt");
+	parseFile(std::filesystem::path("configurables/regiment_costs.txt"));
 	clearRegisteredKeywords();
 }
 

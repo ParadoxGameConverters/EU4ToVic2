@@ -416,7 +416,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>pch.lib;CommonItems.lib</AdditionalDependencies>
+      <AdditionalDependencies>pch.lib;CommonItems.lib;zip.lib</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)lib</AdditionalLibraryDirectories>

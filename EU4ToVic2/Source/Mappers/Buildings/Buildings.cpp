@@ -8,12 +8,12 @@ mappers::Buildings::Buildings()
 {
 	registerKeys();
 
-	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/buildings/"))
-		parseFile(theConfiguration.getEU4Path() + "/common/buildings/" + filename);
+	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() / "common/buildings"))
+		parseFile(theConfiguration.getEU4Path() / "common/buildings" / filename);
 
 	for (const auto& mod: theConfiguration.getMods())
-		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path + "/common/buildings/"))
-			parseFile(mod.path + "/common/buildings/" + filename);
+		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path / "common/buildings"))
+			parseFile(mod.path / "common/buildings" / filename);
 
 	clearRegisteredKeywords();
 }

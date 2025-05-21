@@ -10,8 +10,8 @@ mappers::FactoryTechMapper::FactoryTechMapper()
 {
 	Log(LogLevel::Info) << "Parsing V2 Factory Techs";
 	registerKeys();
-	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/technologies/"))
-		parseFile(theConfiguration.getVic2Path() + "/technologies/" + filename);
+	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() / "technologies"))
+		parseFile(theConfiguration.getVic2Path() / "technologies" / filename);
 	clearRegisteredKeywords();
 }
 

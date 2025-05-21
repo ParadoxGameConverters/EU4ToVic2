@@ -8,7 +8,7 @@ namespace mappers
 class CulturalUnionMapper: commonItems::parser
 {
   public:
-	CulturalUnionMapper(const std::string& filename);
+	CulturalUnionMapper(const std::filesystem::path& filename);
 	explicit CulturalUnionMapper(std::istream& theStream);
 
 	[[nodiscard]] std::set<std::string> getCoresForCulture(const std::string& culture) const;

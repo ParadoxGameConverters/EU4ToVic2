@@ -13,7 +13,7 @@ class ModCommons: commonItems::parser
 {
   public:
 	ModCommons() = default;
-	ModCommons(const std::string& tag, const std::string& filename);
+	ModCommons(const std::string& tag, const std::filesystem::path& filename);
 
 	void setPartyDates();
 

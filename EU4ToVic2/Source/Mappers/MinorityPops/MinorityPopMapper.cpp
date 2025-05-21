@@ -6,7 +6,7 @@
 mappers::MinorityPopMapper::MinorityPopMapper()
 {
 	registerKeys();
-	parseFile("configurables/minority_pops.txt");
+	parseFile(std::filesystem::path("configurables/minority_pops.txt"));
 	clearRegisteredKeywords();
 }
 

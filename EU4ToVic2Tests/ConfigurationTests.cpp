@@ -3,7 +3,7 @@
 #include <sstream>
 
 
-bool fakeDoesFolderExist(const std::string& folder)
+bool fakeDoesFolderExist(const std::filesystem::path& folder)
 {
 	if (folder == "C:\\EU4PathWithoutExecutable")
 	{
@@ -40,7 +40,7 @@ bool fakeDoesFolderExist(const std::string& folder)
 }
 
 
-bool fakeDoesFileExist(const std::string& file)
+bool fakeDoesFileExist(const std::filesystem::path& file)
 {
 	if (file == "C:\\EU4PathWithoutDataFile/eu4.exe")
 	{

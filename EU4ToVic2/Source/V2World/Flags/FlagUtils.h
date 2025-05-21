@@ -6,13 +6,15 @@
 
 namespace V2
 {
-bool createColonialFlag(const std::string& colonialOverlordPath, const std::string& colonialBasePath, const std::string& targetPath);
+bool createColonialFlag(const std::filesystem::path& colonialOverlordPath,
+	 const std::filesystem::path& colonialBasePath,
+	 const std::filesystem::path& targetPath);
 bool createCustomFlag(const commonItems::Color& c1,
 	 const commonItems::Color& c2,
 	 const commonItems::Color& c3,
-	 const std::string& emblemPath,
-	 const std::string& basePath,
-	 const std::string& targetPath);
+	 const std::filesystem::path& emblemPath,
+	 const std::filesystem::path& basePath,
+	 const std::filesystem::path& targetPath);
 } // namespace V2
 
 #endif // FLAG_UTILS_H

@@ -9,7 +9,7 @@ class UnitType: commonItems::parser
   public:
 	UnitType() = default;
 	explicit UnitType(std::istream& theStream);
-	explicit UnitType(const std::string& filePath);
+	explicit UnitType(const std::filesystem::path& filePath);
 
 	void setStrength(const int theStrength) { strength = theStrength; }
 

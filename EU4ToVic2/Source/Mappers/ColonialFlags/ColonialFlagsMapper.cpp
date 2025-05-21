@@ -6,7 +6,7 @@ mappers::ColonialFlagsMapper::ColonialFlagsMapper()
 {
 	Log(LogLevel::Info) << "Loading colonial flag registry.";
 	registerKeys();
-	parseFile("configurables/colonial_flags.txt");
+	parseFile(std::filesystem::path("configurables/colonial_flags.txt"));
 	clearRegisteredKeywords();
 }
 

@@ -7,7 +7,7 @@ mappers::PortProvinces::PortProvinces()
 {
 	Log(LogLevel::Info) << "Parsing black and white ports.";
 	registerKeys();
-	parseFile("configurables/port_provinces.txt");
+	parseFile(std::filesystem::path("configurables/port_provinces.txt"));
 	clearRegisteredKeywords();
 }
 

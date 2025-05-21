@@ -7,27 +7,27 @@ namespace fs = std::filesystem;
 
 V2::ProvinceNameParser::ProvinceNameParser()
 {
-	if (commonItems::DoesFileExist("./blankMod/output/localisation/text.csv"))
+	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/localisation/text.csv")))
 	{
-		importProvinceLocalizations("./blankMod/output/localisation/text.csv");
+		importProvinceLocalizations(std::filesystem::path("blankMod/output/localisation/text.csv"));
 	}
-	const auto& locFolder = theConfiguration.getVic2Path() + "/localisation";
+	const auto& locFolder = theConfiguration.getVic2Path() / "localisation";
 	if (commonItems::DoesFolderExist(locFolder))
 	{
 		for (const auto& locFile: commonItems::GetAllFilesInFolderRecursive(locFolder))
 		{
-			importProvinceLocalizations(locFolder + "/" + locFile);
+			importProvinceLocalizations(locFolder / locFile);
 		}
 	}
 	if (theConfiguration.isHpmEnabled())
 	{
-		importProvinceLocalizations(theConfiguration.getVanillaVic2Path() + "/localisation/text.csv");
+		importProvinceLocalizations(theConfiguration.getVanillaVic2Path() / "localisation/text.csv");
 	}
 }
 
-void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file)
+void V2::ProvinceNameParser::importProvinceLocalizations(const std::filesystem::path& file)
 {
-	std::ifstream locFile(fs::u8path(file));
+	std::ifstream locFile(file);
 
 	while (locFile.good() && !locFile.eof())
 	{

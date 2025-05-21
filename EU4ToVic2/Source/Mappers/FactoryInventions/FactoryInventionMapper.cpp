@@ -10,8 +10,8 @@ mappers::FactoryInventionMapper::FactoryInventionMapper()
 {
 	Log(LogLevel::Info) << "Parsing V2 Factory Inventions";
 	registerKeys();
-	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/"))
-		parseFile(theConfiguration.getVic2Path() + "/inventions/" + filename);
+	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() / "inventions"))
+		parseFile(theConfiguration.getVic2Path() / "inventions" / filename);
 	clearRegisteredKeywords();
 }
 

@@ -6,7 +6,7 @@ mappers::WarGoalMapper::WarGoalMapper()
 {
 	Log(LogLevel::Info) << "Parsing War Goals.";
 	registerKeys();
-	parseFile("configurables/war_goal_map.txt");
+	parseFile(std::filesystem::path("configurables/war_goal_map.txt"));
 	clearRegisteredKeywords();
 }
 

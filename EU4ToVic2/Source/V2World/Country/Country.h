@@ -165,7 +165,7 @@ class Country
 	bool dynamicCountry = false; // true if this country is a Vic2 dynamic country
 	bool newCountry = false;	  // true if this country is being added by the converter, i.e. doesn't already exist in Vic2
 	std::string tag;
-	std::string commonCountryFile;
+	std::filesystem::path commonCountryFile;
 	std::shared_ptr<EU4::Country> srcCountry;
 	std::optional<UncivReforms> uncivReforms;
 	std::optional<Reforms> reforms;
@@ -185,7 +185,7 @@ class Country
 	EU4::NationalSymbol nationalColors;
 	ModCommons modCommons;
 
-	[[nodiscard]] std::optional<std::string> getFileFromTag(const std::string& directoryPath, const std::string& tag) const;
+	[[nodiscard]] std::optional<std::filesystem::path> getFileFromTag(const std::filesystem::path& directoryPath, const std::string& theTag) const;
 	void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 	void initParties(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 	void setReligion(const std::string& religion, const mappers::ReligionMapper& religionMapper);

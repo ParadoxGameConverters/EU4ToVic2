@@ -9,14 +9,14 @@ mappers::StateMapper::StateMapper()
 	Log(LogLevel::Info) << "Parsing state region structure.";
 	registerKeys();
 
-	std::string filename;
-	if (commonItems::DoesFileExist("./blankMod/output/map/region.txt"))
+	std::filesystem::path filename;
+	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/map/region.txt")))
 	{
-		filename = "./blankMod/output/map/region.txt";
+		filename = std::filesystem::path("blankMod/output/map/region.txt");
 	}
 	else
 	{
-		filename = theConfiguration.getVic2Path() + "/map/region.txt";
+		filename = theConfiguration.getVic2Path() / "map/region.txt";
 	}
 
 	parseFile(filename);

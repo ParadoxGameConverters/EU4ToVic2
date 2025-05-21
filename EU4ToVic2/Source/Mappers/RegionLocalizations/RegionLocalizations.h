@@ -23,7 +23,7 @@ class RegionLocalizations
 	std::map<std::string, std::string> gerLocalisations;
 	std::map<std::string, std::string> fraLocalisations;
 
-	std::map<std::string, std::string> chopFile(const std::string& locFile) const;
+	std::map<std::string, std::string> chopFile(const std::filesystem::path& locFile) const;
 };
 } // namespace mappers
 

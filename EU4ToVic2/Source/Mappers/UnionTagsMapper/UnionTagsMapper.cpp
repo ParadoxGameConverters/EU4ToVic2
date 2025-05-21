@@ -7,7 +7,7 @@ mappers::UnionTagsMapper::UnionTagsMapper()
 {
 	Log(LogLevel::Info) << "Parsing union tags.";
 	registerKeys();
-	parseFile("configurables/union_tags.txt");
+	parseFile(std::filesystem::path("configurables/union_tags.txt"));
 	clearRegisteredKeywords();
 }
 

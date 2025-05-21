@@ -263,7 +263,7 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 						else
 						{
 							Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
-							throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+							throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path().string() + "/mod/HPM");
 						}
 					}
 					if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
@@ -479,7 +479,7 @@ void EU4::World::fillHistoricalData()
 void EU4::World::verifySave()
 {
 	const auto& savePath = theConfiguration.getEU4SaveGamePath();
-	const std::ifstream saveFile(std::filesystem::u8path(savePath), std::ios::in | std::ios::binary);
+	const std::ifstream saveFile(savePath, std::ios::in | std::ios::binary);
 	std::stringstream inStream;
 	inStream << saveFile.rdbuf();
 	saveGame.gamestate = inStream.str();
@@ -513,7 +513,7 @@ void EU4::World::verifySave()
 		melt.writeData(saveGame.gamestate);
 	}
 
-	zip_t* zip = zip_open(savePath.c_str(), 0, 'r');
+	zip_t* zip = zip_open(savePath.string().c_str(), 0, 'r');
 	const auto entriesCount = zip_entries_total(zip);
 	if (entriesCount > 3)
 		throw std::runtime_error("Unrecognized savegame structure! RNW savegames are NOT supported!");
@@ -588,16 +588,16 @@ void EU4::World::assignProvincesToAreas(const std::map<std::string, std::set<int
 
 void EU4::World::loadEU4RegionsOldVersion()
 {
-	auto regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
+	auto regionFilename = theConfiguration.getEU4Path() / "map/region.txt";
 
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(mod.path + "/map/region.txt"))
+		if (!commonItems::DoesFileExist(mod.path / "map/region.txt"))
 			continue;
-		regionFilename = mod.path + "/map/region.txt";
+		regionFilename = mod.path / "map/region.txt";
 	}
 
-	std::ifstream theStream(fs::u8path(regionFilename));
+	std::ifstream theStream(regionFilename);
 	Areas installedAreas(theStream);
 	theStream.close();
 	assignProvincesToAreas(installedAreas.getAreas());
@@ -607,42 +607,42 @@ void EU4::World::loadEU4RegionsOldVersion()
 
 void EU4::World::loadEU4RegionsNewVersion()
 {
-	auto areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
-	auto regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
-	auto superRegionFilename = theConfiguration.getEU4Path() + "/map/superregion.txt";
+	auto areaFilename = theConfiguration.getEU4Path() / "map/area.txt";
+	auto regionFilename = theConfiguration.getEU4Path() / "map/region.txt";
+	auto superRegionFilename = theConfiguration.getEU4Path() / "map/superregion.txt";
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(mod.path + "/map/area.txt"))
+		if (!commonItems::DoesFileExist(mod.path / "map/area.txt"))
 			continue;
-		areaFilename = mod.path + "/map/area.txt";
+		areaFilename = mod.path / "map/area.txt";
 	}
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(mod.path + "/map/region.txt"))
+		if (!commonItems::DoesFileExist(mod.path / "map/region.txt"))
 			continue;
-		regionFilename = mod.path + "/map/region.txt";
+		regionFilename = mod.path / "map/region.txt";
 	}
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(mod.path + "/map/superregion.txt"))
+		if (!commonItems::DoesFileExist(mod.path / "map/superregion.txt"))
 			continue;
-		superRegionFilename = mod.path + "/map/superregion.txt";
+		superRegionFilename = mod.path / "map/superregion.txt";
 	}
 
-	std::ifstream areaStream(fs::u8path(areaFilename));
+	std::ifstream areaStream(areaFilename);
 	if (!areaStream.is_open())
 		throw std::runtime_error("Could not open map/area.txt!");
 	Areas installedAreas(areaStream);
 	areaStream.close();
 	assignProvincesToAreas(installedAreas.getAreas());
 
-	std::ifstream superRegionFile(fs::u8path(superRegionFilename));
+	std::ifstream superRegionFile(superRegionFilename);
 	if (!superRegionFile.is_open())
 		throw std::runtime_error("Could not open map/superregion.txt!");
 	SuperRegions sRegions(superRegionFile);
 	superRegionFile.close();
 
-	std::ifstream regionStream(fs::u8path(regionFilename));
+	std::ifstream regionStream(regionFilename);
 	if (!regionStream.is_open())
 		throw std::runtime_error("Could not open map/region.txt!");
 	regions = std::make_unique<Regions>(sRegions, installedAreas, regionStream);
@@ -651,22 +651,22 @@ void EU4::World::loadEU4RegionsNewVersion()
 
 void EU4::World::readCommonCountries()
 {
-	std::ifstream commonCountries(fs::u8path(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt"));
+	std::ifstream commonCountries(theConfiguration.getEU4Path() / "common/country_tags/00_countries.txt");
 	if (!commonCountries.is_open())
-		throw std::runtime_error("Could not open " + theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt!");
+		throw std::runtime_error("Could not open " + theConfiguration.getEU4Path().string() + "/common/country_tags/00_countries.txt!");
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 
 	for (const auto& mod: theConfiguration.getMods())
-		for (const auto& fileName: commonItems::GetAllFilesInFolder(mod.path + "/common/country_tags/"))
+		for (const auto& fileName: commonItems::GetAllFilesInFolder(mod.path / "common/country_tags/"))
 		{
-			std::ifstream convertedCommonCountries(fs::u8path(mod.path + "/common/country_tags/" + fileName));
+			std::ifstream convertedCommonCountries(mod.path / "common/country_tags" / fileName);
 			if (!convertedCommonCountries.is_open())
-				throw std::runtime_error("Could not open " + mod.path + "/common/country_tags/" + fileName + "!");
+				throw std::runtime_error("Could not open " + mod.path.string() + "/common/country_tags/" + fileName.string() + "!");
 			readCommonCountriesFile(convertedCommonCountries, mod.path);
 		}
 }
 
-void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& rootPath)
+void EU4::World::readCommonCountriesFile(std::istream& in, const std::filesystem::path& rootPath)
 {
 	std::string line;
 	while (!in.eof())
@@ -693,8 +693,8 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 				fileName = commonItems::remQuotes(fileName); // This will clear quotes if any.
 
 				// Parse the country file.
-				auto fullFilename = rootPath + "/common/" + fileName;
-				auto localFileName = trimPath(fullFilename);
+				auto fullFilename = rootPath / "common" / fileName;
+				auto localFileName = fullFilename.filename();
 				if (commonItems::DoesFileExist(fullFilename))
 				{
 					country->readFromCommonCountry(localFileName, fullFilename);
@@ -702,11 +702,11 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 				else
 				{
 					// Try in vanilla if nothing in mods.
-					fullFilename = theConfiguration.getEU4Path() + "/common/" + fileName;
+					fullFilename = theConfiguration.getEU4Path() / "common" / fileName;
 					if (commonItems::DoesFileExist(fullFilename))
 						country->readFromCommonCountry(localFileName, fullFilename);
 					else
-						Log(LogLevel::Warning) << "Where is country file for " << tag << ": " << fullFilename << "?";
+						Log(LogLevel::Warning) << "Where is country file for " << tag << ": " << fullFilename.string() << "?";
 				}
 			}
 		}
@@ -882,9 +882,9 @@ void EU4::World::importShatteredHreTag()
 		const auto& modFiles = commonItems::GetAllFilesInFolder(mod.path);
 		for (const auto& file: modFiles)
 		{
-			if (file == "i_am_hre.txt")
+			if (file.filename().string() == "i_am_hre.txt")
 			{
-				std::ifstream inStream(mod.path + "i_am_hre.txt");
+				std::ifstream inStream(mod.path / "i_am_hre.txt");
 				std::ostringstream incomingTag;
 				incomingTag << inStream.rdbuf();
 				inStream.close();

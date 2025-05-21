@@ -2,23 +2,25 @@
 #include "Log.h"
 #include "targa.h"
 
-bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::string& colonialBasePath, const std::string& targetPath)
+bool V2::createColonialFlag(const std::filesystem::path& colonialOverlordPath,
+	 const std::filesystem::path& colonialBasePath,
+	 const std::filesystem::path& targetPath)
 {
 	tga_image ColonialBase;
 	tga_image Corner;
 
-	tga_result res = tga_read(&ColonialBase, colonialBasePath.c_str());
+	tga_result res = tga_read(&ColonialBase, colonialBasePath.string().c_str());
 	if (0 != res)
 	{
-		Log(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialBasePath;
+		Log(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialBasePath.string();
 		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
-	res = tga_read(&Corner, colonialOverlordPath.c_str());
+	res = tga_read(&Corner, colonialOverlordPath.string().c_str());
 	if (0 != res)
 	{
-		Log(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialOverlordPath;
+		Log(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialOverlordPath.string();
 		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
@@ -61,10 +63,10 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 			}
 		}
 	}
-	res = tga_write(targetPath.c_str(), &ColonialBase);
+	res = tga_write(targetPath.string().c_str(), &ColonialBase);
 	if (0 != res)
 	{
-		Log(LogLevel::Error) << "Failed to create colonial flag: could not write to " << targetPath;
+		Log(LogLevel::Error) << "Failed to create colonial flag: could not write to " << targetPath.string();
 		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
@@ -75,25 +77,25 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 bool V2::createCustomFlag(const commonItems::Color& c1,
 	 const commonItems::Color& c2,
 	 const commonItems::Color& c3,
-	 const std::string& emblemPath,
-	 const std::string& basePath,
-	 const std::string& targetPath)
+	 const std::filesystem::path& emblemPath,
+	 const std::filesystem::path& basePath,
+	 const std::filesystem::path& targetPath)
 {
 	tga_image base;
 	tga_image emblem;
 
-	auto res = tga_read(&base, basePath.c_str());
+	auto res = tga_read(&base, basePath.string().c_str());
 	if (res)
 	{
-		Log(LogLevel::Error) << "Failed to create custom flag: could not open " << basePath;
+		Log(LogLevel::Error) << "Failed to create custom flag: could not open " << basePath.string();
 		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
-	res = tga_read(&emblem, emblemPath.c_str());
+	res = tga_read(&emblem, emblemPath.string().c_str());
 	if (res)
 	{
-		Log(LogLevel::Error) << "Failed to create custom flag: could not open " << emblemPath;
+		Log(LogLevel::Error) << "Failed to create custom flag: could not open " << emblemPath.string();
 		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
@@ -158,10 +160,10 @@ bool V2::createCustomFlag(const commonItems::Color& c1,
 		}
 	}
 
-	res = tga_write(targetPath.c_str(), &base);
+	res = tga_write(targetPath.string().c_str(), &base);
 	if (res)
 	{
-		Log(LogLevel::Error) << "Failed to create custom flag: could not write to " << targetPath;
+		Log(LogLevel::Error) << "Failed to create custom flag: could not write to " << targetPath.string();
 		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}

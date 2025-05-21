@@ -490,13 +490,12 @@ void EU4::Country::determineLibertyDesire()
 	}
 }
 
-void EU4::Country::readFromCommonCountry(const std::string& fileName, const std::string& fullFileName)
+void EU4::Country::readFromCommonCountry(const std::filesystem::path& fileName, const std::filesystem::path& fullFileName)
 {
 	if (name.empty())
 	{
 		// For this country's name we will use the stem of the file name.
-		const auto extPos = fileName.find_last_of('.');
-		name = fileName.substr(0, extPos);
+		name = fileName.stem().string();
 	}
 
 	if (!nationalColors.getMapColor())
