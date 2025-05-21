@@ -1741,9 +1741,6 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion, co
 	Log(LogLevel::Progress) << "85 %";
 
 	// Create common\countries path.
-	const std::filesystem::path countriesPath = "output" / theConfiguration.getOutputName() / "common/countries";
-	Log(LogLevel::Progress) << "86 %";
-
 	// Output common\countries.txt
 	Log(LogLevel::Info) << "<- Creating countries.txt";
 	outputCommonCountries();
