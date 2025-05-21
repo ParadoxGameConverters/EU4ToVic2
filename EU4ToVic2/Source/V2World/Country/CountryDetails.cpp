@@ -24,7 +24,7 @@ V2::CountryDetails::CountryDetails(std::filesystem::path _filename): filename(st
 	{
 		parseFile(theConfiguration.getVic2Path() / "history/countries" / filename);
 	}
-   // what if HPM
+	// what if HPM
 	else if (theConfiguration.isHpmEnabled() && commonItems::DoesFileExist("configurables/HPM/common/countries" / filename))
 	{
 		parseFile("configurables/HPM/common/countries" / filename);

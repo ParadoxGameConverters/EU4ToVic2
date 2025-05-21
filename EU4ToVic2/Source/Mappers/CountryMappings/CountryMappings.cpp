@@ -13,7 +13,8 @@
 #include <locale>
 
 mappers::CountryMappings::CountryMappings():
-	 titleMapper(std::make_unique<TitleMapper>()), colonialTagMapper(std::make_unique<ColonialTagMapper>()),
+	 titleMapper(std::make_unique<TitleMapper>()),
+	 colonialTagMapper(std::make_unique<ColonialTagMapper>()),
 	 v2provinceRegionsMapper(std::make_unique<V2ProvinceRegionsMapper>())
 {
 	/* This rather involved mapper is at the heart of the converter. Unlike simpler title->tag mappers of CK* series, this one requires a lot of sub-mappers.
@@ -33,7 +34,8 @@ mappers::CountryMappings::CountryMappings(std::istream& mainStream,
 	 std::istream& titleMapperStream,
 	 std::istream& v2RegionsStream,
 	 std::istream& colonialTagStream):
-	 titleMapper(std::make_unique<TitleMapper>(titleMapperStream)), colonialTagMapper(std::make_unique<ColonialTagMapper>(colonialTagStream)),
+	 titleMapper(std::make_unique<TitleMapper>(titleMapperStream)),
+	 colonialTagMapper(std::make_unique<ColonialTagMapper>(colonialTagStream)),
 	 v2provinceRegionsMapper(std::make_unique<V2ProvinceRegionsMapper>(v2RegionsStream))
 {
 	registerKeys();
