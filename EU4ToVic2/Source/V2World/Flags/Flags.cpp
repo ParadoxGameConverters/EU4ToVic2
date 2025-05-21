@@ -284,16 +284,7 @@ void V2::Flags::output() const
 
 void V2::Flags::createOutputFolders()
 {
-	if (!std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "gfx"))
-	{
-		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName().string() << "/gfx";
-		exit(-1);
-	}
-	if (!std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "gfx/flags"))
-	{
-		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName().string() << "/gfx/flags";
-		exit(-1);
-	}
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "gfx/flags");
 }
 
 void V2::Flags::copyFlags() const

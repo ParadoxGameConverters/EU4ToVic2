@@ -1718,7 +1718,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion, co
 	Log(LogLevel::Progress) << "80 %";
 
 	Log(LogLevel::Info) << "<- Copying Mod Template";
-	std::filesystem::copy("blankMod/output", "output/output");
+	std::filesystem::copy("blankMod/output", "output/output", std::filesystem::copy_options::recursive);
 	Log(LogLevel::Progress) << "81 %";
 
 	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
@@ -1741,10 +1741,6 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion, co
 
 	// Create common\countries path.
 	const std::filesystem::path countriesPath = "output" / theConfiguration.getOutputName() / "common/countries";
-	if (!std::filesystem::create_directories(countriesPath))
-	{
-		return;
-	}
 	Log(LogLevel::Progress) << "86 %";
 
 	// Output common\countries.txt
@@ -1924,7 +1920,7 @@ void V2::World::outputCommonCountries() const
 		// First output all regular countries, order matters!
 		if (dynamic == dynamicCountries.end())
 		{
-			output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()) << "\"\n";
+			output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()).string() << "\"\n";
 		}
 	}
 	output << "\n";
@@ -1932,7 +1928,7 @@ void V2::World::outputCommonCountries() const
 	output << "dynamic_tags = yes # any tags after this is considered dynamic dominions\n";
 	for (const auto& country: dynamicCountries)
 	{
-		output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()) << "\"\n";
+		output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()).string() << "\"\n";
 	}
 	output.close();
 }
@@ -1998,8 +1994,7 @@ void V2::World::outputProvinces() const
 	{
 		auto filename = province.second->getFilename();
 		auto path = filename.parent_path();
-		if (!std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/provinces" / path))
-			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName().string() + "/history/provinces/" + path.string());
+		std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/provinces" / path);
 
 		// VN override. Can we copy over original province files? This is relevant out of scope where those provinces carry factories we know nothing about.
 		bool fileDone = false;
@@ -2153,7 +2148,7 @@ void V2::World::modifyDefines() const
 void V2::World::verifyCountriesWritten() const
 {
 	std::ifstream v2CountriesInput;
-	v2CountriesInput.open(("output" / theConfiguration.getOutputName() / "common/countries.txt").c_str());
+	v2CountriesInput.open("output" / theConfiguration.getOutputName() / "common/countries.txt");
 	if (!v2CountriesInput.is_open())
 		throw std::runtime_error("Could not open countries.txt");
 

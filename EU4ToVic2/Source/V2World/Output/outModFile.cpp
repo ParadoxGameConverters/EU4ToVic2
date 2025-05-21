@@ -4,8 +4,8 @@
 std::ostream& V2::operator<<(std::ostream& output, const ModFile& modFile)
 {
 	output << "name = \"Converted - " << Localisation::convert(theConfiguration.getActualName().string()) << "\"\n";
-	output << "path = \"mod/" << theConfiguration.getOutputName() << "\"\n";
-	output << "user_dir = \"" << theConfiguration.getOutputName() << "\"\n";
+	output << "path = \"mod/" << theConfiguration.getOutputName().string() << "\"\n";
+	output << "user_dir = \"" << theConfiguration.getOutputName().string() << "\"\n";
 	output << "replace = \"history/provinces\"\n";
 	output << "replace = \"history/countries\"\n";
 	output << "replace = \"history/diplomacy\"\n";
