@@ -487,7 +487,7 @@ link = { vic2 = saahi eu4 = turco_iranian eu4 = tajik eu4 = persian eu4 = saka e
 link = { vic2 = tajik eu4 = persian region = central_asia_region }
 link = { vic2 = tajik eu4 = tajik eu4 = sogdian eu4 = tajihk }
 link = { vic2 = tocharian eu4 = tocharian }
-link = { vic2 = persian eu4 = turco_iranian eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mervi eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = luri_colonial eu4 = qashqai }
+link = { vic2 = persian eu4 = khwarezmian eu4 = turco_iranian eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mervi eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = luri_colonial eu4 = qashqai }
 link = { vic2 = sarmatian eu4 = sarmatian eu4 = iazyges eu4 = budinian eu4 = iazyx eu4 = roxolanian eu4 = scolotian }
 link = { vic2 = pashtun eu4 = east_persian eu4 = afghani eu4 = tabari eu4 = afghan eu4 = kushan eu4 = pashtun }
 link = { vic2 = baluchi eu4 = baluchi eu4 = baloch }

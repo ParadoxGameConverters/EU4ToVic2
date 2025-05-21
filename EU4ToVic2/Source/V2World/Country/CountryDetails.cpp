@@ -7,7 +7,7 @@ V2::CountryDetails::CountryDetails(std::filesystem::path _filename): filename(st
 {
 	registerKeys();
 
-	if (commonItems::DoesFileExist(std::filesystem::path("./blankMod/output/common/countries/") / filename))
+	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/common/countries/") / filename))
 	{
 		parseFile(std::filesystem::path("blankMod/output/common/countries") / filename);
 	}
@@ -18,15 +18,20 @@ V2::CountryDetails::CountryDetails(std::filesystem::path _filename): filename(st
 	// Maybe we're initializing a dead nation. If so look in the /other/ place.
 	else if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/history/countries") / filename))
 	{
-		parseFile(std::filesystem::path("./blankMod/output/history/countries") / filename);
+		parseFile(std::filesystem::path("blankMod/output/history/countries") / filename);
 	}
 	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "history/countries" / filename))
 	{
 		parseFile(theConfiguration.getVic2Path() / "history/countries" / filename);
 	}
+   // what if HPM
+	else if (theConfiguration.isHpmEnabled() && commonItems::DoesFileExist("configurables/HPM/common/countries" / filename))
+	{
+		parseFile("configurables/HPM/common/countries" / filename);
+	}
 	else
 	{
-		Log(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
+		Log(LogLevel::Debug) << "Could not find file common/countries/" << filename.string() << " - skipping";
 	}
 	clearRegisteredKeywords();
 }

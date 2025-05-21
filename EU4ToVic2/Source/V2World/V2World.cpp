@@ -2043,7 +2043,7 @@ void V2::World::outputCountries() const
 				auto outPath = "output" / theConfiguration.getOutputName() / "history/countries" / clipCountryFileName(country.second->getFilename());
 				if (commonItems::DoesFileExist(filePath))
 				{
-					std::filesystem::copy_file(filePath, outPath);
+					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
 					commonsDone = true;
 				}
 
@@ -2051,7 +2051,7 @@ void V2::World::outputCountries() const
 				outPath = "output" / theConfiguration.getOutputName() / "common/countries" / clipCountryFileName(country.second->getCommonCountryFile());
 				if (commonItems::DoesFileExist(filePath))
 				{
-					std::filesystem::copy_file(filePath, outPath);
+					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
 					historyDone = true;
 				}
 
@@ -2059,7 +2059,7 @@ void V2::World::outputCountries() const
 				outPath = "output" / theConfiguration.getOutputName() / "history/units" / std::filesystem::path(country.first + "_OOB.txt");
 				if (commonItems::DoesFileExist(filePath))
 				{
-					std::filesystem::copy_file(filePath, outPath);
+					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
 					oobDone = true;
 				}
 			}
