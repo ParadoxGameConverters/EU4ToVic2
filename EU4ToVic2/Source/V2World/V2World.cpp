@@ -1721,7 +1721,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion, co
 	std::filesystem::copy("blankMod/output", "output/output", std::filesystem::copy_options::recursive);
 	Log(LogLevel::Progress) << "81 %";
 
-	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
+	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName().string();
 	std::filesystem::rename("output/output", "output" / theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "82 %";
 
@@ -1940,8 +1940,7 @@ void V2::World::outputLocalisation(const EU4::EU4Localization& localization) con
 
 	Log(LogLevel::Info) << "<- Writing Localization Names";
 	auto localisationPath = "output" / theConfiguration.getOutputName() / "localisation";
-	if (!std::filesystem::create_directories(localisationPath))
-		return;
+	std::filesystem::create_directories(localisationPath);
 
 	std::ofstream output(localisationPath / "0_Names.csv", std::ofstream::app);
 	if (!output.is_open())
@@ -2244,24 +2243,24 @@ void V2::World::copyHpmFiles() const
 	const auto& hpm = theConfiguration.getVic2Path();
 	const auto& out = "output" / theConfiguration.getOutputName();
 
-	std::filesystem::copy(hpm / "map", out / "map");
-	std::filesystem::copy_file("configurables/HPM/map/default.map", out / "map/default.map");
+	std::filesystem::copy(hpm / "map", out / "map", std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
+	std::filesystem::copy_file("configurables/HPM/map/default.map", out / "map/default.map", std::filesystem::copy_options::overwrite_existing);
 	std::ofstream defaultMap(out / "map/default.map", std::ios_base::app);
 	defaultMap << "\ndefinitions = \"../mod/" << theConfiguration.getOutputName().string() << "/map/definition.csv\"\n";
 	defaultMap.close();
 
 	// gfx/interface
-	std::filesystem::copy(hpm / "gfx/interface/leaders", out / "gfx/interface/leaders");
+	std::filesystem::copy(hpm / "gfx/interface/leaders", out / "gfx/interface/leaders", std::filesystem::copy_options::overwrite_existing);
 	const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(hpm / "gfx/interface");
 	for (const auto& file: gfxInterfaceFiles)
 	{
 		if (file.filename().string() == "icon_religion.dds")
 			continue;
-		std::filesystem::copy_file(hpm / "gfx/interface" / file, out / "gfx/interface" / file);
+		std::filesystem::copy_file(hpm / "gfx/interface" / file, out / "gfx/interface" / file, std::filesystem::copy_options::overwrite_existing);
 	}
 
 	// gfx/anims
-	std::filesystem::copy(hpm / "gfx/anims", out / "gfx/anims");
+	std::filesystem::copy(hpm / "gfx/anims", out / "gfx/anims", std::filesystem::copy_options::overwrite_existing);
 
 	// interface
 	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm / "interface");
@@ -2269,16 +2268,16 @@ void V2::World::copyHpmFiles() const
 	{
 		if (file.filename().string() == "general_gfx.gfx")
 			continue;
-		std::filesystem::copy_file(hpm / "interface" / file, out / "interface" / file);
+		std::filesystem::copy_file(hpm / "interface" / file, out / "interface" / file, std::filesystem::copy_options::overwrite_existing);
 	}
 
-	std::filesystem::copy(hpm / "localisation", out / "localisation");
+	std::filesystem::copy(hpm / "localisation", out / "localisation", std::filesystem::copy_options::overwrite_existing);
 
 	// technologies & inventions
 	std::filesystem::remove_all(out / "technologies");
 	std::filesystem::copy("configurables/HPM/technologies", out / "technologies");
-	std::filesystem::copy(hpm / "inventions", out / "inventions");
-	std::filesystem::copy(hpm / "gfx/pictures/tech", out / "gfx/pictures/tech");
+	std::filesystem::copy(hpm / "inventions", out / "inventions", std::filesystem::copy_options::overwrite_existing);
+	std::filesystem::copy(hpm / "gfx/pictures/tech", out / "gfx/pictures/tech", std::filesystem::copy_options::overwrite_existing);
 
 	// events & decisions
 	for (const auto& file: commonItems::GetAllFilesInFolder(hpm / "events"))
@@ -2317,9 +2316,9 @@ void V2::World::copyHpmFiles() const
 		std::filesystem::copy_file("configurables/HPM/common/countries" / file, out / "common/countries" / file);
 	}
 
-	std::filesystem::copy(hpm / "battleplans", out / "battleplans");
-	std::filesystem::copy(hpm / "poptypes", out / "poptypes");
-	std::filesystem::copy(hpm / "units", out / "units");
+	std::filesystem::copy(hpm / "battleplans", out / "battleplans", std::filesystem::copy_options::overwrite_existing);
+	std::filesystem::copy(hpm / "poptypes", out / "poptypes", std::filesystem::copy_options::overwrite_existing);
+	std::filesystem::copy(hpm / "units", out / "units", std::filesystem::copy_options::overwrite_existing);
 
 	// news
 	const auto& newsFiles = commonItems::GetAllFilesInFolder(hpm / "news");
@@ -2345,7 +2344,7 @@ void V2::World::copyHpmFiles() const
 	}
 
 	// flag for vic2tohoi4
-	std::ofstream flagFile("output" / theConfiguration.getOutputName() / "hybridization.txt");
+	std::ofstream flagFile(out / "hybridization.txt");
 	if (!flagFile.is_open())
 	{
 		throw std::runtime_error("Could not write hybridization file to output/" + theConfiguration.getOutputName().string() + "/hybridization.txt - " +
