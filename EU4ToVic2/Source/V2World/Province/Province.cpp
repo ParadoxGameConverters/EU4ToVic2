@@ -17,7 +17,8 @@ V2::Province::Province(std::filesystem::path _filename,
 	 const mappers::ClimateMapper& climateMapper,
 	 const mappers::TerrainDataMapper& terrainDataMapper,
 	 const ProvinceNameParser& provinceNameParser,
-	 const mappers::NavalBaseMapper& navalBaseMapper): filename(std::move(_filename))
+	 const mappers::NavalBaseMapper& navalBaseMapper):
+	 filename(std::move(_filename))
 {
 	const auto temp = filename.filename();
 	try

@@ -23,7 +23,8 @@
 V2::Country::Country(const std::string& countriesFileLine,
 	 const bool _dynamicCountry,
 	 const mappers::PartyNameMapper& partyNameMapper,
-	 const mappers::PartyTypeMapper& partyTypeMapper): dynamicCountry(_dynamicCountry)
+	 const mappers::PartyTypeMapper& partyTypeMapper):
+	 dynamicCountry(_dynamicCountry)
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
 	auto start = countriesFileLine.find_first_of('/');
@@ -40,7 +41,9 @@ V2::Country::Country(const std::string& countriesFileLine,
 V2::Country::Country(std::string _tag,
 	 const std::string& _commonCountryFile,
 	 const mappers::PartyNameMapper& partyNameMapper,
-	 const mappers::PartyTypeMapper& partyTypeMapper): tag(std::move(_tag)), commonCountryFile(Localisation::convert(_commonCountryFile))
+	 const mappers::PartyTypeMapper& partyTypeMapper):
+	 tag(std::move(_tag)),
+	 commonCountryFile(Localisation::convert(_commonCountryFile))
 {
 	newCountry = true;
 	dynamicCountry = false;

@@ -22,7 +22,8 @@ constexpr int MAX_LIBERTY_COUNTRIES = 20;
 V2::World::World(const EU4::World& sourceWorld,
 	 const mappers::IdeaEffectMapper& ideaEffectMapper,
 	 const mappers::TechGroupsMapper& techGroupsMapper,
-	 const commonItems::ConverterVersion& converterVersion): historicalData(sourceWorld.getHistoricalData())
+	 const commonItems::ConverterVersion& converterVersion):
+	 historicalData(sourceWorld.getHistoricalData())
 {
 	Log(LogLevel::Progress) << "45 %";
 
