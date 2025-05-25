@@ -32,7 +32,7 @@ V2::Province::Province(std::filesystem::path _filename,
 	}
 
 	// In case we're overriding provinces (not true by default)
-	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/history/provinces") / filename))
+	if (commonItems::DoesFileExist("blankMod/output/history/provinces" / filename))
 	{
 		details = mappers::ProvinceDetailsMapper("blankMod/output/history/provinces/" / filename).getProvinceDetails();
 	}

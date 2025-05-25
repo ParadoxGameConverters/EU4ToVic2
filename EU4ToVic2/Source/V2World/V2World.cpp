@@ -2053,8 +2053,8 @@ void V2::World::outputCountries() const
 					historyDone = true;
 				}
 
-				filePath = theConfiguration.getVic2Path() / "history/units" / std::filesystem::path(country.first + "_OOB.txt");
-				outPath = "output" / theConfiguration.getOutputName() / "history/units" / std::filesystem::path(country.first + "_OOB.txt");
+				filePath = theConfiguration.getVic2Path() / "history/units" / (country.first + "_OOB.txt");
+				outPath = "output" / theConfiguration.getOutputName() / "history/units" / (country.first + "_OOB.txt");
 				if (commonItems::DoesFileExist(filePath))
 				{
 					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
@@ -2087,7 +2087,7 @@ void V2::World::outputCountries() const
 		// OOB
 		if (!oobDone)
 		{
-			std::ofstream output("output" / theConfiguration.getOutputName() / "history/units" / std::filesystem::path(country.first + "_OOB.txt"));
+			std::ofstream output("output" / theConfiguration.getOutputName() / "history/units" / (country.first + "_OOB.txt"));
 			if (!output.is_open())
 				throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
 			country.second->outputOOB(output);

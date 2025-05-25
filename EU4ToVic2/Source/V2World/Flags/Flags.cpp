@@ -304,7 +304,7 @@ void V2::Flags::copyFlags() const
 				if (flagFileFound)
 				{
 					const auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / std::filesystem::path(V2Tag + flagFileSuffix);
-					std::filesystem::copy_file(sourceFlagPath, destFlagPath);
+					std::filesystem::copy_file(sourceFlagPath, destFlagPath, std::filesystem::copy_options::overwrite_existing);
 				}
 			}
 		}
@@ -351,13 +351,13 @@ void V2::Flags::createCustomFlags() const
 
 			const auto& suffix = flagFileSuffixes[i];
 			auto flagFileFound = false;
-			auto sourceEmblemPath = std::filesystem::path(baseFlagFolder / "CustomEmblems") / std::filesystem::path(std::to_string(emblem) + suffix);
-			auto sourceFlagPath = std::filesystem::path(baseFlagFolder / "CustomBases") / std::filesystem::path(baseFlagStr + ".tga");
+			auto sourceEmblemPath = baseFlagFolder / "CustomEmblems" / (std::to_string(emblem) + suffix);
+			auto sourceFlagPath = baseFlagFolder / "CustomBases" / (baseFlagStr + ".tga");
 
 			flagFileFound = commonItems::DoesFileExist(sourceFlagPath) && commonItems::DoesFileExist(sourceEmblemPath);
 			if (flagFileFound)
 			{
-				auto destFlagPath = std::filesystem::path("output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix));
+				auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix);
 
 				auto rColor = flagColorMapper.getFlagColorByIndex(r);
 				auto gColor = flagColorMapper.getFlagColorByIndex(g);
@@ -408,17 +408,17 @@ void V2::Flags::createColonialFlags() const
 			if ((i == 0 || i == 3) // monarchy or vanilla
 				 && UniqueColonialFlags.find(baseFlag) == UniqueColonialFlags.end())
 			{
-				auto sourceFlagPath = folderPath / std::filesystem::path(baseFlag + suffix);
+				auto sourceFlagPath = folderPath / (baseFlag + suffix);
 
 				auto overlordFlag = tagMap.find(overlord);
 				if (overlordFlag == tagMap.end())
 					throw std::runtime_error("No flag exists for " + V2Tag + "'s overlord " + overlord + ". Cannot create colony flag.");
 
-				auto overlordFlagPath = folderPath / std::filesystem::path(overlordFlag->second + ".tga");
+				auto overlordFlagPath = folderPath / (overlordFlag->second + ".tga");
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath) && commonItems::DoesFileExist(overlordFlagPath);
 				if (flagFileFound)
 				{
-					auto destFlagPath = std::filesystem::path("output") / theConfiguration.getOutputName() / "gfx/flags" / std::filesystem::path(V2Tag + suffix);
+					auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix);
 					createColonialFlag(overlordFlagPath, sourceFlagPath, destFlagPath);
 				}
 				else
@@ -434,8 +434,8 @@ void V2::Flags::createColonialFlags() const
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					auto destFlagPath = std::filesystem::path("output") / theConfiguration.getOutputName() / "gfx/flags" / std::filesystem::path(V2Tag + suffix);
-					std::filesystem::copy_file(sourceFlagPath, destFlagPath);
+					auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix);
+					std::filesystem::copy_file(sourceFlagPath, destFlagPath, std::filesystem::copy_options::overwrite_existing);
 				}
 				else
 				{

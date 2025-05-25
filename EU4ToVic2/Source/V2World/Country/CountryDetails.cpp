@@ -7,18 +7,18 @@ V2::CountryDetails::CountryDetails(std::filesystem::path _filename): filename(st
 {
 	registerKeys();
 
-	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/common/countries/") / filename))
+	if (commonItems::DoesFileExist("blankMod/output/common/countries/" / filename))
 	{
-		parseFile(std::filesystem::path("blankMod/output/common/countries") / filename);
+		parseFile("blankMod/output/common/countries" / filename);
 	}
 	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "common/countries" / filename))
 	{
 		parseFile(theConfiguration.getVic2Path() / "common/countries" / filename);
 	}
 	// Maybe we're initializing a dead nation. If so look in the /other/ place.
-	else if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/history/countries") / filename))
+	else if (commonItems::DoesFileExist("blankMod/output/history/countries" / filename))
 	{
-		parseFile(std::filesystem::path("blankMod/output/history/countries") / filename);
+		parseFile("blankMod/output/history/countries" / filename);
 	}
 	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "history/countries" / filename))
 	{
