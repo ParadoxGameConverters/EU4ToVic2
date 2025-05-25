@@ -20,7 +20,7 @@ class CustomPopShaping: commonItems::parser
 	CustomPopShaping() = default;
 	explicit CustomPopShaping(std::istream& theStream);
 
-	void loadFile(const std::string& fileName);
+	void loadFile(const std::filesystem::path& fileName);
 	void popShapeTypesForRegions(std::istream& theStream);
 
 	[[nodiscard]] ShapingType getPopShapeType(int provinceID) const;

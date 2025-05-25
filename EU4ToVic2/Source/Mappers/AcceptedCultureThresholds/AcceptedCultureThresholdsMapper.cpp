@@ -7,7 +7,7 @@ mappers::AcceptedCultureThresholdsMapper::AcceptedCultureThresholdsMapper()
 {
 	Log(LogLevel::Info) << "Parsing accepted culture thresholds.";
 	registerKeys();
-	parseFile("configurables/accepted_culture_thresholds.txt");
+	parseFile(std::filesystem::path("configurables/accepted_culture_thresholds.txt"));
 	clearRegisteredKeywords();
 }
 

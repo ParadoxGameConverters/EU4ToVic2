@@ -20,7 +20,7 @@ class Flags
 
   private:
 	void determineUseableFlags();
-	static std::set<std::string> determineAvailableFlags();
+	static std::set<std::filesystem::path> determineAvailableFlags();
 	void getRequiredTags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries);
 	void mapTrivialTags();
 

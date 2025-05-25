@@ -53,7 +53,7 @@ class World: commonItems::parser
 	void loadEU4RegionsNewVersion();
 	void loadEU4RegionsOldVersion();
 	void readCommonCountries();
-	void readCommonCountriesFile(std::istream&, const std::string& rootPath);
+	void readCommonCountriesFile(std::istream& in, const std::filesystem::path& rootPath);
 	void setLocalizations();
 	void resolveRegimentTypes();
 	void mergeNations();

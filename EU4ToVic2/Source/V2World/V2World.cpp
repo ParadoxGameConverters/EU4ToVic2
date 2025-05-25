@@ -15,7 +15,6 @@
 #include <fstream>
 #include <queue>
 #include <ranges>
-namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
 constexpr int MAX_LIBERTY_COUNTRIES = 20;
@@ -735,9 +734,9 @@ void V2::World::importProvinces()
 	const auto provinceFileNames = discoverProvinceFilenames();
 	for (const auto& provinceFileName: provinceFileNames)
 	{
-		if (provinceFileName.find(".txt") == std::string::npos)
+		if (provinceFileName.extension() != ".txt")
 			continue;
-		if (provinceFileName.find('~') != std::string::npos)
+		if (provinceFileName.filename().string().find('~') != std::string::npos)
 			continue;
 		auto newProvince = std::make_shared<Province>(provinceFileName, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));
@@ -749,16 +748,16 @@ void V2::World::importProvinces()
 	}
 }
 
-std::set<std::string> V2::World::discoverProvinceFilenames()
+std::set<std::filesystem::path> V2::World::discoverProvinceFilenames()
 {
-	std::set<std::string> provinceFilenames;
-	if (commonItems::DoesFolderExist("blankMod/output/history/provinces"))
+	std::set<std::filesystem::path> provinceFilenames;
+	if (commonItems::DoesFolderExist(std::filesystem::path("blankMod/output/history/provinces")))
 	{
-		provinceFilenames = commonItems::GetAllFilesInFolderRecursive("blankMod/output/history/provinces");
+		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(std::filesystem::path("blankMod/output/history/provinces"));
 	}
 	if (provinceFilenames.empty())
 	{
-		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces");
+		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() / "history/provinces");
 	}
 
 	return provinceFilenames;
@@ -784,15 +783,15 @@ void V2::World::shuffleRgos()
 void V2::World::importDefaultPops()
 {
 	totalWorldPopulation = 0;
-	std::string popsFolder;
+	std::filesystem::path popsFolder;
 
 	if (theConfiguration.isHpmEnabled())
 	{
-		popsFolder = theConfiguration.getVic2Path() + "/history/pops/1836.1.1/";
+		popsFolder = theConfiguration.getVic2Path() / "history/pops/1836.1.1";
 	}
 	else
 	{
-		popsFolder = "./blankMod/output/history/pops/1836.1.1/";
+		popsFolder = std::filesystem::path("blankMod/output/history/pops/1836.1.1");
 	}
 	auto filenames = commonItems::GetAllFilesInFolder(popsFolder);
 
@@ -804,21 +803,21 @@ void V2::World::importDefaultPops()
 	}
 }
 
-void V2::World::importPopsFromFile(const std::string& filename)
+void V2::World::importPopsFromFile(const std::filesystem::path& filename)
 {
 	std::list<int> popProvinces;
-	std::string popsFolder;
+	std::filesystem::path popsFolder;
 
 	if (theConfiguration.isHpmEnabled())
 	{
-		popsFolder = theConfiguration.getVic2Path() + "/history/pops/1836.1.1/";
+		popsFolder = theConfiguration.getVic2Path() / "history/pops/1836.1.1";
 	}
 	else
 	{
 		// We are using our own defaults instead of vanilla source because it was modded with cultural minorities.
-		popsFolder = "./blankMod/output/history/pops/1836.1.1/";
+		popsFolder = std::filesystem::path("blankMod/output/history/pops/1836.1.1");
 	}
-	const mappers::PopMapper popMapper(popsFolder + filename);
+	const mappers::PopMapper popMapper(popsFolder / filename);
 
 	for (const auto& [provinceID, popDetails]: popMapper.getProvincePops())
 	{
@@ -826,7 +825,7 @@ void V2::World::importPopsFromFile(const std::string& filename)
 
 		importPopsFromProvince(provinceID, popDetails);
 	}
-	popRegions.insert(std::make_pair(filename, popProvinces));
+	popRegions.insert(std::make_pair(filename.string(), popProvinces));
 }
 
 void V2::World::importPopsFromProvince(const int provinceID, const std::vector<mappers::PopDetails>& popsDetails)
@@ -867,19 +866,19 @@ void V2::World::importPotentialCountries()
 	dynamicCountries.clear();
 
 	std::ifstream v2CountriesInput;
-	std::vector<std::string> countriesFiles;
+	std::vector<std::filesystem::path> countriesFiles;
 	if (theConfiguration.isHpmEnabled())
 	{
-		countriesFiles.push_back(theConfiguration.getVic2Path() + "/common/countries.txt");
-		countriesFiles.push_back("./configurables/HPM/common/countries.txt");
+		countriesFiles.emplace_back(theConfiguration.getVic2Path() / "common/countries.txt");
+		countriesFiles.emplace_back(std::filesystem::path("configurables/HPM/common/countries.txt"));
 	}
-	countriesFiles.push_back("./blankMod/output/common/countries.txt");
+	countriesFiles.emplace_back(std::filesystem::path("blankMod/output/common/countries.txt"));
 
 	for (const auto& countriesFile: countriesFiles)
 	{
 		v2CountriesInput.open(countriesFile);
 		if (!v2CountriesInput.is_open())
-			throw std::runtime_error("Could not open " + countriesFile + ". The converter may be corrupted, try downloading it again.");
+			throw std::runtime_error("Could not open " + countriesFile.string() + ". The converter may be corrupted, try downloading it again.");
 
 		auto dynamicSection = false;
 		while (!v2CountriesInput.eof())
@@ -1716,15 +1715,15 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 
 void V2::World::output(const commonItems::ConverterVersion& converterVersion, const EU4::EU4Localization& localization) const
 {
-	commonItems::TryCreateFolder("output");
+	std::filesystem::create_directories("output");
 	Log(LogLevel::Progress) << "80 %";
 
 	Log(LogLevel::Info) << "<- Copying Mod Template";
-	commonItems::CopyFolder("blankMod/output", "output/output");
+	std::filesystem::copy("blankMod/output", "output/output", std::filesystem::copy_options::recursive);
 	Log(LogLevel::Progress) << "81 %";
 
-	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
-	commonItems::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
+	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName().string();
+	std::filesystem::rename("output/output", "output" / theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "82 %";
 
 	Log(LogLevel::Info) << "<- Crafting .mod File";
@@ -1742,13 +1741,6 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion, co
 	Log(LogLevel::Progress) << "85 %";
 
 	// Create common\countries path.
-	const auto countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
-	if (!commonItems::TryCreateFolder(countriesPath))
-	{
-		return;
-	}
-	Log(LogLevel::Progress) << "86 %";
-
 	// Output common\countries.txt
 	Log(LogLevel::Info) << "<- Creating countries.txt";
 	outputCommonCountries();
@@ -1825,7 +1817,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion, co
 
 void V2::World::outputNeoCultures() const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/localisation/0_Neocultures.csv");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "localisation/0_Neocultures.csv");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create neocultures file!");
 
@@ -1852,11 +1844,11 @@ void V2::World::transcribeHistoricalData()
 
 void V2::World::outputHistory() const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "common/botanical_expedition.txt");
 	if (!output.is_open())
 	{
-		throw std::runtime_error("Could not send botanical expedition output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt - " +
-										 commonItems::GetLastErrorString());
+		throw std::runtime_error("Could not send botanical expedition output/" + theConfiguration.getOutputName().string() +
+										 "/common/botanical_expedition.txt - " + commonItems::GetLastErrorString());
 	}
 	output << historicalData;
 	output.close();
@@ -1864,11 +1856,11 @@ void V2::World::outputHistory() const
 
 void V2::World::outputCultures() const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/cultures.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "common/cultures.txt");
 	if (!output.is_open())
 	{
-		throw std::runtime_error(
-			 "Could not create cultures file at output/" + theConfiguration.getOutputName() + "/common/cultures.txt - " + commonItems::GetLastErrorString());
+		throw std::runtime_error("Could not create cultures file at output/" + theConfiguration.getOutputName().string() + "/common/cultures.txt - " +
+										 commonItems::GetLastErrorString());
 	}
 	output << cultureGroupsMapper;
 	output.close();
@@ -1877,11 +1869,11 @@ void V2::World::outputCultures() const
 
 void V2::World::outputReligions() const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/religion.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "common/religion.txt");
 	if (!output.is_open())
 	{
-		throw std::runtime_error(
-			 "Could not create religions file at output/" + theConfiguration.getOutputName() + "/common/religion.txt - " + commonItems::GetLastErrorString());
+		throw std::runtime_error("Could not create religions file at output/" + theConfiguration.getOutputName().string() + "/common/religion.txt - " +
+										 commonItems::GetLastErrorString());
 	}
 	output << religiousGroupsMapper;
 	output.close();
@@ -1890,15 +1882,15 @@ void V2::World::outputReligions() const
 
 void V2::World::outputWars() const
 {
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/wars");
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/wars");
 	for (const auto& war: wars)
 	{
 		const auto& filename = war.generateFileName();
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/wars/" + filename);
+		std::ofstream output("output" / theConfiguration.getOutputName() / "history/wars" / filename);
 		if (!output.is_open())
 		{
-			throw std::runtime_error(
-				 "Could not create wars file output/" + theConfiguration.getOutputName() + "/history/wars/" + filename + " - " + commonItems::GetLastErrorString());
+			throw std::runtime_error("Could not create wars file output/" + theConfiguration.getOutputName().string() + "/history/wars/" + filename + " - " +
+											 commonItems::GetLastErrorString());
 		}
 		output << war;
 		output.close();
@@ -1907,7 +1899,7 @@ void V2::World::outputWars() const
 
 void V2::World::outputVersion(const commonItems::ConverterVersion& converterVersion)
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "eu4tov2_version.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Error writing version file! Is the output folder writable?");
 	output << converterVersion;
@@ -1916,7 +1908,7 @@ void V2::World::outputVersion(const commonItems::ConverterVersion& converterVers
 
 void V2::World::outputCommonCountries() const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/countries.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "common/countries.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create countries file!");
 
@@ -1926,7 +1918,7 @@ void V2::World::outputCommonCountries() const
 		// First output all regular countries, order matters!
 		if (dynamic == dynamicCountries.end())
 		{
-			output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()) << "\"\n";
+			output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()).string() << "\"\n";
 		}
 	}
 	output << "\n";
@@ -1934,22 +1926,21 @@ void V2::World::outputCommonCountries() const
 	output << "dynamic_tags = yes # any tags after this is considered dynamic dominions\n";
 	for (const auto& country: dynamicCountries)
 	{
-		output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()) << "\"\n";
+		output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()).string() << "\"\n";
 	}
 	output.close();
 }
 
 void V2::World::outputLocalisation(const EU4::EU4Localization& localization) const
 {
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/countries");
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/units");
 
 	Log(LogLevel::Info) << "<- Writing Localization Names";
-	auto localisationPath = "output/" + theConfiguration.getOutputName() + "/localisation";
-	if (!commonItems::TryCreateFolder(localisationPath))
-		return;
+	auto localisationPath = "output" / theConfiguration.getOutputName() / "localisation";
+	std::filesystem::create_directories(localisationPath);
 
-	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
+	std::ofstream output(localisationPath / "0_Names.csv", std::ofstream::app);
 	if (!output.is_open())
 		throw std::runtime_error("Could not update localization text file.");
 
@@ -1963,7 +1954,7 @@ void V2::World::outputLocalisation(const EU4::EU4Localization& localization) con
 	output.close();
 
 	Log(LogLevel::Info) << "<- Writing Province Localizations";
-	output.open(localisationPath + "/0_ProvinceNames.csv");
+	output.open(localisationPath / "0_ProvinceNames.csv");
 	if (!output.is_open())
 		throw std::runtime_error("Could not write province localizations.");
 	for (const auto& [provinceID, name]: localizedProvinces)
@@ -1976,7 +1967,7 @@ void V2::World::outputLocalisation(const EU4::EU4Localization& localization) con
 	output.close();
 
 	Log(LogLevel::Info) << "<- Writing Mutated Fauna";
-	output.open(localisationPath + "/0_Dyncultures.csv");
+	output.open(localisationPath / "0_Dyncultures.csv");
 	if (!output.is_open())
 		throw std::runtime_error("Could not write dynculture localizations.");
 	output << "KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X\n";
@@ -1995,13 +1986,12 @@ void V2::World::outputLocalisation(const EU4::EU4Localization& localization) con
 
 void V2::World::outputProvinces() const
 {
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/provinces");
 	for (const auto& province: provinces)
 	{
 		auto filename = province.second->getFilename();
-		auto path = getPath(filename);
-		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
-			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
+		auto path = filename.parent_path();
+		std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "history/provinces" / path);
 
 		// VN override. Can we copy over original province files? This is relevant out of scope where those provinces carry factories we know nothing about.
 		bool fileDone = false;
@@ -2009,10 +1999,10 @@ void V2::World::outputProvinces() const
 		{
 			if (provinceMapper.getEU4ProvinceNumbers(province.first).empty() && !vnColonialMapper.isProvinceVNColonial(province.first))
 			{
-				auto filePath = theConfiguration.getVic2Path() + "/history/provinces/" + filename;
+				auto filePath = theConfiguration.getVic2Path() / "history/provinces" / filename;
 				if (commonItems::DoesFileExist(filePath))
 				{
-					commonItems::TryCopyFile(filePath, "output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
+					std::filesystem::copy_file(filePath, "output" / theConfiguration.getOutputName() / "history/provinces" / filename);
 					fileDone = true;
 				}
 			}
@@ -2020,11 +2010,11 @@ void V2::World::outputProvinces() const
 
 		if (!fileDone)
 		{
-			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
+			std::ofstream output("output" / theConfiguration.getOutputName() / "history/provinces" / filename);
 			if (!output.is_open())
 			{
-				throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
-												 " - " + commonItems::GetLastErrorString());
+				throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName().string() + "/history/provinces/" +
+												 filename.string() + " - " + commonItems::GetLastErrorString());
 			}
 			output << *province.second;
 			output.close();
@@ -2047,27 +2037,27 @@ void V2::World::outputCountries() const
 		{
 			if (country.second->isCountryOutsideVNScope(provinceMapper))
 			{
-				auto filePath = theConfiguration.getVic2Path() + "/history/countries/" + clipCountryFileName(country.second->getFilename());
-				auto outPath = "output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename());
+				auto filePath = theConfiguration.getVic2Path() / "history/countries" / clipCountryFileName(country.second->getFilename());
+				auto outPath = "output" / theConfiguration.getOutputName() / "history/countries" / clipCountryFileName(country.second->getFilename());
 				if (commonItems::DoesFileExist(filePath))
 				{
-					commonItems::TryCopyFile(filePath, outPath);
+					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
 					commonsDone = true;
 				}
 
-				filePath = theConfiguration.getVic2Path() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile());
-				outPath = "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile());
+				filePath = theConfiguration.getVic2Path() / "common/countries" / clipCountryFileName(country.second->getCommonCountryFile());
+				outPath = "output" / theConfiguration.getOutputName() / "common/countries" / clipCountryFileName(country.second->getCommonCountryFile());
 				if (commonItems::DoesFileExist(filePath))
 				{
-					commonItems::TryCopyFile(filePath, outPath);
+					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
 					historyDone = true;
 				}
 
-				filePath = theConfiguration.getVic2Path() + "/history/units/" + country.first + "_OOB.txt";
-				outPath = "output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt";
+				filePath = theConfiguration.getVic2Path() / "history/units" / (country.first + "_OOB.txt");
+				outPath = "output" / theConfiguration.getOutputName() / "history/units" / (country.first + "_OOB.txt");
 				if (commonItems::DoesFileExist(filePath))
 				{
-					commonItems::TryCopyFile(filePath, outPath);
+					std::filesystem::copy_file(filePath, outPath, std::filesystem::copy_options::overwrite_existing);
 					oobDone = true;
 				}
 			}
@@ -2076,9 +2066,9 @@ void V2::World::outputCountries() const
 		// Country file
 		if (!country.second->isDynamicCountry() && !historyDone)
 		{
-			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename()));
+			std::ofstream output("output" / theConfiguration.getOutputName() / "history/countries" / clipCountryFileName(country.second->getFilename()));
 			if (!output.is_open())
-				throw std::runtime_error("Could not create country history file " + clipCountryFileName(country.second->getFilename()));
+				throw std::runtime_error("Could not create country history file " + clipCountryFileName(country.second->getFilename()).string());
 			output << *country.second;
 			output.close();
 		}
@@ -2086,11 +2076,10 @@ void V2::World::outputCountries() const
 		// commons file
 		if (!commonsDone)
 		{
-			std::ofstream commons(
-				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+			std::ofstream commons("output" / theConfiguration.getOutputName() / "common/countries" / clipCountryFileName(country.second->getCommonCountryFile()));
 			if (!commons.is_open())
-				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
-												 clipCountryFileName(country.second->getCommonCountryFile()));
+				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName().string() + "/common/countries/" +
+												 clipCountryFileName(country.second->getCommonCountryFile()).string());
 			country.second->outputCommons(commons);
 			commons.close();
 		}
@@ -2098,7 +2087,7 @@ void V2::World::outputCountries() const
 		// OOB
 		if (!oobDone)
 		{
-			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
+			std::ofstream output("output" / theConfiguration.getOutputName() / "history/units" / (country.first + "_OOB.txt"));
 			if (!output.is_open())
 				throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
 			country.second->outputOOB(output);
@@ -2117,13 +2106,13 @@ void V2::World::modifyDefines() const
 	// Edit starting date in defines + adjust GP count if needed
 	if (theConfiguration.isHpmEnabled())
 	{
-		bool definesRemoved = fs::remove("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+		bool definesRemoved = std::filesystem::remove("output" / theConfiguration.getOutputName() / "common/defines.lua");
 		if (definesRemoved)
-			fs::copy_file("configurables/HPM/common/defines.lua", "output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+			std::filesystem::copy_file("configurables/HPM/common/defines.lua", "output" / theConfiguration.getOutputName() / "common/defines.lua");
 		else
 			throw std::runtime_error("Could not replace defines.lua");
 	}
-	std::ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	std::ifstream defines_lua("output" / theConfiguration.getOutputName() / "common/defines.lua");
 	incomingDefines << defines_lua.rdbuf();
 	defines_lua.close();
 	auto strDefines = incomingDefines.str();
@@ -2137,18 +2126,18 @@ void V2::World::modifyDefines() const
 		strDefines.replace(posGPs, numGPs.length(), replacementGPs);
 	}
 
-	std::ofstream out_defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	std::ofstream out_defines_lua("output" / theConfiguration.getOutputName() / "common/defines.lua");
 	out_defines_lua << strDefines;
 	out_defines_lua.close();
 
 	// Edit bookmark start
-	std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	std::ifstream bookmarks_txt("output" / theConfiguration.getOutputName() / "common/bookmarks.txt");
 	incomingBookmarks << bookmarks_txt.rdbuf();
 	bookmarks_txt.close();
 	auto strBookmarks = incomingBookmarks.str();
 	auto pos2 = strBookmarks.find(startDate);
 	strBookmarks.replace(pos2, startDate.length(), theConfiguration.getLastEU4Date().toString());
-	std::ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	std::ofstream out_bookmarks_txt("output" / theConfiguration.getOutputName() / "common/bookmarks.txt");
 	out_bookmarks_txt << strBookmarks;
 	out_bookmarks_txt.close();
 }
@@ -2156,7 +2145,7 @@ void V2::World::modifyDefines() const
 void V2::World::verifyCountriesWritten() const
 {
 	std::ifstream v2CountriesInput;
-	v2CountriesInput.open(("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str());
+	v2CountriesInput.open("output" / theConfiguration.getOutputName() / "common/countries.txt");
 	if (!v2CountriesInput.is_open())
 		throw std::runtime_error("Could not open countries.txt");
 
@@ -2175,11 +2164,11 @@ void V2::World::verifyCountriesWritten() const
 		const auto size = line.find_last_of('\"') - start - 1;
 		countryFileName = line.substr(start + 1, size);
 
-		if (commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
+		if (commonItems::DoesFileExist("output" / theConfiguration.getOutputName() / "common/countries" / countryFileName))
 		{
 			continue;
 		}
-		if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName))
+		if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "common/countries" / countryFileName))
 		{
 			continue;
 		}
@@ -2190,11 +2179,11 @@ void V2::World::verifyCountriesWritten() const
 
 void V2::World::createModFile() const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + ".mod");
+	std::ofstream output("output" / std::filesystem::path(theConfiguration.getOutputName().string() + ".mod"));
 	if (!output.is_open())
-		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + ".mod");
+		throw std::runtime_error("Could not create " + theConfiguration.getOutputName().string() + ".mod");
 	Log(LogLevel::Info) << "\t-> Writing to: "
-							  << "output/" + theConfiguration.getOutputName() + ".mod";
+							  << "output/" + theConfiguration.getOutputName().string() + ".mod";
 	output << modFile;
 	output.close();
 }
@@ -2204,10 +2193,11 @@ void V2::World::outputPops() const
 	for (const auto& popRegion: popRegions)
 	{
 		std::ofstream popsFile;
-		popsFile.open("output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first);
+		popsFile.open("output" / theConfiguration.getOutputName() / "history/pops/1836.1.1" / popRegion.first);
 		if (!popsFile.is_open())
 		{
-			throw std::runtime_error("Could not create pops file output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first);
+			throw std::runtime_error(
+				 "Could not create pops file output/" + theConfiguration.getOutputName().string() + "/history/pops/1836.1.1/" + popRegion.first);
 		}
 
 		for (auto provinceNumber: popRegion.second)
@@ -2237,126 +2227,126 @@ std::shared_ptr<V2::Country> V2::World::getCountry(const std::string& tag) const
 	return (countryItr != countries.end()) ? countryItr->second : nullptr;
 }
 
-std::string V2::World::clipCountryFileName(const std::string& incoming) const
+std::filesystem::path V2::World::clipCountryFileName(const std::filesystem::path& incoming) const
 {
-	if (incoming.size() <= 80)
+	if (incoming.string().size() <= 80)
 		return incoming;
 	else
-		return incoming.substr(0, 76) + ".txt";
+		return std::filesystem::path(incoming.stem().string().substr(0, 76) + ".txt");
 }
 
 void V2::World::copyHpmFiles() const
 {
 	Log(LogLevel::Info) << "<- Copying HPM files";
 	const auto& hpm = theConfiguration.getVic2Path();
-	const auto& out = "output/" + theConfiguration.getOutputName();
+	const auto& out = "output" / theConfiguration.getOutputName();
 
-	commonItems::CopyFolder(hpm + "/map", out + "/map");
-	commonItems::TryCopyFile("configurables/HPM/map/default.map", out + "/map/default.map");
-	std::ofstream defaultMap(out + "/map/default.map", std::ios_base::app);
-	defaultMap << "\ndefinitions = \"../mod/" << theConfiguration.getOutputName() << "/map/definition.csv\"\n";
+	std::filesystem::copy(hpm / "map", out / "map", std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
+	std::filesystem::copy_file("configurables/HPM/map/default.map", out / "map/default.map", std::filesystem::copy_options::overwrite_existing);
+	std::ofstream defaultMap(out / "map/default.map", std::ios_base::app);
+	defaultMap << "\ndefinitions = \"../mod/" << theConfiguration.getOutputName().string() << "/map/definition.csv\"\n";
 	defaultMap.close();
 
 	// gfx/interface
-	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
-	const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/gfx/interface");
+	std::filesystem::copy(hpm / "gfx/interface/leaders", out / "gfx/interface/leaders", std::filesystem::copy_options::overwrite_existing);
+	const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(hpm / "gfx/interface");
 	for (const auto& file: gfxInterfaceFiles)
 	{
-		if (file == "icon_religion.dds")
+		if (file.filename().string() == "icon_religion.dds")
 			continue;
-		fs::copy_file(hpm + "/gfx/interface/" + file, out + "/gfx/interface/" + file);
+		std::filesystem::copy_file(hpm / "gfx/interface" / file, out / "gfx/interface" / file, std::filesystem::copy_options::overwrite_existing);
 	}
 
 	// gfx/anims
-	commonItems::CopyFolder(hpm + "/gfx/anims", out + "/gfx/anims");
+	std::filesystem::copy(hpm / "gfx/anims", out / "gfx/anims", std::filesystem::copy_options::overwrite_existing);
 
 	// interface
-	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/interface");
+	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm / "interface");
 	for (const auto& file: interfaceFiles)
 	{
-		if (file == "general_gfx.gfx")
+		if (file.filename().string() == "general_gfx.gfx")
 			continue;
-		fs::copy_file(hpm + "/interface/" + file, out + "/interface/" + file);
+		std::filesystem::copy_file(hpm / "interface" / file, out / "interface" / file, std::filesystem::copy_options::overwrite_existing);
 	}
 
-	commonItems::CopyFolder(hpm + "/localisation", out + "/localisation");
+	std::filesystem::copy(hpm / "localisation", out / "localisation", std::filesystem::copy_options::overwrite_existing);
 
 	// technologies & inventions
-	commonItems::DeleteFolder(out + "/technologies");
-	commonItems::CopyFolder("configurables/HPM/technologies", out + "/technologies");
-	commonItems::CopyFolder(hpm + "/inventions", out + "/inventions");
-	commonItems::CopyFolder(hpm + "/gfx/pictures/tech", out + "/gfx/pictures/tech");
+	std::filesystem::remove_all(out / "technologies");
+	std::filesystem::copy("configurables/HPM/technologies", out / "technologies");
+	std::filesystem::copy(hpm / "inventions", out / "inventions", std::filesystem::copy_options::overwrite_existing);
+	std::filesystem::copy(hpm / "gfx/pictures/tech", out / "gfx/pictures/tech", std::filesystem::copy_options::overwrite_existing);
 
 	// events & decisions
-	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/events"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(hpm / "events"))
 	{
-		fs::remove(out + "/events/" + file);
-		fs::copy_file(hpm + "/events/" + file, out + "/events/" + file);
+		std::filesystem::remove(out / "events" / file);
+		std::filesystem::copy_file(hpm / "events" / file, out / "events" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/events"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/events")))
 	{
-		fs::remove(out + "/events/" + file);
-		fs::copy_file("configurables/HPM/events/" + file, out + "/events/" + file);
+		std::filesystem::remove(out / "events" / file);
+		std::filesystem::copy_file("configurables/HPM/events" / file, out / "events" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/decisions"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(hpm / "decisions"))
 	{
-		fs::remove(out + "/decisions/" + file);
-		fs::copy_file(hpm + "/decisions/" + file, out + "/decisions/" + file);
+		std::filesystem::remove(out / "decisions" / file);
+		std::filesystem::copy_file(hpm / "decisions" / file, out / "decisions" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/decisions"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/decisions")))
 	{
-		fs::remove(out + "/decisions/" + file);
-		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
+		std::filesystem::remove(out / "decisions" / file);
+		std::filesystem::copy_file("configurables/HPM/decisions" / file, out / "decisions" / file);
 	}
 
 	// common
-	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/common"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(hpm / "common"))
 	{
 		if (file == "cb_types.txt" || file == "rebel_types.txt")
-			fs::remove(out + "/common/" + file);
-		else if (commonItems::DoesFileExist(out + "/common/" + file))
+			std::filesystem::remove(out / "common" / file);
+		else if (commonItems::DoesFileExist(out / "common" / file))
 			continue;
-		fs::copy_file(hpm + "/common/" + file, out + "/common/" + file);
+		std::filesystem::copy_file(hpm / "common" / file, out / "common" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/common/countries"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/common/countries")))
 	{
-		fs::remove(out + "/common/countries/" + file);
-		fs::copy_file("configurables/HPM/common/countries/" + file, out + "/common/countries/" + file);
+		std::filesystem::remove(out / "common/countries" / file);
+		std::filesystem::copy_file("configurables/HPM/common/countries" / file, out / "common/countries" / file);
 	}
 
-	commonItems::CopyFolder(hpm + "/battleplans", out + "/battleplans");
-	commonItems::CopyFolder(hpm + "/poptypes", out + "/poptypes");
-	commonItems::CopyFolder(hpm + "/units", out + "/units");
+	std::filesystem::copy(hpm / "battleplans", out / "battleplans", std::filesystem::copy_options::overwrite_existing);
+	std::filesystem::copy(hpm / "poptypes", out / "poptypes", std::filesystem::copy_options::overwrite_existing);
+	std::filesystem::copy(hpm / "units", out / "units", std::filesystem::copy_options::overwrite_existing);
 
 	// news
-	const auto& newsFiles = commonItems::GetAllFilesInFolder(hpm + "/news");
+	const auto& newsFiles = commonItems::GetAllFilesInFolder(hpm / "news");
 	for (const auto& file: newsFiles)
 	{
-		if (commonItems::DoesFileExist(out + "/news/" + file))
+		if (commonItems::DoesFileExist(out / "news" / file))
 			continue;
-		fs::copy_file(hpm + "/news/" + file, out + "/news/" + file);
+		std::filesystem::copy_file(hpm / "news" / file, out / "news" / file);
 	}
 
 	// flags
-	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/gfx/flags"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/gfx/flags")))
 	{
-		fs::remove(out + "/gfx/flags/" + file);
-		fs::copy_file("configurables/HPM/gfx/flags/" + file, out + "/gfx/flags/" + file);
+		std::filesystem::remove(out / "gfx/flags" / file);
+		std::filesystem::copy_file("configurables/HPM/gfx/flags" / file, out / "gfx/flags" / file);
 	}
 
 	// localisation
-	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/localisation"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/localisation")))
 	{
-		fs::remove(out + "/localisation/" + file);
-		fs::copy_file("configurables/HPM/localisation/" + file, out + "/localisation/" + file);
+		std::filesystem::remove(out / "localisation" / file);
+		std::filesystem::copy_file("configurables/HPM/localisation" / file, out / "localisation" / file);
 	}
 
 	// flag for vic2tohoi4
-	std::ofstream flagFile("output/" + theConfiguration.getOutputName() + "/hybridization.txt");
+	std::ofstream flagFile(out / "hybridization.txt");
 	if (!flagFile.is_open())
 	{
-		throw std::runtime_error(
-			 "Could not write hybridization file to output/" + theConfiguration.getOutputName() + "/hybridization.txt - " + commonItems::GetLastErrorString());
+		throw std::runtime_error("Could not write hybridization file to output/" + theConfiguration.getOutputName().string() + "/hybridization.txt - " +
+										 commonItems::GetLastErrorString());
 	}
 	flagFile << "HPM";
 	flagFile.close();
@@ -2412,7 +2402,7 @@ void V2::World::outputDynamicContent() const
 {
 	for (const auto& [file, decision]: decisions)
 	{
-		std::ofstream out("output/" + theConfiguration.getOutputName() + "/decisions/" + file);
+		std::ofstream out("output" / theConfiguration.getOutputName() / "decisions" / file);
 		if (!out.is_open())
 			throw std::runtime_error("Could not open " + file + " for writing!");
 		out << decision;
@@ -2420,7 +2410,7 @@ void V2::World::outputDynamicContent() const
 
 	for (const auto& [file, event]: events)
 	{
-		std::ofstream out("output/" + theConfiguration.getOutputName() + "/events/" + file);
+		std::ofstream out("output" / theConfiguration.getOutputName() / "events" / file);
 		if (!out.is_open())
 			throw std::runtime_error("Could not open " + file + " for writing!");
 		out << event;
@@ -2428,7 +2418,7 @@ void V2::World::outputDynamicContent() const
 
 	for (const auto& [file, localisation]: localisations)
 	{
-		std::ofstream out("output/" + theConfiguration.getOutputName() + "/localisation/" + file);
+		std::ofstream out("output" / theConfiguration.getOutputName() / "localisation" / file);
 		if (!out.is_open())
 			Log(LogLevel::Debug) << "Could not open " + file + " for writing!";
 		out << localisation;

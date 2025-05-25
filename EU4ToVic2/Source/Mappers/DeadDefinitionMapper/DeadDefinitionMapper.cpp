@@ -8,9 +8,9 @@ mappers::DeadDefinitionMapper::DeadDefinitionMapper()
 	registerKeys();
 	if (theConfiguration.isHpmEnabled())
 	{
-		parseFile("configurables/HPM/dead_definitions.txt");
+		parseFile(std::filesystem::path("configurables/HPM/dead_definitions.txt"));
 	}
-	parseFile("configurables/dead_definitions.txt");
+	parseFile(std::filesystem::path("configurables/dead_definitions.txt"));
 	clearRegisteredKeywords();
 }
 

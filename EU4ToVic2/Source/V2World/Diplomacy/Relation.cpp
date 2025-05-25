@@ -5,7 +5,9 @@ V2::Relation::Relation(std::string _target): target(std::move(_target))
 }
 
 V2::Relation::Relation(std::string _target, EU4::EU4RelationDetails& oldRelations):
-	 target(std::move(_target)), relations(oldRelations.getRelations()), militaryAccess(oldRelations.hasMilitaryAccess())
+	 target(std::move(_target)),
+	 relations(oldRelations.getRelations()),
+	 militaryAccess(oldRelations.hasMilitaryAccess())
 {
 }
 

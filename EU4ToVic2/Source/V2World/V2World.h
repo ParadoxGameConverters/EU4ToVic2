@@ -85,18 +85,18 @@ class World
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 	[[nodiscard]] unsigned int countCivilizedNations() const;
 	[[nodiscard]] std::shared_ptr<Country> getHreEmperor() const;
-	[[nodiscard]] std::string clipCountryFileName(const std::string& incoming) const;
+	[[nodiscard]] std::filesystem::path clipCountryFileName(const std::filesystem::path& incoming) const;
 
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
-	static std::set<std::string> discoverProvinceFilenames();
+	static std::set<std::filesystem::path> discoverProvinceFilenames();
 
 	void dropStates(const mappers::TechGroupsMapper& techGroupsMapper);
 	void dropCores();
 	void importProvinces();
 	void shuffleRgos();
 	void importDefaultPops();
-	void importPopsFromFile(const std::string& filename);
+	void importPopsFromFile(const std::filesystem::path& filename);
 	void importPopsFromProvince(int provinceID, const std::vector<mappers::PopDetails>& popsDetails);
 	void importPotentialCountries();
 	void importPotentialCountry(const std::string& line, bool dynamicCountry);

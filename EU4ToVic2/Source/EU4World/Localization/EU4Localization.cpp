@@ -10,25 +10,25 @@ namespace fs = std::filesystem;
 void EU4::EU4Localization::initializeFromEU4Installation()
 {
 	Log(LogLevel::Info) << "-> Reading Words.";
-	readFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
+	readFromAllFilesInFolder(theConfiguration.getEU4Path() / "localisation");
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		readFromAllFilesInFolder(mod.path + "/localisation");
-		readFromAllFilesInFolder(mod.path + "/localisation/replace");
+		readFromAllFilesInFolder(mod.path / "localisation");
+		readFromAllFilesInFolder(mod.path / "localisation/replace");
 	}
 	Log(LogLevel::Info) << "-> " << localizations.size() << " Important Words read.";
 }
 
-void EU4::EU4Localization::readFromAllFilesInFolder(const std::string& folderPath)
+void EU4::EU4Localization::readFromAllFilesInFolder(const std::filesystem::path& folderPath)
 {
 	// There is no need to recurse as EU4 doesn't support subfolders in loc dir except for "replace"
 	for (const auto& fileName: commonItems::GetAllFilesInFolder(folderPath))
-		readFromFile(folderPath + '/' + fileName);
+		readFromFile(folderPath / fileName);
 }
 
-void EU4::EU4Localization::readFromFile(const std::string& fileName)
+void EU4::EU4Localization::readFromFile(const std::filesystem::path& fileName)
 {
-	std::ifstream locFile(fs::u8path(fileName));
+	std::ifstream locFile(fileName);
 	readFromStream(locFile);
 	locFile.close();
 }

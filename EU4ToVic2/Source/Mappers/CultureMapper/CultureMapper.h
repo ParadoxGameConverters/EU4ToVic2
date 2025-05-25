@@ -11,7 +11,7 @@ class CultureMapper: commonItems::parser
 	CultureMapper() = default;
 	explicit CultureMapper(std::istream& theStream);
 
-	void loadFile(const std::string& fileName);
+	void loadFile(const std::filesystem::path& fileName);
 
 	[[nodiscard]] std::optional<std::string> cultureMatch(const EU4::Regions& eu4Regions,
 		 const std::string& eu4culture,

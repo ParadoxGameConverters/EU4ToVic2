@@ -13,32 +13,32 @@
 #include <algorithm>
 #include <cmath>
 
-V2::Province::Province(std::string _filename,
+V2::Province::Province(std::filesystem::path _filename,
 	 const mappers::ClimateMapper& climateMapper,
 	 const mappers::TerrainDataMapper& terrainDataMapper,
 	 const ProvinceNameParser& provinceNameParser,
 	 const mappers::NavalBaseMapper& navalBaseMapper):
 	 filename(std::move(_filename))
 {
-	const auto temp = trimPath(filename);
+	const auto temp = filename.filename();
 	try
 	{
-		provinceID = std::stoi(temp);
+		provinceID = std::stoi(temp.string());
 	}
 	catch (std::exception& e)
 	{
-		Log(LogLevel::Error) << "Failed to extract province number from file name: " << filename << " " << e.what();
-		throw std::runtime_error("Failed to extract province number from file name: " + filename + " " + e.what());
+		Log(LogLevel::Error) << "Failed to extract province number from file name: " << filename.string() << " " << e.what();
+		throw std::runtime_error("Failed to extract province number from file name: " + filename.string() + " " + e.what());
 	}
 
 	// In case we're overriding provinces (not true by default)
-	if (commonItems::DoesFileExist("blankMod/output/history/provinces/" + filename))
+	if (commonItems::DoesFileExist("blankMod/output/history/provinces" / filename))
 	{
-		details = mappers::ProvinceDetailsMapper("blankMod/output/history/provinces/" + filename).getProvinceDetails();
+		details = mappers::ProvinceDetailsMapper("blankMod/output/history/provinces/" / filename).getProvinceDetails();
 	}
 	else
 	{
-		details = mappers::ProvinceDetailsMapper(theConfiguration.getVic2Path() + "/history/provinces/" + filename).getProvinceDetails();
+		details = mappers::ProvinceDetailsMapper(theConfiguration.getVic2Path() / "history/provinces" / filename).getProvinceDetails();
 	}
 
 	for (const auto& climate: climateMapper.getClimateMap())

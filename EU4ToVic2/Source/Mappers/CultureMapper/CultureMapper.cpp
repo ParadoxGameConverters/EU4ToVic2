@@ -12,7 +12,7 @@ mappers::CultureMapper::CultureMapper(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void mappers::CultureMapper::loadFile(const std::string& fileName)
+void mappers::CultureMapper::loadFile(const std::filesystem::path& fileName)
 {
 	registerKeys();
 	parseFile(fileName);

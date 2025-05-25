@@ -117,17 +117,17 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	if (!srcCountry->getRandomName().empty())
 		newCountry = true;
 
-	auto possibleFilename = getFileFromTag("./blankMod/output/history/countries/", tag);
+	auto possibleFilename = getFileFromTag(std::filesystem::path("blankMod/output/history/countries"), tag);
 	if (!possibleFilename)
 	{
-		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
+		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() / "history/countries", tag);
 	}
 
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
-		countryName = trimPath(countryName);
-		details.filename = tag + " - " + countryName;
+		countryName = countryName.filename();
+		details.filename = std::filesystem::path(tag + " - " + countryName.string());
 	}
 	else
 	{
@@ -552,15 +552,14 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 	details.isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
 
 	// Don't fire up Details if there's no point.
-	auto possibleFilename = getFileFromTag("./blankMod/output/history/countries/", tag);
+	auto possibleFilename = getFileFromTag(std::filesystem::path("blankMod/output/history/countries"), tag);
 	if (!possibleFilename)
-		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
+		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() / "history/countries", tag);
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
-		auto lastSlash = countryName.find_last_of('/');
-		countryName = countryName.substr(++lastSlash, countryName.size());
-		details.filename = tag + " - " + countryName;
+		countryName = countryName.filename();
+		details.filename = std::filesystem::path(tag + " - " + countryName.string());
 		return;
 	}
 	details = CountryDetails(*possibleFilename);
@@ -991,12 +990,12 @@ std::string V2::Country::getColonialRegion() const
 	return srcCountry->getColonialRegion();
 }
 
-std::optional<std::string> V2::Country::getFileFromTag(const std::string& directoryPath, const std::string& tag) const
+std::optional<std::filesystem::path> V2::Country::getFileFromTag(const std::filesystem::path& directoryPath, const std::string& theTag) const
 {
 	auto foundFiles = commonItems::GetAllFilesInFolder(directoryPath);
-	for (std::string file: foundFiles)
+	for (auto file: foundFiles)
 	{
-		if (tag == file.substr(0, 3))
+		if (theTag == file.string().substr(0, 3))
 		{
 			return file;
 		}
@@ -1111,7 +1110,5 @@ bool V2::Country::isCountryOutsideVNScope(const mappers::ProvinceMapper& provinc
 		if (!provinceMapper.getEU4ProvinceNumbers(province.first).empty())
 			outside = false;
 
-	if (tag == "PIC")
-		Log(LogLevel::Debug) << "PIC returning " << outside;
 	return outside;
 }

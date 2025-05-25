@@ -44,13 +44,13 @@ class CountryDetails: commonItems::parser
 {
   public:
 	CountryDetails() = default;
-	explicit CountryDetails(std::string _filename);
+	explicit CountryDetails(std::filesystem::path _filename);
 	explicit CountryDetails(std::istream& theStream);
 
 	// These values are open to ease management.
 	// This is a storage container for V2::Country.
 	// Some of these values are loaded from files, others are adjusted on the fly.
-	std::string filename;
+	std::filesystem::path filename;
 	std::string graphicalCulture;
 	std::string colorString;
 	std::vector<Party> parties;

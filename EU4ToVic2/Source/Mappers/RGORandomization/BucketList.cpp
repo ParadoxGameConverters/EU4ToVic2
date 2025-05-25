@@ -15,7 +15,7 @@ mappers::BucketList::BucketList()
 	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
-	parseFile("configurables/rgo_randomization.txt");
+	parseFile(std::filesystem::path("configurables/rgo_randomization.txt"));
 	clearRegisteredKeywords();
 }
 

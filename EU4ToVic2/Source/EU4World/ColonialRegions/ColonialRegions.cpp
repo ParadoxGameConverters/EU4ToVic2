@@ -11,14 +11,14 @@ EU4::ColonialRegions::ColonialRegions()
 	Log(LogLevel::Info) << "Parsing EU4 colonial regions";
 
 	registerKeys();
-	if (!commonItems::DoesFileExist(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt"))
-		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt";
+	if (!commonItems::DoesFileExist(theConfiguration.getEU4Path() / "common/colonial_regions/00_colonial_regions.txt"))
+		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getEU4Path().string() + "/common/colonial_regions/00_colonial_regions.txt";
 	else
-		parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
+		parseFile(theConfiguration.getEU4Path() / "common/colonial_regions/00_colonial_regions.txt");
 
 	for (const auto& mod: theConfiguration.getMods())
-		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path + "/common/colonial_regions/"))
-			parseFile(mod.path + "/common/colonial_regions/" + filename);
+		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path / "common/colonial_regions/"))
+			parseFile(mod.path / "common/colonial_regions" / filename);
 
 	clearRegisteredKeywords();
 }

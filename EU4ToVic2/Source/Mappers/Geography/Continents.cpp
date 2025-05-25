@@ -11,12 +11,12 @@ mappers::Continents::Continents()
 	Log(LogLevel::Info) << "Loading Province into Continents.";
 	for (const auto& mod: theConfiguration.getMods())
 	{
-		const auto& continentFile = mod.path + "/map/continent.txt";
+		const auto& continentFile = mod.path / "map/continent.txt";
 		if (commonItems::DoesFileExist(continentFile))
 			parseFile(continentFile);
 	}
 	if (continentMap.empty())
-		parseFile(theConfiguration.getEU4Path() + "/map/continent.txt");
+		parseFile(theConfiguration.getEU4Path() / "map/continent.txt");
 	if (continentMap.empty())
 		Log(LogLevel::Warning) << "No continent mappings found - may lead to problems later";
 	clearRegisteredKeywords();

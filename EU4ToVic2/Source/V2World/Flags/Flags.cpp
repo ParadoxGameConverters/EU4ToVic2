@@ -201,9 +201,9 @@ void V2::Flags::determineUseableFlags()
 		for (auto flagFileSuffixItr = flagFileSuffixes.rbegin(); flagFileSuffixItr != flagFileSuffixes.rend(); ++flagFileSuffixItr)
 		{
 			auto suffix = *flagFileSuffixItr;
-			if (ends_with(flag, suffix))
+			if (ends_with(flag.string(), suffix))
 			{
-				auto tag = flag.substr(0, flag.find(suffix));
+				auto tag = flag.string().substr(0, flag.string().find(suffix));
 
 				// Ensure we have flags for all suffixes of this tag.
 				auto haveAllFlags = true;
@@ -229,11 +229,11 @@ void V2::Flags::determineUseableFlags()
 	}
 }
 
-std::set<std::string> V2::Flags::determineAvailableFlags()
+std::set<std::filesystem::path> V2::Flags::determineAvailableFlags()
 {
-	std::set<std::string> availableFlags;
+	std::set<std::filesystem::path> availableFlags;
 
-	const std::vector<std::string> availableFlagFolders = {"flags", theConfiguration.getVic2Path() + "/gfx/flags"};
+	const std::vector<std::filesystem::path> availableFlagFolders = {std::filesystem::path("flags"), theConfiguration.getVic2Path() / "gfx/flags"};
 
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
@@ -284,21 +284,12 @@ void V2::Flags::output() const
 
 void V2::Flags::createOutputFolders()
 {
-	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx"))
-	{
-		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx";
-		exit(-1);
-	}
-	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx/flags"))
-	{
-		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx/flags";
-		exit(-1);
-	}
+	std::filesystem::create_directories("output" / theConfiguration.getOutputName() / "gfx/flags");
 }
 
 void V2::Flags::copyFlags() const
 {
-	const std::vector<std::string> availableFlagFolders = {"flags", theConfiguration.getVic2Path() + "/gfx/flags"};
+	const std::vector<std::filesystem::path> availableFlagFolders = {"flags", theConfiguration.getVic2Path() / "gfx/flags"};
 	for (const auto& tagMapping: tagMap)
 	{
 		const auto V2Tag = tagMapping.first;
@@ -308,12 +299,12 @@ void V2::Flags::copyFlags() const
 			auto flagFileFound = false;
 			for (auto availableFolderItr = availableFlagFolders.begin(); availableFolderItr != availableFlagFolders.end() && !flagFileFound; ++availableFolderItr)
 			{
-				const auto sourceFlagPath = *availableFolderItr + '/' + flagTag + flagFileSuffix;
+				const auto sourceFlagPath = *availableFolderItr / std::filesystem::path(flagTag + flagFileSuffix);
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					const auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + flagFileSuffix;
-					commonItems::TryCopyFile(sourceFlagPath, destFlagPath);
+					const auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / std::filesystem::path(V2Tag + flagFileSuffix);
+					std::filesystem::copy_file(sourceFlagPath, destFlagPath, std::filesystem::copy_options::overwrite_existing);
 				}
 			}
 		}
@@ -322,7 +313,7 @@ void V2::Flags::copyFlags() const
 
 void V2::Flags::createCustomFlags() const
 {
-	std::string baseFlagFolder = "flags";
+	std::filesystem::path baseFlagFolder = "flags";
 
 	for (const auto& cflag: customFlagMapping)
 	{
@@ -360,13 +351,13 @@ void V2::Flags::createCustomFlags() const
 
 			const auto& suffix = flagFileSuffixes[i];
 			auto flagFileFound = false;
-			auto sourceEmblemPath = baseFlagFolder + "/CustomEmblems/" + std::to_string(emblem) + suffix;
-			auto sourceFlagPath = baseFlagFolder + "/CustomBases/" + baseFlagStr + ".tga";
+			auto sourceEmblemPath = baseFlagFolder / "CustomEmblems" / (std::to_string(emblem) + suffix);
+			auto sourceFlagPath = baseFlagFolder / "CustomBases" / (baseFlagStr + ".tga");
 
 			flagFileFound = commonItems::DoesFileExist(sourceFlagPath) && commonItems::DoesFileExist(sourceEmblemPath);
 			if (flagFileFound)
 			{
-				auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+				auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix);
 
 				auto rColor = flagColorMapper.getFlagColorByIndex(r);
 				auto gColor = flagColorMapper.getFlagColorByIndex(g);
@@ -382,8 +373,8 @@ void V2::Flags::createCustomFlags() const
 			else
 			{
 				if (!commonItems::DoesFileExist(sourceFlagPath))
-					throw std::runtime_error("Could not find " + sourceFlagPath + " for " + V2Tag);
-				throw std::runtime_error("Could not find " + sourceEmblemPath + " for " + V2Tag);
+					throw std::runtime_error("Could not find " + sourceFlagPath.string() + " for " + V2Tag);
+				throw std::runtime_error("Could not find " + sourceEmblemPath.string() + " for " + V2Tag);
 			}
 		}
 	}
@@ -411,44 +402,44 @@ void V2::Flags::createColonialFlags() const
 		for (auto i = 0; i < 5; i++)
 		{
 			const auto& suffix = flagFileSuffixes[i];
-			const auto& folderPath = "flags";
+			const std::filesystem::path& folderPath = "flags";
 			bool flagFileFound;
 
 			if ((i == 0 || i == 3) // monarchy or vanilla
 				 && UniqueColonialFlags.find(baseFlag) == UniqueColonialFlags.end())
 			{
-				auto sourceFlagPath = folderPath + std::string("/") + baseFlag + suffix;
+				auto sourceFlagPath = folderPath / (baseFlag + suffix);
 
 				auto overlordFlag = tagMap.find(overlord);
 				if (overlordFlag == tagMap.end())
 					throw std::runtime_error("No flag exists for " + V2Tag + "'s overlord " + overlord + ". Cannot create colony flag.");
 
-				auto overlordFlagPath = folderPath + std::string("/") + overlordFlag->second + ".tga";
+				auto overlordFlagPath = folderPath / (overlordFlag->second + ".tga");
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath) && commonItems::DoesFileExist(overlordFlagPath);
 				if (flagFileFound)
 				{
-					auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+					auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix);
 					createColonialFlag(overlordFlagPath, sourceFlagPath, destFlagPath);
 				}
 				else
 				{
 					if (!commonItems::DoesFileExist(sourceFlagPath))
-						throw std::runtime_error("Could not find " + sourceFlagPath);
-					throw std::runtime_error("Could not find " + overlordFlagPath);
+						throw std::runtime_error("Could not find " + sourceFlagPath.string());
+					throw std::runtime_error("Could not find " + overlordFlagPath.string());
 				}
 			}
 			else
 			{
-				auto sourceFlagPath = folderPath + std::string("/") + baseFlag + suffix;
+				auto sourceFlagPath = folderPath / std::filesystem::path(baseFlag + suffix);
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
-					commonItems::TryCopyFile(sourceFlagPath, destFlagPath);
+					auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + suffix);
+					std::filesystem::copy_file(sourceFlagPath, destFlagPath, std::filesystem::copy_options::overwrite_existing);
 				}
 				else
 				{
-					throw std::runtime_error("Could not find " + sourceFlagPath);
+					throw std::runtime_error("Could not find " + sourceFlagPath.string());
 				}
 			}
 		}

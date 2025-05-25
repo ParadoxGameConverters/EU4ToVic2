@@ -3,30 +3,35 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-V2::CountryDetails::CountryDetails(std::string _filename): filename(std::move(_filename))
+V2::CountryDetails::CountryDetails(std::filesystem::path _filename): filename(std::move(_filename))
 {
 	registerKeys();
 
-	if (commonItems::DoesFileExist("./blankMod/output/common/countries/" + filename))
+	if (commonItems::DoesFileExist("blankMod/output/common/countries/" / filename))
 	{
-		parseFile("./blankMod/output/common/countries/" + filename);
+		parseFile("blankMod/output/common/countries" / filename);
 	}
-	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
+	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "common/countries" / filename))
 	{
-		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
+		parseFile(theConfiguration.getVic2Path() / "common/countries" / filename);
 	}
 	// Maybe we're initializing a dead nation. If so look in the /other/ place.
-	else if (commonItems::DoesFileExist("./blankMod/output/history/countries/" + filename))
+	else if (commonItems::DoesFileExist("blankMod/output/history/countries" / filename))
 	{
-		parseFile("./blankMod/output/history/countries/" + filename);
+		parseFile("blankMod/output/history/countries" / filename);
 	}
-	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/history/countries/" + filename))
+	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "history/countries" / filename))
 	{
-		parseFile(theConfiguration.getVic2Path() + "/history/countries/" + filename);
+		parseFile(theConfiguration.getVic2Path() / "history/countries" / filename);
+	}
+	// what if HPM
+	else if (theConfiguration.isHpmEnabled() && commonItems::DoesFileExist("configurables/HPM/common/countries" / filename))
+	{
+		parseFile("configurables/HPM/common/countries" / filename);
 	}
 	else
 	{
-		Log(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
+		Log(LogLevel::Debug) << "Could not find file common/countries/" << filename.string() << " - skipping";
 	}
 	clearRegisteredKeywords();
 }

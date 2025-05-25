@@ -11,12 +11,12 @@ EU4::Religions::Religions()
 	Log(LogLevel::Info) << "Parsing EU4 religions";
 	registerKeys();
 
-	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/religions/"))
-		parseFile(theConfiguration.getEU4Path() + "/common/religions/" + filename);
+	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() / "common/religions/"))
+		parseFile(theConfiguration.getEU4Path() / "common/religions" / filename);
 
 	for (const auto& mod: theConfiguration.getMods())
-		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path + "/common/religions/"))
-			parseFile(mod.path + "/common/religions/" + filename);
+		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path / "common/religions"))
+			parseFile(mod.path / "common/religions" / filename);
 
 	clearRegisteredKeywords();
 }

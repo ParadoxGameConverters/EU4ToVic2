@@ -10,7 +10,7 @@ mappers::CustomPopShaping::CustomPopShaping(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void mappers::CustomPopShaping::loadFile(const std::string& fileName)
+void mappers::CustomPopShaping::loadFile(const std::filesystem::path& fileName)
 {
 	registerKeys();
 	parseFile(fileName);
