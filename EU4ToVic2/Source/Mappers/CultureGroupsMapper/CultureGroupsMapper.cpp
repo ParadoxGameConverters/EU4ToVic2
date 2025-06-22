@@ -8,7 +8,7 @@ mappers::CultureGroupsMapper::CultureGroupsMapper()
 {
 	Log(LogLevel::Info) << "-> Loading culture group equivalences.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/culture_group_map.txt"));
+	parseFile("configurables/culture_group_map.txt");
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "-> " << eu4ToV2CultureGroups.size() << " links loaded.";
 }

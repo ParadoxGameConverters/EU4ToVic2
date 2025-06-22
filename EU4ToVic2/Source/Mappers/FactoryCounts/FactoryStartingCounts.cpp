@@ -7,7 +7,7 @@ mappers::FactoryStartingCounts::FactoryStartingCounts()
 {
 	Log(LogLevel::Info) << "Parsing starting factories.";
 	registerKeywords();
-	parseFile(std::filesystem::path("configurables/starting_factories.txt"));
+	parseFile("configurables/starting_factories.txt");
 	clearRegisteredKeywords();
 }
 

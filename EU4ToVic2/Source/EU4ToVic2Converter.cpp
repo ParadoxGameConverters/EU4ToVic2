@@ -10,7 +10,7 @@
 void convertEU4ToVic2(const commonItems::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Progress) << "0 %";
-	ConfigurationFile configurationFile(std::filesystem::path("configuration.txt"), converterVersion);
+	ConfigurationFile configurationFile("configuration.txt", converterVersion);
 	deleteExistingOutputFolder();
 	Log(LogLevel::Progress) << "4 %";
 

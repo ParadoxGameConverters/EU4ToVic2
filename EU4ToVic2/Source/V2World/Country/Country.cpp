@@ -117,7 +117,7 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	if (!srcCountry->getRandomName().empty())
 		newCountry = true;
 
-	auto possibleFilename = getFileFromTag(std::filesystem::path("blankMod/output/history/countries"), tag);
+	auto possibleFilename = getFileFromTag("blankMod/output/history/countries", tag);
 	if (!possibleFilename)
 	{
 		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() / "history/countries", tag);
@@ -127,7 +127,7 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	{
 		auto countryName = commonCountryFile;
 		countryName = countryName.filename();
-		details.filename = std::filesystem::path(tag + " - " + countryName.string());
+		details.filename = tag + " - " + countryName.string();
 	}
 	else
 	{
@@ -552,14 +552,14 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 	details.isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
 
 	// Don't fire up Details if there's no point.
-	auto possibleFilename = getFileFromTag(std::filesystem::path("blankMod/output/history/countries"), tag);
+	auto possibleFilename = getFileFromTag("blankMod/output/history/countries", tag);
 	if (!possibleFilename)
 		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() / "history/countries", tag);
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
 		countryName = countryName.filename();
-		details.filename = std::filesystem::path(tag + " - " + countryName.string());
+		details.filename = tag + " - " + countryName.string();
 		return;
 	}
 	details = CountryDetails(*possibleFilename);

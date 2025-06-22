@@ -5,7 +5,7 @@
 mappers::VNColonialMapper::VNColonialMapper()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/vn_colonial.txt"));
+	parseFile("configurables/vn_colonial.txt");
 	clearRegisteredKeywords();
 }
 

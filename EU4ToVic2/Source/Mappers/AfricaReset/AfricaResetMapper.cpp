@@ -7,7 +7,7 @@ mappers::AfricaResetMapper::AfricaResetMapper()
 {
 	Log(LogLevel::Info) << "Parsing african resettable regions.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/africa_reset.txt"));
+	parseFile("configurables/africa_reset.txt");
 	clearRegisteredKeywords();
 }
 

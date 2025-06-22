@@ -751,9 +751,9 @@ void V2::World::importProvinces()
 std::set<std::filesystem::path> V2::World::discoverProvinceFilenames()
 {
 	std::set<std::filesystem::path> provinceFilenames;
-	if (commonItems::DoesFolderExist(std::filesystem::path("blankMod/output/history/provinces")))
+	if (commonItems::DoesFolderExist("blankMod/output/history/provinces"))
 	{
-		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(std::filesystem::path("blankMod/output/history/provinces"));
+		provinceFilenames = commonItems::GetAllFilesInFolderRecursive("blankMod/output/history/provinces");
 	}
 	if (provinceFilenames.empty())
 	{
@@ -791,7 +791,7 @@ void V2::World::importDefaultPops()
 	}
 	else
 	{
-		popsFolder = std::filesystem::path("blankMod/output/history/pops/1836.1.1");
+		popsFolder = "blankMod/output/history/pops/1836.1.1";
 	}
 	auto filenames = commonItems::GetAllFilesInFolder(popsFolder);
 
@@ -815,7 +815,7 @@ void V2::World::importPopsFromFile(const std::filesystem::path& filename)
 	else
 	{
 		// We are using our own defaults instead of vanilla source because it was modded with cultural minorities.
-		popsFolder = std::filesystem::path("blankMod/output/history/pops/1836.1.1");
+		popsFolder = "blankMod/output/history/pops/1836.1.1";
 	}
 	const mappers::PopMapper popMapper(popsFolder / filename);
 
@@ -870,9 +870,9 @@ void V2::World::importPotentialCountries()
 	if (theConfiguration.isHpmEnabled())
 	{
 		countriesFiles.emplace_back(theConfiguration.getVic2Path() / "common/countries.txt");
-		countriesFiles.emplace_back(std::filesystem::path("configurables/HPM/common/countries.txt"));
+		countriesFiles.emplace_back("configurables/HPM/common/countries.txt");
 	}
-	countriesFiles.emplace_back(std::filesystem::path("blankMod/output/common/countries.txt"));
+	countriesFiles.emplace_back("blankMod/output/common/countries.txt");
 
 	for (const auto& countriesFile: countriesFiles)
 	{
@@ -2283,7 +2283,7 @@ void V2::World::copyHpmFiles() const
 		std::filesystem::remove(out / "events" / file);
 		std::filesystem::copy_file(hpm / "events" / file, out / "events" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/events")))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/events"))
 	{
 		std::filesystem::remove(out / "events" / file);
 		std::filesystem::copy_file("configurables/HPM/events" / file, out / "events" / file);
@@ -2293,7 +2293,7 @@ void V2::World::copyHpmFiles() const
 		std::filesystem::remove(out / "decisions" / file);
 		std::filesystem::copy_file(hpm / "decisions" / file, out / "decisions" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/decisions")))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/decisions"))
 	{
 		std::filesystem::remove(out / "decisions" / file);
 		std::filesystem::copy_file("configurables/HPM/decisions" / file, out / "decisions" / file);
@@ -2308,7 +2308,7 @@ void V2::World::copyHpmFiles() const
 			continue;
 		std::filesystem::copy_file(hpm / "common" / file, out / "common" / file);
 	}
-	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/common/countries")))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/common/countries"))
 	{
 		std::filesystem::remove(out / "common/countries" / file);
 		std::filesystem::copy_file("configurables/HPM/common/countries" / file, out / "common/countries" / file);
@@ -2328,14 +2328,14 @@ void V2::World::copyHpmFiles() const
 	}
 
 	// flags
-	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/gfx/flags")))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/gfx/flags"))
 	{
 		std::filesystem::remove(out / "gfx/flags" / file);
 		std::filesystem::copy_file("configurables/HPM/gfx/flags" / file, out / "gfx/flags" / file);
 	}
 
 	// localisation
-	for (const auto& file: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/HPM/localisation")))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/localisation"))
 	{
 		std::filesystem::remove(out / "localisation" / file);
 		std::filesystem::copy_file("configurables/HPM/localisation" / file, out / "localisation" / file);

@@ -8,7 +8,7 @@ mappers::LeaderTraitMapper::LeaderTraitMapper()
 {
 	Log(LogLevel::Info) << "Loading leader traits.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/leader_traits.txt"));
+	parseFile("configurables/leader_traits.txt");
 	clearRegisteredKeywords();
 }
 

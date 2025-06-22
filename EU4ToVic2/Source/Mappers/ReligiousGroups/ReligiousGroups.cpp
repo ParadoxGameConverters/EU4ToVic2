@@ -9,7 +9,7 @@ mappers::ReligiousGroups::ReligiousGroups()
 {
 	Log(LogLevel::Info) << "Parsing V2 Religions";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/religion_definitions.txt"));
+	parseFile("configurables/religion_definitions.txt");
 	clearRegisteredKeywords();
 }
 
