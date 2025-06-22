@@ -7,7 +7,7 @@
 mappers::ProvinceRenamings::ProvinceRenamings()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/province_renamings.txt"));
+	parseFile("configurables/province_renamings.txt");
 	clearRegisteredKeywords();
 }
 

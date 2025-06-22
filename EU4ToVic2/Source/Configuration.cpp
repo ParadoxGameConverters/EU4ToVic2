@@ -14,21 +14,21 @@ void Configuration::instantiate(std::istream& theStream,
 	 bool (*doesFileExist)(const std::filesystem::path& path3))
 {
 	registerKeyword("SaveGame", [this](std::istream& theStream) {
-		EU4SaveGamePath = std::filesystem::path(commonItems::getString(theStream));
+		EU4SaveGamePath = commonItems::getString(theStream);
 		Log(LogLevel::Info) << "EU4 savegame path: " << EU4SaveGamePath.string();
 	});
 	registerKeyword("EU4directory", [this, converterVersion, DoesFolderExist, doesFileExist](std::istream& theStream) {
-		EU4Path = std::filesystem::path(commonItems::getString(theStream));
+		EU4Path = commonItems::getString(theStream);
 		verifyEU4Path(EU4Path, DoesFolderExist, doesFileExist);
 		Log(LogLevel::Info) << "EU4 path: " << EU4Path.string();
 		verifyEU4Version(converterVersion);
 	});
 	registerKeyword("EU4DocumentsDirectory", [this](std::istream& theStream) {
-		EU4DocumentsPath = std::filesystem::path(commonItems::getString(theStream));
+		EU4DocumentsPath = commonItems::getString(theStream);
 		Log(LogLevel::Info) << "EU4 documents path: " << EU4DocumentsPath.string();
 	});
 	registerKeyword("Vic2directory", [this, converterVersion, DoesFolderExist, doesFileExist](std::istream& theStream) {
-		Vic2Path = std::filesystem::path(commonItems::getString(theStream));
+		Vic2Path = commonItems::getString(theStream);
 		verifyVic2Path(Vic2Path, DoesFolderExist, doesFileExist);
 		Log(LogLevel::Info) << "Vic2 path: " << Vic2Path.string();
 		verifyVic2Version(converterVersion);
@@ -97,7 +97,7 @@ void Configuration::instantiate(std::istream& theStream,
 		Log(LogLevel::Info) << "Hybrid mod: " << hybridModString;
 	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
-		incomingOutputName = std::filesystem::path(commonItems::getString(theStream));
+		incomingOutputName = commonItems::getString(theStream);
 		Log(LogLevel::Info) << "Output Name: " << incomingOutputName.string();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -237,11 +237,11 @@ void Configuration::setOutputName()
 		outputName = incomingOutputName;
 	}
 	outputName = outputName.stem();
-	outputName = std::filesystem::path(replaceCharacter(outputName.string(), '-'));
-	outputName = std::filesystem::path(replaceCharacter(outputName.string(), ' '));
+	outputName = replaceCharacter(outputName.string(), '-');
+	outputName = replaceCharacter(outputName.string(), ' ');
 	theConfiguration.setActualName(outputName);
 
-	outputName = std::filesystem::path(commonItems::normalizeUTF8Path(outputName.string()));
+	outputName = commonItems::normalizeUTF8Path(outputName.string());
 	theConfiguration.setOutputName(outputName);
 	Log(LogLevel::Info) << "Using output name " << outputName.string();
 }

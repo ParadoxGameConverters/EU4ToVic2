@@ -27,8 +27,8 @@ V2::ModCommons::ModCommons(const std::string& tag, const std::filesystem::path& 
 
 	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "common/countries" / filename))
 		parseFile(theConfiguration.getVic2Path() / "common/countries" / filename);
-	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "history/countries" / std::filesystem::path(tag + " - " + filename.string())))
-		parseFile(theConfiguration.getVic2Path() / "history/countries" / std::filesystem::path(tag + " - " + filename.string()));
+	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() / "history/countries" / (tag + " - " + filename.string())))
+		parseFile(theConfiguration.getVic2Path() / "history/countries" / (tag + " - " + filename.string()));
 	clearRegisteredKeywords();
 
 	setPartyDates();

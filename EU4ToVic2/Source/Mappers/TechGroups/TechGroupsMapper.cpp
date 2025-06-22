@@ -23,7 +23,7 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 		}
 	});
 
-	parseFile(std::filesystem::path("configurables/tech_groups.txt"));
+	parseFile("configurables/tech_groups.txt");
 	clearRegisteredKeywords();
 }
 

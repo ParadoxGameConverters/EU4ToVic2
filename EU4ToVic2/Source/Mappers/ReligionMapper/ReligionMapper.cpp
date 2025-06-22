@@ -10,7 +10,7 @@ mappers::ReligionMapper::ReligionMapper()
 {
 	Log(LogLevel::Info) << "Parsing religion mappings.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/religion_map.txt"));
+	parseFile("configurables/religion_map.txt");
 	clearRegisteredKeywords();
 }
 

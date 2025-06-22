@@ -28,7 +28,7 @@ void mappers::CultureGroupsManager::initForV2()
 {
 	Log(LogLevel::Info) << "Parsing V2 Cultures and Culture Groups";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/culture_definitions.txt"));
+	parseFile("configurables/culture_definitions.txt");
 	clearRegisteredKeywords();
 }
 

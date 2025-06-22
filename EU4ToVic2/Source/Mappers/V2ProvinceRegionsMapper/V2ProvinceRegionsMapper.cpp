@@ -7,8 +7,8 @@
 mappers::V2ProvinceRegionsMapper::V2ProvinceRegionsMapper()
 {
 	registerKeys();
-	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/map/region.txt")))
-		parseFile(std::filesystem::path("blankMod/output/map/region.txt"));
+	if (commonItems::DoesFileExist("blankMod/output/map/region.txt"))
+		parseFile("blankMod/output/map/region.txt");
 	else
 		parseFile(theConfiguration.getVic2Path() / "map/region.txt");
 	clearRegisteredKeywords();

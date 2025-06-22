@@ -6,7 +6,7 @@
 mappers::ColonialTagMapper::ColonialTagMapper()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/colonial_tags.txt"));
+	parseFile("configurables/colonial_tags.txt");
 	clearRegisteredKeywords();
 }
 

@@ -5,7 +5,7 @@
 mappers::PartyNameMapper::PartyNameMapper()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/party_names.txt"));
+	parseFile("configurables/party_names.txt");
 	clearRegisteredKeywords();
 }
 

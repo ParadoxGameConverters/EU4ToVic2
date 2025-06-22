@@ -11,7 +11,7 @@ mappers::StartingTechMapper::StartingTechMapper()
 	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
-	parseFile(std::filesystem::path("configurables/starting_technologies.txt"));
+	parseFile("configurables/starting_technologies.txt");
 	clearRegisteredKeywords();
 }
 

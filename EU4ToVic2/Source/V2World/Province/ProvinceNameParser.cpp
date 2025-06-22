@@ -7,9 +7,9 @@ namespace fs = std::filesystem;
 
 V2::ProvinceNameParser::ProvinceNameParser()
 {
-	if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/localisation/text.csv")))
+	if (commonItems::DoesFileExist("blankMod/output/localisation/text.csv"))
 	{
-		importProvinceLocalizations(std::filesystem::path("blankMod/output/localisation/text.csv"));
+		importProvinceLocalizations("blankMod/output/localisation/text.csv");
 	}
 	const auto& locFolder = theConfiguration.getVic2Path() / "localisation";
 	if (commonItems::DoesFolderExist(locFolder))

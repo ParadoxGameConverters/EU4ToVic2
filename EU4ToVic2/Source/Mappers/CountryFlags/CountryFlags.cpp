@@ -6,7 +6,7 @@
 mappers::CountryFlags::CountryFlags()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/flag_mappings.txt"));
+	parseFile("configurables/flag_mappings.txt");
 	clearRegisteredKeywords();
 }
 

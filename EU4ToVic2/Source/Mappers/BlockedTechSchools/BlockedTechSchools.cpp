@@ -5,7 +5,7 @@
 mappers::BlockedTechSchools::BlockedTechSchools()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/blocked_tech_schools.txt"));
+	parseFile("configurables/blocked_tech_schools.txt");
 	clearRegisteredKeywords();
 }
 

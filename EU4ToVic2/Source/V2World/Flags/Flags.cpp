@@ -233,7 +233,7 @@ std::set<std::filesystem::path> V2::Flags::determineAvailableFlags()
 {
 	std::set<std::filesystem::path> availableFlags;
 
-	const std::vector<std::filesystem::path> availableFlagFolders = {std::filesystem::path("flags"), theConfiguration.getVic2Path() / "gfx/flags"};
+	const std::vector<std::filesystem::path> availableFlagFolders = {"flags", theConfiguration.getVic2Path() / "gfx/flags"};
 
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
@@ -299,11 +299,11 @@ void V2::Flags::copyFlags() const
 			auto flagFileFound = false;
 			for (auto availableFolderItr = availableFlagFolders.begin(); availableFolderItr != availableFlagFolders.end() && !flagFileFound; ++availableFolderItr)
 			{
-				const auto sourceFlagPath = *availableFolderItr / std::filesystem::path(flagTag + flagFileSuffix);
+				const auto sourceFlagPath = *availableFolderItr / (flagTag + flagFileSuffix);
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					const auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / std::filesystem::path(V2Tag + flagFileSuffix);
+					const auto destFlagPath = "output" / theConfiguration.getOutputName() / "gfx/flags" / (V2Tag + flagFileSuffix);
 					std::filesystem::copy_file(sourceFlagPath, destFlagPath, std::filesystem::copy_options::overwrite_existing);
 				}
 			}
@@ -430,7 +430,7 @@ void V2::Flags::createColonialFlags() const
 			}
 			else
 			{
-				auto sourceFlagPath = folderPath / std::filesystem::path(baseFlag + suffix);
+				auto sourceFlagPath = folderPath / (baseFlag + suffix);
 				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{

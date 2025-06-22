@@ -26,7 +26,7 @@ mappers::CountryMappings::CountryMappings():
 
 	Log(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/country_mappings.txt"));
+	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
 }
 
