@@ -818,6 +818,9 @@ link = { vic2 = illyrian eu4 = illyrian }
 link = { vic2 = nuragic eu4 = nuragic }
 link = { vic2 = vandal eu4 = vandal }
 link = { vic2 = alexandrine eu4 = alexandrine }
+link = { vic2 = old_bashu eu4 = old_bashu }
+link = { vic2 = dongyi eu4 = dongyi }
+link = { vic2 = baiyue eu4 = baiyue }
 
 # IMP:CK2 cultures
 link = { vic2 = old_italian_american eu4 = sabellian eu4 = old_ligurian eu4 = venetic eu4 = siculian eu4 = lepontic region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
